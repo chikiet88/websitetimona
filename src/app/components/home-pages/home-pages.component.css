@@ -1,0 +1,150 @@
+
+@media only screen and (max-width: 762px){
+    .banner-img{
+        width: 100%;
+        height: 400px;
+    }
+    .new-item{
+        flex-direction: column;
+    }
+    .new-title{
+        text-align: center;
+    }
+    .new-des{
+        text-align: center;
+    }
+    .new-link{
+        text-align: center;
+    }
+  }
+
+.news-events{
+    padding-bottom: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+
+
+
+.events-title::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 2px;
+   
+    background-color: rgb(8, 8, 109);
+    left: 0;
+
+}
+
+
+
+
+.event-des{
+    padding: 10px 0;
+    font-size: 12px;
+    color: rgb(15, 15, 168);
+}
+.event-item a{
+    text-decoration: none;
+    color: rgb(8, 8, 109);
+    font-size: 10px;
+    font-weight: bold;
+    top: 15px;
+}
+
+
+
+.specializ{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 109);
+    border-radius: 30px;
+}
+.specializ-wrapper{
+    padding: 0 100px 50px 100px;
+}
+.specializ-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.specializ-title{
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 50px;
+    font-weight: bold;   
+}
+.specializ-des{
+    font-size: 16px;
+    color: #fff;
+    text-transform: initial;
+    text-align: center;
+    padding: 30px 0 40px 0;
+}
+.specializ-gallery{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 40px;
+}
+
+.item-img{
+    
+    height: 150px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #ddd;
+}
+.item-info{
+    width: 250px;
+}
+.item-info .item-title{
+    color: rgb(209, 209, 12);
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    
+}
+.item-info .item-des{
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 3.2rem;
+
+}
+.gallery-item a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.item-commit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item-icon{
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+.item-title-1{
+    padding-top: 10px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    text-align: center;
+    text-transform: uppercase;
+}

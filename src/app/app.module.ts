@@ -3,18 +3,31 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from "@angular/material/list"
+// import { HomePageComponent } from './components/home-page/home-page.component';
+import { HomePagesComponent } from './components/home-pages/home-pages.component';
 
-import { HomePageComponent } from './components/home-page/home-page.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     
-    HomePageComponent
+    
+          HomePagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
