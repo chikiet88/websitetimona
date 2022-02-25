@@ -1,0 +1,265 @@
+.specializ{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 109);
+    border-radius: 30px;
+}
+.specializ-wrapper{
+    padding: 0 100px 50px 100px;
+}
+.specializ-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.specializ-title{
+    font-size: 50px;
+    color: #fff;
+    text-transform: uppercase;
+    padding-top: 50px;
+    font-weight: bold;   
+}
+.specializ-des{
+    font-size: 16px;
+    color: #fff;
+    text-transform: initial;
+    text-align: center;
+    padding: 30px 0 40px 0;
+}
+.specializ-gallery{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 40px;
+    gap: 10px;
+}
+
+.item-img{
+    
+    height: 150px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #ddd;
+}
+.item-info{
+    width: 250px;
+}
+.item-info .item-title{
+    color: rgb(209, 209, 12);
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    
+}
+.item-info .item-des{
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.6rem;
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 3.2rem;
+
+}
+.gallery-item a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.item-commit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item-icon{
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.item-title-1{
+    padding-top: 10px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.1px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.lecturer-gallery{
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 40px;
+    column-gap: 40px;
+}
+.item-lecturer{
+    display: flex;
+}
+.lecturer-img{
+    width: 200px;
+    background-color: #ddd;
+    box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+    -webkit-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+    -moz-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+}
+.lecturer-info{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.lecturer-title{
+    color: #fff;
+    font-size: 16px;
+}
+.lecturer-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(209, 209, 12);
+    letter-spacing: 0.2px;
+    text-transform: uppercase;    
+    padding: 10px 0;
+}
+.lecturer-specializ{
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    
+}
+.lecturer-info ul{
+    padding-top: 10px;
+}
+.lecturer-info ul li{
+    list-style: none;
+    color: #fff;
+    font-size: 12px;
+    padding-top: 5px;
+}
+.lecturer-info ul li::before {
+    content: "\2022";
+    color: #fff;
+    font-weight: bold;
+    display: inline-block; 
+    width: 0.5rem;
+    margin-left: -7px;
+    
+}
+
+
+@media only screen and (max-width: 762px){
+    .banner-img{
+        width: 100%;
+        height: 400px;
+    }
+    .new-item{
+        flex-direction: column;
+    }
+    .new-title{
+        text-align: center;
+    }
+    .new-des{
+        text-align: center;
+    }
+    .new-link{
+        text-align: center;
+    }
+    .item-info{
+        width: 100% !important;
+        text-align: center;
+    }
+    .item-des{
+        margin: 10px 0;
+    }
+    .specializ-title{
+        font-size: 1.5rem !important;
+        padding-top: 20px !important;
+    }
+    .item-icon{
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .item-title-1{
+        font-size: 10px !important;
+    }
+    
+    .lecturer-gallery{
+        display: block !important;
+    }
+
+    .lecturer-name{
+        padding: inherit !important;
+        font-size: 1rem !important;
+        border-right: 1px solid #fff;
+        margin-right: 17px; 
+    }
+    .lecturer-img{
+        width: 150px !important;
+    }
+    .lecturer-specializ{
+        font-size: 10px;
+    }
+
+    .experts{
+        padding: inherit !important;
+        margin: 0 1.25rem !important;
+    }
+
+    .new-social{
+        flex-wrap: wrap;
+        justify-content: space-evenly !important;
+    }
+    .new-img{
+        margin-right: inherit !important;
+        margin-top: 15px;
+        margin-left: inherit !important;
+    }
+    .newpaper-title{
+        font-size: 1.5rem !important;
+        margin: 0 50px;
+    }
+
+    .carousel-mobile{
+        height: 40vh !important;
+    }
+
+  }
+
+  
+
+  .carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+.carousel .prev{
+    display: none;
+}
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+}

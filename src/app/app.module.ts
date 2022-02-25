@@ -11,6 +11,10 @@ import {MatListModule} from "@angular/material/list"
 // import { HomePageComponent } from './components/home-page/home-page.component';
 import { HomePagesComponent } from './components/home-pages/home-pages.component';
 
+import { SpecialzedComponent } from './specialzed/specialzed.component';
+
+
+
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { HomePagesComponent } from './components/home-pages/home-pages.component
     AppComponent,
     
     
-          HomePagesComponent
+          HomePagesComponent,
+                     
+                      SpecialzedComponent,
+                                       
+                      
   ],
   imports: [
     BrowserModule,
@@ -28,6 +36,7 @@ import { HomePagesComponent } from './components/home-pages/home-pages.component
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

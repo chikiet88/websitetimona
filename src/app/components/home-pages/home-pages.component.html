@@ -84,15 +84,16 @@
       </div>
     </div> -->
   </nav>
+
 </header>
 
-<div class="homepage lg:pt-10 ">
+<div class="homepage lg:pt-10 overflow-x-hidden">
   <section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8"> 
     <div class="lg:pt-10 w-full h-1/2 flex flex-col lg:flex-row ">
         <div class="flex-1 bg-gray-200 lg:mr-4 ">
           <div style="width:200px; height:400px"></div>
       </div>
-        <div class="flex-1 right new">
+        <div class="flex-1 right new hidden lg:block">
             <h2 class="uppercase lg:pl-2 mb-2 relative text-indigo-900 text-center lg:text-left pt:10 text-xl ">Tin tức - sự kiện</h2>
             <div class="pt-4 flex justify-start new-item">
               <div class="lg:w-1/2 w-full bg-gray-200 pr-4 mr-4">
@@ -139,24 +140,26 @@
     </div>
   </section>
 
-
   <section class="lg:max-w-7xl pb-12 mx-auto lg:px-2 lg:px-6 lg:px-8 lg:pt-12">
     <div class="flex justify-between lg:flex-row flex-col-reverse lg:px-0 px-4">
         <div class="flex-1 mr-4 flex flex-col justify-between">
             <div class="intro-left__top">
-                <div class="uppercase lg:pl-2 mb-2 relative text-indigo-900 text-xl lg:text-left text-center lg:pt-0 pt-10 "> Giới thiệu</div>
+                <div class="uppercase lg:pl-2 mb-2 relative text-indigo-900 text-xl lg:text-left font-bold text-center lg:pt-0 pt-10 "> Giới thiệu</div>
                 <div class="lg:w-3/4 text-sm pb-3 text-indigo-900 font-bold lg:text-left w-full text-center">Học viện thẩm mỹ quốc tế Timona Academy tự hào là địa chỉ đào tạo chuyên
                     nghiệp nguồn nhân lực chất lượng cao cho ngành làm đẹp với cam kết 100%
                     việc làm cho học viên sau tốt nghiệp. Đồng thời, đây cũng là đơn vị uy tín cấp
                     phép bởi Sở LĐTBXH và được giới chuyên môn đánh giá cao trong công tác
-                    đào tạo, ứng dụng công nghệ mới của ngành Thẩm mỹ.
+                    đào tạo, ứng dụng công nghệ mới của ngành Thẩm mỹ.<br class="lg:hidden">
                     Suốt hơn 6 năm hoạt động, Timona Academy luôn được hàng ngàn học viên
                     tín nhiệm là địa chỉ dạy nghề thẩm mỹ uy tín và chất lượng như một điểm sáng
                     giữa thực trạng “vàng thau lẫn lộn” các cơ sở dạy nghề hiện nay.
                 </div>
             </div>
-            <div class="text-indigo-900 text-xs top-3 font-black new-link">
-                <a href="#" class="text-base">Tìm hiểu thêm >></a>
+            <div class="text-indigo-900 text-xs top-3 font-black new-link hidden lg:block ">
+              <a href="#" class="text-base   ">Tìm hiểu thêm >></a>
+           </div>
+            <div class="text-indigo-900 text-xs top-3 text-center  font-black new-link bg-indigo-900 mx-20 rounded-lg lg:hidden">
+                <a href="#" class="text-base text-white ">Tìm hiểu thêm >></a>
             </div>
         </div>
 
@@ -167,88 +170,311 @@
         </div>
     </div>
   </section>
-  
-  <section class="w-full h-full bg-indigo-900 rounded-xl lg:max-w-7xl pb-12 mx-auto lg:px-2 lg:px-6 lg:px-8 lg:pt-12">
-    <div class="lg:px-20 px-4">
-        <div class="flex flex-col justify-center items-center">
-            <p class="lg:text-5xl text:xl font-bold text-white uppercase">Chuyên ngành đào tạo</p>
-            <span class="item-des text-center lg:text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla delectus saepe ducimus, necessitatibus deserunt eos iusto minima voluptate doloribus quae, similique, hic corporis maiores magnam exercitationem reiciendis neque. Ex, perspiciatis?</span>
-        </div>
-        <div class="grid grid-cols-3 gap-x-8 gap-y-4 pt-10">
-            <div class="gallery-item">
-                <div class="item-img "></div>
-                <div class="item-info">
-                    <div class="item-title">Phun xăm <br > thẩm mỹ</div>
-                    <span class="item-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et qui ut libero odit quod ad velit eum autem praesentium laborum architecto ab dicta obcaecati, vitae voluptatum possimus consequuntur veniam?</span>
+<section class="w-full h-full bg-indigo-900 rounded-xl lg:max-w-7xl pb-12 mx-auto lg:px-2 lg:px-6 lg:px-8 lg:pt-12">
+    <app-specialzed></app-specialzed>
+
+      <div class="statistical hidden lg:block">
+        <div class="statistical-wrapper">
+            <div class="statistical-item">
+                <div class="statistical-item_img">img</div>
+                <div class="statistical-item_info">
+                    <h2 class="statistical-item_title">06</h2>
+                    <span class="statistical_des">Cơ sở</span>
                 </div>
-                <a class="#">Xem thêm >></a>
             </div>
-
-            <div class="gallery-item hidden">
-                <div class="item-img"></div>
-                <div class="item-info">
-                    <div class="item-title">Phun xăm <br > thẩm mỹ</div>
-                    <span class="item-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et qui ut libero odit quod ad velit eum autem praesentium laborum architecto ab dicta obcaecati, vitae voluptatum possimus consequuntur veniam?</span>
-                </div>
-                <a class="#">Xem thêm >></a>
-            </div>
-
-            <div class="gallery-item hidden lg:block">
-                <div class="item-img"></div>
-                <div class="item-info">
-                    <div class="item-title">Phun xăm <br > thẩm mỹ</div>
-                    <span class="item-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et qui ut libero odit quod ad velit eum autem praesentium laborum architecto ab dicta obcaecati, vitae voluptatum possimus consequuntur veniam?</span>
-                </div>
-                <a class="#">Xem thêm >></a>
-            </div>
-           
-            <div class="gallery-item hidden lg:block">
-              <div class="item-img"></div>
-              <div class="item-info">
-                  <div class="item-title">Phun xăm <br > thẩm mỹ</div>
-                  <span class="item-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et qui ut libero odit quod ad velit eum autem praesentium laborum architecto ab dicta obcaecati, vitae voluptatum possimus consequuntur veniam?</span>
-              </div>
-              <a class="#">Xem thêm >></a>
-          </div>
-
-          <div class="gallery-item hidden lg:block">
-            <div class="item-img"></div>
-            <div class="item-info">
-                <div class="item-title">Phun xăm <br > thẩm mỹ</div>
-                <span class="item-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et qui ut libero odit quod ad velit eum autem praesentium laborum architecto ab dicta obcaecati, vitae voluptatum possimus consequuntur veniam?</span>
-            </div>
-            <a class="#">Xem thêm >></a>
-        </div>
-
-        <div class="gallery-item hidden lg:block">
-          <div class="item-img"></div>
-          <div class="item-info">
-              <div class="item-title">Phun xăm <br > thẩm mỹ</div>
-              <span class="item-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et qui ut libero odit quod ad velit eum autem praesentium laborum architecto ab dicta obcaecati, vitae voluptatum possimus consequuntur veniam?</span>
-          </div>
-          <a class="#">Xem thêm >></a>
-      </div>
-
-      <div class="gallery-item hidden lg:block">
-        <div class="item-img"></div>
-        <div class="item-info">
-            <div class="item-title">Phun xăm <br > thẩm mỹ</div>
-            <span class="item-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit et qui ut libero odit quod ad velit eum autem praesentium laborum architecto ab dicta obcaecati, vitae voluptatum possimus consequuntur veniam?</span>
-        </div>
-        <a class="#">Xem thêm >></a>
-    </div>
             
+            <div class="statistical-item">
+                <div class="statistical-item_img">img</div>
+                <div class="statistical-item_info">
+                    <h2 class="statistical-item_title">20.000 +</h2>
+                    <span class="statistical_des">Học viên mỗi năm</span>
+                </div>
+            </div>
+            <div class="statistical-item">
+                <div class="statistical-item_img">img</div>
+                <div class="statistical-item_info">
+                    <h2 class="statistical-item_title">100 %</h2>
+                    <span class="statistical_des">Có việc làm</span>
+                </div>
+            </div>
+            <div class="statistical-item">
+                <div class="statistical-item_img">img</div>
+                <div class="statistical-item_info">
+                    <h2 class="statistical-item_title">10 triệu</h2>
+                    <span class="statistical_des">Lương khởi điểm</span>
+                </div>
+            </div>
         </div>
-
-
-       
-        
-       
     </div>
 
+    <div class="stories hidden lg:block">
+      <div class="specializ-top">
+          <h2 class="specializ-title">Câu chuyện học viên</h2>
+      </div>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="stories-wrapper">
+              <div class="story-left">youtube</div>
+              <div class="item-lecturer story-right">
+                  <div class="lecturer-img story-img">img</div>
+                  <div class="lecturer-info story-info">
+                      <span class="lecturer-title">Học viên</span>
+                      <h2 class="lecturer-name">Trần LÊ <br> Mỹ Ngọc</h2>
+                      <span class="lecturer-specializ">học viên ngoại khóa 35</span>
+                      <span class="story-des">Sau nhiều năm theo đuổi ngành dược. Ngạc nhiên ra rằng bản thân không phù hợp nên đã tìm hiểu và lựa chon thay đổi</span>
+                  </div>
+              </div>
+              </div>
+          </div>
+          <div class="carousel-item">
+            <div class="stories-wrapper">
+              <div class="story-left">youtube1</div>
+              <div class="item-lecturer story-right">
+                  <div class="lecturer-img story-img">img</div>
+                  <div class="lecturer-info story-info">
+                      <span class="lecturer-title">Học viên</span>
+                      <h2 class="lecturer-name">Trần LÊ <br> Mỹ Ngọc1</h2>
+                      <span class="lecturer-specializ">học viên ngoại khóa 35</span>
+                      <span class="story-des">Sau nhiều năm theo đuổi ngành dược. Ngạc nhiên ra rằng bản thân không phù hợp nên đã tìm hiểu và lựa chon thay đổi</span>
+                  </div>
+              </div>
+              </div>        
+          
+          </div>
+          <div class="carousel-item">
+            <div class="stories-wrapper">
+              <div class="story-left">youtube 2</div>
+              <div class="item-lecturer story-right">
+                  <div class="lecturer-img story-img">img</div>
+                  <div class="lecturer-info story-info">
+                      <span class="lecturer-title">Học viên</span>
+                      <h2 class="lecturer-name">Trần LÊ <br> Mỹ Ngọc2</h2>
+                      <span class="lecturer-specializ">học viên ngoại khóa 35</span>
+                      <span class="story-des">Sau nhiều năm theo đuổi ngành dược. Ngạc nhiên ra rằng bản thân không phù hợp nên đã tìm hiểu và lựa chon thay đổi</span>
+                  </div>
+              </div>
+              </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+    </div>  
+    
+    
+    <div class="stories-mobile stories bg-indigo-900 lg:hidden">
+      <div class="specializ-top">
+        <h2 class="specializ-title">Câu chuyện học viên</h2>
+        <p class="text-center text-white text-xs !mx-6">Hơn 10.000 học viên hài lòng và thành công khi chọn Timona Academy</p>
+      </div>
+      <div class="bg-cyan-900 rounded-lg mx-5 flex justify-center items-center h-44 relative" style="height: 350px ;">
+        <div class="absolute left-0 bottom-0"><div class="bg-gray-100  " style="width: 150px  ; height: 300px ;"></div></div>
+        <div class="flex flex-col absolute left-1/2">
+            <span class="lecturer-title">Học viên</span>
+            <p class="lecturer-name !border-r-0 !m-0">Trần LÊ <br> Mỹ Ngọc</p>
+            <span class="lecturer-specializ ">học viên ngoại khóa 35</span>
+            <span class="story-des">Sau nhiều năm theo đuổi ngành dược. Ngạc nhiên ra rằng bản thân không phù hợp nên đã tìm hiểu và lựa chon thay đổi</span>
+        </div>
+        <div><i class="absolute w-10 h-10 top-1/2 left-1/2 bg-gray-100 translate-1/2">icon</i></div>
+    </div>
+ </div>
+ <div class="experts">
+  <div class="specializ-top">
+      <h2 class="specializ-title text-center expert-title">học nghề cùng chuyên gia</h2>
+  </div>
+  <div class=" lg:block hidden"> <div class="expert-wrapper">
+    <div class="expert-video">
+        <div class="expert-boder">
+            <div class="expert-boder-left">
+               <div class="expert-boder-img">logo</div>
+               <div class="expert-boder-question">master thẩm mỹ khó hay dễ</div>
+            </div>
+            <div class="expert-boder-right">img</div>
+            <i class="button-play">icon</i>
+        </div>
+        <span class="expert-question">master thẩm mỹ - khó hay dễ?</span>
+    </div>
+    <div class="expert-video">
+        <div class="expert-boder border-reverse">
+            <div class="expert-boder-left left-reverse">
+               <div class="expert-boder-img img-reverse">logo</div>
+               <div class="expert-boder-question">cách thức <br> <strong class="text-strong">  tạo niềm tin</strong><br>nơi khách hàng</div>
+            </div>
+            <div class="expert-boder-right right-reverse">img</div>
+            <i class="button-play"></i>
+        </div>
+        <span class="expert-question">cách thức tạo niềm tin nơi khách hàng</span>
+    </div>
+</div></div>
+    
+  <div class="expert-mobiles w-full lg:hidden" style="height:200px">
+    <div class="relative h-full">
+      <div class="bg-gray-100 h-full mb-5 ">img </div>
+    </div>
+    
+
+    <div class="expert-boder-question !w-full text-center mt-5 font-black">master thẩm mỹ khó hay dễ</div>
    
-    
-    
+  </div>
+</div>
+
+
+  </section>
+  <section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8 pt-10"> 
+    <div class="lg:pt-10 w-full h-1/2 flex flex-col lg:flex-row ">
+        <div class="flex-1 bg-gray-200 lg:mr-4 hidden">
+          <div style="width:200px; height:400px"></div>
+      </div>
+        <div class="flex-1 right new lg:hidden">
+            <h2 class="uppercase lg:pl-2 mb-2 relative text-indigo-900 text-center lg:text-left pt:10 text-xl ">Tin tức - sự kiện</h2>
+            <div class="pt-4 flex justify-start new-item">
+              <div class="lg:w-1/2 w-full bg-gray-200 pr-4 mr-4">
+                <div class="banner-img"></div>
+              </div>
+              <div class="flex flex-col new-info">
+                  <p class="text-base text-indigo-900 font-black new-title">Tinoma Academy được vinh danh thương hiệu tiêu biểu Châu Á thái bình dương</p>
+                  <span class="pb-2 text-sm text-indigo-900 new-des">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid beatae corrupti</span>                            
+ 
+                  <div class="text-indigo-900 text-xs top-3 font-black new-link hidden lg:block ">
+                    <a href="#" class="text-base hidden lg:block">Tìm hiểu thêm >></a>
+                 </div>
+                  <div class="text-indigo-900 text-xs top-3 text-center  font-black new-link bg-indigo-900 mx-14 rounded-lg lg:hidden">
+                      <a href="#" class="text-base text-white ">Xem thêm các thông tin khác >></a>
+                  </div>
+                </div>
+             </div>
+        </div>
+    </div>
   </section>
   
+
+  
+  <div class="px-9"> 
+    <div class="newspaper">
+      <h2 class="newpaper-title">Báo chí nói gì về timona academy</h2>
+      <div class="new-social">
+          <div class="new-img">img</div>
+          <div class="new-img">img</div>
+          <div class="new-img">img</div>                    
+          <div class="new-img">img</div>
+          <div class="new-img">img</div>  
+          <div class="new-img">img</div>
+          <div class="new-img">img</div>
+      </div>
+    </div>
+
+    <div class="form-sale hidden lg:block"> 
+      <div class="form-wrapper">
+          <div class="form-left x">
+             
+              <div class="form-left-total">img</div>
+          </div>
+          <div class="form-right">
+              <form class="form-submit">
+                <input type="text" id="username-success" class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-1 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400" placeholder="HỌ TÊN">
+                <input type="text" id="username-success" class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-1 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400" placeholder="SỐ ĐIỆN THOẠI">
+                <input type="text" id="username-success" class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400" placeholder="MÃ GIỚI HIỆU">
+
+                <select id="countries" class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 mr-3 mt-5 block  p-1.5 dark:bg-black-100 dark:border-black-400">
+                  <option>KHÓA HỌC</option>
+                  
+                </select>
+                
+                  <button>đăng kí ngay</button> 
+              </form>
+          </div>
+      </div>
+    </div>
+
+    <div class="formsale-mobile bg-indigo-900 rounded-lg lg:hidden"> 
+      <div class="" style="height: 50px; width: 50px;"></div>
+      <form class="form-submit pb-8">
+        <input type="text" id="username-success" class="bg-green-50 border border-none  text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400" placeholder="HỌ TÊN">
+        <input type="text" id="username-success" class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400" placeholder="SỐ ĐIỆN THOẠI">
+        <input type="text" id="username-success" class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400" placeholder="MÃ GIỚI HIỆU">
+
+        <select id="countries" class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-5 block  p-1.5 dark:bg-black-100 dark:border-black-400">
+          <option class="text-black-700">KHÓA HỌC</option>
+          
+        </select>
+        
+          <button class="text-center !w-full mx-14">đăng kí ngay</button> 
+      </form>
+    </div>
+  </div>
+  
 </div>
+
+<section class="footer">
+  <div class="footer-mobile mx-5 pb-72 pt-10 lg:hidden">
+    <div class="footer-top">
+      <p class="text-yellow-500 text-center text-base">HỆ THỐNG HỌC VIÊN ĐÀO TẠO THẨM MỸ QUỐC TẾ TIMONA ACADEMY</p> 
+      <div class="bg-gray-100 w-100" style="height: 100px;" >img</div> 
+      <div class="flex justify-between items-center pt-5">
+        <p class="text-white">THEO DÕI TIMNA ACADEMY</p>
+        <ul class="flex">
+          <li class="icon-item mr-3 rounded-lg">icon</li>
+          <li class="icon-item mr-3 rounded-lg">icon</li>
+          <li class="icon-item mr-3 rounded-lg">icon</li>
+          <li class="icon-item  rounded-lg">icon</li>
+
+         </ul> 
+      </div>
+      <ul class="footer-right-address">
+        <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ Chí Minh</li>
+        <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+        <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+        <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+        <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+      </ul>
+      <div class="flex justify-center">
+        <div class="bg-yellow-500 my-5 text-indigo-900  rounded-lg text-xl text-center font-black" style="width: 120px;">1900 2664</div>
+        <div class="bg-yellow-500 my-5 text-indigo-900 ml-5 rounded-lg text-xl text-center font-black" style="width: 120px;">Tư Vấn</div>
+      
+      </div>
+    </div>
+  </div>
+  <div class="hidden lg:block">
+    <div class="footer-container hidden lg:block">
+      <div class="footer-wrapper">
+          <div class="footer-left">
+              <div class="footer-left-logo">
+                  <div class="logo-footer">img</div>
+                  <ul class="icons-social">
+                      <li class="icon-item">icon</li>
+                      <li class="icon-item">icon</li>
+                      <li class="icon-item">icon</li>
+                  </ul>
+              </div>
+              <div class="footer-left-notify">img</div>
+          </div>
+          <div class="footer-right">
+              <h2 class="footer-right-title">hệ thống học viện đào tạo thẩm mỹ quốc tế timona academy</h2>
+              <ul class="footer-right-address">
+                  <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ Chí Minh</li>
+                  <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+                  <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+                  <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+                  <li class="address-item">CN1: 408 Cao Thắng, P.12, Quận 10, TP. Hồ chí Minh</li>
+              </ul>
+              <div class="footer-right-contact">
+                  <div class="contact phone">Đội ngũ tư vấn (24/7): 1900 2664</div>
+                  <div class="contact email">Email: tuvan@tazaskinclinic.com</div>
+              </div>
+          </div>
+      </div>
+      <h2 class="footer-bottom"> &#169; TIMONA ACADEMY</h2>
+      
+  </div>
+  </div>
+  
+    
+</section>
