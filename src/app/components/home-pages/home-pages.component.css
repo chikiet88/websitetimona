@@ -52,9 +52,9 @@
         font-size: 10px;
     }
 
-    .experts{
+    .expert-wrapper{
         padding: inherit !important;
-        margin: 0 1.25rem !important;
+      
     }
 
     .new-social{
@@ -65,6 +65,9 @@
         margin-right: inherit !important;
         margin-top: 15px;
         margin-left: inherit !important;
+    }
+    .intro-left__top{
+        text-align: center;
     }
     .newpaper-title{
         font-size: 1.5rem !important;
@@ -346,10 +349,9 @@
 }
 
 
-.experts{
-    padding: 0 100px ;
-}
+
 .expert-wrapper{
+    padding: 0 100px;
      display: flex;
      padding-top: 50px;
      padding-bottom: 50px;
@@ -737,3 +739,5 @@
     #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
         color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
     }
+
+    
