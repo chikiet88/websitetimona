@@ -73,6 +73,9 @@
     margin-top: 0.75rem !important;
     margin-bottom: 0.75rem !important;
 }
+.intro-des{
+    width: 70%;
+}
 
 @media screen and (max-width: 768px){
     .title{
@@ -123,7 +126,7 @@
        
     }
     .img-res{
-        width: 300px !important;
+        width: 400px;
     }
     .img-infras, .info-infras{
         width: 100% !important;
@@ -147,7 +150,7 @@
         margin: 0 0.75rem;
     }
     .img-adress{
-        height: 265px !important;
+        height: 165px !important;
     }
 
     
@@ -157,6 +160,10 @@
         display: none;
     }  
     
+    .intro-des{
+        width: 100%;
+
+    }
     .text-column{
         column-count: 1;
     }

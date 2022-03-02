@@ -36,7 +36,7 @@
 
 .item-img{
     
-    height: 150px;
+    height: 200px;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: #ddd;
@@ -111,6 +111,7 @@
     -moz-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
 }
 .lecturer-info{
+    width: 500px;
     padding-top: 20px;
     padding-left: 20px;
 }
@@ -154,7 +155,7 @@
 
 @media only screen and (max-width: 960px){
     .lecturer-img_mobile{
-        width: 250px;
+        width: 250 px;
 
     }
     .lecturer-info{
@@ -172,7 +173,7 @@
         height: 400px;
     }
     .item-img{
-        height: 240px;
+        height: 230px;
     }
     .new-item{
         flex-direction: column;
