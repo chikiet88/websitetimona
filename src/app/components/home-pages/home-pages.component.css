@@ -1,3 +1,18 @@
+@media only screen and (max-width: 480px){
+    .storie-img{
+        width: 150px !important;
+        
+    }
+}
+.storie-img{
+    width: 150px;
+    height: 300px;
+}
+@media only screen and (max-width: 960px){
+    .storie-img{
+        width: 250px;
+    }
+}
 
 @media only screen and (max-width: 762px){
     .banner-img{
@@ -78,9 +93,10 @@
     .address-item{
         font-size: 12px !important;
     }
-    .footer{
-        padding-top: inherit !important;
+    .storie-img{
+        width: 200px;
     }
+    
 
   }
 
@@ -227,6 +243,7 @@
 }
 .lecturer-img{
     width: 200px;
+    height: 250px;
     background-color: #ddd;
     box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
     -webkit-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
@@ -698,17 +715,7 @@
         border-radius: 50%;
         background-color: rgb(179, 179, 1);
     }
-    .footer-bottom{
-        color: #fff;
-        font-size: 14px;
-        padding-bottom: 50px;
-        position: relative;
-    }
-    .footer-bottom::after{
-        contain: "\A9";
-        position: absolute;
-        color: #fff;
-    }
+    
 
     .carousel-open:checked + .carousel-item {
         position: static;

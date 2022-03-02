@@ -125,5 +125,8 @@
     .footer{
         padding-top: inherit !important;
     }
+    .nav-links{
+        display: none;
+    }
 
   }

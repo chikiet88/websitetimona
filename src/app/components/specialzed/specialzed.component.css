@@ -95,7 +95,7 @@
 .lecturer-gallery{
     padding-top: 40px;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 40px;
     column-gap: 40px;
 }
@@ -103,7 +103,7 @@
     display: flex;
 }
 .lecturer-img{
-    width: 30%;
+    width: 150px;
     height: 280px;
     background-color: #ddd;
     box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
@@ -116,7 +116,7 @@
 }
 .lecturer-title{
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
 }
 .lecturer-name{
     font-size: 20px;
@@ -152,11 +152,27 @@
     
 }
 
+@media only screen and (max-width: 960px){
+    .lecturer-img_mobile{
+        width: 250px;
+
+    }
+    .lecturer-info{
+        width: 500px;
+    }
+    .item-img{
+        height: 180px;
+    }
+}
+
 
 @media only screen and (max-width: 762px){
     .banner-img{
         width: 100%;
         height: 400px;
+    }
+    .item-img{
+        height: 240px;
     }
     .new-item{
         flex-direction: column;
@@ -203,8 +219,8 @@
         margin-right: 17px; 
     }
     .lecturer-img{
-        width: 150px !important;
-        height: 230px !important;
+        width: 200px !important;
+       
     }
     .lecturer-specializ{
         font-size: 10px;
