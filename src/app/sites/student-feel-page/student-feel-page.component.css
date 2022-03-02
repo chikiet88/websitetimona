@@ -1,0 +1,30 @@
+.dropdown-menu{
+    width: 90%;
+}
+
+.dropdown-toggle::after{
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.center-img{
+    transform: translate(0%, -40%);
+}
+.trapezoid{
+    border-bottom: 200px solid #555;
+	border-left: 50px solid transparent;
+
+	height: 100%;
+	width: 60%;
+    right: 0;
+}
+.center-img{
+    transform: translateY(-50%);
+}
+.play-icon{
+    width: 30px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    
+}

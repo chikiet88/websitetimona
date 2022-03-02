@@ -1,0 +1,72 @@
+.item-lecturer{
+    display: flex;
+}
+.lecturer-img{
+    width: 200px;
+    background-color: #ddd;
+    box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+    -webkit-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+    -moz-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+}
+.lecturer-info{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.lecturer-title{
+    color: #fff;
+    font-size: 16px;
+}
+.lecturer-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(209, 209, 12);
+    letter-spacing: 0.2px;
+    text-transform: uppercase;    
+    padding: 10px 0;
+}
+.lecturer-specializ{
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    
+}
+.lecturer-info ul{
+    padding-top: 10px;
+}
+.lecturer-info ul li{
+    list-style: none;
+    color: #fff;
+    font-size: 12px;
+    padding-top: 5px;
+}
+.lecturer-info ul li::before {
+    content: "\2022";
+    color: #fff;
+    font-weight: bold;
+    display: inline-block; 
+    width: 0.5rem;
+    margin-left: -7px;
+    
+}
+.banner-img{
+    width: 400px;
+    height: 400px;
+}
+.text{
+    column-count: 2;
+    column-gap: 60px;
+}
+@media screen and (max-width: 768px){
+    .banner-img{
+        height: 250px;
+    }
+    .container-lecturer{
+        padding: 0.75rem;
+    }
+    .text{
+    column-count: 1;
+    column-gap: 0;
+    }
+}

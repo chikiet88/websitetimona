@@ -1,0 +1,161 @@
+.intro-role{
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: relative;
+}
+.role-item{
+    position: relative;
+}
+.role-item::after{
+    position: absolute;
+    content: "";
+    background-color: white;
+    width: 1px;
+    right: 0;
+    height: 90%;
+    top: 0;
+
+}
+.text-column{
+    column-count: 2;
+}
+
+.intro-commit{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.img-border{
+    border-top-right-radius: 50px;
+
+}
+.shape-outer {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    height: 70px;
+    width: calc(170px + 4vw);
+    margin: 25px;
+    background-color: rgb(25, 25, 73);
+    -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
+    		clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
+   
+}
+
+.sign-right {
+    height: 66px;
+    width: calc(166px + 4vw);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(173, 173, 2);
+    -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
+    		clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
+}
+
+.commit-intro{
+    border: 1px solid rgb(160, 160, 10);
+    
+}
+
+.number{
+    font-size: 120px;
+}
+.trademark-img{
+    width: 150px;
+    height: 150px;
+}
+
+.ten-commit{
+    margin-left: 2rem !important;
+    margin-right: 3.5rem !important;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+@media screen and (max-width: 768px){
+    .title{
+        text-align: center;
+    }
+    .role-item::after{
+        display: none;
+    }
+    .role-item{
+        display: flex;
+        align-items: center;
+    }
+    .role-item::after:nth-last-child(3){
+        display: none;
+    }
+    .title-border{
+        border: 1px solid #fff;
+       width: 150px;
+        padding: 3rem 1rem;
+        text-align: center;
+    }
+    .intro-role{
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        
+    }
+    .intro-commit{
+       margin-bottom: 3rem;
+        border-bottom-left-radius: 50px;
+    }
+
+
+    .shape-outer {
+        position: relative;
+        display: flex;
+        flex-shrink: 0;
+        height: 25px;
+        width: 100px;
+        margin: 10px;
+       
+       
+    }
+    .sign-right {
+        height: 21px;
+        width: 96px;
+        font-size: 10px;
+        
+       
+    }
+    .img-res{
+        width: 300px !important;
+    }
+    .img-infras, .info-infras{
+        width: 100% !important;
+    }
+    
+    .number{
+        font-size: 90px;
+    }
+
+    .ten-commit{
+        font-size: 10px;
+        margin: 1px 1px 1px 30px !important;
+      
+    }
+    
+    .trademark-img{
+        width: 65px;
+        height: 65px;
+    }
+    .container-storie{
+        margin: 0 0.75rem;
+    }
+    
+}
+@media screen and (max-width: 960px){
+    .role-item::after{
+        display: none;
+    }  
+    .intro-commit{
+        margin: 15px 0;
+    } 
+    .text-column{
+        column-count: 1;
+    }
+}

@@ -1,0 +1,20 @@
+.dropdown-menu{
+    width: 90%;
+}
+.btn-secondary:hover{
+    
+    
+}
+.dropdown-toggle::after{
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.center-img{
+    transform: translate(-25%, -50%);
+}
+.banner-img{
+    height: 250px;
+    width: 300px;
+}

@@ -60,6 +60,7 @@
     .new-social{
         flex-wrap: wrap;
         justify-content: space-evenly !important;
+        margin: 0 6px;
     }
     .new-img{
         margin-right: inherit !important;
@@ -596,7 +597,7 @@
         margin-top: 50px;
     }
     .footer-container{
-        padding: 0 150px;
+       
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -612,10 +613,9 @@
         content: "";
         position: absolute;
         width: 100%;
-        bottom: 30px;
+        bottom: 0;
         left: 0;
         height: 1px;
-        
         background-color: #fff;
     }
     .footer-left{
