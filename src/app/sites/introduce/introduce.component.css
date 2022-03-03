@@ -2,6 +2,7 @@
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     position: relative;
+    padding-bottom: 30px;
 }
 .role-item{
     position: relative;
@@ -11,7 +12,7 @@
     content: "";
     background-color: white;
     width: 1px;
-    right: 0;
+    right: -25px;
     height: 90%;
     top: 0;
 
@@ -27,7 +28,7 @@
 }
 .img-border{
     border-top-right-radius: 50px;
-    height: 300px;
+    
 }
 .shape-outer {
     position: relative;
@@ -49,7 +50,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(173, 173, 2);
+    background-color: rgb(212, 212, 20);
     -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
     		clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
 }
@@ -103,11 +104,17 @@
         
     }
     .intro-commit{
+        display: flex;
+        flex-direction: row-reverse;
        margin-bottom: 3rem;
         border-bottom-left-radius: 50px;
     }
 
+    .border-mb{
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
 
+    }
     .shape-outer {
         position: relative;
         display: flex;

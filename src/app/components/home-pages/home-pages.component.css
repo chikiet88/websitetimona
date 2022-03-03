@@ -155,8 +155,8 @@
     align-items: center;
 }
 .specializ-title{
-    font-size: 50px;
-    color: #fff;
+    font-size: 40px;
+    
     text-transform: uppercase;
     padding-top: 50px;
     font-weight: bold;   
@@ -173,6 +173,14 @@
     grid-template-columns: auto auto auto;
     row-gap: 40px;
     gap: 10px;
+}
+.border-top{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.border-bottom{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .item-img{
@@ -242,8 +250,7 @@
     display: flex;
 }
 .lecturer-img{
-    width: 200px;
-    height: 250px;
+    width: 250px;
     background-color: #ddd;
     box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
     -webkit-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
@@ -293,10 +300,10 @@
 }
 
 .statistical {
-    margin-bottom: 50px;
+
     width: 100%;
     height: 80px;
-    background-color: rgb(122, 122, 32);
+    background-color: rgb(180, 180, 20);
 }
 .statistical-wrapper{
     display: flex;
@@ -344,14 +351,14 @@
     padding: 50px 100px;
 }
 .story-left{
-   flex: 1;
-   
-   background-color: #fff;
+ 
+   width: 50%;
+    
    
    margin-right: 20px;
 }
 .story-right{
-    flex: 1;
+    width: 50%;
 }
 .story-info{
     display: flex;
@@ -372,13 +379,12 @@
 .expert-wrapper{
     padding: 0 100px;
      display: flex;
+     justify-content: space-between;
      padding-top: 50px;
      padding-bottom: 50px;
-     justify-content: space-between;
+     
 }
-.expert-title{
-    color: rgb(122, 122, 32);
-}
+
 .expert-video{
     display: flex;
     flex-direction: column;
@@ -417,7 +423,7 @@
 .expert-boder-question{
     text-transform: uppercase;
     font-size: 18px;
-    color: rgb(122, 122, 32);
+  
     letter-spacing: 1px;
     width: 180px;
 }
@@ -454,12 +460,12 @@
 .text-strong{
     font-size: 22px;
     font-weight: bold;
-    color: rgb(122, 122, 32);
+   
     padding: 10px 0;
 }
 
 .expert-question{
-    color: rgb(122, 122, 32);
+    
     font-size: 18px;
     text-transform: uppercase;
     padding-top: 25px;
@@ -486,8 +492,8 @@
     padding-top: 30px;
     }
     .new-img{
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
         background-color: #ddd;
         margin-right: 15px;
         margin-left: 15px;

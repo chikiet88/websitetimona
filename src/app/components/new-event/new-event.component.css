@@ -10,8 +10,11 @@ display: -webkit-box;
 max-height: 3.2rem;
 }
 .banner-img{
-    width: 150px;
+    width: 170px;
     
+}
+.new-wrapper{
+    height: 465px;
 }
 
 .banner-image img{
@@ -27,9 +30,13 @@ max-height: 3.2rem;
     .banner-image{
        height: 545px;
     }
+    .new-wrapper{
+        height: auto;
+    }
 }
 @media screen  and (max-width:480px){
     .banner-image{
         height: 410px;
     }
+   
 }

@@ -6,5 +6,12 @@
    .intro-left__top{
        text-align: center;
    }
-
+   .yotube-video{
+       width: 100%;
+   }
+   .button{
+       padding: 10px;
+        border: 1px solid blue;
+       
+    }
   }

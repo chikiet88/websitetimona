@@ -14,7 +14,7 @@
     align-items: center;
 }
 .specializ-title{
-    font-size: 50px;
+    font-size: 40px;
     color: #fff;
     text-transform: uppercase;
     padding-top: 50px;
@@ -39,12 +39,13 @@
     height: 200px;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: #ddd;
+   
 }
 
 .item-info{
    
 }
+
 .item-info .item-title{
     color: rgb(209, 209, 12);
     font-weight: bold;
@@ -64,7 +65,11 @@
     max-height: 5.2rem;
 
 }
+.gallery-item{
+    cursor: pointer;
+}
 .gallery-item a{
+  
     text-decoration: none;
     color: #fff;
     font-size: 12px;
@@ -131,7 +136,7 @@
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 16px;
     
 }
 .lecturer-info ul{
@@ -140,7 +145,7 @@
 .lecturer-info ul li{
     list-style: none;
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     padding-top: 5px;
 }
 .lecturer-info ul li::before {
@@ -173,7 +178,7 @@
         height: 400px;
     }
     .item-img{
-        height: 230px;
+        height: 235px;
     }
     .new-item{
         flex-direction: column;
@@ -223,13 +228,24 @@
         width: 200px !important;
        
     }
+
+    .specializ-des{
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
     .lecturer-specializ{
         font-size: 10px;
+    }
+    .button{
+        padding: 5px 20px 5px 20px !important;
     }
 
     .experts{
         padding: inherit !important;
         margin: 0 1.25rem !important;
+    }
+    .commit-wrapper{
+        padding-top: 50px;
     }
 
     .new-social{

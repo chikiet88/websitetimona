@@ -1,14 +1,14 @@
+<div class="homepage overflow-x-hidden">
+  <app-new-event></app-new-event>
 
+  <app-intro></app-intro>
 
-<div class="homepage lg:pt-10 overflow-x-hidden">
- <app-new-event></app-new-event>
+  <div class="lg:max-w-7xl lg:mx-auto lg:pt-10  lg:px-8">
+    <section class="w-full h-full bg-indigo-900 border-top pb-12  lg:px-20">
+      <app-specialzed></app-specialzed>
+    </section>
 
- <app-intro></app-intro>
-
-  <section class="w-full h-full bg-indigo-900 rounded-xl lg:max-w-7xl pb-12 mx-auto lg:px-2 lg:px-6 lg:px-8 lg:pt-12">
-    <app-specialzed></app-specialzed>
-
-    <div class="statistical hidden lg:block mt-10">
+    <div class="statistical hidden lg:block  pb-12  lg:px-20">
       <div class="statistical-wrapper">
         <div class="statistical-item">
           <div class="statistical-item_img">img</div>
@@ -17,7 +17,7 @@
             <span class="statistical_des">Cơ sở</span>
           </div>
         </div>
-
+  
         <div class="statistical-item">
           <div class="statistical-item_img">img</div>
           <div class="statistical-item_info">
@@ -42,250 +42,401 @@
       </div>
     </div>
 
+  <section
+    class="w-full h-full bg-indigo-900 border-bottom pb-12  pb-12 lg:px-20"
+  >
     <div class="stories hidden lg:block">
       <div class="specializ-top">
-        <h2 class="specializ-title">Câu chuyện học viên</h2>
+        <h2 class="specializ-title text-white ">Câu chuyện học viên</h2>
       </div>
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="stories-wrapper">
-              <div class="story-left">youtube</div>
+              <div class="story-left">
+                <iframe
+                  width="400"
+                  height="315"
+                  class="yotube-video"
+                  src="https://www.youtube.com/embed/pjgElO5jKOs"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
               <div class="item-lecturer story-right">
                 <div class="lecturer-img story-img">
-                  <div style="width: 150px;">
-                    
+                  <div style="width: 150px" class="h-full">
+                    <img src="../../../assets/images/storydk.png" class="h-full"/>
                   </div>
                 </div>
                 <div class="lecturer-info story-info">
                   <span class="lecturer-title">Học viên</span>
                   <h2 class="lecturer-name">Chị Nga</h2>
-                  <span class="lecturer-specializ">học viên ngoại khóa K47</span>
-                  <span class="story-des">“Mình từng kinh doanh online nhưng thu nhập thấp, bấp bênh nên quyết định thay đổi hướng đi. Mình chọn Tinona để học nghề và giờ đã có thể tự mở được Spa cho mình.”</span>
+                  <span class="lecturer-specializ"
+                    >học viên ngoại khóa K47</span
+                  >
+                  <span class="story-des"
+                    >“Mình từng kinh doanh online nhưng thu nhập thấp, bấp bênh
+                    nên quyết định thay đổi hướng đi. Mình chọn Tinona để học
+                    nghề và giờ đã có thể tự mở được Spa cho mình.”</span
+                  >
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <!-- <div class="carousel-item">
             <div class="stories-wrapper">
-              <div class="story-left">youtube1</div>
+              <div class="story-left">
+                <iframe
+                  width="500"
+                  height="315"
+                  class="yotube-video"
+                  src="https://www.youtube.com/embed/pjgElO5jKOs"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
               <div class="item-lecturer story-right">
                 <div class="lecturer-img story-img">
-                  <div style="width: 150px;">
+                  <div style="width: 250px" class="h-full">
                     
                   </div>
                 </div>
                 <div class="lecturer-info story-info">
                   <span class="lecturer-title">Học viên</span>
                   <h2 class="lecturer-name">Bạn Thịnh</h2>
-                  <span class="lecturer-specializ">học viên ngoại khóa K54</span>
-                  <span class="story-des">“Cảm ơn Timona, ngoài được học chuyên môn tôi còn được trau dồi kỹ năng, tư duy và thái độ để trở thành một chuyên viên thẩm mỹ chuyên nghiệp”.</span>
+                  <span class="lecturer-specializ"
+                    >học viên ngoại khóa K54</span
+                  >
+                  <span class="story-des"
+                    >“Cảm ơn Timona, ngoài được học chuyên môn tôi còn được trau
+                    dồi kỹ năng, tư duy và thái độ để trở thành một chuyên viên
+                    thẩm mỹ chuyên nghiệp”.</span
+                  >
                 </div>
               </div>
             </div>
-
-          </div>
-          <div class="carousel-item">
-            <div class="stories-wrapper">
-              <div class="story-left">youtube 2</div>
-              <div class="item-lecturer story-right">
-                <div class="lecturer-img story-img">
-                  <div style="width: 150px;">
-                    
-                  </div>
-                </div>
-                <div class="lecturer-info story-info">
-                  <span class="lecturer-title">Học viên</span>
-                  <h2 class="lecturer-name">Bạn Ngọc</h2>
-                  <span class="lecturer-specializ">học viên ngoại khóa K55</span>
-                  <span class="story-des">“Sau nhiều năm theo đuổi ngành Dược, Ngọc nhận ra rằng bản thân không phù hợp nên đã tìm hiểu và lựa chọn thay đổi. Ngọc thấy quyết định chọn Timona để học nghề Spa là rất sáng suốt, giờ thì công việc ổn định, mức thu nhập cũng cao hơn nhiều so với trước đây.”
-                    </span>
-                </div>
+            
+          </div>  -->
+          <!-- <div class="carousel-item">
+          <div class="stories-wrapper">
+            <div class="story-left"><iframe
+              class="yotube-video h-full w-full"
+              src="https://www.youtube.com/embed/pjgElO5jKOs"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe></div>
+            <div class="item-lecturer story-right">
+              <div style="width: 150px" class="h-full">
+                <img
+                  src="../../../assets/images/storydk.png"
+                  class="h-full"
+                />
+              </div>
+              <div class="lecturer-info story-info">
+                <span class="lecturer-title">Học viên</span>
+                <h2 class="lecturer-name">Bạn Ngọc</h2>
+                <span class="lecturer-specializ"
+                  >học viên ngoại khóa K55</span
+                >
+                <span class="story-des"
+                  >“Sau nhiều năm theo đuổi ngành Dược, Ngọc nhận ra rằng bản
+                  thân không phù hợp nên đã tìm hiểu và lựa chọn thay đổi.
+                  Ngọc thấy quyết định chọn Timona để học nghề Spa là rất sáng
+                  suốt, giờ thì công việc ổn định, mức thu nhập cũng cao hơn
+                  nhiều so với trước đây.”
+                </span>
               </div>
             </div>
           </div>
+        </div> -->
         </div>
-        <button class="carousel-control-prev" style="left: -30px !important;" type="button"
-          data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <button
+          class="carousel-control-prev"
+          style="left: -30px !important"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" style="right: -30px !important;"
-          data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button
+          class="carousel-control-next"
+          type="button"
+          style="right: -30px !important"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
     </div>
-
 
     <div class="stories-mobile stories bg-indigo-900 lg:hidden">
       <div class="specializ-top">
-        <h2 class="specializ-title">Câu chuyện học viên</h2>
-        <p class="text-center text-white text-xs !mx-6">Hơn 10.000 học viên hài lòng và thành công khi chọn Timona
-          Academy</p>
+        <h2 class="specializ-title text-white">Câu chuyện học viên</h2>
+        <p class="text-center text-white text-xs !mx-6">
+          Hơn 10.000 học viên hài lòng và thành công khi chọn Timona Academy
+        </p>
       </div>
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators ">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-            class="active !w-2 !h-2 " style="border-radius: 50% !important; " aria-current="true"
-            aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="!w-2 !h-2 "
-            style="border-radius: 50% !important; " aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="!w-2 !h-2 "
-            style="border-radius: 50% !important; " aria-label="Slide 3"></button>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active !w-2 !h-2"
+            style="border-radius: 50% !important"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            class="!w-2 !h-2"
+            style="border-radius: 50% !important"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            class="!w-2 !h-2"
+            style="border-radius: 50% !important"
+            aria-label="Slide 3"
+          ></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="bg-cyan-900 mb-10 rounded-lg mx-4 flex justify-center items-center h-44 relative"
-              style="height: 350px ;">
+            <div
+              class="bg-cyan-900 mb-10 rounded-lg mx-4 flex justify-center items-center h-44 relative"
+              style="height: 350px"
+            >
               <div class="absolute left-0 bottom-0">
-                <div class="bg-gray-100  storie-img" ></div>
+                <div class="storie-img">
+                  <img src="../../../assets/images/storymb.png" alt="" />
+                </div>
               </div>
               <div class="flex flex-col absolute left-1/2">
                 <span class="lecturer-title">Học viên</span>
                 <p class="lecturer-name !border-r-0 !m-0">chị nga</p>
-                <span class="lecturer-specializ ">học viên ngoại khóa K47</span>
-                <span class="story-des">“Mình từng kinh doanh online nhưng thu nhập thấp, bấp bênh nên quyết định thay đổi hướng đi. Mình chọn Tinona để học nghề và giờ đã có thể tự mở được Spa cho mình.”</span>
+                <span class="lecturer-specializ">học viên ngoại khóa K47</span>
+                <span class="story-des"
+                  >“Mình từng kinh doanh online nhưng thu nhập thấp, bấp bênh
+                  nên quyết định thay đổi hướng đi. Mình chọn Tinona để học nghề
+                  và giờ đã có thể tự mở được Spa cho mình.”</span
+                >
               </div>
-
-
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="bg-cyan-900 mb-10 rounded-lg mx-4  flex justify-center items-center h-44 relative"
-              style="height: 350px ;">
-              <div class="absolute left-0 bottom-0">
-                <div class="bg-gray-100  storie-img"></div>
-              </div>
-              <div class="flex flex-col absolute left-1/2">
-                <span class="lecturer-title">Học viên</span>
-                <p class="lecturer-name !border-r-0 !m-0">Bạn Thịnh</p>
-                <span class="lecturer-specializ ">học viên ngoại khóa K54</span>
-                <span class="story-des">“Cảm ơn Timona, ngoài được học chuyên môn tôi còn được trau dồi kỹ năng, tư duy và thái độ để trở thành một chuyên viên thẩm mỹ chuyên nghiệp”.</span>
-              </div>
-
+          <!-- <div class="carousel-item">
+          <div
+            class="bg-cyan-900 mb-10 rounded-lg mx-4 flex justify-center items-center h-44 relative"
+            style="height: 350px"
+          >
+            <div class="absolute left-0 bottom-0">
+              <div class="bg-gray-100 storie-img"></div>
+            </div>
+            <div class="flex flex-col absolute left-1/2">
+              <span class="lecturer-title">Học viên</span>
+              <p class="lecturer-name !border-r-0 !m-0">Bạn Thịnh</p>
+              <span class="lecturer-specializ">học viên ngoại khóa K54</span>
+              <span class="story-des"
+                >“Cảm ơn Timona, ngoài được học chuyên môn tôi còn được trau
+                dồi kỹ năng, tư duy và thái độ để trở thành một chuyên viên
+                thẩm mỹ chuyên nghiệp”.</span
+              >
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="bg-cyan-900 mb-10 rounded-lg mx-4  flex justify-center items-center h-44 relative"
-              style="height: 350px ;">
-              <div class="absolute left-0 bottom-0">
-                <div class="bg-gray-100  storie-img" ></div>
-              </div>
-              <div class="flex flex-col absolute left-1/2">
-                <span class="lecturer-title">Học viên</span>
-                <p class="lecturer-name !border-r-0 !m-0">Bạn Ngọc</p>
-                <span class="lecturer-specializ ">học viên ngoại khóa K55</span>
-                <span class="story-des">“Sau nhiều năm theo đuổi ngành Dược, Ngọc nhận ra rằng bản thân không phù hợp nên đã tìm hiểu và lựa chọn thay đổi. Ngọc thấy quyết định chọn Timona để học nghề Spa là rất sáng suốt, giờ thì công việc ổn định, mức thu nhập cũng cao hơn nhiều so với trước đây.”</span>
-              </div>
-
+        </div>
+        <div class="carousel-item">
+          <div
+            class="bg-cyan-900 mb-10 rounded-lg mx-4 flex justify-center items-center h-44 relative"
+            style="height: 350px"
+          >
+            <div class="absolute left-0 bottom-0">
+              <div class="bg-gray-100 storie-img"></div>
+            </div>
+            <div class="flex flex-col absolute left-1/2">
+              <span class="lecturer-title">Học viên</span>
+              <p class="lecturer-name !border-r-0 !m-0">Bạn Ngọc</p>
+              <span class="lecturer-specializ">học viên ngoại khóa K55</span>
+              <span class="story-des"
+                >“Sau nhiều năm theo đuổi ngành Dược, Ngọc nhận ra rằng bản
+                thân không phù hợp nên đã tìm hiểu và lựa chọn thay đổi. Ngọc
+                thấy quyết định chọn Timona để học nghề Spa là rất sáng suốt,
+                giờ thì công việc ổn định, mức thu nhập cũng cao hơn nhiều so
+                với trước đây.”</span
+              >
             </div>
           </div>
+        </div> -->
         </div>
       </div>
     </div>
 
-    <div class="experts ">
+    <div class="experts">
       <div class="specializ-top">
-        <h2 class="specializ-title text-center expert-title">học nghề cùng chuyên gia</h2>
+        <h2 class="specializ-title text-center expert-title text-yellow-500">
+          học nghề cùng chuyên gia
+        </h2>
       </div>
 
       <div class="lg:block hidden">
-        <div id="carouselExampleControl-expert" class="carousel slide" data-bs-ride="carousel">
+        <div
+          id="carouselExampleControl-expert"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
           <div class="carousel-inner">
-            <div class="carousel-item active ">
-
+            <div class="carousel-item active">
               <div class="expert-wrapper">
                 <div class="expert-video">
                   <div class="expert-boder">
                     <div class="expert-boder-left">
                       <div class="expert-boder-img">logo</div>
-                      <div class="expert-boder-question">master thẩm mỹ khó hay dễ</div>
+                      <div class="expert-boder-question text-yellow-500">
+                        master thẩm mỹ khó hay dễ
+                      </div>
                     </div>
-                    <div class="expert-boder-right">img1</div>
-                    <i class="button-play">icon</i>
+                    <div class="expert-boder-right">
+                      <img src="../../../assets/images/hocnghedk.png" alt="" />
+                    </div>
+                    <!-- <i class="button-play">icon</i> -->
                   </div>
-                  <span class="expert-question">master thẩm mỹ - khó hay dễ?</span>
+                  <span class="expert-question text-yellow-500"
+                    >master thẩm mỹ - khó hay dễ?</span
+                  >
                 </div>
-                <div class="expert-video ">
+                <div class="expert-video">
                   <div class="expert-boder border-reverse">
                     <div class="expert-boder-left left-reverse">
                       <div class="expert-boder-img img-reverse">logo</div>
-                      <div class="expert-boder-question">cách thức <br> <strong class="text-strong"> tạo niềm
-                          tin</strong><br>nơi khách hàng</div>
+                      <div class="expert-boder-question text-yellow-500">
+                        cách thức <br />
+                        <strong class="text-strong text-yellow-500 "> tạo niềm tin</strong
+                        ><br />nơi khách hàng
+                      </div>
                     </div>
-                    <div class="expert-boder-right right-reverse">img</div>
-                    <i class="button-play"></i>
+                    <div class="expert-boder-right right-reverse">
+                      <img src="../../../assets/images/hocnghedk.png" alt="" />
+                    </div>
+                    <!-- <i class="button-play">icon</i> -->
                   </div>
-                  <span class="expert-question">cách thức tạo niềm tin nơi khách hàng</span>
+                  <span class="expert-question text-yellow-500 text-yellow-500"
+                    >cách thức tạo niềm tin nơi khách hàng</span
+                  >
                 </div>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="expert-wrapper">
-                <div class="expert-video">
-                  <div class="expert-boder">
-                    <div class="expert-boder-left">
-                      <div class="expert-boder-img">logo</div>
-                      <div class="expert-boder-question">master thẩm mỹ khó hay dễ</div>
+            <!-- <div class="carousel-item">
+            <div class="expert-wrapper">
+              <div class="expert-video">
+                <div class="expert-boder">
+                  <div class="expert-boder-left">
+                    <div class="expert-boder-img">logo</div>
+                    <div class="expert-boder-question">
+                      master thẩm mỹ khó hay dễ
                     </div>
-                    <div class="expert-boder-right">img2</div>
-                    <i class="button-play">icon</i>
                   </div>
-                  <span class="expert-question">master thẩm mỹ - khó hay dễ?</span>
+                  <div class="expert-boder-right">img2</div>
+                  <i class="button-play">icon</i>
                 </div>
-                <div class="expert-video">
-                  <div class="expert-boder border-reverse">
-                    <div class="expert-boder-left left-reverse">
-                      <div class="expert-boder-img img-reverse">logo</div>
-                      <div class="expert-boder-question">cách thức <br> <strong class="text-strong"> tạo niềm
-                          tin</strong><br>nơi khách hàng</div>
-                    </div>
-                    <div class="expert-boder-right right-reverse">img</div>
-                    <i class="button-play"></i>
-                  </div>
-                  <span class="expert-question">cách thức tạo niềm tin nơi khách hàng</span>
-                </div>
+                <span class="expert-question text-yellow-500"
+                  >master thẩm mỹ - khó hay dễ?</span
+                >
               </div>
-            </div>
-            <div class="carousel-item">
-              <div class="expert-wrapper">
-                <div class="expert-video">
-                  <div class="expert-boder">
-                    <div class="expert-boder-left">
-                      <div class="expert-boder-img">logo</div>
-                      <div class="expert-boder-question">master thẩm mỹ khó hay dễ</div>
+              <div class="expert-video">
+                <div class="expert-boder border-reverse">
+                  <div class="expert-boder-left left-reverse">
+                    <div class="expert-boder-img img-reverse">logo</div>
+                    <div class="expert-boder-question">
+                      cách thức <br />
+                      <strong class="text-strong"> tạo niềm tin</strong
+                      ><br />nơi khách hàng
                     </div>
-                    <div class="expert-boder-right">img3</div>
-                    <i class="button-play">icon</i>
                   </div>
-                  <span class="expert-question">master thẩm mỹ - khó hay dễ?</span>
+                  <div class="expert-boder-right right-reverse">img</div>
+                  <i class="button-play"></i>
                 </div>
-                <div class="expert-video">
-                  <div class="expert-boder border-reverse">
-                    <div class="expert-boder-left left-reverse">
-                      <div class="expert-boder-img img-reverse">logo</div>
-                      <div class="expert-boder-question">cách thức <br> <strong class="text-strong"> tạo niềm
-                          tin</strong><br>nơi khách hàng</div>
-                    </div>
-                    <div class="expert-boder-right right-reverse">img</div>
-                    <i class="button-play"></i>
-                  </div>
-                  <span class="expert-question">cách thức tạo niềm tin nơi khách hàng</span>
-                </div>
+                <span class="expert-question"
+                  >cách thức tạo niềm tin nơi khách hàng</span
+                >
               </div>
             </div>
           </div>
-          <button class="carousel-control-prev" style="left: -30px !important;" type="button"
-            data-bs-target="#carouselExampleControl-expert" data-bs-slide="prev">
+          <div class="carousel-item">
+            <div class="expert-wrapper">
+              <div class="expert-video">
+                <div class="expert-boder">
+                  <div class="expert-boder-left">
+                    <div class="expert-boder-img">logo</div>
+                    <div class="expert-boder-question">
+                      master thẩm mỹ khó hay dễ
+                    </div>
+                  </div>
+                  <div class="expert-boder-right">img3</div>
+                  <i class="button-play">icon</i>
+                </div>
+                <span class="expert-question"
+                  >master thẩm mỹ - khó hay dễ?</span
+                >
+              </div>
+              <div class="expert-video">
+                <div class="expert-boder border-reverse">
+                  <div class="expert-boder-left left-reverse">
+                    <div class="expert-boder-img img-reverse">logo</div>
+                    <div class="expert-boder-question">
+                      cách thức <br />
+                      <strong class="text-strong"> tạo niềm tin</strong
+                      ><br />nơi khách hàng
+                    </div>
+                  </div>
+                  <div class="expert-boder-right right-reverse">img</div>
+                  <i class="button-play"></i>
+                </div>
+                <span class="expert-question"
+                  >cách thức tạo niềm tin nơi khách hàng</span
+                >
+              </div>
+            </div>
+          </div> -->
+          </div>
+          <button
+            class="carousel-control-prev"
+            style="left: -30px !important"
+            type="button"
+            data-bs-target="#carouselExampleControl-expert"
+            data-bs-slide="prev"
+          >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" style="right: -30px !important;"
-            data-bs-target="#carouselExampleControl-expert" data-bs-slide="next">
+          <button
+            class="carousel-control-next"
+            type="button"
+            style="right: -30px !important"
+            data-bs-target="#carouselExampleControl-expert"
+            data-bs-slide="next"
+          >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -293,150 +444,279 @@
       </div>
 
       <div class="lg:hidden mx-3">
-        <div id="carouselExampleIndicators-expertMb" class="carousel slide" data-bs-ride="carousel">
+        <div
+          id="carouselExampleIndicators-expertMb"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
           <div class="carousel-indicators !bottom-7">
-            <button type="button" data-bs-target="#carouselExampleIndicators-expertMb" data-bs-slide-to="0"
-              class="active !w-2 !h-2 " style="border-radius: 50% !important; " aria-current="true"
-              aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators-expertMb" data-bs-slide-to="1"
-              class="!w-2 !h-2 " style="border-radius: 50% !important; " aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators-expertMb" data-bs-slide-to="2"
-              class="!w-2 !h-2 " style="border-radius: 50% !important; " aria-label="Slide 3"></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators-expertMb"
+              data-bs-slide-to="0"
+              class="active !w-2 !h-2"
+              style="border-radius: 50% !important"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators-expertMb"
+              data-bs-slide-to="1"
+              class="!w-2 !h-2"
+              style="border-radius: 50% !important"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators-expertMb"
+              data-bs-slide-to="2"
+              class="!w-2 !h-2"
+              style="border-radius: 50% !important"
+              aria-label="Slide 3"
+            ></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="expert-mobiles  mb-10 w-full lg:hidden" style="height:200px">
+              <div
+                class="expert-mobiles mb-10 w-full lg:hidden"
+                style="height: 250px"
+              >
                 <div class="relative h-full">
-                  <div class="bg-gray-100 h-full mb-5 ">img1 </div>
+                  <div class="bg-gray-100 h-full mb-5">
+                    <img src="../../../assets/images/hocnghemb.png" class="h-full" alt="" />
+                  </div>
                 </div>
-
               </div>
-              <div class="expert-boder-question !w-full text-center mt-5 font-black">master thẩm mỹ khó hay dễ</div>
-            </div>
-            <div class="carousel-item">
-              <div class="expert-mobiles mb-10  w-full lg:hidden" style="height:200px">
-                <div class="relative h-full">
-                  <div class="bg-gray-100 h-full mb-5 ">img2 </div>
-                </div>
-
+              <div
+                class="expert-boder-question !w-full text-center mt-5 font-black text-yellow-500"
+              >
+                master thẩm mỹ khó hay dễ
               </div>
-              <div class="expert-boder-question !w-full text-center mt-5 font-black">master thẩm mỹ khó hay dễ</div>
             </div>
-            <div class="carousel-item">
-              <div class="expert-mobiles mb-10 w-full lg:hidden" style="height:200px">
-                <div class="relative h-full">
-                  <div class="bg-gray-100 h-full mb-5 ">img3 </div>
-                </div>
-
+            <!-- <div class="carousel-item">
+            <div
+              class="expert-mobiles mb-10 w-full lg:hidden"
+              style="height: 250px"
+            >
+              <div class="relative h-full">
+                <div class="bg-gray-100 h-full mb-5">img2</div>
               </div>
-              <div class="expert-boder-question !w-full text-center mt-5 font-black">master thẩm mỹ khó hay dễ</div>
             </div>
+            <div
+              class="expert-boder-question !w-full text-center mt-5 font-black"
+            >
+              master thẩm mỹ khó hay dễ
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="expert-mobiles mb-10 w-full lg:hidden"
+              style="height: 250px"
+            >
+              <div class="relative h-full">
+                <div class="bg-gray-100 h-full mb-5">img3</div>
+              </div>
+            </div>
+            <div
+              class="expert-boder-question !w-full text-center mt-5 font-black"
+            >
+              master thẩm mỹ khó hay dễ
+            </div>
+          </div> -->
           </div>
         </div>
       </div>
     </div>
-
   </section>
 
+  </div>
+ 
+  
+
+
+
   <section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8 pt-10 lg:hidden">
-    <div class="lg:pt-10 w-full h-1/2 flex flex-col lg:flex-row ">
+    <div class="lg:pt-10 w-full h-1/2 flex flex-col lg:flex-row">
       <div class="flex-1 bg-gray-200 lg:mr-4 hidden">
-        <div style="width:200px; height:400px"></div>
+        <div style="width: 200px; height: 400px"></div>
       </div>
       <div class="flex-1 right new lg:hidden">
-        <h2 class="uppercase lg:pl-2 mb-2 relative text-indigo-900 text-center lg:text-left pt:10 text-xl ">Tin tức - sự
-          kiện</h2>
+        <h2
+          class="uppercase lg:pl-2 mb-2 relative text-indigo-900 text-center lg:text-left pt:10 text-xl"
+        >
+          Tin tức - sự kiện
+        </h2>
         <div class="pt-4 flex justify-start new-item">
           <div class="lg:w-1/2 bg-gray-200 mx-3">
-            <div class="banner-img"></div>
+            <div class="" style="height: 370px">
+              <img src="../../../assets/images/new-imgmb.png" class="h-full" alt="" />
+            </div>
           </div>
           <div class="flex flex-col new-info mt-4">
-            <p class="text-base text-indigo-900 font-black new-title">Tinoma Academy được vinh danh thương hiệu tiêu
-              biểu Châu Á thái bình dương</p>
-            <span class="pb-2 text-sm text-indigo-900 new-des">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid beatae
-              corrupti</span>
+            <p class="text-base text-indigo-900 font-black new-title">
+              Tinoma Academy được vinh danh thương hiệu tiêu biểu Châu Á thái
+              bình dương
+            </p>
+            <span class="pb-2 text-sm text-indigo-900 new-des"
+              >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores
+              temporibus unde tempora voluptatem nisi reprehenderit deleniti
+              delectus aliquid beatae corrupti</span
+            >
 
-            <div class="text-indigo-900 text-xs top-3 font-black new-link hidden lg:block ">
+            <div
+              class="text-indigo-900 text-xs top-3 font-black new-link hidden lg:block"
+            >
               <a href="#" class="text-base hidden lg:block">Tìm hiểu thêm >></a>
             </div>
             <div
-              class="text-indigo-900 text-xs top-3 text-center  font-black new-link bg-indigo-900 mx-14 rounded-lg lg:hidden">
-              <a href="#" class="text-base text-white ">Xem thêm các thông tin khác >></a>
+              class="text-indigo-900 text-xs top-3 text-center font-black new-link bg-indigo-900 mx-20 rounded-lg lg:hidden"
+            >
+              <a href="#" class="text-base text-white "
+                >Xem thêm các thông tin khác >></a
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <div class="lg:px-28">
     <div class="newspaper">
       <h2 class="newpaper-title">Báo chí nói gì về timona academy</h2>
       <div class="new-social">
-        <div class="new-img">img</div>
-        <div class="new-img">img</div>
-        <div class="new-img">img</div>
-        <div class="new-img">img</div>
-        <div class="new-img">img</div>
-        <div class="new-img">img</div>
-        <div class="new-img">img</div>
+        <div class="new-img">
+          <img
+            src="../../../assets/images/commitdk.png"
+            alt=""
+            class="h-full"
+          />
+        </div>
+        <div class="new-img">
+          <img
+            src="../../../assets/images/commitdk.png"
+            alt=""
+            class="h-full"
+          />
+        </div>
+        <div class="new-img">
+          <img
+            src="../../../assets/images/commitdk.png"
+            alt=""
+            class="h-full"
+          />
+        </div>
+        <div class="new-img">
+          <img
+            src="../../../assets/images/commitdk.png"
+            alt=""
+            class="h-full"
+          />
+        </div>
+        <div class="new-img">
+          <img
+            src="../../../assets/images/commitdk.png"
+            alt=""
+            class="h-full"
+          />
+        </div>
+        <div class="new-img">
+          <img
+            src="../../../assets/images/commitdk.png"
+            alt=""
+            class="h-full"
+          />
+        </div>
+        <div class="new-img">
+          <img
+            src="../../../assets/images/commitdk.png"
+            alt=""
+            class="h-full"
+          />
+        </div>
       </div>
     </div>
 
-    <div class="form-sale  hidden lg:block">
+    <div class="form-sale hidden lg:block">
       <div class="form-wrapper">
         <div class="form-left">
-
-          <div class="form-left-total">img</div>
+          <div class="">
+            <img src="../../../assets/images/form-imgdk.png" alt="" />
+          </div>
         </div>
-        <div class="form-right">
-          <form class="form-submit">
-            <input type="text" id="username-success"
-              class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-1 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400"
-              placeholder="HỌ TÊN">
-            <input type="text" id="username-success"
-              class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-1 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400"
-              placeholder="SỐ ĐIỆN THOẠI">
-            <input type="text" id="username-success"
-              class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400"
-              placeholder="MÃ GIỚI HIỆU">
+        <div class="form-right ml-10">
+          <form class="form-submit relative pb-20">
+            <div class="flex justify-between">
+              <input
+                type="text"
+                id="username-success"
+                class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="HỌ TÊN"
+              />
+              <input
+                type="text"
+                id="username-success"
+                class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm ml-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="SỐ ĐIỆN THOẠI"
+              />
+            </div>
 
-            <select id="countries"
-              class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 mr-3 mt-5 block  p-1.5 dark:bg-black-100 dark:border-black-400">
-              <option>KHÓA HỌC</option>
+            <div class="flex justify-between mt-5">
+              <input
+                type="text"
+                id="username-success"
+                class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="MÃ GIỚI THIỆU"
+              />
 
-            </select>
+              <select
+                id="countries"
+                class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 ml-3 block p-1.5 dark:bg-black-100 dark:border-black-400"
+              >
+                <option>KHÓA HỌC</option>
+              </select>
+            </div>
 
-            <button>đăng kí ngay</button>
+            <button class="absolute bottom-0">đăng kí ngay</button>
           </form>
         </div>
       </div>
     </div>
 
     <div class="formsale-mobile bg-indigo-900 rounded-lg lg:hidden">
-      <div class="" style="height: 50px; width: 50px;"></div>
+      <div class="flex justify-center items-center pt-5">
+        <img src="../../../assets/images/form-imgmb.png" alt="" />
+      </div>
       <form class="form-submit pb-8 justify-center items-center">
-        <input type="text" id="username-success"
-          class="bg-green-50 border border-none  text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400"
-          placeholder="HỌ TÊN">
-        <input type="text" id="username-success"
-          class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400"
-          placeholder="SỐ ĐIỆN THOẠI">
-        <input type="text" id="username-success"
-          class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-5 focus:border-black-500 block  p-1.5 dark:bg-black-100 dark:border-black-400"
-          placeholder="MÃ GIỚI HIỆU">
+        <input
+          type="text"
+          id="username-success"
+          class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+          placeholder="HỌ TÊN"
+        />
+        <input
+          type="text"
+          id="username-success"
+          class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+          placeholder="SỐ ĐIỆN THOẠI"
+        />
+        <input
+          type="text"
+          id="username-success"
+          class="bg-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+          placeholder="MÃ GIỚI HIỆU"
+        />
 
-        <select id="countries"
-          class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-5 block  p-1.5 dark:bg-black-100 dark:border-black-400">
+        <select
+          id="countries"
+          class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
+        >
           <option class="text-black-700">KHÓA HỌC</option>
-
         </select>
 
-        <button class="text-center !w-full mx-20 ">đăng kí ngay</button>
+        <button class="text-center !w-full mx-32 rounded-lg">đăng kí ngay</button>
       </form>
     </div>
   </div>
-
 </div>
