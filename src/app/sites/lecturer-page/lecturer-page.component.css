@@ -2,7 +2,8 @@
     display: flex;
 }
 .lecturer-img{
-    width: 200px;
+    height: 280px;
+   width: 150px;
     background-color: #ddd;
     box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
     -webkit-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
@@ -16,14 +17,15 @@
 .lecturer-title{
     color: #fff;
     font-size: 16px;
+    text-transform: uppercase;
 }
 .lecturer-name{
     font-size: 20px;
     font-weight: bold;
-    color: rgb(209, 209, 12);
+    color: #f7d900;
     letter-spacing: 0.2px;
     text-transform: uppercase;    
-    padding: 10px 0;
+    
 }
 .lecturer-specializ{
     color: #fff;
@@ -52,15 +54,19 @@
 }
 .banner-img{
     width: 400px;
-    height: 400px;
+    height: 300px;
 }
 .text{
     column-count: 2;
     column-gap: 60px;
 }
+.wrapper{
+    padding: 1.25rem 5rem !important;
+}
 @media screen and (max-width: 768px){
     .banner-img{
         height: 250px;
+        width: 100%;
     }
     .container-lecturer{
         padding: 0.75rem;
@@ -69,4 +75,8 @@
     column-count: 1;
     column-gap: 0;
     }
+    .wrapper{
+        padding: 1rem  !important;
+    }
+   
 }

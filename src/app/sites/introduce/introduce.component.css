@@ -17,11 +17,15 @@
     top: 0;
 
 }
+.wrapper{
+    padding: 1.25rem 3rem !important;
+}
 .text-column{
     column-count: 2;
 }
 
 .intro-commit{
+    height: 550px;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -50,13 +54,13 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(212, 212, 20);
+    background-color: #f7d900;
     -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
     		clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%) ;
 }
 
 .commit-intro{
-    border: 1px solid rgb(160, 160, 10);
+    border: 1px solid #f7d900;
     
 }
 
@@ -74,10 +78,16 @@
     margin-top: 0.75rem !important;
     margin-bottom: 0.75rem !important;
 }
-.intro-des{
-    width: 70%;
+.stories-des{
+    margin: inherit !important;
 }
-
+.intro-description{
+    padding: 0 4rem;
+}
+.carousel-indicators .active{
+    background-color: #0c67c9;
+    
+}
 @media screen and (max-width: 768px){
     .title{
         text-align: center;
@@ -89,6 +99,9 @@
         display: flex;
         align-items: center;
     }
+    .wrapper{
+        padding: 1.25rem 1.25rem !important;
+    }
     .role-item::after:nth-last-child(3){
         display: none;
     }
@@ -98,15 +111,26 @@
         padding: 3rem 1rem;
         text-align: center;
     }
+    .stories-des{
+        padding: 0 1rem !important;
+    }
+    .intro-wrapper{
+        margin: 0 1rem;
+    }
     .intro-role{
         border-top-left-radius: 0px;
         border-bottom-right-radius: 0px;
         
     }
+    
+    .intro-description{
+        padding: 0 1rem 1rem 1rem;
+    }
     .intro-commit{
         display: flex;
         flex-direction: row-reverse;
        margin-bottom: 3rem;
+       height: 100% ;
         border-bottom-left-radius: 50px;
     }
 
@@ -119,15 +143,15 @@
         position: relative;
         display: flex;
         flex-shrink: 0;
-        height: 25px;
-        width: 100px;
+        height: 50px;
+        width: 120px;
         margin: 10px;
        
        
     }
     .sign-right {
-        height: 21px;
-        width: 96px;
+        height: 48px;
+        width: 116px;
         font-size: 10px;
         
        
@@ -154,10 +178,13 @@
         height: 65px;
     }
     .container-storie{
-        margin: 0 0.75rem;
+        margin: 0 1rem;
     }
     .img-adress{
         height: 165px !important;
+    }
+    .chuyennganh-ttile{
+        margin: inherit;
     }
 
     
@@ -180,5 +207,8 @@
     }
     .img-adress{
         height: 345px;
+    }
+    .img-res{
+        width: 100%;
     }
 }

@@ -19,6 +19,9 @@
         width: 100%;
         height: 400px;
     }
+    .formsale-mobile{
+        margin-bottom: 50px;
+    }
     .new-item{
         flex-direction: column;
     }
@@ -194,7 +197,7 @@
     width: 250px;
 }
 .item-info .item-title{
-    color: rgb(209, 209, 12);
+    color: #f7d900;
     font-weight: bold;
     font-size: 20px;
     text-transform: uppercase;
@@ -204,6 +207,7 @@
 .item-info .item-des{
     font-size: 14px;
     color: #fff;
+    text-align: justify;
     line-height: 1.6rem;
     overflow: hidden;
     display: -webkit-box; 
@@ -268,7 +272,7 @@
 .lecturer-name{
     font-size: 20px;
     font-weight: bold;
-    color: rgb(209, 209, 12);
+    color: #f7d900;
     letter-spacing: 0.2px;
     text-transform: uppercase;    
     padding: 10px 0;
@@ -303,7 +307,7 @@
 
     width: 100%;
     height: 80px;
-    background-color: rgb(180, 180, 20);
+    background-color:  #f7d900;
 }
 .statistical-wrapper{
     display: flex;
@@ -328,15 +332,15 @@
 }
 .statistical-item_title{
     font-size: 24px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
     color: rgb(8, 8, 109);
     font-weight: 800;
-    letter-spacing: 0.3px;
-    letter-spacing: 3px;
+    
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 .statistical_des{
-    font-size: 18px;
+    font-size: 12px;
     color: rgb(8, 8, 109);
     font-weight: bold;
     text-transform: uppercase;
@@ -422,7 +426,7 @@
 
 .expert-boder-question{
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 15px;
   
     letter-spacing: 1px;
     width: 180px;
@@ -466,7 +470,7 @@
 
 .expert-question{
     
-    font-size: 18px;
+    font-size: 15px;
     text-transform: uppercase;
     padding-top: 25px;
 }
@@ -493,7 +497,7 @@
     }
     .new-img{
         width: 100px;
-        height: 100px;
+        height: 70px;
         background-color: #ddd;
         margin-right: 15px;
         margin-left: 15px;
@@ -606,7 +610,7 @@
     } */
     .form-submit button{
         border: none;
-        background-color: rgb(182, 182, 47);
+        background-color: #f7d900;
         border-radius: 10px;
         width: 150px;
         height: 30px;
@@ -681,7 +685,7 @@
         font-size: 20px;
         letter-spacing: 1px;
         width: 75%;
-        color: rgb(179, 179, 1);
+        color: #f7d900;
         font-weight: bold;
         text-transform: uppercase;
         padding-bottom: 15px;
@@ -701,7 +705,7 @@
     }
     .contact{
         font-size: 20px;
-        color: rgb(179, 179, 1);
+        color: #f7d900;
         font-weight: bold;
         text-transform: uppercase;
         
@@ -720,7 +724,7 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background-color: rgb(179, 179, 1);
+        background-color: #f7d900;
     }
     
 
@@ -747,6 +751,10 @@
         right: 0;
         text-align: center;
         z-index: 10;
+    }
+    .carousel-indicators .active{
+        background-color: #0c67c9;
+        
     }
     #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
     #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
