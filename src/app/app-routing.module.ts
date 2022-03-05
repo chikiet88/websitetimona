@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePagesComponent } from './components/home-pages/home-pages.component';
+import { HomepageComponent } from './sites/homepage/homepage.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { ActivatePageComponent } from './sites/activate-page/activate-page.component';
 import { AnswerPageComponent } from './sites/answer-page/answer-page.component';
@@ -10,11 +10,12 @@ import { IntroduceComponent } from './sites/introduce/introduce.component';
 import { LecturerPageComponent } from './sites/lecturer-page/lecturer-page.component';
 import { NewPageComponent } from './sites/new-page/new-page.component';
 import { StudentFeelPageComponent } from './sites/student-feel-page/student-feel-page.component';
+import { PhunxamPageComponent } from './sites/phunxam-page/phunxam-page.component';
 
 
 
 const routes: Routes = [
-  { path:'', component:HomePagesComponent },
+  { path:'', component:HomepageComponent },
  { path:'gioi-thieu-hoc-vien',component:IntroduceComponent },
  { path:'gioi-thieu-giang-vien',component:LecturerPageComponent },
  { path:'lien-he',component:ContactPageComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
  { path:'goc-hoc-vien',component:CornerStudentComponent },
  { path:'goc-hoc-vien/giai-dap',component:AnswerPageComponent},
  { path:'goc-hoc-vien/hoat-dong',component:ActivatePageComponent},
- { path:'goc-hoc-vien/cam-nghi-hoc-vien',component:StudentFeelPageComponent}
+ { path:'goc-hoc-vien/cam-nghi-hoc-vien',component:StudentFeelPageComponent},
+ { path:'khoa-hoc/phun-xam',component:PhunxamPageComponent},
 
 
 
@@ -36,5 +38,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routting = [HomePagesComponent, IntroComponent, LecturerPageComponent ]
+export const routting = [HomepageComponent, IntroComponent, LecturerPageComponent ]
 

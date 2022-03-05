@@ -1,122 +1,4 @@
-.footer{
-    background-color: rgb(8, 8, 109);
-    padding-top: 50px;
-    margin-top: 50px;
-}
-.footer-container{
-    padding: 0 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.footer-wrapper{
-    width: 100%;
-    display:  flex;
-    position: relative;
-    padding-bottom: 50px;
-}
-.footer-wrapper::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    background-color: #fff;
-}
-.footer-left{
-    flex: 1;
-    margin-right: 20px;
-}
-.footer-right{
-    flex: 3;
-    margin-left: 20px;
-}
-.footer-left-logo{
-    display: flex;
-    justify-content: space-between;
-}
-.logo-footer{
-    width: 150px;
-    height: 80px;
-    background-color: #ddd;
-}
-.icons-social{
-    
-}
-.icon-item{
-    width: 30px;
-    height: 30px;
-    background-color: #ddd;
-    margin-bottom: 10px;
-}
-.footer-left-notify{
-    width: 100%;
-    height: 80px;
-    background-color: #ddd;
-    margin-right: 40px;
-}
-.footer-right{
 
-}
-.footer-right-title{
-    font-size: 20px;
-    letter-spacing: 1px;
-    width: 100%;
-    color: #f7d900;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding-bottom: 15px;
-}
-.footer-right-address{
-
-}
-.address-item{
-    color: #fff;
-    font-size: 14px;
-    padding: 5px 0;
-}
-.footer-right-contact{
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-.contact{
-    font-size: 20px;
-    color: #f7d900;
-    font-weight: bold;
-    text-transform: uppercase;
-    
-    
-}
-.email{
-    position: relative;
-}
-.email::before{
-    content: "";
-    position: absolute;
-    left: 0px;
-    top: 50%;
-    top: 35%;
-    margin-left: -25px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: #f7d900;
-}
-.footer-bottom{
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    padding-bottom: 50px;
-    position: relative;
-}
-.footer-bottom::after{
-    contain: "\A9";
-    position: absolute;
-    color: #fff;
-}
 
 .btn:focus{
     box-shadow: inherit
@@ -174,18 +56,15 @@ opacity: 0.8;
 }
 .dropdownMenu{
     background-color: #00256e;
+    
 }
 
 @media only screen and (max-width: 762px){
     
-    .footer{
-        padding-top: inherit !important;
-    }
+  
     .nav-links{
         display: none;
     }
-    .footer{
-        margin-top: inherit;
-    }
+    
 
   }

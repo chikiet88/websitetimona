@@ -19,6 +19,11 @@ import { CornerStudentComponent } from './sites/corner-student/corner-student.co
 import { AnswerPageComponent } from './sites/answer-page/answer-page.component';
 import { ActivatePageComponent } from './sites/activate-page/activate-page.component';
 import { StudentFeelPageComponent } from './sites/student-feel-page/student-feel-page.component';
+import { HomepageComponent } from './sites/homepage/homepage.component';
+import { MainlayoutComponent } from './components/mainlayout/mainlayout.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PhunxamPageComponent } from './sites/phunxam-page/phunxam-page.component';
+
 
 
 
@@ -39,13 +44,19 @@ import { StudentFeelPageComponent } from './sites/student-feel-page/student-feel
                                              CornerStudentComponent,
                                                                                         AnswerPageComponent,
                                                                                         ActivatePageComponent,
-                                                                                        StudentFeelPageComponent
+                                                                                        StudentFeelPageComponent,
+                                                                                        HomepageComponent,
+                                                                                        MainlayoutComponent,
+                                                                                        FooterComponent,
+                                                                                       
+                                                                                        PhunxamPageComponent
                                        
                       
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
+     
   ],
   providers: [],
   bootstrap: [AppComponent]
