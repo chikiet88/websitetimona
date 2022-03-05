@@ -144,17 +144,16 @@
         display: flex;
         flex-shrink: 0;
         height: 50px;
-        width: 120px;
+        width: 100px;
         margin: 10px;
        
        
     }
     .sign-right {
         height: 48px;
-        width: 116px;
+        width: 110px;
         font-size: 10px;
         
-       
     }
     .img-res{
         width: 400px;

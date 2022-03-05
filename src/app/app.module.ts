@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomePagesComponent } from './components/home-pages/home-pages.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 import { SpecialzedComponent } from './components/specialzed/specialzed.component';
 import { NewEventComponent } from './components/new-event/new-event.component';
@@ -23,6 +25,8 @@ import { HomepageComponent } from './sites/homepage/homepage.component';
 import { MainlayoutComponent } from './components/mainlayout/mainlayout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PhunxamPageComponent } from './sites/phunxam-page/phunxam-page.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -55,7 +59,16 @@ import { PhunxamPageComponent } from './sites/phunxam-page/phunxam-page.componen
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+      
+    }),
+    MatSidenavModule,
      
   ],
   providers: [],

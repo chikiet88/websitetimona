@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  showmenu = 'hidden';
+  toggle = false;
   constructor() { }
 
+  showFiller = false;
+  clickEvent(){
+    this.toggle = !this.toggle;
+    this.toggle ? this.showmenu='show-menu' : this.showmenu=''
+  }
+  
   ngOnInit(): void {
   }
 

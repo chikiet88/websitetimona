@@ -1,6 +1,141 @@
 
-  <app-header></app-header>
   
-  <router-outlet></router-outlet>
+ 
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav bg-indigo-900" mode="over">
+      <div class="sm:hidden  mobile-header" id="mobile-menu">
+        <div class="pt-2 pb-3 space-y-1">
+          <a routerLink="/" routerLinkActive="active" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Trang Chủ</a>
+          <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
+    
+          <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Chuyên ngành</a>
+    
+          <a routerLink="/goc-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Gói Học viên</a>
+    
+          <a routerLink="/tin-tuc" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Tin tức & sự kiện</a>
+          <a routerLink="/lien-he" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Liên hệ</a>
   
-<app-footer></app-footer>
+        </div>
+      </div>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content flex flex-col ">
+      <header>
+        <nav class="bg-indigo-900 h-auto ">
+          <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-auto">
+              <div class="absolute inset-y-0 left-0 z-10 flex items-center md:hidden">
+                <!-- Mobile menu button-->
+                <button type="button" mat-button (click)="drawer.toggle()"
+                  class="inline-flex items-center justify-center  p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  aria-controls="mobile-menu" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <!--
+                      Icon when menu is closed.
+          
+                      Heroicon name: outline/menu
+          
+                      Menu open: "hidden", Menu closed: "block"
+                    -->
+                  <svg class="hiddenh-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <!--
+                      Icon when menu is open.
+          
+                      Heroicon name: outline/x
+          
+                      Menu open: "block", Menu closed: "hidden"
+                    -->
+                  <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+      
+              </div>
+              <div class="logo w-full h-20  relative md:hidden z-1">
+                <div class="logo w-20 h-10 bg-gray-200 absolute top-1/4" style="left: 50%; transform: translateX(-50%);">
+                  <img src="../../../assets/images/logo-header.png" class="h-full" alt="">
+                </div>
+              </div>
+      
+              <div class="flex-1 flex items-center justify-start md:mx-4 sm:items-stretch sm:justify-between lg:px-5 nav-links">
+                <div class="flex-shrink-0 flex items-center ">
+                  <a routerLink="/" alt="" class="">
+                    <img class="hidden md:block lg:block !h-12 !w-25 bg-gray-700" src="../../../assets/images/logo-header.png" alt="TIMONA ACADEMY">
+                  </a>
+                  <!-- <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow"> -->
+      
+                </div>
+                <div class="hidden sm:block sm:ml-6 pt-6">
+                  <div class="flex items-center justify-end ">
+                    <div class="hidden lg:block">
+                      <div class="flex border-2 rounded ">
+                        <input type="text" class="px-4 py-1 w-80 h-6 rounded-lg relative">
+                        <button class="flex items-center justify-center px-4 border-none absolute right-4 ">
+                          <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path
+                              d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+      
+                  </div>
+                  <div class=" hidden lg:block md:block navbar-links">
+                    <div class="flex space-x-4 pl-3 pt-3 pb-3 ">
+                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                      
+        
+                        <div class="dropdown">
+                          <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a routerLink="/gioi-thieu-hoc-vien"
+                            class="text-lg uppercase hover:bg-gray-700 text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Giới
+                            thiệu</a>
+                          </button>
+                          <ul class="dropdown-menu bg-indigo-900" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="dropdown-item " routerLink="/gioi-thieu-hoc-vien">Giới Thiệu Học Viên</a></li>
+                            <li><a class="dropdown-item" routerLink="/gioi-thieu-giang-vien">Giới Thiệu Giảng Viên</a></li>
+                           
+                          </ul>
+                        </div>
+                      <a routerLink="/chuyen-nganh"
+                        class="text-lg uppercase text-white hover:bg-gray-700 hover:text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Chuyên
+                        ngành</a>
+        
+                      <a routerLink="/goc-hoc-vien"
+                        class=" text-lg uppercase text-white hover:bg-gray-700 hover:text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Góc
+                        Học viên</a>
+        
+                      <a routerLink="/tin-tuc"
+                        class="text-lg uppercase text-white hover:bg-gray-700 hover:text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Tin
+                        tức & sự kiện</a>
+                      <a routerLink="/lien-he"
+                        class="text-lg uppercase text-white hover:bg-gray-700 hover:text-white px-3 py-2 mr-2 rounded-md text-sm font-medium">Liên
+                        hệ</a>
+        
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+      
+      
+      
+            </div>
+          </div>
+      
+        
+          
+        </nav>
+      
+      </header>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+     
+    </div>
+  
+  </mat-drawer-container>
