@@ -115,13 +115,23 @@
 .lecturer-img{
     width: 150px;
     height: 280px;
-    background-color: #ddd;
-    box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
-    -webkit-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
-    -moz-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+    
+   
+}
+.border-shadow{
+    width: 150px;
+    height: 50%;
+    z-index: 0;
+    background-color: rgb(39, 39, 196);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+    bottom: 0;
+    position: absolute;
 }
 .lecturer-info{
     width: 500px;
+    z-index: 10;
     padding-top: 20px;
     padding-left: 20px;
 }

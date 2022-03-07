@@ -57,14 +57,14 @@
               </div>
               <div class="logo w-full h-20  relative md:hidden z-1">
                 <div class="logo w-20 h-10 bg-gray-200 absolute top-1/4" style="left: 50%; transform: translateX(-50%);">
-                  <img src="../../../assets/images/logo-header.png" class="h-full" alt="">
+                  <img src="../../../assets/images/homepages/homepage/logo/timona-logo.png" class="h-full w-full bg-indigo-900 object-contain" alt="">
                 </div>
               </div>
       
               <div class="flex-1 flex items-center justify-start md:mx-4 sm:items-stretch sm:justify-between lg:px-5 nav-links">
                 <div class="flex-shrink-0 flex items-center ">
                   <a routerLink="/" alt="" class="">
-                    <img class="hidden md:block lg:block !h-12 !w-25 bg-gray-700" src="../../../assets/images/logo-header.png" alt="TIMONA ACADEMY">
+                    <img class="hidden md:block lg:block !h-16 !w-25  w-full bg-indigo-900 object-contain" src="../../../assets/images/homepages/homepage/logo/timona-logo.png" alt="TIMONA ACADEMY">
                   </a>
                   <!-- <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow"> -->
       
@@ -86,35 +86,83 @@
       
                   </div>
                   <div class=" hidden lg:block md:block navbar-links">
-                    <div class="flex space-x-4 pl-3 pt-3 pb-3 ">
+                    <div class="flex space-x-4 pl-3 pt-3 pb-3 item-link">
                       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                       
         
                         <div class="dropdown">
                           <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                            <a routerLink="/gioi-thieu-hoc-vien"
+                            <a 
                             class="text-lg uppercase hover:bg-gray-700 text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Giới
                             thiệu</a>
                           </button>
-                          <ul class="dropdown-menu bg-indigo-900" aria-labelledby="dropdownMenuButton2">
+                          <ul class=" dropdown-menu  bg-[#FFFFFF] z-1 delay-300" aria-labelledby="dropdownMenuButton2">
+                            <div class="cont_icon_trg absolute z-0" style="left:35%">
+                              <svg width="44px" height="30px" viewBox="0 0 46 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  >
+                                  <defs>
+                                      <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+                                          <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                          <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                          <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0813575634 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+                                          <feMerge>
+                                              <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                                              <feMergeNode in="SourceGraphic"></feMergeNode>
+                                          </feMerge>
+                                      </filter>
+                                  </defs>
+                                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                      <polygon id="Triangle-1" fill="#FFFFFF" filter="url(#filter-1)" sketch:type="MSShapeGroup" points="23 7 39 24 7 24 "></polygon>
+                                  </g>
+                              </svg>
+                            </div>
                             <li><a class="dropdown-item " routerLink="/gioi-thieu-hoc-vien">Giới Thiệu Học Viên</a></li>
                             <li><a class="dropdown-item" routerLink="/gioi-thieu-giang-vien">Giới Thiệu Giảng Viên</a></li>
-                           
                           </ul>
                         </div>
-                      <a routerLink="/chuyen-nganh"
-                        class="text-lg uppercase text-white hover:bg-gray-700 hover:text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Chuyên
-                        ngành</a>
+                        
+                        <div class="dropdown ">
+                          <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a 
+                            class="text-lg uppercase hover:bg-gray-700 text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">chuyên ngành</a>
+                          </button>
+                          
+                            <ul class=" dropdown-menu  bg-[#FFFFFF] z-1 delay-300" aria-labelledby="dropdownMenuButton2">
+                              <div class="cont_icon_trg absolute left-1/2 z-0">
+                                <svg width="44px" height="30px" viewBox="0 0 46 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  >
+                                    <defs>
+                                        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+                                            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                                            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0813575634 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+                                            <feMerge>
+                                                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                                                <feMergeNode in="SourceGraphic"></feMergeNode>
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                        <polygon id="Triangle-1" fill="#FFFFFF" filter="url(#filter-1)" sketch:type="MSShapeGroup" points="23 7 39 24 7 24 "></polygon>
+                                    </g>
+                                </svg>
+                              </div>
+                              <li><a class="dropdown-item " routerLink="/khoa-hoc/theme1">Theme 1</a></li>
+                              <li><a class="dropdown-item" routerLink="/khoa-hoc/theme2">Theme 2</a></li>
+                              <li><a class="dropdown-item" routerLink="/khoa-hoc/theme3">Theme 3</a></li>
+                            </ul>
+                            
+                        
+                          
+                        </div> 
         
                       <a routerLink="/goc-hoc-vien"
-                        class=" text-lg uppercase text-white hover:bg-gray-700 hover:text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Góc
+                        class=" text-lg uppercase text-white  lg:px-3 lg:py-2 rounded-md text-sm font-medium">Góc
                         Học viên</a>
         
                       <a routerLink="/tin-tuc"
-                        class="text-lg uppercase text-white hover:bg-gray-700 hover:text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Tin
+                        class="text-lg uppercase text-white  lg:px-3 lg:py-2 rounded-md text-sm font-medium">Tin
                         tức & sự kiện</a>
                       <a routerLink="/lien-he"
-                        class="text-lg uppercase text-white hover:bg-gray-700 hover:text-white px-3 py-2 mr-2 rounded-md text-sm font-medium">Liên
+                        class="text-lg uppercase text-white  pl-3 py-2 mr-2 rounded-md text-sm font-medium">Liên
                         hệ</a>
         
                     </div>

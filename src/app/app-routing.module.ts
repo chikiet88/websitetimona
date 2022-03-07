@@ -10,9 +10,9 @@ import { IntroduceComponent } from './sites/introduce/introduce.component';
 import { LecturerPageComponent } from './sites/lecturer-page/lecturer-page.component';
 import { NewPageComponent } from './sites/new-page/new-page.component';
 import { StudentFeelPageComponent } from './sites/student-feel-page/student-feel-page.component';
-import { PhunxamPageComponent } from './sites/phunxam-page/phunxam-page.component';
-
-
+import { Theme1Component } from './sites/theme1/theme1.component';
+import { Theme2Component } from './sites/theme2/theme2.component';
+import { Theme3Component } from './sites/theme3/theme3.component';
 
 const routes: Routes = [
   { path:'', component:HomepageComponent },
@@ -24,7 +24,11 @@ const routes: Routes = [
  { path:'goc-hoc-vien/giai-dap',component:AnswerPageComponent},
  { path:'goc-hoc-vien/hoat-dong',component:ActivatePageComponent},
  { path:'goc-hoc-vien/cam-nghi-hoc-vien',component:StudentFeelPageComponent},
- { path:'khoa-hoc/phun-xam',component:PhunxamPageComponent},
+ { path:'khoa-hoc/theme1',component:Theme1Component},
+ { path:'khoa-hoc/theme2',component:Theme2Component},
+ { path:'khoa-hoc/theme3',component:Theme3Component},
+
+
 
 
 

@@ -1,5 +1,5 @@
 .footer{
-    background-color: rgb(8, 8, 109);
+    background-color: #00256e;
     padding-top: 50px;
     margin-top: 50px;
 }
@@ -38,8 +38,8 @@
     justify-content: space-between;
 }
 .logo-footer{
-    width: 150px;
-    height: 80px;
+    width: 210px;
+    height: 70px;
     background-color: #ddd;
 }
 .icons-social{

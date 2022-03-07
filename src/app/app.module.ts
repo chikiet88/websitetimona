@@ -24,9 +24,13 @@ import { StudentFeelPageComponent } from './sites/student-feel-page/student-feel
 import { HomepageComponent } from './sites/homepage/homepage.component';
 import { MainlayoutComponent } from './components/mainlayout/mainlayout.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { PhunxamPageComponent } from './sites/phunxam-page/phunxam-page.component';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+
+import { Theme1Component } from './sites/theme1/theme1.component';
+import { Theme2Component } from './sites/theme2/theme2.component';
+import { Theme3Component } from './sites/theme3/theme3.component';
 
 
 
@@ -53,7 +57,11 @@ import { environment } from '../environments/environment';
                                                                                         MainlayoutComponent,
                                                                                         FooterComponent,
                                                                                        
-                                                                                        PhunxamPageComponent
+                                                                                       
+                                                                                                                                                                                
+                                                                                                                                                                                 Theme1Component,
+                                                                                                                                                                                 Theme2Component,
+                                                                                                                                                                                 Theme3Component
                                        
                       
   ],

@@ -79,6 +79,7 @@
         flex-wrap: wrap;
         justify-content: space-evenly !important;
         margin: 0 6px;
+        align-items: center;
     }
     .new-img{
         margin-right: inherit !important;
@@ -496,25 +497,25 @@
     padding-top: 30px;
     }
     .new-img{
-        width: 100px;
+        width: 120px;
         height: 70px;
         background-color: #ddd;
         margin-right: 15px;
         margin-left: 15px;
     }
+    
 
     .form-sale{
-   
-        background-color: rgb(8, 8, 109);
+        height: 330px;
+        
         padding-bottom: 50px;
         border-radius: 20px;
     }
     .form-wrapper{
-        padding: 50px 30px 0 30px;
+        padding: 80px 30px 60px 30px;
         display: flex;
-        justify-content: space-between;
-        
-    
+        position: absolute;
+        left: 45%;
     }
     .form-left{
         display: flex;
@@ -563,35 +564,25 @@
         margin-left: 15px;
     }
     .form-right{
-    flex: 1.5;
+    
     }
     .form-submit{
         display: flex;
         flex-wrap: wrap;
     }
     .form-submit input{
-        width: 300px;
+        width: 250px;
     }
     .form-submit select{
-        width: 300px;
+        width: 250px;
     }
-    /* input{
-        margin-right: 10px;
-        border: none;
-        border-radius: 10px;
-        width: 200px;
-        height: 20px;
-        padding-left: 20px;
-        font-weight: bold;
-        
-    }
-    .lastchild{
-        margin-top: 30px;
-    }
+   
+    
     ::placeholder{
-        color: #ddd;
+        
+        font-size: 12px;
         margin-left: 10px;
-    } */
+    }
     /* select{
         margin-right: 30px;
         border: none;

@@ -20,12 +20,41 @@
 
     </div>
 
-    <div class="lg:pt-10 w-full h-1/2 flex flex-col  hidden lg:block">
-        <div class="pb-5">
-            <div class="text-base text-indigo-900">Home >> Góc Học Viên >> Hỏi Đáp Cùng Timona Academy</div>
-        </div>
+    <div class="lg:pt-10 w-full h-1/2 flex flex-col  pb-4 hidden lg:block">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+              <li class="inline-flex items-center">
+                <a
+                  routerLink=""
+                  class="inline-flex items-center text-sm  text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                >
+                  Home
+                </a>
+              </li>
+              <li>
+                <div class="flex items-center text-indigo-900">
+                  >>
+                  <a
+                  routerLink="/goc-hoc-vien"
+                    class="ml-1 text-sm font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                    > Góc Học Viên</a
+                  >
+                </div>
+              </li>
+            
+              
+              <li aria-current="page">
+                <div class="flex items-center text-indigo-900">
+                  >>
+                  <span
+                    class="ml-1 text-sm  text-text-indigo-900 md:ml-2 dark:text-indigo-900"
+                    >Giải Đáp</span
+                  >
+                </div>
+              </li>
+            </ol>
+          </nav>
     </div>
-
     <div class="">
         <div class="w-full bg-red-100 relative" style="height: 300px;">
             <img src="../../../assets/images/lienhe.png " class="absolute left-0 h-full"/>

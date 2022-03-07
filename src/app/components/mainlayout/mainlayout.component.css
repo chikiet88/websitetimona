@@ -22,20 +22,20 @@
     box-shadow: inherit
 }
 .dropdown-toggle::after{
-    display: none;
+  color: #fff;
 }
+
 .dropdown:hover .dropdown-menu{
     display: block;
-    transition: 0.4s;
+    transition: all 1s;
 }
-.dropdown-menu{
-    transition: 0.4s;
-}
+
 
 
 
 .dropdowna:hover:after {
   width: 100%;
+  transition: all 0.4s;
 }
 
 .dropdown a {
@@ -55,28 +55,45 @@
     transition: all 0.4s;
 }
 
-.hover\:bg-gray-700:hover{
-    color: #00256e !important;
-background-color: rgba(253, 251, 251, 0.849);
-opacity: 0.8;
-}
-.dropdown-item{
-    color: #fff;
+.btn:hover a, .dropdown-toggle:hover:after {
+    color: #f7d900 !important;
+    background-color: inherit;
+    opacity: 0.8;
     transition: all 0.4s;
+}
+.cont_icon_trg{
+    transform: translateX(-50%);
+    top: -15px;
+}
+
+.dropdown-item{
+    color: rgb(83, 82, 82);
+    transition: all 0.4s;
+    padding: 10px 10px;
+    border-radius: 10px;
 }
 .dropdown-item:hover{
     transition: all 0.4s;
     opacity: 0.8;
-    color: #00256e !important;
+    color: #fff !important;
+    background-color: #f7d900;
+   
 }
 .dropdown-menu .active{
     color: #fff;
+    transition: all 0.4s;
 }
-.dropdownMenu{
-    background-color: #00256e;
-    
+.dropdown-menu li{
+    margin: 10px;
+}
+.item-link a{ 
+    transition: all 0.4s;
 }
 
+.item-link>a:hover{
+    color: #f7d900 !important;
+    transition: all 0.4s;
+}
 
 .mobile-header a:hover{
     background-color: rgba(253, 251, 251, 0.849);
