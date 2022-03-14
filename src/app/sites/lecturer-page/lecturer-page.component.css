@@ -4,15 +4,14 @@
 .lecturer-img{
     height: 280px;
    width: 150px;
-    background-color: #ddd;
-    box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
-    -webkit-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
-    -moz-box-shadow: 8px 22px 24px -8px rgba(0,0,0,0.67);
+    
+   
 }
 .lecturer-info{
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
+    width: 370px;
 }
 .lecturer-title{
     color: #fff;
@@ -63,6 +62,36 @@
 .wrapper{
     padding: 1.25rem 5rem !important;
 }
+.border-shadow {
+    width: 70px;
+    height: 60%;
+    z-index: 0;
+    left: 40px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background-color: rgb(0 56 190);
+    box-shadow: 8px -18px 35px 16px rgba(0,85,237,0.66);
+  -webkit-box-shadow: 8px -18px 35px 16px rgba(0,85,237,0.66);
+  -moz-box-shadow: 8px -18px 35px 16px rgba(0,85,237,0.66);
+    bottom: 0;
+    position: absolute;
+  }
+  .shadow-bottom{
+      bottom: 0;
+      position: absolute; 
+      width: 250px;
+      margin: 0 auto;
+      border-radius: 40%;
+      
+     z-index: 0;
+        background-color: #000;
+      display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 1px 11px 3px rgb(1 7 29 / 87%);;
+        -webkit-box-shadow: 0px 1px 11px 3px rgb(1 7 29 / 87%);;
+        -moz-box-shadow: 0px 1px 11px 3px rgb(1 7 29 / 87%);;
+  }
 @media screen and (max-width: 768px){
     .banner-img{
         height: 250px;
@@ -78,5 +107,12 @@
     .wrapper{
         padding: 1rem  !important;
     }
-   
+    .lecturer-info{
+        width: 190px;
+        padding-left: 10px;
+    }
+    .item-lecturer{
+        height: 350px;
+    }
+
 }

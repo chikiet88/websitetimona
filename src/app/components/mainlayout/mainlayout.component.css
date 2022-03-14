@@ -96,6 +96,28 @@
 }
 
 .mobile-header a:hover{
-    background-color: rgba(253, 251, 251, 0.849);
+    background-color: #f7d900;
     color: #fff;
+    padding: 10px 10px;
+}
+.btn-secondary:hover{
+  background-color: #00256e;
+}
+.mat-expansion-panel-header{
+  padding: 0 35px 0 0 !important;
+}
+.mat-expansion-panel-header:hover, .mat-expansion-panel-bod{
+  background: #00256e !important;
+}
+.mat-focus-indicato{
+  position: inherit !important;
+}
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+  box-shadow: inherit !important;
+}
+.mat-expansion-panel-header.mat-expanded{
+  height: inherit;
+}
+.mat-expansion-panel-body{
+  padding: inherit;
 }

@@ -4,16 +4,64 @@
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav bg-indigo-900" mode="over">
       <div class="sm:hidden  mobile-header" id="mobile-menu">
-        <div class="pt-2 pb-3 space-y-1">
-          <a routerLink="/" routerLinkActive="active" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Trang Chủ</a>
-          <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
+        <button type="button" mat-button (click)="drawer.toggle()"
+                  class="inline-flex items-center justify-center border-none  p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  aria-controls="mobile-menu"
+                   >
+                  <span class="sr-only">Close main menu</span>
+                  
+                  <img src="../../../assets/images/homepages/homepage/Ngành ĐT (xong)/icon-close.svg" />
+                </button>
+        <div class="pt-2 pb-3 space-y-1 flex flex-col pb-3">
+          <a routerLink="/"  class="text-lg uppercase mt-4 text-white  lg:px-3 lg:py-2 rounded-md text-sm font-medium" aria-current="page">Trang Chủ</a>
+          <!-- <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
+           -->
+           
+           
+        
+          <mat-accordion>
+            <mat-expansion-panel class="bg-indigo-900" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header >
+                <mat-panel-title>
+                  <p class="text-lg uppercase text-white mt-2 mb-0 lg:px-3 lg:py-2 rounded-md text-sm font-medium">Giới thiệu</p>
+                </mat-panel-title>
+                
+              </mat-expansion-panel-header>
+              <div class="flex flex-col">
+                <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md  font-medium font-serif" routerLink="/gioi-thieu-hoc-vien">+ Học Viên</a>
+                 <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md  font-medium font-serif" routerLink="/gioi-thieu-giang-vien">+ Giảng Viên</a>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+
+          <mat-accordion>
+            <mat-expansion-panel class="bg-indigo-900" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header >
+                <mat-panel-title>
+                  <p class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium">Chuyên ngành</p>
+                </mat-panel-title>
+                
+              </mat-expansion-panel-header>
+              <div class="flex flex-col">
+                <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-hoc-vien">+ theme 1</a>
+                 <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-giang-vien">+ theme 2</a>
+                <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-hoc-vien">+ theme 3</a>
+
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+          
+
+       
+          
+        
     
-          <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Chuyên ngành</a>
+          <a routerLink="/goc-hoc-vien" class="text-lg uppercase text-white mt-3 pb-2 lg:px-3 lg:py-2 rounded-md text-sm font-medium">Gói Học viên</a>
     
-          <a routerLink="/goc-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Gói Học viên</a>
-    
-          <a routerLink="/tin-tuc" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Tin tức & sự kiện</a>
-          <a routerLink="/lien-he" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Liên hệ</a>
+          <a routerLink="/tin-tuc" class="text-lg uppercase text-white mt-3 lg:px-3 pb-2 lg:py-2 rounded-md text-sm font-medium">Tin tức & sự kiện</a>
+          <a routerLink="/lien-he" class="text-lg uppercase text-white mt-3 lg:px-3 pb-2 lg:py-2 rounded-md text-sm font-medium">Liên hệ</a>
   
         </div>
       </div>
@@ -28,7 +76,7 @@
                 <!-- Mobile menu button-->
                 <button type="button" mat-button (click)="drawer.toggle()"
                   class="inline-flex items-center justify-center  p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                  aria-controls="mobile-menu" aria-expanded="false">
+                  aria-controls="mobile-menu" >
                   <span class="sr-only">Open main menu</span>
                   <!--
                       Icon when menu is closed.
@@ -39,7 +87,7 @@
                     -->
                   <svg class="hiddenh-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <path fill="#fafafa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                   <!--
                       Icon when menu is open.
@@ -56,7 +104,7 @@
       
               </div>
               <div class="logo w-full h-20  relative md:hidden z-1">
-                <div class="logo w-20 h-10 bg-gray-200 absolute top-1/4" style="left: 50%; transform: translateX(-50%);">
+                <div class="logo bg-gray-200 absolute left-1/2 top-1/4" style="width: 150px; height: 50px; transform: translateX(-50%);">
                   <img src="../../../assets/images/homepages/homepage/logo/timona-logo.png" class="h-full w-full bg-indigo-900 object-contain" alt="">
                 </div>
               </div>
@@ -91,7 +139,7 @@
                       
         
                         <div class="dropdown">
-                          <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                          <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2"  >
                             <a 
                             class="text-lg uppercase hover:bg-gray-700 text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">Giới
                             thiệu</a>
@@ -121,7 +169,7 @@
                         </div>
                         
                         <div class="dropdown ">
-                          <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                          <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2"  >
                             <a 
                             class="text-lg uppercase hover:bg-gray-700 text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">chuyên ngành</a>
                           </button>

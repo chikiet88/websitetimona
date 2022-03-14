@@ -4,9 +4,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { HomePagesComponent } from './components/home-pages/home-pages.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { SpecialzedComponent } from './components/specialzed/specialzed.component';
 import { NewEventComponent } from './components/new-event/new-event.component';
@@ -31,7 +31,10 @@ import { environment } from '../environments/environment';
 import { Theme1Component } from './sites/theme1/theme1.component';
 import { Theme2Component } from './sites/theme2/theme2.component';
 import { Theme3Component } from './sites/theme3/theme3.component';
-
+// import { AdminComponent } from './sites/admin/admin.component';
+// import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { KhoahocComponent } from './sites/khoahoc/khoahoc.component';
 
 
 
@@ -39,7 +42,7 @@ import { Theme3Component } from './sites/theme3/theme3.component';
   declarations: [
     
     AppComponent,
-          HomePagesComponent,   
+      
                       SpecialzedComponent,
                                              NewEventComponent,
                                              IntroComponent,
@@ -61,7 +64,9 @@ import { Theme3Component } from './sites/theme3/theme3.component';
                                                                                                                                                                                 
                                                                                                                                                                                  Theme1Component,
                                                                                                                                                                                  Theme2Component,
-                                                                                                                                                                                 Theme3Component
+                                                                                                                                                                                 Theme3Component,
+                                                                                                                                                                                //  AdminComponent,
+                                                                                                                                                                                //  KhoahocComponent,
                                        
                       
   ],
@@ -77,6 +82,8 @@ import { Theme3Component } from './sites/theme3/theme3.component';
       
     }),
     MatSidenavModule,
+    MatExpansionModule,
+    
      
   ],
   providers: [],

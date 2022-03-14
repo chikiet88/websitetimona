@@ -36,7 +36,7 @@ max-height: 3.2rem;
 }
 @media screen  and (max-width:480px){
     .banner-image{
-        height: 410px;
+        height: auto;
     }
    
 }

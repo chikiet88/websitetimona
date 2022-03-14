@@ -4,8 +4,8 @@
     <app-intro></app-intro>
   </div>
 
-  <div class="lg:max-w-7xl lg:mx-auto lg:pt-10 lg:px-8">
-    <section class="w-full h-full bg-indigo-900 border-top pb-12 lg:px-20">
+  <div class="lg:max-w-7xl lg:mx-auto lg:px-8">
+    <section class="w-full h-full bg-indigo-900 border-top lg:px-20">
       <app-specialzed></app-specialzed>
     </section>
 
@@ -86,7 +86,7 @@
               <div class="stories-wrapper">
                 <div class="story-left">
                   <iframe
-                    width="400"
+                    width="100%"
                     height="315"
                     class="yotube-video"
                     src="https://www.youtube.com/embed/pjgElO5jKOs"
@@ -116,7 +116,7 @@
             <div class="stories-wrapper">
               <div class="story-left">
                 <iframe
-                  width="500"
+                  width="100%"
                   height="315"
                   class="yotube-video"
                   src="https://www.youtube.com/embed/pjgElO5jKOs"
@@ -176,7 +176,7 @@
           </div>
           <button
             class="carousel-control-prev"
-            style="left: -30px !important"
+            style="left: -100px !important"
             type="button"
             data-bs-target="#carouselExampleControls"
             data-bs-slide="prev"
@@ -187,7 +187,7 @@
           <button
             class="carousel-control-next"
             type="button"
-            style="right: -30px !important"
+            style="right: -100px !important"
             data-bs-target="#carouselExampleControls"
             data-bs-slide="next"
           >
@@ -197,7 +197,7 @@
         </div>
       </div>
 
-      <div class="stories-mobile stories bg-indigo-900 lg:hidden">
+      <div class="stories-mobile stories bg-indigo-900 pt-4 lg:hidden">
         <div class="specializ-top">
           <h2 class="specializ-title text-white">Câu chuyện học viên</h2>
           <p class="text-center text-white text-xs !mx-6">
@@ -308,9 +308,11 @@
         </div>
       </div>
 
-      <div class="experts">
+      <div class="experts pt-4 lg:pt-0">
         <div class="specializ-top">
-          <h2 class="specializ-title text-center expert-title text-yellow-500">
+          <h2
+            class="specializ-title !pt-0 text-center expert-title text-yellow-500"
+          >
             học nghề cùng chuyên gia
           </h2>
         </div>
@@ -324,65 +326,89 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="expert-wrapper">
-                  <div class="expert-video">
-                    <div class="expert-boder">
-                      <div class="expert-boder-left">
-                        <div class="expert-boder-img">
-                          <img
-                            src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                            class="h-full w-ful bg-indigo-900 object-contain"
-                            alt=""
-                          />
+                  <div class="">
+                    <div class="expert-video">
+                      <div class="relative"  (click)="showVideo()">
+                        <div class="expert-boder {{hidden}} ">
+                          <div class="expert-boder-left">
+                            <div class="expert-boder-img">
+                              <img
+                                src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
+                                class="h-full w-ful bg-indigo-900 object-contain"
+                                alt=""
+                              />
+                            </div>
+                            <div class="expert-boder-question text-yellow-500">
+                              master thẩm mỹ khó hay dễ
+                            </div>
+                          </div>
+                          <div class="expert-boder-right">
+                            <img
+                              src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/master-thẩm-mỹ.png"
+                              class="h-full w-ful bg-indigo-900"
+                              alt=""
+                            />
+                          </div>
                         </div>
-                        <div class="expert-boder-question text-yellow-500">
-                          master thẩm mỹ khó hay dễ
+                        <div class="video-yotube {{active}} absolute top-0 left-0 w-full h-full">
+                          
+                          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HjNODEFghK0?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                      </div>
-                      <div class="expert-boder-right">
-                        <img
-                          src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/master-thẩm-mỹ.png"
-                          class="h-full w-ful bg-indigo-900"
-                          alt=""
-                        />
-                      </div>
-                      <!-- <i class="button-play">icon</i> -->
-                    </div>
-                    <span class="expert-question text-yellow-500"
-                      >master thẩm mỹ - khó hay dễ?</span
-                    >
-                  </div>
-                  <div class="expert-video">
-                    <div class="expert-boder border-reverse">
-                      <div class="expert-boder-left left-reverse">
-                        <div class="expert-boder-img img-reverse">
-                          <img
-                          src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                          class="h-full w-ful bg-indigo-900 object-contain"
-                            alt=""
-                          />
-                        </div>
-                        <div class="expert-boder-question text-yellow-500">
-                          <div class="mb-2">cách thức</div>
+                        <i class="button-play cursor-pointer {{hidden}}" ><img class="w-full h-full" src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg" alt=""></i>
 
-                          <strong class="text-strong text-yellow-500">
-                            tạo niềm tin</strong
-                          >
-                          <div class="mt-2">nơi khách hàng</div>
-                        </div>
+
                       </div>
-                      <div class="expert-boder-right right-reverse">
-                        <img
-                          src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/niềm-tin-khách-hàng.png"
-                          class="h-full w-ful bg-indigo-900"
-                          alt=""
-                        />
-                      </div>
-                      <!-- <i class="button-play">icon</i> -->
+
+                      <span class="expert-question text-yellow-500"
+                        >master thẩm mỹ - khó hay dễ?</span
+                      >
                     </div>
-                    <span
-                      class="expert-question text-yellow-500 text-yellow-500"
-                      >cách thức tạo niềm tin nơi khách hàng</span
-                    >
+                  </div>
+                  <div class="">
+                    <div class="expert-video">
+                      <div class="relative " (click)="showVideo1()">
+                        <div class="expert-boder border-reverse {{hidden1}}" >
+                          <div class="expert-boder-left left-reverse">
+                            <div class="expert-boder-img img-reverse">
+                              <img
+                                src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
+                                class="h-full w-ful bg-indigo-900 object-contain"
+                                alt=""
+                              />
+                            </div>
+                            <div class="expert-boder-question text-yellow-500">
+                              <div class="mb-2">cách thức</div>
+  
+                              <strong class="text-strong text-yellow-500">
+                                tạo niềm tin</strong
+                              >
+                              <div class="mt-2">nơi khách hàng</div>
+                            </div>
+                          </div>
+                          <div class="expert-boder-right right-reverse">
+                            <img
+                              src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/niềm-tin-khách-hàng.png"
+                              class="h-full w-ful bg-indigo-900"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div class="{{active1}} absolute top-0 left-0 w-full h-full ">
+                          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/RmVt5J4b1Ag?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+
+                        <i class="button-play cursor-pointer {{hidden1}}" 
+                          ><img
+                            class="w-full h-full"
+                            src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg"
+                            alt=""
+                        /></i>
+                      </div>
+                      <span
+                        class="expert-question text-yellow-500 text-yellow-500"
+                        >cách thức tạo niềm tin nơi khách hàng</span
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -461,7 +487,7 @@
             </div>
             <button
               class="carousel-control-prev"
-              style="left: -30px !important"
+              style="left: -100px !important"
               type="button"
               data-bs-target="#carouselExampleControl-expert"
               data-bs-slide="prev"
@@ -475,7 +501,7 @@
             <button
               class="carousel-control-next"
               type="button"
-              style="right: -30px !important"
+              style="right: -100px !important"
               data-bs-target="#carouselExampleControl-expert"
               data-bs-slide="next"
             >
@@ -520,19 +546,27 @@
                 style="border-radius: 50% !important"
                 aria-label="Slide 3"
               ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators-expertMb"
+                data-bs-slide-to="3"
+                class="!w-2 !h-2"
+                style="border-radius: 50% !important"
+                aria-label="Slide 4"
+              ></button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
+            <div class="carousel-inner pb-3">
+              <div class="carousel-item active pb-5">
                 <div
-                  class="expert-mobiles mb-10 w-full lg:hidden"
+                  class="expert-mobiles pb-5 w-full lg:hidden"
                   style="height: 250px"
                 >
                   <div class="relative h-full">
-                    <div class="bg-gray-100 h-full mb-5">
+                    <div class="mb-5">
                       <iframe
-                        width="515"
-                        height="250"
-                        src="https://www.youtube.com/embed/Y-KmAE7HOy4"
+                        width="100%"
+                        height="290"
+                        src="https://www.youtube.com/embed/HjNODEFghK0"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -547,36 +581,82 @@
                   master thẩm mỹ khó hay dễ
                 </div>
               </div>
-              <!-- <div class="carousel-item">
-            <div
-              class="expert-mobiles mb-10 w-full lg:hidden"
-              style="height: 250px"
-            >
-              <div class="relative h-full">
-                <div class="bg-gray-100 h-full mb-5">img2</div>
+              <div class="carousel-item pb-5">
+                <div
+                  class="expert-mobiles pb-5 w-full lg:hidden"
+                  style="height: 250px"
+                >
+                  <div class="relative h-full">
+                    <div class="mb-5">
+                      <iframe
+                        width="100%"
+                        height="290"
+                        src="https://www.youtube.com/embed/RmVt5J4b1Ag"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="expert-boder-question !w-full text-center mt-5 font-black text-yellow-500"
+                >
+                  master thẩm mỹ khó hay dễ
+                </div>
               </div>
-            </div>
-            <div
-              class="expert-boder-question !w-full text-center mt-5 font-black"
-            >
-              master thẩm mỹ khó hay dễ
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div
-              class="expert-mobiles mb-10 w-full lg:hidden"
-              style="height: 250px"
-            >
-              <div class="relative h-full">
-                <div class="bg-gray-100 h-full mb-5">img3</div>
+
+              <div class="carousel-item pb-5">
+                <div
+                  class="expert-mobiles pb-5 w-full lg:hidden"
+                  style="height: 250px"
+                >
+                  <div class="relative h-full">
+                    <div class="mb-5">
+                      <iframe
+                        width="100%"
+                        height="290"
+                        src="https://www.youtube.com/embed/D7nrbiprVOQ"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="expert-boder-question !w-full text-center mt-5 font-black text-yellow-500"
+                >
+                  master thẩm mỹ khó hay dễ
+                </div>
               </div>
-            </div>
-            <div
-              class="expert-boder-question !w-full text-center mt-5 font-black"
-            >
-              master thẩm mỹ khó hay dễ
-            </div>
-          </div> -->
+              <div class="carousel-item pb-5">
+                <div
+                  class="expert-mobiles pb-5 w-full lg:hidden"
+                  style="height: 250px"
+                >
+                  <div class="relative h-full">
+                    <div class="mb-5">
+                      <iframe
+                        width="100%"
+                        height="290"
+                        src="https://www.youtube.com/embed/Nj2RxBPvRaI"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="expert-boder-question !w-full text-center mt-5 font-black text-yellow-500"
+                >
+                  master thẩm mỹ khó hay dễ
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -622,9 +702,9 @@
               <a href="#" class="text-base hidden lg:block">Tìm hiểu thêm >></a>
             </div>
             <div
-              class="text-indigo-900 text-xs top-3 text-center font-black new-link bg-indigo-900 mx-20 rounded-lg lg:hidden"
+              class="text-indigo-900 text-xs top-3 text-center font-black new-link pt-2   lg:hidden"
             >
-              <a href="#" class="text-base text-white"
+              <a href="#" class="text-base text-white bg-indigo-900  rounded-lg p-2"
                 >Xem thêm các thông tin khác >></a
               >
             </div>
@@ -639,49 +719,74 @@
       <h2 class="newpaper-title">Báo chí nói gì về timona academy</h2>
       <div class="new-social">
         <div class="new-img">
-          <img src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/VN.png" alt="" class="w-full h-full bg-[#fafafa]  object-contain" />
+          <img
+            src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/VN.png"
+            alt=""
+            class="w-full h-full bg-[#fafafa] object-contain"
+          />
         </div>
         <div class="new-img">
-          <img src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/tuoitre.png" alt="" class="w-full h-full bg-[#fafafa]  object-contain" />
+          <img
+            src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/tuoitre.png"
+            alt=""
+            class="w-full h-full bg-[#fafafa] object-contain"
+          />
         </div>
         <div class="new-img">
-          <img src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/Yeah1.png" alt="" class="w-full h-full bg-[#fafafa]  object-contain" />
+          <img
+            src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/Yeah1.png"
+            alt=""
+            class="w-full h-full bg-[#fafafa] object-contain"
+          />
         </div>
-        <div class="new-img" style="height: 50px;">
-          <img src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/eva.vn.png" alt="" class="w-full h-full bg-[#fafafa]  object-contain" />
+        <div class="new-img" style="height: 50px">
+          <img
+            src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/eva.vn.png"
+            alt=""
+            class="w-full h-full bg-[#fafafa] object-contain"
+          />
         </div>
         <div class="new-img">
-          <img src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/ngoisao.png" alt="" class="w-full h-full bg-[#fafafa]  object-contain" />
+          <img
+            src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/ngoisao.png"
+            alt=""
+            class="w-full h-full bg-[#fafafa] object-contain"
+          />
         </div>
-        <div class="new-img" style="height: 50px;">
-          <img src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/dulichtoday.png" alt="" class="w-full h-full bg-[#fafafa]  object-contain" />
+        <div class="new-img" style="height: 50px">
+          <img
+            src="../../../assets/images/homepages/homepage/LOGO BÁO CHÍ/dulichtoday.png"
+            alt=""
+            class="w-full h-full bg-[#fafafa] object-contain"
+          />
         </div>
-       
       </div>
     </div>
 
     <div
-      class="form-sale relative  hidden lg:block lg:max-w-7xl lg:mx-auto lg:pt-10 lg:px-8"
+      class="form-sale relative hidden lg:block lg:max-w-7xl lg:mx-auto lg:px-8"
     >
-
-    <div class=" text-5xl text-white absolute">
-      <img src="../../../assets/images/homepages/homepage/Đăng ký kháo học/Dangkykhoahoc.png" class="w-full h-full top-0 left" alt="">
-    </div>
-      <div class="form-wrapper  rounded-2xl">
-        
+      <div class="text-5xl text-white absolute left-0 w-full">
+        <img
+          src="../../../assets/images/homepages/homepage/Đăng ký kháo học/Dangkykhoahoc.png"
+          class="w-full h-full top-0 left"
+          alt=""
+        />
+      </div>
+      <div class="form-wrapper rounded-2xl">
         <div class="form-right ml-10 w-3/5">
           <form class="form-submit relative pb-5">
             <div class="flex justify-between pb-3">
               <input
                 type="text"
                 id="username-success"
-                class=" border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                class="border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                 placeholder="HỌ TÊN"
               />
               <input
                 type="text"
                 id="username-success"
-                class=" border border-none text-black-900 placeholder-black-700 text-sm ml-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                class="border border-none text-black-900 placeholder-black-700 text-sm ml-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                 placeholder="SỐ ĐIỆN THOẠI"
               />
             </div>
@@ -690,7 +795,7 @@
               <input
                 type="text"
                 id="username-success"
-                class=" border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                class="border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                 placeholder="MÃ GIỚI THIỆU"
               />
 

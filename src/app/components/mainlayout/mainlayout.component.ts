@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MainlayoutComponent implements OnInit {
 
   constructor() { }
+  panelOpenState = false;
   showFiller = false;
   ngOnInit(): void {
       
