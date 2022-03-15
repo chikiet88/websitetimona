@@ -28,13 +28,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-import { Theme1Component } from './sites/theme1/theme1.component';
-import { Theme2Component } from './sites/theme2/theme2.component';
-import { Theme3Component } from './sites/theme3/theme3.component';
+
+
 // import { AdminComponent } from './sites/admin/admin.component';
 // import { HttpClientModule } from '@angular/common/http';
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { KhoahocComponent } from './sites/khoahoc/khoahoc.component';
+import { KhoahocComponent } from './sites/khoahoc/khoahoc.component';
+import { KhoahocModule } from './sites/khoahoc/khoahoc.module';
+import { CommonModule } from '@angular/common';
+
 
 
 
@@ -62,16 +64,16 @@ import { Theme3Component } from './sites/theme3/theme3.component';
                                                                                        
                                                                                        
                                                                                                                                                                                 
-                                                                                                                                                                                 Theme1Component,
-                                                                                                                                                                                 Theme2Component,
-                                                                                                                                                                                 Theme3Component,
+                                                                                                                                                                              
+                                                                                                                                                                                 KhoahocComponent,
                                                                                                                                                                                 //  AdminComponent,
-                                                                                                                                                                                //  KhoahocComponent,
+                                                                                                                                                                                 KhoahocComponent,
                                        
                       
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -83,6 +85,8 @@ import { Theme3Component } from './sites/theme3/theme3.component';
     }),
     MatSidenavModule,
     MatExpansionModule,
+    KhoahocModule,
+   
     
      
   ],

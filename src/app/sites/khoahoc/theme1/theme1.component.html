@@ -31,7 +31,7 @@
   </div>
 
   <div class="w-full h-1/2 flex flex-col hidden lg:block">
-    <div class="pb-4">
+    <div class="pb-4 flex justify-between">
       <nav class="flex" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
           <li class="inline-flex items-center">
@@ -63,23 +63,20 @@
           </li>
         </ol>
       </nav>
+      <button type="button" (click)="goBack()">go back</button>
     </div>
   </div>
 
-  <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
+  <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom" >
     <p class="text-white uppercase text-center text-xl lg:text-4xl pt-3">
-      Phun Xăm thẩm Mỹ
+    {{theme.title}}
     </p>
     <p class="lg:text-base text-sm text-white intro-description lg:italic text-justify">
-      Phun xăm thẩm mỹ được mệnh danh là nghề "hốt bạc" trong thời đại làm đẹp
-      lên ngôi như hiện nay. Với cơ hội nghề nghiệp cao, thu nhập khủng lên tới
-      30 triệu đồng/ tháng, tiết kiệm chi phí, thời gian học tập. Tham giá khóa
-      học phun xăm chắc chắn là lựa chọn lý tưởng cho bạn trẻ ngoài con đường
-      đại học, cao đẳng. Nhưng học ở đâu để vững kiến thức, chắc tay nghề, học
-      xong là có đầy đủ kỹ năng để xin việc ngay? Bạn đang tìm hiểu về một lớp
-      dạy phun xăm thẩm mỹ, vậy hãy đọc ngay bài viết dưới đây.
+     {{theme.des}}
     </p>
   </div>
+
+  
 
   <div class="wrapper">
     <div class="pt-4">

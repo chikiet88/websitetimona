@@ -44,10 +44,10 @@
                 </mat-panel-title>
                 
               </mat-expansion-panel-header>
-              <div class="flex flex-col">
-                <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-hoc-vien">+ theme 1</a>
-                 <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-giang-vien">+ theme 2</a>
-                <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-hoc-vien">+ theme 3</a>
+              <div class="flex flex-col" *ngFor="let item of items ">
+                <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-hoc-vien">{{item.title}}</a>
+                 <!-- <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-giang-vien">+ theme 2</a>
+                <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/gioi-thieu-hoc-vien">+ theme 3</a> -->
 
               </div>
             </mat-expansion-panel>
@@ -170,7 +170,7 @@
                         
                         <div class="dropdown ">
                           <button class="btn  dropdown-toggle border-none" type="button" id="dropdownMenuButton2"  >
-                            <a 
+                            <a routerLink="/khoa-hoc"
                             class="text-lg uppercase hover:bg-gray-700 text-white lg:px-3 lg:py-2 rounded-md text-sm font-medium">chuyên ngành</a>
                           </button>
                           
@@ -193,9 +193,10 @@
                                     </g>
                                 </svg>
                               </div>
-                              <li><a class="dropdown-item " routerLink="/khoa-hoc/theme1">Theme 1</a></li>
-                              <li><a class="dropdown-item" routerLink="/khoa-hoc/theme2">Theme 2</a></li>
-                              <li><a class="dropdown-item" routerLink="/khoa-hoc/theme3">Theme 3</a></li>
+                              
+                              <li *ngFor="let item of items" (click)="onSelect(item.id)"><a class="dropdown-item " routerLink="/khoa-hoc/{{item.id}}">{{item.title}}</a></li>
+                              <!-- <li><a class="dropdown-item" routerLink="/khoa-hoc/theme2">Theme 2</a></li>
+                              <li><a class="dropdown-item" routerLink="/khoa-hoc/theme3">Theme 3</a></li> -->
                             </ul>
                             
                         

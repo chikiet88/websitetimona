@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KhoahocService } from 'src/app/sites/khoahoc/khoahoc.service';
 
 @Component({
   selector: 'app-mainlayout',
@@ -6,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mainlayout.component.css']
 })
 export class MainlayoutComponent implements OnInit {
-
-  constructor() { }
+  items:any;
+  constructor(private khoahocService :KhoahocService ) {}
   panelOpenState = false;
   showFiller = false;
-  ngOnInit(): void {
-      
+  theme:any;
+  onSelect(id:number){
+    this.khoahocService.getKhoahocChitiet(id)
+    .subscribe(theme => this.theme = theme);
   }
+  ngOnInit(): void {
+      this.items = this.khoahocService.getKhoahoc()
+  }
+  
 
 }
