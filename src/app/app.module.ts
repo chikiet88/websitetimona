@@ -24,7 +24,7 @@ import { StudentFeelPageComponent } from './sites/student-feel-page/student-feel
 import { HomepageComponent } from './sites/homepage/homepage.component';
 import { MainlayoutComponent } from './components/mainlayout/mainlayout.component';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -64,7 +64,7 @@ import { CommonModule } from '@angular/common';
                                                                                        
                                                                                        
                                                                                                                                                                                 
-                                                                                                                                                                              
+                                                                                        
                                                                                                                                                                                  KhoahocComponent,
                                                                                                                                                                                 //  AdminComponent,
                                                                                                                                                                                  KhoahocComponent,
@@ -75,6 +75,7 @@ import { CommonModule } from '@angular/common';
     BrowserModule,
     CommonModule,
     BrowserAnimationsModule,
+    CarouselModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

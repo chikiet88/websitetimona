@@ -26,8 +26,11 @@ const routes: Routes = [
 //  { path:'khoa-hoc/theme1',component:Theme1Component},
 
 
+// {path: 'academy', loadChildren: () => import('app/modules/admin/apps/academy/academy.module').then(m => m.AcademyModule)},
+{path:'', children:[
+  {path:'khoa-hoc', loadChildren: () => import('../app/sites/khoahoc/khoahoc.module').then(m => m.KhoahocModule)},
 
-{path:'khoa-hoc', loadChildren:() => import('../app/sites/khoahoc/khoahoc.module').then(m => m.KhoahocModule)},
+] },
 
 
 

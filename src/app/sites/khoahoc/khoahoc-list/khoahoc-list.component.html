@@ -1,0 +1,4 @@
+<nav *ngFor="let theme of themes" class="pt-5">
+    
+    <a class="p-4 bg-red-100"  [routerLink]="['./',theme.id]">{{theme.title}}</a>
+  </nav>

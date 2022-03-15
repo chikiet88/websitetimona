@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { KhoahocService } from './khoahoc.service';
 import { Khoahoc } from './khoahoc.types';
@@ -9,19 +10,15 @@ import { Khoahoc } from './khoahoc.types';
   styleUrls: ['./khoahoc.component.css']
 })
 export class KhoahocComponent implements OnInit {
-  themes: Khoahoc[] = [];
-  selectTheme:any;
-  constructor(private khoahocService: KhoahocService) { }
-  getKhoahoc(){
-    this.themes = this.khoahocService.getKhoahoc();
-  }
+  
+  constructor(private khoahocService: KhoahocService, private route: ActivatedRoute) { }
+  
 
- getKhoahocChitet(theme:any){
-  const id = theme.id
-  this.khoahocService.getKhoahocChitiet(id).subscribe(detail => this.selectTheme = detail )
- }
+ reloadCurrentRoute() {
+   
+    
+}
   ngOnInit(): void {
-    this.getKhoahoc();
     
   }
 

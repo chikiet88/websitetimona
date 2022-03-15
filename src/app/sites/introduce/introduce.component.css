@@ -68,8 +68,8 @@
     font-size: 120px;
 }
 .trademark-img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
 }
 
 .ten-commit{
@@ -185,7 +185,9 @@
     .chuyennganh-ttile{
         margin: inherit;
     }
-
+    .trademark-img{
+        margin: 0.75rem;
+    }
     
 }
 @media screen and (max-width: 960px){

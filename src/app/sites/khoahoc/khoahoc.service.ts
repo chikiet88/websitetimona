@@ -7,13 +7,13 @@ import { KHOAHOC } from './mock-khoahoc';
 })
 export class KhoahocService {
 
-  // private _courses: BehaviorSubject<Khoahoc[] | null> = new BehaviorSubject(null);
-  _course$: BehaviorSubject<Khoahoc[]> = new BehaviorSubject<Khoahoc[]>([]);
+  private _course: BehaviorSubject<any | null> = new BehaviorSubject(null);
+  // _course$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor() { }
   
-  get course$(): Observable<Khoahoc[]>{
-    return this._course$.asObservable();
+  get course$(): Observable<any>{
+    return this._course.asObservable();
   }
 
   
@@ -22,7 +22,10 @@ export class KhoahocService {
     return KHOAHOC;
   }
   getKhoahocChitiet(id:number):Observable<Khoahoc | undefined>{
-    return of(KHOAHOC.find(h=> h.id === id));
+   
+     const detail = KHOAHOC.find(h=> h.id === id);
+     this._course.next(detail);
+     return of(detail);
   }
   
 }

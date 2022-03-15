@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 @import "~bootstrap/dist/css/bootstrap.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,4 +55,20 @@ html, body { height: 100%; }
 body { margin: 0; font-family: gilroy; }
 *{
 	font-family: gilroy;
+}
+
+.owl-theme .owl-dots .owl-dot span{
+	background: #ddd;
+	width: 8px;
+	height: 8px;
+}
+
+
+.owl-theme .owl-dots .owl-dot.active span{
+	background: #1a63f5;
+}
+@media screen and (max-width: 768px){
+	.owl-theme .owl-nav.disabled+.owl-dots{
+		display: none;
+	}
 }
