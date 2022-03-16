@@ -27,20 +27,25 @@ export class Theme1Component implements OnInit {
 
   ngOnInit(): void {
     
-    const id = Number(this.route.snapshot.paramMap.get('id')); //1
-    if(id){
-      this.khoahocService.getKhoahocChitiet(id)
-      .subscribe(theme => {
+    this.khoahocService.course$.subscribe((course:any)=>{
+      this.theme = course
+    })
+    // const id = Number(this.route.snapshot.paramMap.get('id')); //1
+    // console.log(id);
+    
+    // if(id){
+    //   this.khoahocService.getKhoahocChitiet(id)
+    //   .subscribe(theme => {
         
-        // const parentUrl = this.state.url.split('/').slice(0, -1).join('/');
+    //     // const parentUrl = this.state.url.split('/').slice(0, -1).join('/');
 
-        //                    // Navigate to there
-        //                    this.router.navigateByUrl(parentUrl);
+    //     //                    // Navigate to there
+    //     //                    this.router.navigateByUrl(parentUrl);
         
-        this.theme = theme});
-      // Get the parent url
+    //     this.theme = theme});
+    //   // Get the parent url
                            
-    }
+    // }
     
     
   }

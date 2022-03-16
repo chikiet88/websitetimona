@@ -10,7 +10,9 @@ export const khoahocRoutes: Route[]=[
     {path:'',component:KhoahocComponent, 
     children:[
         {path:'', component:KhoahocListComponent,
-        
+        resolve:{
+            detail  : KhoahocDetailResolver,
+        },
          children:[
             { path:':id',component:Theme1Component ,resolve:{
                 detail  : KhoahocDetailResolver,

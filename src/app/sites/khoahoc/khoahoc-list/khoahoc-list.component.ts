@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, takeUntil } from 'rxjs';
 import { KhoahocService } from '../khoahoc.service';
 import { Khoahoc } from '../khoahoc.types';
 
@@ -8,14 +9,33 @@ import { Khoahoc } from '../khoahoc.types';
   styleUrls: ['./khoahoc-list.component.css']
 })
 export class KhoahocListComponent implements OnInit {
-  themes: Khoahoc[] = [];
-  selectTheme:any;
+  courses$: Observable<Khoahoc[]>;
+
+  themes: any;
+  selectedCourse:any;
   constructor(private khoahocService: KhoahocService) { }
   getKhoahoc(){
-    this.themes = this.khoahocService.getKhoahoc();
+    this.courses$ = this.khoahocService.courses$;
+    this.khoahocService.courses$
+            
+            .subscribe((courses: Khoahoc[]) => {
+
+                // Update the counts
+                this.themes = courses;
+
+                // Mark for check
+                // this._changeDetectorRef.markForCheck();
+            });
+            
   }
   ngOnInit(): void {
     this.getKhoahoc()
+
+    this.khoahocService.course$     
+            .subscribe((course: any) => {
+                // Update the selected contact
+                this.selectedCourse = course;   
+            });
   }
 
 }

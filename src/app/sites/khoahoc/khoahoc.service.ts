@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable, of, take, tap } from 'rxjs';
 import { Khoahoc } from './khoahoc.types';
 import { KHOAHOC } from './mock-khoahoc';
 @Injectable({
@@ -9,9 +9,13 @@ export class KhoahocService {
 
   private _course: BehaviorSubject<any | null> = new BehaviorSubject(null);
   // _course$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  private _courses: BehaviorSubject<any | null> = new BehaviorSubject(null);
 
   constructor() { }
   
+  get courses$(): Observable<any>{
+    return this._courses.asObservable();
+  }
   get course$(): Observable<any>{
     return this._course.asObservable();
   }
@@ -19,13 +23,33 @@ export class KhoahocService {
   
 
   getKhoahoc(){
-    return KHOAHOC;
+    return this._courses.next(KHOAHOC);
   }
-  getKhoahocChitiet(id:number):Observable<Khoahoc | undefined>{
-   
-     const detail = KHOAHOC.find(h=> h.id === id);
-     this._course.next(detail);
-     return of(detail);
-  }
+  getKhoahocChitiet(id: number): Observable<Khoahoc>
+    {
+        return this._courses.pipe(
+            take(1),
+            map((courses) => {
+
+                // Find the contact
+                const course = courses.find(item => item.id === id) || null;
+
+                // Update the contact
+                this._course.next(course);
+
+                // Return the contact
+                return course;
+            }),
+            // switchMap((contact) => {
+
+            //     if ( !contact )
+            //     {
+            //         return throwError('Could not found contact with id of ' + id + '!');
+            //     }
+
+            //     return of(contact);
+            // })
+        );
+    }
   
 }
