@@ -19,23 +19,28 @@ export class KhoahocListComponent implements OnInit {
     this.khoahocService.courses$
             
             .subscribe((courses: Khoahoc[]) => {
-
-                // Update the counts
                 this.themes = courses;
-
-                // Mark for check
-                // this._changeDetectorRef.markForCheck();
+                
             });
             
   }
   ngOnInit(): void {
-    this.getKhoahoc()
+    this.courses$ = this.khoahocService.courses$;
+        this.khoahocService.courses$
+            
+            .subscribe((courses: Khoahoc[]) => {
 
-    this.khoahocService.course$     
-            .subscribe((course: any) => {
-                // Update the selected contact
-                this.selectedCourse = course;   
+                // Update the counts
+                this.themes = courses;
+                console.log(this.themes);
+                
             });
+
+    // this.khoahocService.course$     
+    //         .subscribe((course: any) => {
+    //             // Update the selected contact
+    //             this.selectedCourse = course;   
+    //         });
   }
 
 }

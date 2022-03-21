@@ -22,7 +22,7 @@
     box-shadow: inherit
 }
 .dropdown-toggle::after{
-  color: #fff;
+  display: none;
 }
 
 .dropdown:hover .dropdown-menu{

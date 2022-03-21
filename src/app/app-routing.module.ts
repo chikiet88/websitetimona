@@ -10,8 +10,12 @@ import { IntroduceComponent } from './sites/introduce/introduce.component';
 import { LecturerPageComponent } from './sites/lecturer-page/lecturer-page.component';
 import { NewPageComponent } from './sites/new-page/new-page.component';
 import { StudentFeelPageComponent } from './sites/student-feel-page/student-feel-page.component';
-
-import { KhoahocComponent } from './sites/khoahoc/khoahoc.component';
+import { ThemeComponent } from './admin/components/theme/theme.component';
+import { AddHeaderComponent } from './admin/components/add-header/add-header.component';
+import { MenuComponent } from './admin/components/menu/menu.component';
+import { AddContactComponent } from './admin/components/add-contact/add-contact.component';
+import { AddFooterComponent } from './admin/components/add-footer/add-footer.component';
+// import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path:'', component:HomepageComponent },
@@ -23,10 +27,16 @@ const routes: Routes = [
  { path:'goc-hoc-vien/giai-dap',component:AnswerPageComponent},
  { path:'goc-hoc-vien/hoat-dong',component:ActivatePageComponent},
  { path:'goc-hoc-vien/cam-nghi-hoc-vien',component:StudentFeelPageComponent},
-//  { path:'khoa-hoc/theme1',component:Theme1Component},
+  {path:'theme', component:ThemeComponent},
+  {path:'header', component:AddHeaderComponent},
+  {path:'menu', component:MenuComponent},
+  {path:'contact', component:AddContactComponent},
+  {path:'footer', component: AddFooterComponent},
 
 
-// {path: 'academy', loadChildren: () => import('app/modules/admin/apps/academy/academy.module').then(m => m.AcademyModule)},
+
+
+
 {path:'', children:[
   {path:'khoa-hoc', loadChildren: () => import('../app/sites/khoahoc/khoahoc.module').then(m => m.KhoahocModule)},
 

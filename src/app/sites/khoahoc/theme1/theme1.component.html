@@ -46,7 +46,7 @@
             <div class="flex items-center text-indigo-900">
               >>
               <a
-                routerLink=""
+                routerLink="/khoa-hoc"
                 class="ml-1 text-sm font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
                 >Khóa Học</a
               >
@@ -57,31 +57,29 @@
               >>
               <span
                 class="ml-1 text-sm font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                >Phun xăm Thẩm Mỹ</span
+                >{{ theme.title }}</span
               >
             </div>
           </li>
         </ol>
       </nav>
-      <button type="button" (click)="goBack()">go back</button>
     </div>
   </div>
 
-  <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom" >
+  <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
     <p class="text-white uppercase text-center text-xl lg:text-4xl pt-3">
-    {{theme.title}}
+      {{ theme.title }}
     </p>
-    <p class="lg:text-base text-sm text-white intro-description lg:italic text-justify">
-     {{theme.des}}
-    </p>
+    <p
+      class="lg:text-base text-sm text-white intro-description lg:italic text-justify"
+    ></p>
+    <div [innerHTML]="theme.des" class="text-white"></div>
   </div>
 
-  
-
   <div class="wrapper">
-    <div class="pt-4">
+    <!-- <div class="pt-4">
       <h2 class="text-indigo-900 uppercase text-xl">
-        HIỂU VỀ KHÓA ĐÀO TẠO PHUN XĂM CHUYÊN NGHIỆP
+        GIỚI THIỆU CHUNG VỀ KHÓA ĐÀO TẠO KỸ THUẬT VIÊN SPA
       </h2>
       <div class="flex justify-center items-center">
         <div class="flex justify-center items-center w-full youtube-video">
@@ -97,179 +95,136 @@
         </div>
       </div>
       <div class="text-indigo-900 text-sm text-justify lg:pt-3 font-black">
-        Phun thêu thẩm mỹ hay còn gọi là dịch vụ trang điểm bán vĩnh viễn đang
-        rất thịnh hành trên thị trường làm đẹp hiện nay. Phương pháp giúp thay
-        đổi ngoại hình mày, môi, mí nhanh chóng mà không xâm lấn, an toàn và
-        hiệu quả với chi phí thấp, thời gian sử dụng lâu dài.
+        Xã hội phát triển, mức sống người dân ngày một nâng cao kéo theo nhu cầu
+        làm đẹp của chị em phụ nữ và thậm chí của nam giới ngày một tăng lên. Do
+        vậy, nhiều người tìm đến các Spa, Viện thẩm mỹ để trau chuốt vẻ bề
+        ngoài. Không thể phủ nhận một gương mặt đẹp với làn da tươi trẻ sẽ giúp
+        bạn trở nên quyến rũ hơn, tự tin giao tiếp. Từ đó, công việc hay tình
+        yêu, cuộc sống hôn nhân cũng trở nên thuận lợi và dễ dàng hơn.
         <br />
         Các kỹ thuật viên sẽ sử dụng máy với đầu kim siêu nhỏ để đưa mực vào
         dưới lớp thượng bì và “vẽ”. Nhờ đó cải thiện khuyết điểm như môi thâm,
         mí mắt không rõ nét, chân mày nhạt nhòa, thiếu đầu cụt đuôi… giúp khuôn
         mặt trông hài hòa và có điểm nhấn hơn.
         <br />
-        Nhằm đáp ứng đa dạng nhu cầu làm đẹp của khách hàng, phun xăm thẩm mỹ
-        phát triển với 3 dịch vụ chính:
+        Khóa đào tạo Spa chăm sóc điều trị da được hình thành dựa trên nhu cầu
+        làm đẹp của xã hội và những người có niềm đam mê với Spa chăm sóc da
+        muốn được đào tạo bài bản chuyên sâu. Tại Timona Academy, đây là một
+        trong những khóa học thu hút lượng lớn học viên tham gia học tập để trở
+        thành những kỹ thuật viên Spa chăm sóc điều trị da chuyên nghiệp.
         <br />
-        Phun xăm, điêu khắc lông mày xuất hiện sớm nhất và vẫn tiếp tục phát
-        triển cho đến ngày nay. Ứng dụng cơ chế phun phủ mực hoặc điêu khắc từng
-        sợi lên lông mày, chỉ sau khoảng 60 phút bạn đã sở hữu cặp chân mày sắc
-        nét, tự nhiên.
-        <br />
-        Phun xăm mí giúp tiết kiệm thời gian kẻ eyeliner rắc rối, tạo hiệu ứng
-        đôi mắt to tròn, có hồn và đuôi mắt sắc nét hơn.
-
-        <br />
-        Phun môi giúp loại bỏ tình trạng thâm tái hoặc nhợt nhạt, tạo cho chị em
-        đôi môi tươi tắn, hồng hào và căng bóng.
-        <br />
-        Khi tham gia các lớp dạy phun xăm, bạn cần trang bị đầy đủ dụng cụ, máy
-        móc hỗ trợ hiện đại nhất để đáp ứng được những yêu cầu khắt khe về kỹ
-        thuật. Trong đó máy móc và mực phun xăm là những phụ kiện không thể
-        thiếu trong quá trình đào tạo học viên phun xăm thẩm mỹ. Ngoài ra, còn
-        có các dụng cụ hỗ trợ khác cần phải có như: chì kẻ mày, thước tỉ lệ
-        vàng, dao cạo lông mày, bông tẩy trang, nước tẩy trang, tăm bông, kem ủ
-        tê, nhẫn lấy mực, kem che khuyết điểm, khay inox,…
-        <br />
-        Hiện nay, các lớp dạy phun xăm tại Timona Academy đều trang bị hết dụng
-        cụ cơ bản cho học viên khi nhập học. Do đó, học viên chỉ cần chuẩn bị
-        tâm lý và tới lớp học mà thôi. Dụng cụ, máy móc, phụ kiện phun xăm dẫu
-        có quan trọng nhưng không phải là tất cả, nó cũng chỉ chiếm một phần
-        trong một ca phun xăm thật trên cơ thể người. Bởi thực hiện phun xăm là
-        cả một nghệ thuật và các Artist là những người nghệ sĩ, nhất thiết bạn
-        cần phải đặt cái tâm và trách nhiệm lên mỗi việc bạn làm. Phải luôn trau
-        dồi kỹ năng, chuyên môn và kiến thức để giúp bản thân nâng cao được
-        trình độ và khả năng sáng tạo tuyệt vời của bản thân.
+        Kỹ thuật viên Spa là người trực tiếp thực hiện các dịch vụ chăm sóc da,
+        làm đẹp hoặc trị liệu cho khách hàng tại Spa theo đúng tiêu chuẩn do Spa
+        quy định, giúp cải thiện sắc đẹp và đem lại hiệu quả thư giãn cho khách
+        hàng.
       </div>
     </div>
 
     <div class="pt-4">
-      <h2 class="text-indigo-900 uppercase text-xl mb-0">Cơ Hội nghề nghiệp</h2>
-      <div class="text-indigo-900 text-sm text-justify lg:pt-3 font-black">
-        Đây là một trong những điều cần quan tâm khi bạn muốn tham gia khóa đào tạo học viên phun xăm thẩm mỹ cũng như có ý định theo đuổi nghề nghiệp này. Hiện nay và trong tương lai, phun xăm thẩm mỹ vẫn là ngành cực kỳ ‘hot” và luôn đứng top đầu danh sách những nghề lương cao, ổn định mà bạn nên lựa chọn. Bởi nhu cầu làm đẹp ngày càng cao của con người kéo theo lượng khách hàng đông đảo sử dụng dịch vụ này liên tục tăng mạnh và nhu cầu về nhân lực cực kỳ lớn. Điều này đồng nghĩa, khi là một kỹ thuật viên phun xăm chuyên nghiệp, bạn sẽ không lo thất nghiệp sau khi ra trường.
+      <h2 class="text-indigo-900 uppercase text-xl mb-0">CƠ HỘI NGHỀ NGHIỆP</h2>
 
+      
 
-      </div>
-
-      <div class="w-full pt-3 lg:hidden" style="height: 200px">
-        <img
-          src="../../../assets/images/course-phunxammb.png"
-          class=""
-          alt=""
-        />
-      </div>
-
-      <div class="lg:hidden">
-        <div class="pt-4">
-          <h2 class="text-indigo-900 uppercase text-xl mb-0">
-            CƠ HỘI VIỆC LÀM
-          </h2>
-          <div class="text-indigo-900 text-sm text-justify lg:pt-3 font-black">
-            Đây là một trong những điều cần quan tâm khi bạn muốn tham gia khóa đào tạo học viên phun xăm thẩm mỹ cũng như có ý định theo đuổi nghề nghiệp này. Hiện nay và trong tương lai, phun xăm thẩm mỹ vẫn là ngành cực kỳ ‘hot” và luôn đứng top đầu danh sách những nghề lương cao, ổn định mà bạn nên lựa chọn. Bởi nhu cầu làm đẹp ngày càng cao của con người kéo theo lượng khách hàng đông đảo sử dụng dịch vụ này liên tục tăng mạnh và nhu cầu về nhân lực cực kỳ lớn. Điều này đồng nghĩa, khi là một kỹ thuật viên phun xăm chuyên nghiệp, bạn sẽ không lo thất nghiệp sau khi ra trường.
-
-          </div>
-        </div>
-
-        <div class="pt-4">
-          <h2 class="text-indigo-900 uppercase text-xl mb-0">
-            LỘ TRÌNH THĂNG TIẾN
-          </h2>
-          <div class="text-indigo-900 text-sm text-justify lg:pt-3 font-black">
-            Sau khi hoàn tất các lớp học phun xăm thẩm mỹ, bạn sẽ không dừng lại ở vị trí kỹ thuật viên mà có thể thăng tiến lên nhiều vị trí khác như: trưởng kỹ thuật viên, quản lý kỹ thuật viên. Thậm chí nếu có tiềm lực kinh tế, bạn hoàn toàn có thể mở tiệm kinh doanh riêng.
-            Do đó, nghề phun xăm cũng giống như các ngành nghề làm đẹp khác, có rất nhiều vị trí để bạn tiến tới. Quan trọng là ở bạn có chịu nỗ lực, ý chí cầu toàn trong công việc và cố gắng vượt qua khó khăn để đạt tới vị trí mà bản thân mong muốn hay không?
-            
-          </div>
-        </div>
-
-        <div class="pt-4">
-          <h2 class="text-indigo-900 uppercase text-xl mb-0">
-            MỨC LƯƠNG KỸ THUẬT VIÊN
-          </h2>
-          <div class="text-indigo-900 text-sm text-justify lg:pt-3 font-black">
-            Với nhu cầu làm đẹp tăng cao như hiện nay thì nghề phun xăm thẩm mỹ “hái ra tiền” không có gì là lạ. Mức thu nhập có thể lên tới 20tr/tháng tùy vào năng lực, sự tăng tiến theo kinh nghiệm và thời gian làm nghề. Đối với những bạn lựa chọn đầu tư mở tiệm, thu nhập ổn định ở mức 8 con số mỗi tháng là chuyện bình thường.
-          </div>
-        </div>
-      </div>
-
-      <div class="hidden lg:block">
-        <div class="grid grid-cols-3 gap-4 pt-3">
-          <div class="relative bg-gray-100 boder-bottom" style="height: 500px">
-            <div class="bg-red-100 w-full absolute top-0" style="height: 300px">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-4 pt-3">
+          <div class="lg:relative bg-gray-100 boder-bottom lg:h-[500px]">
+            <div class="bg-red-100 w-full lg:absolute top-0 h-[300px] ">
               <img
                 src="../../../assets/images/theme1-cohoi.png"
-                class="w-full h-full"
+                class="w-full h-full "
                 alt=""
               />
             </div>
-            <div class="w-full absolute bottom-0 bg boder-bottom">
-              <div class="px-5 flex justify-center flex-col items-center pt-32">
-                <h2 class="uppercase text-xl text-yellow-500 mb-0">
-                  Cơ hội việc làm
+            <div class="w-full lg:absolute bottom-0 bg boder-bottom lg:h-[500px]">
+              <div class="lg:px-5 flex flex-col lg:items-center lg:pt-32">
+                <h2 class="uppercase lg:text-xl text-lg text-indigo-900 font-black lg:text-yellow-500 mb-0 lg:text-center">
+                  Nhu cầu nhân lực
                 </h2>
-                <p class="text-white text-sm text-justify">
-                    Đây là một trong những điều cần quan tâm khi bạn muốn tham gia khóa đào tạo học viên phun xăm thẩm mỹ cũng như có ý định theo đuổi nghề nghiệp này. Hiện nay và trong tương lai, phun xăm thẩm mỹ vẫn là ngành cực kỳ ‘hot” và luôn đứng top đầu danh sách những nghề lương cao, ổn định mà bạn nên lựa chọn. Bởi nhu cầu làm đẹp ngày càng cao của con người kéo theo lượng khách hàng đông đảo sử dụng dịch vụ này liên tục tăng mạnh và nhu cầu về nhân lực cực kỳ lớn. Điều này đồng nghĩa, khi là một kỹ thuật viên phun xăm chuyên nghiệp, bạn sẽ không lo thất nghiệp sau khi ra trường.
-
+                <p class="lg:text-white text-indigo-900 text-sm text-justify">
+                  Theo Trung tâm dự báo nhu cầu nhân lực TP.HCM, ước tính mỗi
+                  năm có hơn 2.000 Spa được mở ra, cần đến 20.000 nhân lực giỏi
+                  để lấp đầy vị trí thiếu hụt.
+                  <br />
+                  Spa hiện đang là ngành hốt bạc và có nhiều triển vọng trong
+                  tương lai. Điều này cũng đặt ra thách thức lớn cho các cơ sở
+                  đào tạo ngành thẩm mỹ và cả người học. Do đó, sự phát triển và
+                  cơ hội kỹ thuật viên spa luôn luôn được mở rộng theo nhu cầu
+                  làm đẹp của con người.
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="relative bg-gray-100 boder-bottom" style="height: 500px">
-            <div class="bg-red-100 w-full absolute top-0" style="height: 300px">
+          <div class="lg:relative bg-gray-100 boder-bottom lg:h-[500px]">
+            <div class="bg-red-100 w-full absolute top-0 h-[300px] hidden lg:block">
               <img
                 src="../../../assets/images/theme1-cohoi.png"
-                class="w-full h-full"
+                class="w-full h-full hidden lg:block"
                 alt=""
               />
             </div>
-            <div class="w-full absolute bottom-0 boder-bottom bg">
-              <div class="px-5 flex justify-center flex-col items-center pt-32">
-                <h2 class="uppercase text-xl text-yellow-500 mb-0">
-                    LỘ TRÌNH THĂNG TIẾN
-
+            <div class="w-full lg:absolute bottom-0 boder-bottom bg lg:h-[500px]">
+              <div class="lg:px-5 flex flex-col lg:items-center lg:pt-32">
+                <h2 class="uppercase lg:text-xl text-lg text-indigo-900 font-black lg:text-yellow-500 mb-0 lg:text-center">
+                  Mức lương kỹ thuật viên Spa
                 </h2>
-                <p class="text-white text-sm text-justify">
-                    Sau khi hoàn tất các lớp học phun xăm thẩm mỹ, bạn sẽ không dừng lại ở vị trí kỹ thuật viên mà có thể thăng tiến lên nhiều vị trí khác như: trưởng kỹ thuật viên, quản lý kỹ thuật viên. Thậm chí nếu có tiềm lực kinh tế, bạn hoàn toàn có thể mở tiệm kinh doanh riêng.
-                    Do đó, nghề phun xăm cũng giống như các ngành nghề làm đẹp khác, có rất nhiều vị trí để bạn tiến tới. Quan trọng là ở bạn có chịu nỗ lực, ý chí cầu toàn trong công việc và cố gắng vượt qua khó khăn để đạt tới vị trí mà bản thân mong muốn hay không?
-                    
+                <p class="lg:text-white text-indigo-900 text-sm text-justify">
+                  Sau khi tốt nghiệp khóa học nghề spa, học viên sẽ được làm
+                  việc trong môi trường lý tưởng: nhẹ nhàng, mát mẻ, sang trọng
+                  với mức thu nhập hấp dẫn từ 10 - 20 triệu. Mức lương sẽ tùy
+                  thuộc vào tay nghề, đánh giá của khách hàng và tăng dần theo
+                  thời gian.
+                  <br />
+                  Kỹ thuật chăm sóc da của bạn càng giỏi, khách hàng đánh giá
+                  tốt, mức thu nhập của bạn sẽ càng cao, đặc biệt “khủng” hơn
+                  với vị trí trưởng nhóm, quản lý Spa.
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="relative bg-gray-100 boder-bottom" style="height: 500px">
-            <div class="bg-red-100 w-full absolute top-0" style="height: 300px">
+          <div class="lg:relative bg-gray-100 boder-bottom lg:h-[500px]">
+            <div class="bg-red-100 w-full absolute top-0 h-[300px] hidden lg:block">
               <img
                 src="../../../assets/images/theme1-cohoi.png"
-                class="w-full h-full"
+                class="w-full h-full hidden lg:block"
                 alt=""
               />
             </div>
-            <div class="w-full absolute bottom-0 bg boder-bottom">
-              <div class="px-5 flex justify-center flex-col items-center pt-32">
-                <h2 class="uppercase text-xl text-yellow-500 text-center mb-0">
-                    MỨC LƯƠNG KỸ THUẬT VIÊN
-
+            <div class="w-full lg:absolute bottom-0 bg boder-bottom lg:h-[500px]">
+              <div class="lg:px-5 flex flex-col lg:items-center lg:pt-32">
+                <h2 class="uppercase lg:text-xl text-lg text-indigo-900 font-black lg:text-yellow-500 lg:text-center mb-0">
+                  Các bước thăng tiến trong công việc
                 </h2>
-                <p class="text-white text-sm text-justify">
-                    Với nhu cầu làm đẹp tăng cao như hiện nay thì nghề phun xăm thẩm mỹ “hái ra tiền” không có gì là lạ. Mức thu nhập có thể lên tới 20tr/tháng tùy vào năng lực, sự tăng tiến theo kinh nghiệm và thời gian làm nghề. Đối với những bạn lựa chọn đầu tư mở tiệm, thu nhập ổn định ở mức 8 con số mỗi tháng là chuyện bình thường.
+                <p class="lg:text-white text-indigo-900 text-sm text-justify">
+                  Khởi điểm là một kỹ thuật viên Spa chăm sóc điều trị da, sau
+                  một thời gian tích lũy kinh nghiệm và kiến thức, bạn sẽ được
+                  cất nhắc lên những vị trí cao hơn: Trưởng kỹ thuật viên, Quản
+                  lý kỹ thuật viên, Quản lý spa, Đổi hướng kinh doanh ngành spa,
+                  chăm sóc da riêng.
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
 
     <div class="pt-4">
       <h2 class="text-indigo-900 uppercase text-xl mb-0">
-        chi tiết khóa học phun xăm chuyên nghiệp
+        CHI TIẾT KHÓA HỌC KỸ THUẬT VIÊN SPA
       </h2>
 
       <div class="text-indigo-900 text-sm text-justify pt-3 font-black">
-        Khi đăng ký khóa học điêu khắc chân mày nói riêng và khóa phun xăm chuyên nghiệp nói chung tại Timona Academy, bạn sẽ được học theo một khung chương trình đào tạo bài bản theo tiêu chuẩn quốc tế với những xu hướng thời thượng cùng đội ngũ giảng viên thuộc hàng “nghệ nhân phun xăm”.
-            <br>
-        Lộ trình logic theo các cấp độ học viên sẽ tiến bộ từ từ, trực tiếp giảng viên kèm cặp 1:1, thực hành lên mẫu thật liên tục, học đến đâu chắc đến đó. Việc này sẽ giúp học viên dễ dàng và nhanh chóng tiếp thu các kỹ thuật mới và lên nhanh tay nghề.
-        
+        Kỹ thuật viên Spa nhiều bạn lầm tưởng chỉ là nhiệm vụ chăm sóc da. Thực
+        chất công việc của một Kỹ thuật viên Spa rất đa dạng, bao gồm massage
+        mặt, massage body, nặn mụn, gội đầu dưỡng sinh, sử dụng thiết bị thẩm mỹ
+        công nghệ cao trong điều trị các vấn đề về da, giải đáp thắc mắc và tư
+        vấn dịch vụ cho khách hàng…
+        <br />
+        Khóa học Kỹ thuật viên Spa của Timona Academy được thiết kế nhằm trang
+        bị cho người học tổng quan kiến thức từ cơ bản đến nâng cao về chuyên
+        môn ngành chăm sóc da. Người học có thể đáp ứng tốt những yêu cầu hiện
+        nay ở các doanh nghiệp, cơ sở thẩm mỹ tuyển dụng. Nội dung các khóa đào
+        tạo kỹ thuật viên Spa tại Timona được thiết kế cụ thể như sau:
       </div>
       <div class="pt-4 w-full">
         <div class="flex justify-between lg:flex-row flex-col">
@@ -281,74 +236,74 @@
               </h2>
               <div>
                 <div class="relative">
-                  <p class="text-base text-white mb-0 uppercase">
-                    Giới thiệu dụng cụ và kiến thức an toàn phun xăm:
+                  <p class="text-base text-white mb-0">
+                    Kiến thức chuyên sâu về làn da, lý thuyết dịch vụ body bao
+                    gồm giảm béo – tắm trắng – triệt lông, lăn kim điều trị da
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-                <ul class="text-white">
-                  <li>Cấu trúc da chuyên sâu trong phun xăm</li>
-                  <li>Ủ tê đúng cách, xử lý tình huống phát sinh</li>
-                  <li>Hướng dẫn sử dụng thiết bị và pha màu hiện đại</li>
-                  <li>Xác định cấu trúc mặt định hình mày, môi phù hợp</li>
-                  <li>Cập nhật trọn bộ kỹ thuật phun xăm hiện đại</li>
-                  <li>Kỹ thuật khắc phục phun xăm hư, lỗi</li>
-                </ul>
-              </div>
-
-              <div class="pt-3">
                 <div class="relative">
                   <p class="text-base text-white mb-0">
-                    KỸ THUẬT PHUN CHâN MÀY
+                    Nhận diện chính xác từng cấp độ bệnh lý về da: nám, tàn
+                    nhang, lão hóa…
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-                <ul class="text-white">
-                  <li>Hướng dẫn vẽ chân mày phong thủy, vẽ chì nét</li>
-                  <li>Kỹ thuật phun Shading hiệu ứng bút chỉ 3D</li>
-                  <li>Xử lý chân mày hỏng, trổ xanh, trổ đỏ</li>
-                  
-                </ul>
-              </div>
-
-              <div class="pt-3">
                 <div class="relative">
                   <p class="text-base text-white mb-0">
-                    KỸ THUẬT PHUN MÍ
+                    Kỹ thuật soi da & phân tích thông số với máy công nghệ cao
+                    nhập khẩu Hoa Kỳ
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-
-                <ul class="text-white">
-                  <li>Phun mí nước (phun mí tự nhiên nhất)</li>
-                  <li>Phun mí đuôi cá siêu nét</li>
-                </ul>
-              </div>
-
-              <div class="pt-3">
                 <div class="relative">
                   <p class="text-base text-white mb-0">
-                    KỸ THUẬT PHUN MÔI
+                    Chăm sóc da từ cơ bản đến nâng cao
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-
-                <ul class="text-white">
-                  <li>Phun môi không sưng, không đau</li>
-                  <li>Phun môi pha lê, Collagen, tế bào gốc</li>
-                  <li>Phun môi xí muội</li>
-                  <li>Kỹ thuật xử lý môi thâm</li>
-                </ul>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Kỹ thuật massage Facial, đầu – cổ - vai – gáy, săn cơ và trẻ
+                    hóa da tự nhiên
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Cải thiện da bằng phương pháp phi kim nano, tảo xoắn
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Kỹ thuật lấy nhân mụn không đau, không thâm sẹo
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Hướng dẫn lựa chọn và sử dụng mỹ phẩm theo độ tuổi, loại da
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
+                  ></div>
+                </div>
               </div>
-
             </div>
           </div>
           <div
@@ -356,150 +311,154 @@
           >
             <div class="p-6">
               <h2 class="text-2xl uppercase text-yellow-500 text-center mb-0">
-                khóa phun xăm thẩm mỹ <br />
-                Chuyên sâu
+                KHÓA CHĂM SÓC <br />
+                ĐIỀU TRỊ DA CHUYÊN SÂU
               </h2>
-              <p class="text-white">
-                Được học toàn bộ kiến thức khóa nâng cao kết hợp kiến thức chuyên sâu như:
-              </p>
+
               <div>
                 <div class="relative">
                   <p class="text-base text-white mb-0">
-                    PHUN MÀY
+                    Toàn bộ kiến thức của khóa học chăm sóc, điều trị da nâng ca
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-                <ul class="text-white">
-                  <li>Kỹ thuật Microblading 3D, Hairstroke nam, nữ</li>
-                  <li>cấu trúc da chuyên sâu trong phun xăm</li>
-                </ul>
-              </div>
-
-              <div class="pt-3">
                 <div class="relative">
                   <p class="text-base text-white mb-0">
-                    PHUN MÔI
+                    Kiến thức làm kim điều trị da chuyên sâu
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-                <ul class="text-white">
-                  <li>Xử lý thâm loang, lẹm viền, hạ màu, nâng tông
-                </li>
-                  <li>Phun xử lý môi thâm cho nam giới</li>
-                </ul>
-              </div>
-
-              <div class="pt-3">
                 <div class="relative">
                   <p class="text-base text-white mb-0">
-                    PHUN MÍ
+                    Thành thạo phương pháp lăn kim điều trị da chuyên sâu
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-                <ul class="text-white">
-                  <li>Phun mí bướm Châu Âu</li>
-                  <li>Phun mí mở tròng</li>
-                </ul>
-              </div>
-
-              <div class="pt-3">
                 <div class="relative">
                   <p class="text-base text-white mb-0">
-                    PHUN HỒNG NHŨ HOA
+                    Lên phác đồ điều trị mụn, rỗ, nám, tàn nhang, lão hóa…
                   </p>
                   <div
-                    class="absolute w-1 h-1 rounded-full top-1/2 left-0 bg-white circle"
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
                   ></div>
                 </div>
-                <ul class="text-white">
-                  <li>Xử lý thâm nhũ hoa, khắc phục lỗi khi phun</li>
-                  <li>Cách pha màu chuẩn tỉ lệ, đi lên tông nhũ</li>
-                </ul>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Quy trình chuẩn tắm trắng chuyên
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-[12px] left-0 bg-white circle"
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <p class="text-indigo-900 py-3">
-            Ngoài ra, bạn còn được học kỹ thuật phun nốt ruồi phong thủy, kỹ thuật removal xóa sửa không dùng laser mini tattoo.
 
-        </p>
-
-        <div class="flex justify-center items-center relative pb-3">
+        <div class="flex justify-center items-center relative py-3">
           <div class="bg-indigo-900 rounded-3xl p-2">
             <a class="text-xl text-yellow-500 p-3">Đăng ký tư vấn ngay</a>
           </div>
-          <div
-            class="absolute w-full bottom-0 bg-indigo-900"
-            style="height: 1px"
-          ></div>
+          <div class="absolute w-full bottom-0 bg-indigo-900 h-[1px]"></div>
         </div>
 
         <div class="pt-4">
           <h2 class="text-indigo-900 uppercase tex mb-2 lg:block hidden">
             học ngành này cần những gì?
           </h2>
-          <div class="w-full" style="height: 300px">
+          <div class="w-full h-[300px] flex items-center justify-center">
             <img
-              src="../../../assets/images/lienhe.png "
+              src="../../../assets/images/banner-theme.png"
               alt=""
-              class="w-full h-full lg:block hidden"
+              class=" h-full object-cover"
             />
-            <img
-              src="../../../assets/images/banner-phunxam.png "
-              class="w-full h-full lg:hidden"
-              alt=""
-            />
+            
           </div>
           <h2 class="text-indigo-900 uppercase tex mb-2 lg:hidden">
             học ngành này cần những gì?
           </h2>
           <p class="text-indigo-900 text-justify font-black">
-            Với mức cạnh tranh của nghề phun xăm thẩm mỹ rất lớn, vì vậy, đòi hỏi người học phải thật sự có tay nghề vững chắc, luôn cập nhật những thông tin, xu hướng và công nghệ máy móc mới nhất. Chỉ có vậy, bạn mới có thể cạnh tranh và kiếm được thu nhập khủng cho bản thân.
+            Theo thống kê mỗi năm có hơn 60% cử nhân thất nghiệp sau khi tốt
+            nghiệp Đại học – Cao đẳng dẫn đến tình trạng “thừa thầy thiếu thợ”
+            ngày càng gia tăng. Do vậy việc học nghề kỹ thuật viên Spa trong xã
+            hội ngày nay lại mang đến nhiều triển vọng dành cho các bạn trẻ.
+            <br />Nghề spa không có quy định giới hạn đối tượng, chỉ cần bạn có
+            niềm yêu thích cái đẹp và khả năng giao tiếp tốt là một lợi thế. Đặc
+            biệt, nếu muốn trở thành một kỹ thuật viên spa chăm sóc điều trị da
+            chuyên nghiệp, bạn cần: khéo léo trong giao tiếp, hiểu ý khách hàng,
+            biết cách nói chuyện với khách cũng như khiến khách cảm thấy hài
+            lòng sau khi thực hiện dịch vụ. Tuy nhiên, đó chỉ là những kỹ năng
+            mềm. <br />Trong công việc, bạn nhất định phải đảm bảo được: vệ
+            sinh, tay nghề, tỉ mỉ, cẩn thận và đặc biệt kiên nhẫn, luôn có chí
+            cầu tiến trong công việc. Tính chất của nghề đòi hỏi bạn phải linh
+            hoạt và đổi mới tùy theo nhu cầu của khách hàng, nhu cầu của thị
+            trường. Vì là ngành dịch vụ nên chuyên viên spa phải chấp nhận làm
+            việc ngoài giờ hành chính, cũng như không có nhiều ngày nghỉ vào dịp
+            lễ tết. Luôn cân bằng cảm xúc để có được tâm trạng tốt nhất nhằm
+            mang lại cho khách hàng những giây phút thư giãn tuyệt vời… Chỉ có
+            như vậy, bạn mới có thể trụ vững trong nghề và muốn mở rộng cơ hội
+            việc làm của mình.
           </p>
         </div>
 
         <div class="pt-4">
           <h2 class="text-indigo-900 uppercase tex mb-2">
             Học ngành này bao lâu?
-
           </h2>
-          <div class="w-full hidden lg:block" style="height: 300px">
-            <img src="../../../assets/images/lienhe.png " alt="" />
+          <div class="hidden lg:block">
+            <div class="w-full  h-[300px] flex items-center justify-center ">
+              <img src="../../../assets/images/banner-theme.png" alt="" />
+            </div>
           </div>
+          
           <p class="text-indigo-900 text-justify font-black">
-            Hiện nay, thời gian của một khóa học phun xăm thẩm mỹ tùy thuộc vào mức độ chuyên sâu của từng khóa. Thông thường, để hoàn thành một khóa học phun xăm đầy đủ trung bình bạn sẽ mất một khoảng 2,5 – 3 tháng. Học viện Timona Academy cũng là một số ít đơn vị đào tạo thẩm mỹ cho phép học viên học cho tới khi đáp ứng đủ điều kiện hành nghề. Do đó, thời gian học xăm mất khoảng bao lâu có thể dài hoặc ngắn hơn tùy thuộc vào sự tiến bộ của từng học viên.
-
+            Học nhanh đi làm ngay chính là một trong những ưu điểm tốt của ngành
+            này. Chúng ta có thể tham gia khóa học nghề Spa ngắn hạn tại trung
+            tâm đào tạo, cơ sở chăm sóc sắc đẹp. Thông thường, thời gian đào tạo
+            1 khóa học nghề spa sẽ giao động từ 2-3 tháng. Tùy thuộc vào kiến
+            thức từng khóa cũng như trình độ kỹ năng, thời gian học cũng sẽ thay
+            đổi.
           </p>
         </div>
 
         <div class="pt-4">
           <h2 class="text-indigo-900 uppercase tex mb-2">
-            Học phun xăm ra làm gì?
+            Học ngành này ra làm gì?
           </h2>
-          <div class="w-full hidden lg:block" style="height: 300px">
-            <img src="../../../assets/images/lienhe.png " alt="" />
+          <div class="hidden lg:block">
+            <div class="w-full  h-[300px] flex items-center justify-center">
+              <img src="../../../assets/images/banner-theme.png" alt="" />
+            </div>
           </div>
+          
           <p class="text-indigo-900 text-justify font-black">
-            Học phun xăm ở Timona Academy, bạn hoàn toàn tự tin để trở thành: Thợ phun xăm chuyên nghiệp, Nhân viên tư vấn tại các Spa - thẩm mỹ viện lớn. Cao hơn, bạn có thể trở thành các Master chuyên nghiệp và sở hữu cơ sở kinh doanh riêng khi đủ trình độ và khả năng tài chính.
+            Khi những ngành nghề khác đang rơi vào tình trạng “bão hòa” về nhân
+            lực thì ở lĩnh vực làm đẹp lại mang đến nhiều tiềm năng cho người
+            lao động. Chỉ cần là người có tay nghề cao, bạn sẽ chẳng bao giờ
+            phải lo đến chuyện thất nghiệp. Sau khi kết thúc các khóa học nghề,
+            bạn có thể dễ dàng xin việc tại bất kỳ thẩm mỹ viện hay spa nào.
           </p>
         </div>
         <div class="pt-4">
           <h2 class="text-indigo-900 uppercase tex mb-2">
             KỸ NĂNG ĐẠT ĐƯỢC SAU KHÓA HỌC
           </h2>
-          <div class="w-full hidden lg:block" style="height: 300px">
-            <img src="../../../assets/images/lienhe.png " alt="" />
+          <div class="hidden lg:block">
+            <div class="w-full h-[300px] flex items-center justify-center">
+              <img src="../../../assets/images/banner-theme.png" alt="" />
+            </div>
           </div>
+          
 
           <div class="relative lg:pl-4">
             <p class="text-indigo-900 lg:ml-2 font-black">
-                Nắm được tiềm năng và định hướng nghề phun xăm thẩm mỹ
+              Nắm được tiềm năng và định hướng nghề chăm sóc da
             </p>
             <div
               class="lg:absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
@@ -507,7 +466,8 @@
           </div>
           <div class="relative lg:pl-4">
             <p class="text-indigo-900 lg:ml-2 font-black">
-                Nắm được các dụng cụ và các sản phẩm sử dụng trong phun xăm
+              Hiểu và nắm vững cách sử dụng các sản phẩm, dụng cụ, máy móc trong
+              chăm sóc da và điều trị da
             </p>
             <div
               class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
@@ -515,7 +475,8 @@
           </div>
           <div class="relative lg:pl-4">
             <p class="text-indigo-900 lg:ml-2 font-black">
-                Nhận biết dáng mày, kiểu mắt, môi trước khi phun xăm
+              Thăm khám, phân tích và nhận biết rõ 5 loại da căn bản: Da thường
+              - khô - nhờn - hỗn hợp - nhạy cảm
             </p>
             <div
               class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
@@ -523,23 +484,8 @@
           </div>
           <div class="relative lg:pl-4">
             <p class="text-indigo-900 lg:ml-2 font-black">
-                Thực hành thành thạo công thức tỷ lệ vàng trong phun xăm
-            </p>
-            <div
-              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
-            ></div>
-          </div>
-          <div class="relative lg:pl-4">
-            <p class="text-indigo-900 lg:ml-2 font-black">
-                Nắm vững quy trình chuẩn trước, trong và sau khi phun xăm
-            </p>
-            <div
-              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
-            ></div>
-          </div>
-          <div class="relative lg:pl-4">
-            <p class="text-indigo-900 lg:ml-2 font-black">
-                Phun mày, môi, mí và thuần thục các dụng cụ ứng dụng trong phun xăm
+              Thuần thục các kỹ thuật massage mặt, body, điều trị chuyên sâu về
+              nám, sạm, tàn nhang, mụn, lão hóa, triệt lông, giảm béo…
             </p>
             <div
               class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
@@ -548,59 +494,216 @@
 
           <div class="relative lg:pl-4">
             <p class="text-indigo-900 lg:ml-2 font-black">
-                Những bí quyết giảm đau trong phun xăm, mix màu mực cực chuẩn
+              Quy trình chăm sóc trước và sau khi phun xăm
             </p>
             <div
               class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
-            ></div>
-          </div>
-
-          <div class="relative lg:pl-4">
-            <p class="text-indigo-900 lg:ml-2 font-black">
-                Kỹ thuật và phương pháp xử lý phun xăm hỏng
-
-            </p>
-            <div
-              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
-            ></div>
-          </div>
-
-          <div class="relative lg:pl-4">
-            <p class="text-indigo-900 lg:ml-2 font-black">
-                Quy trình chăm sóc trước và sau khi phun xăm
-            </p>
-            <div
-              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
-            ></div>
-          </div>
-
-          <div class="flex justify-center items-center relative py-3">
-            <div class="bg-indigo-900 rounded-3xl p-2">
-              <a class="text-xl text-yellow-500 p-3"
-                >Liên hệ nhận lịch khai giảng ngay</a
-              >
-            </div>
-            <div
-              class="absolute hidden lg:block w-full bottom-0 bg-indigo-900"
-              style="height: 1px"
             ></div>
           </div>
         </div>
-
         <div class="pt-4 hidden lg:block">
           <h2 class="text-indigo-900 uppercase tex mb-2">
             học ngành này cần những gì?
           </h2>
           <p class="text-indigo-900 text-justify font-black">
-            Với nhiều năm kinh nghiệm trong đào tạo ngành thẩm mỹ, Timona Academy tự hào là đơn vị uy tín, có mạng lưới liên kết rộng khắp Việt Nam. Đảm bảo quyền lợi cho học viên, 100% học viên có việc làm sau khi tốt nghiệp. 
+            Theo thống kê mỗi năm có hơn 60% cử nhân thất nghiệp sau khi tốt
+            nghiệp Đại học – Cao đẳng dẫn đến tình trạng “thừa thầy thiếu thợ”
+            ngày càng gia tăng. Do vậy việc học nghề kỹ thuật viên Spa trong xã
+            hội ngày nay lại mang đến nhiều triển vọng dành cho các bạn trẻ.
             <br />
-            Hướng đến môi trường học tập sang trọng, chuẩn spa, thẩm mỹ. Phòng lý thuyết và thực hành riêng biệt, tài trợ miễn phí toàn bộ máy móc, trang thiết bị hiện đại. Hỗ trợ ký túc xá với giường tầng thân thiện, máy lạnh điều hòa, đầy đủ tiện nghi… tạo điều kiện thuận lợi tối đa cho các bạn học viên ở xa. Cũng như mang lại sự yên tâm cho các bậc phụ huynh về quá trình học của con mình.
-
+            Nghề spa không có quy định giới hạn đối tượng, chỉ cần bạn có niềm
+            yêu thích cái đẹp và khả năng giao tiếp tốt là một lợi thế. Đặc
+            biệt, nếu muốn trở thành một kỹ thuật viên spa chăm sóc điều trị da
+            chuyên nghiệp, bạn cần: khéo léo trong giao tiếp, hiểu ý khách hàng,
+            biết cách nói chuyện với khách cũng như khiến khách cảm thấy hài
+            lòng sau khi thực hiện dịch vụ. Tuy nhiên, đó chỉ là những kỹ năng
+            mềm.
             <br />
-            Giảng viên là các bác sĩ, chuyên gia đầu ngành đến từ các bệnh viện, thẩm mỹ viện lớn, có nghiệp vụ sư phạm, chỉ dạy học viên tận tình, chu đáo. Timona Academy cam kết chất lượng tay nghề học viên, đào tạo MIỄN PHÍ 100% nếu học viên chưa thành thạo tay nghề.
-            <br />
-            Trọn bộ giáo trình đào tạo được nghiên cứu, phát triển bởi đội ngũ bác sĩ, chuyên gia trong và ngoài nước. Timona Academy luôn khảo sát, cập nhật những công nghệ, phương pháp thẩm mỹ mới nhất hiện nay giúp học viên bắt kịp xu hướng để chinh phục thị trường làm đẹp.
+            Trong công việc, bạn nhất định phải đảm bảo được: vệ sinh, tay nghề,
+            tỉ mỉ, cẩn thận và đặc biệt kiên nhẫn, luôn có chí cầu tiến trong
+            công việc. Tính chất của nghề đòi hỏi bạn phải linh hoạt và đổi mới
+            tùy theo nhu cầu của khách hàng, nhu cầu của thị trường. Vì là ngành
+            dịch vụ nên chuyên viên spa phải chấp nhận làm việc ngoài giờ hành
+            chính, cũng như không có nhiều ngày nghỉ vào dịp lễ tết. Luôn cân
+            bằng cảm xúc để có được tâm trạng tốt nhất nhằm mang lại cho khách
+            hàng những giây phút thư giãn tuyệt vời… Chỉ có như vậy, bạn mới có
+            thể trụ vững trong nghề và muốn mở rộng cơ hội việc làm của mình
           </p>
+        </div>
+        <div class="pt-4 hidden lg:block">
+          <h2 class="text-indigo-900 uppercase tex mb-2">
+            Học ngành này bao lâu?
+          </h2>
+          <p class="text-indigo-900 text-justify font-black">
+            Học nhanh đi làm ngay chính là một trong những ưu điểm tốt của ngành
+            này. Chúng ta có thể tham gia khóa học nghề Spa ngắn hạn tại trung
+            tâm đào tạo, cơ sở chăm sóc sắc đẹp. Thông thường, thời gian đào tạo
+            1 khóa học nghề spa sẽ giao động từ 2-3 tháng. Tùy thuộc vào kiến
+            thức từng khóa cũng như trình độ kỹ năng, thời gian học cũng sẽ thay
+            đổi
+          </p>
+        </div>
+        <div class="pt-4 hidden lg:block">
+          <h2 class="text-indigo-900 uppercase tex mb-2">
+            Học ngành này ra làm gì?
+          </h2>
+          <p class="text-indigo-900 text-justify font-black">
+            Khi những ngành nghề khác đang rơi vào tình trạng “bão hòa” về nhân
+            lực thì ở lĩnh vực làm đẹp lại mang đến nhiều tiềm năng cho người
+            lao động. Chỉ cần là người có tay nghề cao, bạn sẽ chẳng bao giờ
+            phải lo đến chuyện thất nghiệp. Sau khi kết thúc các khóa học nghề,
+            bạn có thể dễ dàng xin việc tại bất kỳ thẩm mỹ viện hay spa nào.
+            <br />
+            Sau một khoảng thời gian tích lũy kinh nghiệm và đã nắm vững các kỹ
+            thuật liên quan đến chăm sóc điều trị da bạn sẽ được cất nhất lên
+            những vị trí cao hơn. Hoặc nếu bạn có đủ có đủ khả năng kinh tế, có
+            thể tự tin mở tiệm/ salon làm chủ spa riêng.
+          </p>
+        </div>
+        <div class="flex justify-center items-center relative py-3">
+          <div class="bg-indigo-900 rounded-3xl p-2">
+            <a class="text-xl text-yellow-500 p-3"
+              >Liên hệ nhận lịch khai giảng ngay</a
+            >
+          </div>
+          <div
+            class="absolute hidden lg:block w-full bottom-0 bg-indigo-900 h-[1px]"
+          ></div>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-indigo-900 uppercase tex mb-2">
+            TẠI SAO BẠN NÊN HỌC NGHỀ SPA - CHĂM SÓC ĐIỀU TRỊ DA TẠI TIMONA
+            ACADEMY
+          </h2>
+          <div class="hidden lg:block">
+            <div class="w-full  h-[300px] flex items-center justify-center">
+              <img src="../../../assets/images/banner-theme.png" alt="" />
+            </div>
+          </div>
+          
+          <p class="text-indigo-900">
+            Học viện Timona Academy tự hào là địa chỉ đào tạo nghề Spa theo tiêu
+            chuẩn quốc tế tại Việt Nam. Với sứ mệnh đào tạo nguồn nhân lực
+            chuyên nghiệp, để nguồn cung – cầu trong ngành spa, thẩm mỹ được cân
+            bằng hơn về chất lượng. Mỗi năm Timona Academy đào tạo hơn 2000 kỹ
+            thuật viên Spa chăm sóc điều trị da đến từ nhiều tỉnh thành trên
+            khắp cả nước.
+            <br />
+            Chính vì vậy, khi đăng ký Khóa học Spa tại đây, học viên sẽ nhận
+            được:
+          </p>
+
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Học viện Timona Academy tự hào là địa chỉ đào tạo nghề Spa theo
+              tiêu chuẩn quốc tế tại Việt Nam. Với sứ mệnh đào tạo nguồn nhân
+              lực chuyên nghiệp, để nguồn cung – cầu trong ngành spa, thẩm mỹ
+              được cân bằng hơn về chất lượng. Mỗi năm Timona Academy đào tạo
+              hơn 2000 kỹ thuật viên Spa chăm sóc điều trị da đến từ nhiều tỉnh
+              thành trên khắp cả nước. Chính vì vậy, khi đăng ký Khóa học Spa
+              tại đây, học viên sẽ nhận được:
+            </p>
+
+            <div
+              class="lg:absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Trực tiếp đội ngũ giảng viên, chuyên gia giàu kinh nghiệm, đã qua
+              đào tạo nghiệp vụ sư phạm, tận tâm cầm tay chỉ việc, kèm cặp 1:1.
+            </p>
+
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Luôn đặt chất lượng đào tạo lên hàng đầu: Chắc kiến thức - Vững
+              tay nghề
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Giáo trình học chuẩn quốc tế. 20% lý thuyết, 80% thực hành, thường
+              xuyên cập nhật xu hướng làm đẹp thời thượng.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Môi trường học tập thân thiện, đẳng cấp chuẩn 5 sao.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Cam kết không phát sinh chi phí trong suốt quá trình học.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Được miễn phí hoàn toàn dụng cụ và máy móc thực hành trong suốt
+              quá trình học.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Tặng giáo trình và đồng phục học nghề miễn phí.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Được hỗ trợ mẫu thật để học viên thực hành nâng cao tay nghề.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Hỗ trợ chỗ ở (ký túc xá) cho học viên ở xa.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Được cấp chứng chỉ đào tạo của trường và chứng chỉ hành nghề của
+              Sở LĐTB & XH.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-black mb-0 lg:ml-2">
+              Được tư vấn giấy phép đăng ký kinh doanh mở cơ sở, mua trang thiết
+              bị, dụng cụ hành nghề,...
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
         </div>
 
         <div class="mt-4 bg-yellow-500 rounded-2xl mx-4 hidden lg:block">
@@ -631,16 +734,20 @@
         <div class="pt-4">
           <h2 class="text-indigo-900 uppercase mb-0 hidden lg:block">
             5. HỌC VIÊN ĐÁNH GIÁ VỀ LỚP DẠY PHUN XĂM TẠI TIMONA ACADEMY
-
           </h2>
           <div class="flex justify-between lg:flex-row flex-col-reverse">
             <div class="lg:w-3/5 mt-2">
               <h2 class="text-indigo-900 uppercase mb-0 lg:hidden">
                 5. HỌC VIÊN ĐÁNH GIÁ VỀ LỚP DẠY PHUN XĂM TẠI TIMONA ACADEMY
-
               </h2>
               <p class="text-indigo-900 text-justify font-black">
-                Với sự đầu tư nghiêm túc về chất lượng – Uy tín trong đào tạo, Timona Academy nhận được nhiều phản hồi tốt từ học viên cũng như quý phụ huynh, đối tác. Đặc biệt trước những nỗ lực không ngừng nghỉ nhằm nâng cao chất lượng đào tạo, tăng cường mạng lưới liên kết đối tác rộng khắp, đảm bảo đúng cam kết việc làm ổn định cho học viên sau tốt nghiệp, Timona Academy vinh dự nhận được giải thưởng “Thương hiệu tiêu biểu châu Á – Thái Bình Dương 2021.”
+                Với sự đầu tư nghiêm túc về chất lượng – Uy tín trong đào tạo,
+                Timona Academy nhận được nhiều phản hồi tốt từ học viên cũng như
+                quý phụ huynh, đối tác. Đặc biệt trước những nỗ lực không ngừng
+                nghỉ nhằm nâng cao chất lượng đào tạo, tăng cường mạng lưới liên
+                kết đối tác rộng khắp, đảm bảo đúng cam kết việc làm ổn định cho
+                học viên sau tốt nghiệp, Timona Academy vinh dự nhận được giải
+                thưởng “Thương hiệu tiêu biểu châu Á – Thái Bình Dương 2021.”
               </p>
             </div>
             <div class="lg:w-2/5 flex justify-end">
@@ -658,51 +765,52 @@
             </div>
           </div>
         </div>
+      </div>
+    </div> -->
 
-        <div class="pt-4">
-          <div class="form-sale hidden lg:block">
-            <div class="form-wrapper">
-              <div class="form-left">
-                <div class="form-left-total">
-                  <div class="text-5xl text-yellow-500 uppercase title">
-                    tư vấn miễn phí
-                  </div>
-                </div>
-              </div>
-              <div class="form-right">
-                <form class="flex flex-col relative pb-5">
-                  <div class="flex">
-                    <input
-                      type="text"
-                      id="username-success"
-                      class="w-1/2 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-1 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                      placeholder="HỌ TÊN"
-                    />
-                    <input
-                      type="text"
-                      id="username-success"
-                      class="w-1/2 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 ml-3 mt-1 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                      placeholder="SỐ ĐIỆN THOẠI"
-                    />
-                  </div>
-
-                  <div class="form-group w-full pt-4">
-                    <textarea
-                      class="form-control textarea-form font-black text-gray-100 rounded-xl lg:text-sm text-xs"
-                      id="exampleFormControlTextarea1"
-                      placeholder="NHẬP NỘI DUNG CẦN TƯ VẤN"
-                      rows="3"
-                    ></textarea>
-                  </div>
-
-                  <button
-                    class="bg-yellow-500 text-indigo-900 uppercase px-3 rounded-lg font-black py-2 absolute bottom-0"
-                  >
-                    gửi đăng ký
-                  </button>
-                </form>
+    <div [innerHTML]="theme.content"></div> 
+    <div class="pt-4">
+      <div class="form-sale hidden lg:block">
+        <div class="form-wrapper">
+          <div class="form-left">
+            <div class="form-left-total">
+              <div class="text-5xl text-yellow-500 uppercase title">
+                tư vấn miễn phí
               </div>
             </div>
+          </div>
+          <div class="form-right">
+            <form class="flex flex-col relative pb-5">
+              <div class="flex">
+                <input
+                  type="text"
+                  id="username-success"
+                  class="w-1/2 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mr-3 mt-1 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                  placeholder="HỌ TÊN"
+                />
+                <input
+                  type="text"
+                  id="username-success"
+                  class="w-1/2 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 ml-3 mt-1 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                  placeholder="SỐ ĐIỆN THOẠI"
+                />
+              </div>
+
+              <div class="form-group w-full pt-4">
+                <textarea
+                  class="form-control textarea-form font-black text-gray-100 rounded-xl lg:text-sm text-xs"
+                  id="exampleFormControlTextarea1"
+                  placeholder="NHẬP NỘI DUNG CẦN TƯ VẤN"
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <button
+                class="bg-yellow-500 text-indigo-900 uppercase px-3 rounded-lg font-black py-2 absolute bottom-0"
+              >
+                gửi đăng ký
+              </button>
+            </form>
           </div>
         </div>
       </div>

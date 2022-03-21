@@ -1,23 +1,37 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 import { KhoahocService } from '../khoahoc.service';
 import { Khoahoc } from '../khoahoc.types';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+
 @Component({
   selector: 'app-theme1',
   templateUrl: './theme1.component.html',
-  styleUrls: ['./theme1.component.css']
+  styleUrls: ['./theme1.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class Theme1Component implements OnInit {
- 
-  constructor(private route: ActivatedRoute, private router: Router, private khoahocService: KhoahocService, private location: Location, private state: RouterStateSnapshot) { }
+  course$: Observable<Khoahoc>;
+  constructor( private khoahocService: KhoahocService, private sanitizer: DomSanitizer) { }
   theme:any;
   
- 
-  goBack(): void {
-    this.location.back();
-  }
+ text:SafeHtml
+ getCourse(){
+  this.khoahocService.course$
+        
+  .subscribe((course: any) => {
+
+      // Update the counts
+      this.theme = course[0];
+      this.theme.content = this.sanitizer.bypassSecurityTrustHtml(this.theme.content);
+      
+  });
+
+
+ }
 //   reloadCurrentRoute() {
 //     const currentUrl = this.router.url;
 //     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
@@ -26,26 +40,7 @@ export class Theme1Component implements OnInit {
 // }
 
   ngOnInit(): void {
-    
-    this.khoahocService.course$.subscribe((course:any)=>{
-      this.theme = course
-    })
-    // const id = Number(this.route.snapshot.paramMap.get('id')); //1
-    // console.log(id);
-    
-    // if(id){
-    //   this.khoahocService.getKhoahocChitiet(id)
-    //   .subscribe(theme => {
-        
-    //     // const parentUrl = this.state.url.split('/').slice(0, -1).join('/');
-
-    //     //                    // Navigate to there
-    //     //                    this.router.navigateByUrl(parentUrl);
-        
-    //     this.theme = theme});
-    //   // Get the parent url
-                           
-    // }
+    this.getCourse()
     
     
   }
