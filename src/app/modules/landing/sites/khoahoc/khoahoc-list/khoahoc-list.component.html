@@ -1,0 +1,136 @@
+<section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8">
+
+    
+
+  <div class="lg:pt-10 w-full h-1/2 flex flex-col  pb-4 hidden lg:block">
+      <nav class="flex" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+              <a
+                routerLink=""
+                class="inline-flex items-center text-sm  text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              >
+                Home
+              </a>
+            </li>
+            
+            <li aria-current="page">
+              <div class="flex items-center text-indigo-900">
+                >>
+                <span
+                  class="ml-1 text-sm  text-text-indigo-900 md:ml-2 dark:text-indigo-900"
+                  >Chuyên ngành</span
+                >
+              </div>
+            </li>
+          </ol>
+        </nav>
+  </div>
+
+  <div class="">
+      <div class="w-full bg-red-100 " style="height: 350px;">
+          <img src="../../../assets/images/banner-chuyennganh.png" alt="" class=" w-full h-full">
+          
+          
+      </div>
+  </div>
+
+  <div class="grid grid-cols-3 gap-8 pt-10  ">
+    <!-- <div class=" relative border-bottom" style="height: 410px;" >
+      <a routerLink="/khoa-hoc/theme2" style="width: 30%;" class="">
+
+          <div class=" cursor-pointer" style=" height: 200px;">
+              <img src="../../../assets/images/courses.png" class=" h-full rounded-md" alt="">
+          </div>
+          <h2 class="text-xl uppercase text-yellow-500 pt-2 mb-0">theme 2</h2>
+          <span class="text-sm text-indigo-900 font-black des pt-2">theme 2</span>
+          <span class="p-2 bg-yellow-500 text-white rounded-lg absolute bottom-5 left-0 items-center">Tìm hiểu thêm >>></span>
+      </a>
+      
+  </div>
+
+  <div class=" relative border-bottom" style="height: 410px;" >
+    <a routerLink="/khoa-hoc/theme3" style="width: 30%;" class="">
+
+        <div class=" cursor-pointer" style=" height: 200px;">
+            <img src="../../../assets/images/courses.png" class=" h-full rounded-md" alt="">
+        </div>
+        <h2 class="text-xl uppercase text-yellow-500 pt-2 mb-0">theme 3</h2>
+        <span class="text-sm text-indigo-900 font-black des pt-2">theme 3</span>
+        <span class="p-2 bg-yellow-500 text-white rounded-lg absolute bottom-5 left-0 items-center">Tìm hiểu thêm >>></span>
+    </a>
+    
+</div> -->
+      <div class=" relative border-bottom" style="height: 410px;" *ngFor="let theme of themes">
+          <a routerLink="{{theme.id}}" style="width: 30%;" class="">
+
+              <div class=" cursor-pointer" style=" height: 200px;">
+                  <img src="../../../assets/images/courses.png" class=" h-full rounded-md" alt="">
+              </div>
+              <h2 class="text-xl uppercase text-yellow-500 pt-2 mb-0">
+                <div [innerHTML]="theme.title"></div>
+              </h2>
+              <span class="text-sm text-indigo-900 font-black des pt-2"><div [innerHTML]="theme.des"></div></span>
+              <span class="p-2 bg-yellow-500 text-white rounded-lg absolute bottom-5 left-0 items-center">Tìm hiểu thêm >>></span>
+          </a>
+          
+      </div>
+      
+  </div>
+  <div class="pt-10 flex flex-col justify-center items-center">
+      <div class=" ">
+        <a class="text-yellow-500 uppercase bg-indigo-900 rounded-3xl text-xl py-2 px-3">Lịch Khai giảng</a>
+      </div>
+      <div
+      class="form-sale relative w-full pt-3 "
+    >
+      <div class="text-5xl text-white absolute left-0 w-full">
+        <img
+          src="../../../assets/images/homepages/homepage/Đăng ký kháo học/Dangkykhoahoc.png"
+          class="w-full h-full top-0 left"
+          alt=""
+        />
+      </div>
+      <div class="form-wrapper rounded-2xl">
+        <div class="form-right ml-10 w-3/5">
+          <form class="form-submit relative pb-10">
+            <div class="flex justify-between pb-3">
+              <input
+                type="text"
+                id="username-success"
+                class="bg-white border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="HỌ TÊN"
+              />
+              <input
+                type="text"
+                id="username-success"
+                class="bg-white border border-none text-black-900 placeholder-black-700 text-sm ml-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="SỐ ĐIỆN THOẠI"
+              />
+            </div>
+
+            <div class="flex justify-between mt-3 pb-2">
+              <input
+                type="text"
+                id="username-success"
+                class="bg-white border border-none text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="MÃ GIỚI THIỆU"
+              />
+
+              <select
+                id="countries"
+                class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 ml-3 block p-1.5 dark:bg-black-100 dark:border-black-400"
+              >
+                <option>KHÓA HỌC</option>
+              </select>
+            </div>
+
+            <button class="absolute bottom-0">đăng kí ngay</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>

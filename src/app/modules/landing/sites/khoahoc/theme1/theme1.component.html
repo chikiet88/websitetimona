@@ -1,0 +1,779 @@
+<div class="lg:max-w-7xl lg:mx-auto sm:px-6 lg:px-8">
+  <div class="text-center mt-10 lg:mx-96 pb-4 lg:pb-10">
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-2xl text-yellow-500 uppercase"
+        type="button"
+        id="dropdownMenuButton1"
+        style="width: 350px"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        xem nhanh nội dung
+        <div
+          class="absolute h-full bg-yellow-500 top-0"
+          style="width: 2px; right: 45px"
+        ></div>
+      </button>
+      
+    </div>
+  </div>
+
+  <div class="w-full h-1/2 flex flex-col hidden lg:block">
+    <div class="pb-4 flex justify-between">
+      <nav class="flex" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a
+              routerLink=""
+              class="inline-flex items-center  font-medium text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center text-indigo-900">
+              >>
+              <a
+                routerLink="/khoa-hoc"
+                class="ml-1  font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                >Khóa Học</a
+              >
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center text-indigo-900">
+              >>
+              <span
+                class="ml-1  font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
+                >{{theme.title}}</span
+              >
+            </div>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
+    <p class="text-white uppercase text-center text-xl lg:text-4xl pt-3">
+{{theme.title}}
+    </p>
+    <p
+      class="lg:text-base  text-white intro-description lg:italic text-justify"
+    ></p>
+    <div [innerHTML]="theme.des" class="text-white"></div>
+  </div>
+
+  <div class="wrapper">
+     <!-- <div class="pt-10">
+      <h2 class="text-indigo-900 uppercase text-xl font-black">
+        GIỚI THIỆU CHUNG VỀ KHÓA ĐÀO TẠO KỸ THUẬT VIÊN SPA
+      </h2>
+      <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center w-full youtube-video">
+          <iframe
+            width="515"
+            height="300"
+            src="https://www.youtube.com/embed/Y-KmAE7HOy4"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div class="text-indigo-900  text-justify lg:pt-3 font-medium">
+        Xã hội phát triển, mức sống người dân ngày một nâng cao kéo theo nhu cầu
+        làm đẹp của chị em phụ nữ và thậm chí của nam giới ngày một tăng lên. Do
+        vậy, nhiều người tìm đến các Spa, Viện thẩm mỹ để trau chuốt vẻ bề
+        ngoài. Không thể phủ nhận một gương mặt đẹp với làn da tươi trẻ sẽ giúp
+        bạn trở nên quyến rũ hơn, tự tin giao tiếp. Từ đó, công việc hay tình
+        yêu, cuộc sống hôn nhân cũng trở nên thuận lợi và dễ dàng hơn.
+        <br />
+        Các kỹ thuật viên sẽ sử dụng máy với đầu kim siêu nhỏ để đưa mực vào
+        dưới lớp thượng bì và “vẽ”. Nhờ đó cải thiện khuyết điểm như môi thâm,
+        mí mắt không rõ nét, chân mày nhạt nhòa, thiếu đầu cụt đuôi… giúp khuôn
+        mặt trông hài hòa và có điểm nhấn hơn.
+        <br />
+        Khóa đào tạo Spa chăm sóc điều trị da được hình thành dựa trên nhu cầu
+        làm đẹp của xã hội và những người có niềm đam mê với Spa chăm sóc da
+        muốn được đào tạo bài bản chuyên sâu. Tại Timona Academy, đây là một
+        trong những khóa học thu hút lượng lớn học viên tham gia học tập để trở
+        thành những kỹ thuật viên Spa chăm sóc điều trị da chuyên nghiệp.
+        <br />
+        Kỹ thuật viên Spa là người trực tiếp thực hiện các dịch vụ chăm sóc da,
+        làm đẹp hoặc trị liệu cho khách hàng tại Spa theo đúng tiêu chuẩn do Spa
+        quy định, giúp cải thiện sắc đẹp và đem lại hiệu quả thư giãn cho khách
+        hàng.
+      </div>
+    </div>
+
+    <div class="pt-4">
+      <h2 class="text-indigo-900 uppercase text-xl mb-0 font-black">CƠ HỘI NGHỀ NGHIỆP</h2>
+
+      
+
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-4 pt-3">
+          <div class="lg:relative bg-gray-100 boder-bottom lg:h-500">
+            <div class="bg-red-100 w-full lg:absolute top-0 h-300 ">
+              <img
+                src="../../../assets/images/theme1-cohoi.png"
+                class="w-full h-full "
+                alt=""
+              />
+            </div>
+            <div class="w-full lg:absolute bottom-0 bg boder-bottom lg:h-500">
+              <div class="lg:px-5 flex flex-col lg:items-center lg:pt-32">
+                <h2 class="uppercase lg:text-xl text-lg  font-black text-yellow-500 text-color  mb-0 lg:text-center">
+                  Nhu cầu nhân lực
+                </h2>
+                <p class="text-white text-color text-justify font-medium">
+                  Theo Trung tâm dự báo nhu cầu nhân lực TP.HCM, ước tính mỗi
+                  năm có hơn 2.000 Spa được mở ra, cần đến 20.000 nhân lực giỏi
+                  để lấp đầy vị trí thiếu hụt.
+                  <br />
+                  Spa hiện đang là ngành hốt bạc và có nhiều triển vọng trong
+                  tương lai. Điều này cũng đặt ra thách thức lớn cho các cơ sở
+                  đào tạo ngành thẩm mỹ và cả người học. Do đó, sự phát triển và
+                  cơ hội kỹ thuật viên spa luôn luôn được mở rộng theo nhu cầu
+                  làm đẹp của con người.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:relative bg-gray-100 boder-bottom lg:h-500">
+            <div class="bg-red-100 w-full absolute top-0 h-300 hidden lg:block">
+              <img
+                src="../../../assets/images/theme1-cohoi.png"
+                class="w-full h-full hidden lg:block"
+                alt=""
+              />
+            </div>
+            <div class="w-full lg:absolute bottom-0 boder-bottom bg lg:h-500">
+              <div class="lg:px-5 flex flex-col lg:items-center lg:pt-32">
+                <h2 class="uppercase lg:text-xl text-lg text-yellow-500 mb-0 font-black text-color lg:text-center">
+                  Mức lương kỹ thuật viên Spa
+                </h2>
+                <p class="text-white  text-justify font-medium text-color">
+                  Sau khi tốt nghiệp khóa học nghề spa, học viên sẽ được làm
+                  việc trong môi trường lý tưởng: nhẹ nhàng, mát mẻ, sang trọng
+                  với mức thu nhập hấp dẫn từ 10 - 20 triệu. Mức lương sẽ tùy
+                  thuộc vào tay nghề, đánh giá của khách hàng và tăng dần theo
+                  thời gian.
+                  <br />
+                  Kỹ thuật chăm sóc da của bạn càng giỏi, khách hàng đánh giá
+                  tốt, mức thu nhập của bạn sẽ càng cao, đặc biệt “khủng” hơn
+                  với vị trí trưởng nhóm, quản lý Spa.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:relative bg-gray-100 boder-bottom lg:h-500">
+            <div class="bg-red-100 w-full absolute top-0 h-300 hidden lg:block">
+              <img
+                src="../../../assets/images/theme1-cohoi.png"
+                class="w-full h-full hidden lg:block"
+                alt=""
+              />
+            </div>
+            <div class="w-full lg:absolute bottom-0 bg boder-bottom lg:h-500">
+              <div class="lg:px-5 flex flex-col lg:items-center lg:pt-32">
+                <h2 class="uppercase lg:text-xl text-lg font-black text-yellow-500 text-color lg:text-center mb-0">
+                  Các bước thăng tiến trong công việc
+                </h2>
+                <p class="text-white  text-justify font-medium text-color">
+                  Khởi điểm là một kỹ thuật viên Spa chăm sóc điều trị da, sau
+                  một thời gian tích lũy kinh nghiệm và kiến thức, bạn sẽ được
+                  cất nhắc lên những vị trí cao hơn: Trưởng kỹ thuật viên, Quản
+                  lý kỹ thuật viên, Quản lý spa, Đổi hướng kinh doanh ngành spa,
+                  chăm sóc da riêng.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="pt-10">
+      <h2 class="text-indigo-900 uppercase text-xl mb-0 font-black">
+        CHI TIẾT KHÓA HỌC KỸ THUẬT VIÊN SPA
+      </h2>
+
+      <div class="text-indigo-900 text-justify pt-3 font-medium">
+        Kỹ thuật viên Spa nhiều bạn lầm tưởng chỉ là nhiệm vụ chăm sóc da. Thực
+        chất công việc của một Kỹ thuật viên Spa rất đa dạng, bao gồm massage
+        mặt, massage body, nặn mụn, gội đầu dưỡng sinh, sử dụng thiết bị thẩm mỹ
+        công nghệ cao trong điều trị các vấn đề về da, giải đáp thắc mắc và tư
+        vấn dịch vụ cho khách hàng…
+        <br />
+        Khóa học Kỹ thuật viên Spa của Timona Academy được thiết kế nhằm trang
+        bị cho người học tổng quan kiến thức từ cơ bản đến nâng cao về chuyên
+        môn ngành chăm sóc da. Người học có thể đáp ứng tốt những yêu cầu hiện
+        nay ở các doanh nghiệp, cơ sở thẩm mỹ tuyển dụng. Nội dung các khóa đào
+        tạo kỹ thuật viên Spa tại Timona được thiết kế cụ thể như sau:
+      </div>
+      <div class="pt-4 w-full">
+        <div class="flex justify-between lg:flex-row flex-col">
+          <div class="lg:w-1/2 bg-indigo-900 h-auto rounded-2xl lg:mr-5">
+            <div class="p-6">
+              <h2 class="text-2xl uppercase text-white text-center mb-0">
+                khóa phun xăm thẩm mỹ <br />
+                nâng cao
+              </h2>
+              <div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Kiến thức chuyên sâu về làn da, lý thuyết dịch vụ body bao
+                    gồm giảm béo – tắm trắng – triệt lông, lăn kim điều trị da
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Nhận diện chính xác từng cấp độ bệnh lý về da: nám, tàn
+                    nhang, lão hóa…
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Kỹ thuật soi da & phân tích thông số với máy công nghệ cao
+                    nhập khẩu Hoa Kỳ
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Chăm sóc da từ cơ bản đến nâng cao
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Kỹ thuật massage Facial, đầu – cổ - vai – gáy, săn cơ và trẻ
+                    hóa da tự nhiên
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Cải thiện da bằng phương pháp phi kim nano, tảo xoắn
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Kỹ thuật lấy nhân mụn không đau, không thâm sẹo
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Hướng dẫn lựa chọn và sử dụng mỹ phẩm theo độ tuổi, loại da
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="lg:w-1/2 bg-indigo-900 h-auto rounded-2xl lg:ml-5 top-margin"
+          >
+            <div class="p-6">
+              <h2 class="text-2xl uppercase text-yellow-500 text-center mb-0">
+                KHÓA CHĂM SÓC <br />
+                ĐIỀU TRỊ DA CHUYÊN SÂU
+              </h2>
+
+              <div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Toàn bộ kiến thức của khóa học chăm sóc, điều trị da nâng ca
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Kiến thức làm kim điều trị da chuyên sâu
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Thành thạo phương pháp lăn kim điều trị da chuyên sâu
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Lên phác đồ điều trị mụn, rỗ, nám, tàn nhang, lão hóa…
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+                <div class="relative">
+                  <p class="text-base text-white mb-0">
+                    Quy trình chuẩn tắm trắng chuyên
+                  </p>
+                  <div
+                    class="absolute w-1 h-1 rounded-full top-2.5 left-0 bg-white circle"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center items-center relative py-3">
+          <div class="bg-indigo-900 rounded-3xl p-2">
+            <a class="text-xl text-yellow-500 p-3">Đăng ký tư vấn ngay</a>
+          </div>
+          <div class="absolute w-full bottom-0 bg-indigo-900 h-1 rounded-lg"></div>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-indigo-900 uppercase font-black mb-2 text-xl lg:block hidden">
+            học ngành này cần những gì?
+          </h2>
+          <div class="w-full h-300 flex items-center justify-center">
+            <img
+              src="../../../assets/images/banner-theme.png" class="w-500"
+              alt=""
+              class="w-500 h-full object-cover"
+            />
+            
+          </div>
+          <h2 class="text-indigo-900 uppercase font-black mb-2 text-xl lg:hidden">
+            học ngành này cần những gì?
+          </h2>
+          <p class="text-indigo-900 text-justify font-medium">
+            Theo thống kê mỗi năm có hơn 60% cử nhân thất nghiệp sau khi tốt
+            nghiệp Đại học – Cao đẳng dẫn đến tình trạng “thừa thầy thiếu thợ”
+            ngày càng gia tăng. Do vậy việc học nghề kỹ thuật viên Spa trong xã
+            hội ngày nay lại mang đến nhiều triển vọng dành cho các bạn trẻ.
+            <br />Nghề spa không có quy định giới hạn đối tượng, chỉ cần bạn có
+            niềm yêu thích cái đẹp và khả năng giao tiếp tốt là một lợi thế. Đặc
+            biệt, nếu muốn trở thành một kỹ thuật viên spa chăm sóc điều trị da
+            chuyên nghiệp, bạn cần: khéo léo trong giao tiếp, hiểu ý khách hàng,
+            biết cách nói chuyện với khách cũng như khiến khách cảm thấy hài
+            lòng sau khi thực hiện dịch vụ. Tuy nhiên, đó chỉ là những kỹ năng
+            mềm. <br />Trong công việc, bạn nhất định phải đảm bảo được: vệ
+            sinh, tay nghề, tỉ mỉ, cẩn thận và đặc biệt kiên nhẫn, luôn có chí
+            cầu tiến trong công việc. Tính chất của nghề đòi hỏi bạn phải linh
+            hoạt và đổi mới tùy theo nhu cầu của khách hàng, nhu cầu của thị
+            trường. Vì là ngành dịch vụ nên chuyên viên spa phải chấp nhận làm
+            việc ngoài giờ hành chính, cũng như không có nhiều ngày nghỉ vào dịp
+            lễ tết. Luôn cân bằng cảm xúc để có được tâm trạng tốt nhất nhằm
+            mang lại cho khách hàng những giây phút thư giãn tuyệt vời… Chỉ có
+            như vậy, bạn mới có thể trụ vững trong nghề và muốn mở rộng cơ hội
+            việc làm của mình.
+          </p>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-indigo-900 uppercase font-black mb-2 text-xl">
+            Học ngành này bao lâu?
+          </h2>
+          <div class="hidden lg:block">
+            <div class="w-full  h-300 flex items-center justify-center ">
+              <img src="../../../assets/images/banner-theme.png" class="w-500 h-full object-cover" alt="" />
+            </div>
+          </div>
+          
+          <p class="text-indigo-900 text-justify font-medium">
+            Học nhanh đi làm ngay chính là một trong những ưu điểm tốt của ngành
+            này. Chúng ta có thể tham gia khóa học nghề Spa ngắn hạn tại trung
+            tâm đào tạo, cơ sở chăm sóc sắc đẹp. Thông thường, thời gian đào tạo
+            1 khóa học nghề spa sẽ giao động từ 2-3 tháng. Tùy thuộc vào kiến
+            thức từng khóa cũng như trình độ kỹ năng, thời gian học cũng sẽ thay
+            đổi.
+          </p>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-indigo-900 uppercase font-black mb-2 text-xl">
+            Học ngành này ra làm gì?
+          </h2>
+          <div class="hidden lg:block">
+            <div class="w-full  h-300 flex items-center justify-center">
+              <img src="../../../assets/images/banner-theme.png" class="w-500 h-full object-cover" alt="" />
+            </div>
+          </div>
+          
+          <p class="text-indigo-900 text-justify font-medium">
+            Khi những ngành nghề khác đang rơi vào tình trạng “bão hòa” về nhân
+            lực thì ở lĩnh vực làm đẹp lại mang đến nhiều tiềm năng cho người
+            lao động. Chỉ cần là người có tay nghề cao, bạn sẽ chẳng bao giờ
+            phải lo đến chuyện thất nghiệp. Sau khi kết thúc các khóa học nghề,
+            bạn có thể dễ dàng xin việc tại bất kỳ thẩm mỹ viện hay spa nào.
+          </p>
+        </div>
+        <div class="pt-4">
+          <h2 class="text-indigo-900 uppercase font-black mb-2 text-xl">
+            KỸ NĂNG ĐẠT ĐƯỢC SAU KHÓA HỌC
+          </h2>
+          <div class="hidden lg:block">
+            <div class="w-full h-300 flex items-center justify-center">
+              <img src="../../../assets/images/banner-theme.png" class="w-500 h-full object-cover" alt="" />
+            </div>
+          </div>
+          
+
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 lg:ml-2 font-medium">
+              Nắm được tiềm năng và định hướng nghề chăm sóc da
+            </p>
+            <div
+              class="lg:absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 lg:ml-2 font-medium">
+              Hiểu và nắm vững cách sử dụng các sản phẩm, dụng cụ, máy móc trong
+              chăm sóc da và điều trị da
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 lg:ml-2 font-medium">
+              Thăm khám, phân tích và nhận biết rõ 5 loại da căn bản: Da thường
+              - khô - nhờn - hỗn hợp - nhạy cảm
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 lg:ml-2 font-medium">
+              Thuần thục các kỹ thuật massage mặt, body, điều trị chuyên sâu về
+              nám, sạm, tàn nhang, mụn, lão hóa, triệt lông, giảm béo…
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 lg:ml-2 font-medium">
+              Quy trình chăm sóc trước và sau khi phun xăm
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+        </div>
+        
+        <div class="flex justify-center items-center relative py-3">
+          <div class="bg-indigo-900 rounded-3xl p-2">
+            <a class="text-xl text-yellow-500 p-3"
+              >Liên hệ nhận lịch khai giảng ngay</a
+            >
+          </div>
+          <div
+            class="absolute hidden lg:block w-full bottom-0 bg-indigo-900 h-1 rounded-lg"
+          ></div>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-indigo-900 uppercase font-black mb-2 text-xl">
+            TẠI SAO BẠN NÊN HỌC NGHỀ SPA - CHĂM SÓC ĐIỀU TRỊ DA TẠI TIMONA
+            ACADEMY
+          </h2>
+          <div class="hidden lg:block">
+            <div class="w-full  h-300 flex items-center justify-center">
+              <img src="../../../assets/images/banner-theme.png" class="w-500" alt="" />
+            </div>
+          </div>
+          
+          <p class="text-indigo-900">
+            Học viện Timona Academy tự hào là địa chỉ đào tạo nghề Spa theo tiêu
+            chuẩn quốc tế tại Việt Nam. Với sứ mệnh đào tạo nguồn nhân lực
+            chuyên nghiệp, để nguồn cung – cầu trong ngành spa, thẩm mỹ được cân
+            bằng hơn về chất lượng. Mỗi năm Timona Academy đào tạo hơn 2000 kỹ
+            thuật viên Spa chăm sóc điều trị da đến từ nhiều tỉnh thành trên
+            khắp cả nước.
+            <br />
+            Chính vì vậy, khi đăng ký Khóa học Spa tại đây, học viên sẽ nhận
+            được:
+          </p>
+
+         
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Trực tiếp đội ngũ giảng viên, chuyên gia giàu kinh nghiệm, đã qua
+              đào tạo nghiệp vụ sư phạm, tận tâm cầm tay chỉ việc, kèm cặp 1:1.
+            </p>
+
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Luôn đặt chất lượng đào tạo lên hàng đầu: Chắc kiến thức - Vững
+              tay nghề
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Giáo trình học chuẩn quốc tế. 20% lý thuyết, 80% thực hành, thường
+              xuyên cập nhật xu hướng làm đẹp thời thượng.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Môi trường học tập thân thiện, đẳng cấp chuẩn 5 sao.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Cam kết không phát sinh chi phí trong suốt quá trình học.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Được miễn phí hoàn toàn dụng cụ và máy móc thực hành trong suốt
+              quá trình học.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Tặng giáo trình và đồng phục học nghề miễn phí.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Được hỗ trợ mẫu thật để học viên thực hành nâng cao tay nghề.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Hỗ trợ chỗ ở (ký túc xá) cho học viên ở xa.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Được cấp chứng chỉ đào tạo của trường và chứng chỉ hành nghề của
+              Sở LĐTB & XH.
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+          <div class="relative lg:pl-4">
+            <p class="text-indigo-900 font-medium mb-0 lg:ml-2">
+              Được tư vấn giấy phép đăng ký kinh doanh mở cơ sở, mua trang thiết
+              bị, dụng cụ hành nghề,...
+            </p>
+            <div
+              class="absolute hidden lg:block rounded-full radius h-1 w-1 left-0 bg-indigo-900"
+            ></div>
+          </div>
+        </div>
+
+        <div class="mt-4 bg-yellow-500 rounded-2xl mx-4 hidden lg:block">
+          <div class="mx-4 py-2 grid grid-cols-3 gap-4">
+            <div
+              class="text-xl font-black text-text-indigo-900 uppercase text-center"
+            >
+              thạo nghề <br />
+              chỉ sau 2-3 tháng
+            </div>
+
+            <div
+              class="text-xl font-black text-text-indigo-900 uppercase text-center"
+            >
+              cam kết 100% <br />
+              Hỗ trợ việc làm
+            </div>
+
+            <div
+              class="text-xl font-black text-text-indigo-900 uppercase text-center"
+            >
+              thu nhập <br />
+              10 - 20 triệu/ tháng
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <h2 class="text-indigo-900 uppercase mb-0 text-xl font-black hidden lg:block">
+            5. HỌC VIÊN ĐÁNH GIÁ VỀ LỚP DẠY PHUN XĂM TẠI TIMONA ACADEMY
+          </h2>
+          <div class="flex justify-between lg:flex-row flex-col-reverse">
+            <div class="lg:w-3/5 mt-2">
+              <h2 class="text-indigo-900 uppercase text-xl mb-0 lg:hidden font-black">
+                5. HỌC VIÊN ĐÁNH GIÁ VỀ LỚP DẠY PHUN XĂM TẠI TIMONA ACADEMY
+              </h2>
+              <p class="text-indigo-900 text-justify font-medium">
+                Với sự đầu tư nghiêm túc về chất lượng – Uy tín trong đào tạo,
+                Timona Academy nhận được nhiều phản hồi tốt từ học viên cũng như
+                quý phụ huynh, đối tác. Đặc biệt trước những nỗ lực không ngừng
+                nghỉ nhằm nâng cao chất lượng đào tạo, tăng cường mạng lưới liên
+                kết đối tác rộng khắp, đảm bảo đúng cam kết việc làm ổn định cho
+                học viên sau tốt nghiệp, Timona Academy vinh dự nhận được giải
+                thưởng “Thương hiệu tiêu biểu châu Á – Thái Bình Dương 2021.”
+              </p>
+            </div>
+            <div class="lg:w-2/5 flex justify-end">
+              <div class="flex justify-center items-center w-full">
+                <iframe
+                  width="450"
+                  height="315"
+                  src="https://www.youtube.com/embed/pjgElO5jKOs"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div [innerHTML]="theme.content"></div>
+    <div class="pt-10">
+      <div
+      class="form-sale relative hidden lg:block lg:max-w-7xl lg:mx-auto lg:px-8"
+    >
+      <div class="text-5xl text-white absolute left-0 w-full">
+        <img
+          src="../../../assets/images/homepages/homepage/Đăng ký kháo học/Dangkykhoahoc.png"
+          class="w-full h-full top-0 left"
+          alt=""
+        />
+      </div>
+      <div class="form-wrapper rounded-2xl">
+        <div class="form-right ml-5 ">
+          <form class="form-submit  relative ">
+            <div class="flex justify-between pb-3">
+              <input
+                type="text"
+                id="username-success"
+                class="border border-none bg-white text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="HỌ TÊN"
+              />
+              <input
+                type="text"
+                id="username-success"
+                class="border border-none bg-white text-black-900 placeholder-black-700 text-sm ml-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="SỐ ĐIỆN THOẠI"
+              />
+            </div>
+
+            <div class="flex justify-between mt-3 pb-2">
+              <input
+                type="text"
+                id="username-success"
+                class="border border-none bg-white text-black-900 placeholder-black-700 text-sm mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                placeholder="MÃ GIỚI THIỆU"
+              />
+
+              <select
+                id="countries"
+                class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 ml-3 block p-1.5 dark:bg-black-100 dark:border-black-400"
+              >
+                <option>KHÓA HỌC</option>
+              </select>
+            </div>
+
+            <button class="absolute bottom-0">đăng kí ngay</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="formsale-mobile bg-indigo-900 rounded-lg lg:hidden">
+      <div class="flex justify-center items-center pt-5 text-white text-5xl">
+        480*500
+      </div>
+      <form class="form-submit pb-8 justify-center items-center">
+        <input
+          type="text"
+          id="username-success"
+          class="bg-white border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+          placeholder="HỌ TÊN"
+        />
+        <input
+          type="text"
+          id="username-success"
+          class=" border bg-white border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+          placeholder="SỐ ĐIỆN THOẠI"
+        />
+        <input
+          type="text"
+          id="username-success"
+          class="bg-white border bg-white
+           border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+          placeholder="MÃ GIỚI HIỆU"
+        />
+
+        <select
+          id="countries"
+          class="g-green-50 border border-none text-black-900 placeholder-black-700 text-sm rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
+        >
+          <option class="text-black-700">KHÓA HỌC</option>
+        </select>
+
+        <button class="text-center !w-full mx-32 rounded-lg">
+          đăng kí ngay
+        </button>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>

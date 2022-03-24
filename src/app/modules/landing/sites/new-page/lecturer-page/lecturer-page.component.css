@@ -1,0 +1,118 @@
+.item-lecturer{
+    display: flex;
+}
+.lecturer-img{
+    height: 280px;
+   width: 150px;
+    
+   
+}
+.lecturer-info{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    width: 370px;
+}
+.lecturer-title{
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.lecturer-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: #f7d900;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;    
+    
+}
+.lecturer-specializ{
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    
+}
+.lecturer-info ul{
+    padding-top: 10px;
+}
+.lecturer-info ul li{
+    list-style: none;
+    color: #fff;
+    font-size: 12px;
+    padding-top: 5px;
+}
+.lecturer-info ul li::before {
+    content: "\2022";
+    color: #fff;
+    font-weight: bold;
+    display: inline-block; 
+    width: 0.5rem;
+    margin-left: -7px;
+    
+}
+.banner-img{
+    width: 400px;
+    height: 300px;
+}
+.text{
+    column-count: 2;
+    column-gap: 60px;
+}
+.wrapper{
+    padding: 1.25rem 5rem !important;
+}
+.border-shadow {
+    width: 70px;
+    height: 60%;
+    z-index: 0;
+    left: 40px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background-color: rgb(0 56 190);
+    box-shadow: 8px -18px 35px 16px rgba(0,85,237,0.66);
+  -webkit-box-shadow: 8px -18px 35px 16px rgba(0,85,237,0.66);
+  -moz-box-shadow: 8px -18px 35px 16px rgba(0,85,237,0.66);
+    bottom: 0;
+    position: absolute;
+  }
+  .shadow-bottom{
+      bottom: 0;
+      position: absolute; 
+      width: 250px;
+      margin: 0 auto;
+      border-radius: 40%;
+      
+     z-index: 0;
+        background-color: #000;
+      display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 1px 11px 3px rgb(1 7 29 / 87%);;
+        -webkit-box-shadow: 0px 1px 11px 3px rgb(1 7 29 / 87%);;
+        -moz-box-shadow: 0px 1px 11px 3px rgb(1 7 29 / 87%);;
+  }
+@media screen and (max-width: 768px){
+    .banner-img{
+        height: 250px;
+        width: 100%;
+    }
+    .container-lecturer{
+        padding: 0.75rem;
+    }
+    .text{
+    column-count: 1;
+    column-gap: 0;
+    }
+    .wrapper{
+        padding: 1rem  !important;
+    }
+    .lecturer-info{
+        width: 190px;
+        padding-left: 10px;
+    }
+    .item-lecturer{
+        height: 350px;
+    }
+
+}
