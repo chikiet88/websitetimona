@@ -13,7 +13,7 @@
                   <img src="../../../assets/images/homepages/homepage/Ngành ĐT (xong)/icon-close.svg" />
                 </button>
         <div class="pt-2 pb-3 space-y-1 flex flex-col pb-3 px-[24px]">
-          <a routerLink="/"  class="text-lg uppercase mt-4 text-white px-[24px]  lg:px-3 lg:py-2 rounded-md text-sm font-medium" aria-current="page">Trang Chủ</a>
+          <a routerLink="/"  class="text-lg uppercase mt-4 text-white px-[24px]  lg:px-3 lg:py-2 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Trang Chủ</a>
           <!-- <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
            -->
            
@@ -21,25 +21,32 @@
         
       
 
-          <mat-accordion *ngFor="let itemmenu of menu">
+          <mat-accordion *ngFor="let itemmenu of menu" >
             <mat-expansion-panel class="bg-indigo-900" (opened)="panelOpenState = true"
                                  (closed)="panelOpenState = false" >
               <mat-expansion-panel-header >
                 <mat-panel-title>
-                  <a routerLink="/home/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium">{{itemmenu.title}}</a>
+                  <div *ngIf="itemmenu.children.length > 0 || itemmenu.Baiviet.length > 0; else notparent">
+                    <a routerLink="/home/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" >{{itemmenu.title}}</a>
+
+                  </div>
+                  <ng-template #notparent>
+                    <a routerLink="/home/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" (click)="drawer.toggle()">{{itemmenu.title}}</a>
+
+                  </ng-template>
                 </mat-panel-title>
                 
               </mat-expansion-panel-header>
               <div *ngIf="itemmenu.children.length > 0">
                 <div class="flex flex-col" *ngFor="let item of itemmenu.children ">
-                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/home/{{item.id}}">{{item.title}}</a>
+                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/home/{{item.id}}" (click)="drawer.toggle()">{{item.title}}</a>
                    
                 </div>
               </div>
               
               <div *ngIf="itemmenu.Baiviet.length > 0">
                 <div class="flex flex-col" *ngFor="let item of itemmenu.Baiviet ">
-                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/home/khoa-hoc/{{item.id}}">{{item.title}}</a>
+                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/home/khoa-hoc/{{item.id}}" (click)="drawer.toggle()">{{item.title}}</a>
                    
                 </div>
               </div>
@@ -128,84 +135,103 @@
                       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                       
         
-                        <div class="dropdown" *ngFor="let itemmenu of menu"   >
-                          <div *ngIf="itemmenu.children.length > 0 || itemmenu.Baiviet.length > 0 ;else notchild">
-                            <button class="btn  dropdown-toggle border-none cusor-pointer hover:text-yellow-500 !px-0" type="button" id="dropdownMenuButton2" mat-button [matMenuTriggerFor]="menu"  #menuTrigger="matMenuTrigger"
-                            (mouseenter)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)" >
-                            <a routerLink="{{itemmenu.slug}}"
-                            class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
-                            </a>
-                            </button>
-                          </div>
-                          <ng-template #notchild> 
-                            <button class="btn  dropdown-toggle border-none cusor-pointer hover:text-yellow-500 !px-0" type="button" id="dropdownMenuButton2" mat-button 
-                >
-                            <a routerLink="{{itemmenu.slug}}"
-                            class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
-                            </a>
-                            </button>
-                          </ng-template>
+                        
+                   
+                        
+                        
                           
-                            <!-- <div *ngIf="itemmenu.children.length != 0 || itemmenu.Baiviet.length != 0"> -->
-                              <mat-menu [hasBackdrop]="false" #menu="matMenu" >
-
-                                <div *ngIf="itemmenu.children.length > 0" >
-                                  <button  (mouseenter)="mouseEnter(menuTrigger)" (click)="$event.stopPropagation()" (mouseleave)="mouseLeave(menuTrigger)" class="dropdown-item mx-0" mat-menu-item *ngFor="let item of itemmenu.children" >
-                                    <a class="dropdown-item " routerLink="/home/{{item.slug}}">{{item.title}}</a>
-                                  </button>
-                                </div>
-                                <div *ngIf="itemmenu.Baiviet.length > 0" >
-                                  <button  (mouseenter)="mouseEnter(menuTrigger)" (click)="$event.stopPropagation()" (mouseleave)="mouseLeave(menuTrigger)" class="dropdown-item mx-0" mat-menu-item *ngFor="let item of itemmenu.Baiviet">
-                                    <a class="dropdown-item " routerLink="/home/khoa-hoc/{{item.id}}">{{item.title}}</a>
-                                  </button>
-                                  </div>
+                            <div class="dropdown relative" *ngFor="let itemmenu of menu">
+                              <div *ngIf="itemmenu.children.length > 0 || itemmenu.Baiviet.length > 0 ;else notchild">
+                                <button
+                                class="
+                                px-4  dropdown-toggle border-none cusor-pointer hover:text-yellow-500
+                                "
+                                type="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                              >
+                              <a 
+                              class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
+                              </a>
                                 
-                               
-                              </mat-menu>
-                            <!-- </div> -->
-                           
-
-                              
-                            
-                            <!-- <ul class=" dropdown-menu  bg-[#FFFFFF] z-1 delay-300" aria-labelledby="dropdownMenuButton2" >
-                              <div class="cont_icon_trg absolute z-0" style="left:35%">
-                                <svg width="44px" height="30px" viewBox="0 0 46 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  >
-                                    <defs>
-                                        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
-                                            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
-                                            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
-                                            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0813575634 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
-                                            <feMerge>
-                                                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
-                                                <feMergeNode in="SourceGraphic"></feMergeNode>
-                                            </feMerge>
-                                        </filter>
-                                    </defs>
-                                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                                        <polygon id="Triangle-1" fill="#FFFFFF" filter="url(#filter-1)" sketch:type="MSShapeGroup" points="23 7 39 24 7 24 "></polygon>
-                                    </g>
-                                </svg>
+                              </button>
                               </div>
-                              <li *ngFor="let child of itemmenu.children" > 
-                                <a class="dropdown-item " routerLink="/{{child.slug ? child.slug : child.id}}">{{child.title}}</a>
-                            </ul> -->
-                          
-                          
-                          
-                        </div>
+                              <ng-template #notchild>
+                                <button
+                                class="px-4  dropdown-toggle border-none cusor-pointer hover:text-yellow-500 "
+                                type="button"
+                                id="dropdownMenuButton"
+                                aria-expanded="false"
+                              >
+                              <a routerLink="{{itemmenu.slug}}"
+                              class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
+                              </a>
+                              </button>
+                              </ng-template>
+                             
+                              <ul
+                                class="
+                                  dropdown-menu
+                                  min-w-max
+                                  absolute
+                                  hidden
+                                  bg-white
+                                  text-base
+                                  z-50
+                                  float-left
+                                  py-2
+                                  list-none
+                                  text-left
+                                  rounded-lg
+                                  shadow-lg
+                                  mt-1
+                                  hidden
+                                  m-0
+                                  bg-clip-padding
+                                  border-none
+                                "
+                                *ngIf="itemmenu.children.length > 0"
+                                aria-labelledby="dropdownMenuButton1"
+                              >
+                                <li *ngFor="let item of itemmenu.children">
+                                  <a class="dropdown-item" routerLink="/home/{{item.slug}}">{{item.title}}</a>
+                                </li>
+                               
+                              </ul>
+                              <ul
+                                class="
+                                  dropdown-menu
+                                  min-w-max
+                                  absolute
+                                  hidden
+                                  bg-white
+                                  text-base
+                                  z-50
+                                  float-left
+                                  
+                                  list-none
+                                  text-left
+                                  rounded-lg
+                                  shadow-lg
+                                
+                                  hidden
+                                  m-0
+                                  bg-clip-padding
+                                  border-none
+                                "
+                                *ngIf="itemmenu.Baiviet.length > 0"
+                                aria-labelledby="dropdownMenuButton1"
+                              >
+                                <li *ngFor="let item of itemmenu.Baiviet">
+                                  <a class="dropdown-item" routerLink="/home/khoa-hoc/{{item.id}}">{{item.title}}</a>
+                                </li>
+                               
+                              </ul>
+                            </div>
                         
                         
-        
-                      <!-- <a routerLink="/goc-hoc-vien"
-                        class=" text-lg uppercase text-white  lg:px-3 lg:py-2 rounded-md text-sm font-medium">Góc
-                        Học viên</a>
-        
-                      <a routerLink="/tin-tuc"
-                        class="text-lg uppercase text-white  lg:px-3 lg:py-2 rounded-md text-sm font-medium">Tin
-                        tức & sự kiện</a>
-                      <a routerLink="/lien-he"
-                        class="text-lg uppercase text-white  pl-3 py-2 mr-2 rounded-md text-sm font-medium">Liên
-                        hệ</a> -->
+                    
         
                     </div>
                   </div>

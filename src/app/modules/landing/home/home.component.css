@@ -124,3 +124,13 @@ padding: inherit;
 .dropdown-toggle{
   padding-top: 0; padding-bottom: 0;
 }
+.dropdown{
+  padding: 10px 0;
+}
+.dropdown:hover>.dropdown-menu {
+	display: block !important;
+  margin: 0;
+  } 
+.dropdown-menu:hover{
+  display: block !important;
+}

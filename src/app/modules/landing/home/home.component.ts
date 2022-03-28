@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HomeService } from './home.service';
 import { Khoahoc } from './home.types';
-
+import $ from 'jquery';
 @Component({
     selector     : 'landing-home',
     templateUrl  : './home.component.html',
@@ -34,10 +34,17 @@ export class LandingHomeComponent
         trigger.closeMenu();
       }, 150);
     }
+    mouseRemove(trigger){
+      this.timedOutCloser = setTimeout(() => {
+        trigger.closeMenu();
+      }, 150);
+    }
   
     ngOnInit(): void {
-   
-      
+      $('.dropdown').hover(function(){ 
+        $('.dropdown-toggle', this).trigger('click'); 
+      });
+     
       this.homeService.getMenu().subscribe((dataMenu)=>{
 
         this.homeService.getKhoahoc().subscribe((dataBaiviet) =>{

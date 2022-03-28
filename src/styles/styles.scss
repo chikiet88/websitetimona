@@ -2,8 +2,7 @@
 /*  @ Import/write your custom styles here.
 /*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
 /* ----------------------------------------------------------------------------------------------------- */
-@import "~bootstrap/dist/css/bootstrap.css";
-
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
 @import "~swiper/css";
 @import "~swiper/css/pagination";
 @import "~swiper/css/navigation";
@@ -73,6 +72,7 @@ body { margin: 0; font-family: 'Times New Roman', Times, serif; }
 .mat-button{
 	padding: 0 15px !important;
 }
+
 div.cdk-overlay-container .mat-menu-content {padding-top: 0; padding-bottom: 0; }
 @media screen and (max-width: 768px){
 	.owl-theme .owl-nav.disabled+.owl-dots{
