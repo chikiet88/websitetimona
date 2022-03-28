@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { KhoahocService } from '../../sites/khoahoc/khoahoc.service';
-import { Khoahoc } from '../../sites/khoahoc/khoahoc.types';
+import { KhoahocService } from '../../khoahoc/khoahoc.service';
+import { Khoahoc } from '../../khoahoc/khoahoc.types';
 import { MainlayoutService } from './mainlayout.service';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({

@@ -15,14 +15,15 @@ import { MainlayoutComponent } from '../components/mainlayout/mainlayout.compone
 import { FooterComponent } from '../components/footer/footer.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { KhoahocComponent } from '../sites/khoahoc/khoahoc.component';
+import { KhoahocComponent } from '../khoahoc/khoahoc.component';
 import { SwiperModule } from 'swiper/angular';
 import { AnswerPageComponent } from '../answer-page/answer-page.component';
 import { ActivatePageComponent } from '../activate-page/activate-page.component';
 import { StudentFeelPageComponent } from '../student-feel-page/student-feel-page.component';
 import { CornerStudentComponent } from '../corner-student/corner-student.component';
 import { TestComponent } from '../test/test.component';
-
+import {FormComponent} from '../components/form/form.component'
+import { IntroduceComponent } from '../introduce/introduce.component';
 @NgModule({
     declarations: [
         LandingHomeComponent,
@@ -38,7 +39,9 @@ import { TestComponent } from '../test/test.component';
         ActivatePageComponent,
         StudentFeelPageComponent,
         CornerStudentComponent,
-        TestComponent
+        TestComponent,
+        FormComponent,
+        IntroduceComponent,
     ],
     imports: [
         RouterModule.forChild(landingHomeRoutes),

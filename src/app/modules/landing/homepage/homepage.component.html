@@ -70,7 +70,7 @@
     </div>
 
     <section
-      class="w-full h-full bg-indigo-900 border-bottom pb-12 pb-12 lg:px-20"
+      class="w-full h-full bg-indigo-900 border-bottom pb-12  lg:px-10"
     >
       <div class="stories hidden lg:block">
         <div class="specializ-top">
@@ -81,9 +81,9 @@
             <div class="story-left">
               <iframe
                 width="100%"
-                height="315"
+                height="280"
                 class="yotube-video"
-                src="https://www.youtube.com/embed/pjgElO5jKOs"
+                src="https://www.youtube.com/embed/PrYsNRnMJ2I"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -109,9 +109,9 @@
             <div class="story-left">
               <iframe
                 width="100%"
-                height="315"
+                height="280"
                 class="yotube-video"
-                src="https://www.youtube.com/embed/pjgElO5jKOs"
+                src="https://www.youtube.com/embed/_Lt66ROpzAY"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -121,7 +121,7 @@
             <div class="item-lecturer story-right">
               <div class="lecturer-info story-info">
                 <span class="text-white text-xl">Học viên</span>
-                <h2 class="text-yellow-500 text-xl">Chị Nga</h2>
+                <h2 class="text-yellow-500 text-xl">Phạm Nguyễn Hồng Ngọc</h2>
                 <span class="text-lg text-white"
                   >Học viên ngoại khóa K47</span
                 >
@@ -137,9 +137,9 @@
             <div class="story-left">
               <iframe
                 width="100%"
-                height="315"
+                height="280"
                 class="yotube-video"
-                src="https://www.youtube.com/embed/pjgElO5jKOs"
+                src="https://www.youtube.com/embed/xwKb7eMvx0w"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -149,7 +149,7 @@
             <div class="item-lecturer story-right">
               <div class="lecturer-info story-info">
                 <span class="text-white text-xl">Học viên</span>
-                <h2 class="text-yellow-500 text-xl">Chị Nga</h2>
+                <h2 class="text-yellow-500 text-xl">Trần Nguyễn Phước Thịnh</h2>
                 <span class="text-lg text-white"
                   >Học viên ngoại khóa K47</span
                 >
@@ -256,7 +256,7 @@
       <div class="experts pt-4 lg:pt-0">
         <div class="specializ-top">
           <h2
-            class="specializ-title !pt-0 text-center expert-title text-yellow-500"
+            class="specializ-title text-[40px] !pt-0 text-center expert-title text-yellow-500"
           >
             học nghề cùng chuyên gia
           </h2>
@@ -270,34 +270,12 @@
               <div class="expert-wrapper">
                 <div class="">
                   <div class="expert-video">
-                    <div class="relative"  (click)="showVideo()">
-                      <div class="expert-boder {{hidden}} ">
-                        <div class="expert-boder-left">
-                          <div class="expert-boder-img">
-                            <img
-                              src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                              class="h-full w-ful bg-indigo-900 object-contain"
-                              alt=""
-                            />
-                          </div>
-                          <div class="expert-boder-question text-yellow-500">
-                            master thẩm mỹ khó hay dễ
-                          </div>
-                        </div>
-                        <div class="expert-boder-right">
-                          <img
-                            src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/master-thẩm-mỹ.png"
-                            class="h-full w-ful bg-indigo-900"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div class="video-yotube {{active}}">
+                    <div class="relative"  >
+                      
+                      <div class="video-yotube ">
                         
                         <iframe width="425" height="250" src="https://www.youtube.com/embed/HjNODEFghK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
-                      <i class="button-play cursor-pointer {{hidden}}" ><img class="w-full h-full" src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg" alt=""></i>
-
 
                     </div>
 
@@ -308,47 +286,17 @@
                 </div>
                 <div class="">
                   <div class="expert-video">
-                    <div class="relative " (click)="showVideo1()">
-                      <div class="expert-boder border-reverse {{hidden1}}" >
-                        <div class="expert-boder-left left-reverse">
-                          <div class="expert-boder-img img-reverse">
-                            <img
-                              src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                              class="h-full w-ful bg-indigo-900 object-contain"
-                              alt=""
-                            />
-                          </div>
-                          <div class="expert-boder-question text-yellow-500">
-                            <div class="mb-2">cách thức</div>
-
-                            <strong class="text-strong text-yellow-500">
-                              tạo niềm tin</strong
-                            >
-                            <div class="mt-2">nơi khách hàng</div>
-                          </div>
-                        </div>
-                        <div class="expert-boder-right right-reverse">
-                          <img
-                            src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/niềm-tin-khách-hàng.png"
-                            class="h-full w-ful bg-indigo-900"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div class="{{active1}} ">
+                    <div class="relative"  >
+                      
+                      <div class="video-yotube ">
+                        
                         <iframe width="425" height="250" src="https://www.youtube.com/embed/RmVt5J4b1Ag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
 
-                      <i class="button-play cursor-pointer {{hidden1}}" 
-                        ><img
-                          class="w-full h-full"
-                          src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg"
-                          alt=""
-                      /></i>
                     </div>
-                    <span
-                      class="expert-question text-yellow-500 text-yellow-500"
-                      >cách thức tạo niềm tin nơi khách hàng</span
+
+                    <span class="expert-question text-yellow-500"
+                      >master thẩm mỹ - khó hay dễ?</span
                     >
                   </div>
                 </div>
@@ -359,34 +307,12 @@
               <div class="expert-wrapper">
                 <div class="">
                   <div class="expert-video">
-                    <div class="relative"  (click)="showVideo()">
-                      <div class="expert-boder {{hidden}} ">
-                        <div class="expert-boder-left">
-                          <div class="expert-boder-img">
-                            <img
-                              src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                              class="h-full w-ful bg-indigo-900 object-contain"
-                              alt=""
-                            />
-                          </div>
-                          <div class="expert-boder-question text-yellow-500">
-                            master thẩm mỹ khó hay dễ
-                          </div>
-                        </div>
-                        <div class="expert-boder-right">
-                          <img
-                            src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/master-thẩm-mỹ.png"
-                            class="h-full w-ful bg-indigo-900"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div class="video-yotube {{active}}">
+                    <div class="relative"  >
+                      
+                      <div class="video-yotube ">
                         
-                        <iframe width="425" height="250" src="https://www.youtube.com/embed/HjNODEFghK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/D7nrbiprVOQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
-                      <i class="button-play cursor-pointer {{hidden}}" ><img class="w-full h-full" src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg" alt=""></i>
-
 
                     </div>
 
@@ -397,140 +323,23 @@
                 </div>
                 <div class="">
                   <div class="expert-video">
-                    <div class="relative " (click)="showVideo1()">
-                      <div class="expert-boder border-reverse {{hidden1}}" >
-                        <div class="expert-boder-left left-reverse">
-                          <div class="expert-boder-img img-reverse">
-                            <img
-                              src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                              class="h-full w-ful bg-indigo-900 object-contain"
-                              alt=""
-                            />
-                          </div>
-                          <div class="expert-boder-question text-yellow-500">
-                            <div class="mb-2">cách thức</div>
-
-                            <strong class="text-strong text-yellow-500">
-                              tạo niềm tin</strong
-                            >
-                            <div class="mt-2">nơi khách hàng</div>
-                          </div>
-                        </div>
-                        <div class="expert-boder-right right-reverse">
-                          <img
-                            src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/niềm-tin-khách-hàng.png"
-                            class="h-full w-ful bg-indigo-900"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div class="{{active1}} ">
-                        <iframe width="425" height="250" src="https://www.youtube.com/embed/RmVt5J4b1Ag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="relative"  >
+                      
+                      <div class="video-yotube ">
+                        
+                        <iframe width="425" height="250" src="https://www.youtube.com/embed/Nj2RxBPvRaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
 
-                      <i class="button-play cursor-pointer {{hidden1}}" 
-                        ><img
-                          class="w-full h-full"
-                          src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg"
-                          alt=""
-                      /></i>
                     </div>
-                    <span
-                      class="expert-question text-yellow-500 text-yellow-500"
-                      >cách thức tạo niềm tin nơi khách hàng</span
+
+                    <span class="expert-question text-yellow-500"
+                      >master thẩm mỹ - khó hay dễ?</span
                     >
                   </div>
                 </div>
               </div>
             </ng-template>
-            <ng-template swiperSlide>
-              <div class="expert-wrapper">
-                <div class="">
-                  <div class="expert-video">
-                    <div class="relative"  (click)="showVideo()">
-                      <div class="expert-boder {{hidden}} ">
-                        <div class="expert-boder-left">
-                          <div class="expert-boder-img">
-                            <img
-                              src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                              class="h-full w-ful bg-indigo-900 object-contain"
-                              alt=""
-                            />
-                          </div>
-                          <div class="expert-boder-question text-yellow-500">
-                            master thẩm mỹ khó hay dễ
-                          </div>
-                        </div>
-                        <div class="expert-boder-right">
-                          <img
-                            src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/master-thẩm-mỹ.png"
-                            class="h-full w-ful bg-indigo-900"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div class="video-yotube {{active}}">
-                        
-                        <iframe width="425" height="250" src="https://www.youtube.com/embed/HjNODEFghK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </div>
-                      <i class="button-play cursor-pointer {{hidden}}" ><img class="w-full h-full" src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg" alt=""></i>
-
-
-                    </div>
-
-                    <span class="expert-question text-yellow-500"
-                      >master thẩm mỹ - khó hay dễ?</span
-                    >
-                  </div>
-                </div>
-                <div class="">
-                  <div class="expert-video">
-                    <div class="relative " (click)="showVideo1()">
-                      <div class="expert-boder border-reverse {{hidden1}}" >
-                        <div class="expert-boder-left left-reverse">
-                          <div class="expert-boder-img img-reverse">
-                            <img
-                              src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
-                              class="h-full w-ful bg-indigo-900 object-contain"
-                              alt=""
-                            />
-                          </div>
-                          <div class="expert-boder-question text-yellow-500">
-                            <div class="mb-2">cách thức</div>
-
-                            <strong class="text-strong text-yellow-500">
-                              tạo niềm tin</strong
-                            >
-                            <div class="mt-2">nơi khách hàng</div>
-                          </div>
-                        </div>
-                        <div class="expert-boder-right right-reverse">
-                          <img
-                            src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/niềm-tin-khách-hàng.png"
-                            class="h-full w-ful bg-indigo-900"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div class="{{active1}} ">
-                        <iframe width="425" height="250" src="https://www.youtube.com/embed/RmVt5J4b1Ag" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </div>
-
-                      <i class="button-play cursor-pointer {{hidden1}}" 
-                        ><img
-                          class="w-full h-full"
-                          src="../../../assets/images/homepages/homepage/học nghề cùng chuyên gia/play-button.jpg"
-                          alt=""
-                      /></i>
-                    </div>
-                    <span
-                      class="expert-question text-yellow-500 text-yellow-500"
-                      >cách thức tạo niềm tin nơi khách hàng</span
-                    >
-                  </div>
-                </div>
-              </div>
-          </ng-template>
+           
           </swiper>
         </div>
 
@@ -756,92 +565,7 @@
         </div>
       </div>
     </div>
-
-    <div
-      class="form-sale relative hidden lg:block lg:max-w-7xl lg:mx-auto lg:px-8"
-    >
-      <div class="text-5xl text-white absolute left-0 w-full">
-        <img
-          src="../../../assets/images/homepages/homepage/Đăng ký kháo học/Dangkykhoahoc.png"
-          class="w-full h-full top-0 left"
-          alt=""
-        />
-      </div>
-      <div class="form-wrapper rounded-2xl">
-        <div class="form-right ml-10 ">
-          <form class="form-submit relative ">
-            <div class="flex justify-between pb-3">
-              <input
-                type="text"
-                id="username-success"
-                class="border border-none bg-white text-black-900 placeholder-black-700  mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                placeholder="HỌ TÊN"
-              />
-              <input
-                type="text"
-                id="username-success"
-                class="border border-none bg-white text-black-900 placeholder-black-700  ml-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                placeholder="SỐ ĐIỆN THOẠI"
-              />
-            </div>
-
-            <div class="flex justify-between mt-3 pb-2">
-              <input
-                type="text"
-                id="username-success"
-                class="border border-none bg-white text-black-900 placeholder-black-700  mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                placeholder="MÃ GIỚI THIỆU"
-              />
-
-              <select
-                id="countries"
-                class="g-green-50 border border-none text-black-900 placeholder-black-700  rounded-lg focus:ring-black-500 focus:border-black-500 ml-3 block p-1.5 dark:bg-black-100 dark:border-black-400"
-              >
-                <option>KHÓA HỌC</option>
-              </select>
-            </div>
-
-            <button class="absolute bottom-0">đăng kí ngay</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="formsale-mobile bg-indigo-900 rounded-lg lg:hidden">
-      <div class="flex justify-center items-center pt-5 text-white text-5xl">
-        480*500
-      </div>
-      <form class="form-submit pb-8 justify-center items-center">
-        <input
-          type="text"
-          id="username-success"
-          class=" border bg-white  border-none text-black-900 placeholder-black-700  rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-          placeholder="HỌ TÊN"
-        />
-        <input
-          type="text"
-          id="username-success"
-          class=" border bg-white  border-none text-black-900 placeholder-black-700  rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-          placeholder="SỐ ĐIỆN THOẠI"
-        />
-        <input
-          type="text"
-          id="username-success"
-          class=" border border-none bg-white  text-black-900 placeholder-black-700  rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-          placeholder="MÃ GIỚI HIỆU"
-        />
-
-        <select
-          id="countries"
-          class="g-green-50 border border-none text-black-900 placeholder-black-700  rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
-        >
-          <option class="text-black-700">KHÓA HỌC</option>
-        </select>
-
-        <button class="text-center !w-full mx-32 rounded-lg">
-          đăng kí ngay
-        </button>
-      </form>
-    </div>
+    <app-form></app-form>
+    
   </div>
 </div>

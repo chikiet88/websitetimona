@@ -1,123 +1,126 @@
 
 
 .example-container {
-    width: 100vw;
-    height: 100vh;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-   
-  }
-  
-  .example-sidenav {
-    padding: 20px;
-  }
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
 
-  
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+ 
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+
 
 .btn:focus{
-    box-shadow: inherit
+  box-shadow: inherit
 }
 .dropdown-toggle::after{
-  display: none;
+display: none;
 }
 
 .dropdown:hover .dropdown-menu{
-    display: block;
-    transition: all 1s;
+  display: block;
+  transition: all 1s;
 }
 
 
 
 
 .dropdowna:hover:after {
-  width: 100%;
-  transition: all 0.4s;
+width: 100%;
+transition: all 0.4s;
 }
 
 .dropdown a {
-  transition: all 0.4s;
+transition: all 0.4s;
 }
 
 
 .dropdown a:hover {
 
-  transition: all 0.4s;
+transition: all 0.4s;
 }
 
 .navbar-links a{
-    transition: all 0.4s;
+  transition: all 0.4s;
 }
 .navbar-links a:hover{
-    transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .btn:hover a, .dropdown-toggle:hover:after {
-    color: #f7d900 !important;
-    background-color: inherit;
-    opacity: 0.8;
-    transition: all 0.4s;
+  color: #f7d900 !important;
+  background-color: inherit;
+  opacity: 0.8;
+  transition: all 0.4s;
 }
 .cont_icon_trg{
-    transform: translateX(-50%);
-    top: -15px;
+  transform: translateX(-50%);
+  top: -15px;
 }
 
 .dropdown-item{
-    color: rgb(83, 82, 82);
-    transition: all 0.4s;
-    padding: 10px 10px;
-    border-radius: 10px;
+  color: rgb(83, 82, 82);
+  transition: all 0.4s;
+  padding: 10px 10px;
+  border-radius: 10px;
 }
 .dropdown-item:hover{
-    transition: all 0.4s;
-    opacity: 0.8;
-    color: #fff !important;
-    background-color: #f7d900;
-   
+  transition: all 0.4s;
+  opacity: 0.8;
+  color: #fff !important;
+  background-color: #f7d900;
+ 
 }
 .dropdown-menu .active{
-    color: #fff;
-    transition: all 0.4s;
+  color: #fff;
+  transition: all 0.4s;
 }
 .dropdown-menu li{
-    margin: 10px;
+  margin: 10px;
 }
 .item-link a{ 
-    transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .item-link>a:hover{
-    color: #f7d900 !important;
-    transition: all 0.4s;
+  color: #f7d900 !important;
+  transition: all 0.4s;
 }
 
 .mobile-header a:hover{
-    background-color: #f7d900;
-    color: #fff;
-    padding: 10px 10px;
+  background-color: #f7d900;
+  color: #fff;
+  padding: 10px 10px;
 }
 .btn-secondary:hover{
-  background-color: #00256e;
+background-color: #00256e;
 }
 .mat-expansion-panel-header{
-  padding: 0 35px 0 0 !important;
+padding: 0 35px 0 0 !important;
 }
 .mat-expansion-panel-header:hover, .mat-expansion-panel-bod{
-  background: #00256e !important;
+background: #00256e !important;
 }
 .mat-focus-indicato{
-  position: inherit !important;
+position: inherit !important;
 }
 .mat-expansion-panel:not([class*=mat-elevation-z]){
-  box-shadow: inherit !important;
+box-shadow: inherit !important;
 }
 .mat-expansion-panel-header.mat-expanded{
-  height: inherit;
+height: inherit;
 }
 .mat-expansion-panel-body{
-  padding: inherit;
+padding: inherit;
+}
+.dropdown-toggle{
+  padding-top: 0; padding-bottom: 0;
 }

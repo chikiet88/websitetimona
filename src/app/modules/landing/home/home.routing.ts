@@ -9,7 +9,7 @@ import { AnswerPageComponent } from '../answer-page/answer-page.component';
 import { ActivatePageComponent } from '../activate-page/activate-page.component';
 import { StudentFeelPageComponent } from '../student-feel-page/student-feel-page.component';
 import { ContactPageComponent } from '../contact-page/contact-page.component';
-import { NewPageComponent } from '../sites/new-page/new-page.component';
+import { NewPageComponent } from '../new-page/new-page.component';
 import { TestComponent } from '../test/test.component';
 export const landingHomeRoutes: Route[] = [
     {
@@ -25,7 +25,7 @@ export const landingHomeRoutes: Route[] = [
                     {
                         path: 'khoa-hoc',
                         loadChildren: () =>
-                            import('../sites/khoahoc/khoahoc.module').then(
+                            import('../khoahoc/khoahoc.module').then(
                                 (m) => m.KhoahocModule
                             ),
                     },

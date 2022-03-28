@@ -73,6 +73,7 @@ body { margin: 0; font-family: 'Times New Roman', Times, serif; }
 .mat-button{
 	padding: 0 15px !important;
 }
+div.cdk-overlay-container .mat-menu-content {padding-top: 0; padding-bottom: 0; }
 @media screen and (max-width: 768px){
 	.owl-theme .owl-nav.disabled+.owl-dots{
 		display: none;

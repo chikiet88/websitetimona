@@ -81,7 +81,10 @@
     font-size: 75px;
 }
 .form-right{
-flex: 1.5;
+    position: absolute;
+    left: 47%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .form-submit input{

@@ -5,6 +5,7 @@ import { KhoahocDetailResolver, KhoahocResolver } from './khoahoc.resolvers';
 import { Theme1Component } from './theme1/theme1.component';
 import { Theme2Component } from './theme2/theme2.component';
 import { Theme3Component } from './theme3/theme3.component';
+import { Theme4Component } from './theme4/theme4.component';
 
 export const khoahocRoutes: Route[] = [
   {
@@ -38,12 +39,12 @@ export const khoahocRoutes: Route[] = [
       //   component:Theme3Component,
        
       // },
-      // {
-      //   path: 'theme4',
-      //   pathMatch: 'full',
-      //   component:Theme3Component,
+      {
+        path: 'theme4',
+        pathMatch: 'full',
+        component:Theme4Component,
        
-      // },
+      },
 
         {
         path: ':id',

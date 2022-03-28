@@ -23,7 +23,9 @@
 .text-column{
     column-count: 2;
 }
-
+.title{
+    font-size: 30px;
+}
 .intro-commit{
     height: 550px;
     border-top-right-radius: 50px;
@@ -91,6 +93,7 @@
 @media screen and (max-width: 768px){
     .title{
         text-align: center;
+        font-size: 22px;
     }
     .role-item::after{
         display: none;

@@ -150,12 +150,12 @@
                               <mat-menu [hasBackdrop]="false" #menu="matMenu" >
 
                                 <div *ngIf="itemmenu.children.length > 0" >
-                                  <button  (mouseenter)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)" class="dropdown-item mx-0" mat-menu-item *ngFor="let item of itemmenu.children" >
+                                  <button  (mouseenter)="mouseEnter(menuTrigger)" (click)="$event.stopPropagation()" (mouseleave)="mouseLeave(menuTrigger)" class="dropdown-item mx-0" mat-menu-item *ngFor="let item of itemmenu.children" >
                                     <a class="dropdown-item " routerLink="/home/{{item.slug}}">{{item.title}}</a>
                                   </button>
                                 </div>
                                 <div *ngIf="itemmenu.Baiviet.length > 0" >
-                                  <button  (mouseenter)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)" class="dropdown-item mx-0" mat-menu-item *ngFor="let item of itemmenu.Baiviet">
+                                  <button  (mouseenter)="mouseEnter(menuTrigger)" (click)="$event.stopPropagation()" (mouseleave)="mouseLeave(menuTrigger)" class="dropdown-item mx-0" mat-menu-item *ngFor="let item of itemmenu.Baiviet">
                                     <a class="dropdown-item " routerLink="/home/khoa-hoc/{{item.id}}">{{item.title}}</a>
                                   </button>
                                   </div>

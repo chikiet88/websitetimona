@@ -9,7 +9,7 @@ import {
   tap,
   throwError,
 } from 'rxjs';
-import { Khoahoc } from '../../sites/khoahoc/khoahoc.types';
+import { Khoahoc } from '../../khoahoc/khoahoc.types';
 
 @Injectable({
   providedIn: 'root',
