@@ -7,6 +7,7 @@ import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
+
 @Component({
 
   selector: 'app-theme1',
@@ -17,24 +18,33 @@ import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 export class Theme1Component implements OnInit {
   course$: Observable<Khoahoc>;
   massTimingsHtml;
-  constructor( private khoahocService: KhoahocService, private sanitizer: DomSanitizer) { 
+
+  constructor( private khoahocService: KhoahocService, private sanitizer: DomSanitizer) {
+    // this.massTimingsHtml = this.getInnerHTMLValue()
   }
+  
   theme:any;
   
  text:SafeHtml
+ 
  getCourse(){
+    
   this.khoahocService.course$
-        
+      
   .subscribe((course: any) => {
     
       // Update the counts
       this.theme = course[0];
-      this.theme.content = this.sanitizer.bypassSecurityTrustHtml(this.theme.content);
       
   });
+  
+  
+ // return this.sanitizer.bypassSecurityTrustHtml(this.theme.content);
 
   
  }
+ 
+ 
  
 //   reloadCurrentRoute() {
 //     const currentUrl = this.router.url;

@@ -8,7 +8,8 @@ import { Theme2Component } from './theme2/theme2.component';
 import { Theme3Component } from './theme3/theme3.component';
 import { Theme4Component } from './theme4/theme4.component';
 import { KhoahocListComponent } from './khoahoc-list/khoahoc-list.component';
-import {FormComponent} from './form/form.component'
+import {FormComponent} from './form/form.component';
+import { Theme1Pipe } from './theme1/theme1.pipe'
 @NgModule({
   declarations: [
     Theme1Component,
@@ -17,7 +18,8 @@ import {FormComponent} from './form/form.component'
     Theme4Component,
 
     KhoahocListComponent,
-    FormComponent
+    FormComponent,
+    Theme1Pipe
   ],
   imports: [
     CommonModule,
