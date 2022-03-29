@@ -25,7 +25,6 @@ import { TestComponent } from '../test/test.component';
 import {FormComponent} from '../components/form/form.component'
 import { IntroduceComponent } from '../introduce/introduce.component';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
-
 @NgModule({
     declarations: [
         LandingHomeComponent,

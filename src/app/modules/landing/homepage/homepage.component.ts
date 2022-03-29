@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import SwiperCore, { Navigation,Pagination } from "swiper";
-SwiperCore.use([Pagination]);
+import SwiperCore, { Navigation,Pagination,FreeMode } from "swiper";
+import { OwlOptions } from 'ngx-owl-carousel-o';
+SwiperCore.use([Pagination, FreeMode, Navigation]);
 
 SwiperCore.use([Navigation]);
 
@@ -11,6 +12,32 @@ SwiperCore.use([Navigation]);
   encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent implements OnInit {
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 1
+      }
+    },
+    nav: true
+  }
+
 
   constructor() { }
   active = 'hidden'

@@ -21,7 +21,17 @@ export class LandingHomeComponent
     courses$: Observable<Khoahoc[]>;
     panelOpenState = false;
     showFiller = false;
-   
+    isShow=false;
+    
+
+    activeMenu(){
+     
+      
+    }
+    toggleMenu()
+    {
+      this.isShow =!this.isShow
+    }
     mouseEnter(trigger) {
       if (this.timedOutCloser) {
         clearTimeout(this.timedOutCloser);
@@ -41,9 +51,7 @@ export class LandingHomeComponent
     }
   
     ngOnInit(): void {
-      $('.dropdown').hover(function(){ 
-        $('.dropdown-toggle', this).trigger('click'); 
-      });
+    
      
       this.homeService.getMenu().subscribe((dataMenu)=>{
 

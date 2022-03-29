@@ -127,10 +127,10 @@ padding: inherit;
 .dropdown{
   padding: 10px 0;
 }
+.dropdown-menu{
+  display: none;
+}
 .dropdown:hover>.dropdown-menu {
-	display: block !important;
+	display: block ;
   margin: 0;
   } 
-.dropdown-menu:hover{
-  display: block !important;
-}

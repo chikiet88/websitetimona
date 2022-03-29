@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, Pipe } from '@angular/core';
 
 import { KhoahocService } from '../khoahoc.service';
 import { Khoahoc } from '../khoahoc.types';
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
 @Component({
+
   selector: 'app-theme1',
   templateUrl: './theme1.component.html',
   styleUrls: ['./theme1.component.css'],
@@ -15,7 +16,9 @@ import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 })
 export class Theme1Component implements OnInit {
   course$: Observable<Khoahoc>;
-  constructor( private khoahocService: KhoahocService, private sanitizer: DomSanitizer) { }
+  massTimingsHtml;
+  constructor( private khoahocService: KhoahocService, private sanitizer: DomSanitizer) { 
+  }
   theme:any;
   
  text:SafeHtml
@@ -30,8 +33,9 @@ export class Theme1Component implements OnInit {
       
   });
 
-
+  
  }
+ 
 //   reloadCurrentRoute() {
 //     const currentUrl = this.router.url;
 //     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {

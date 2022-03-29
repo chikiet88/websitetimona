@@ -16,7 +16,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MaterialExampleModule } from 'material.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
     scrollPositionRestoration: 'enabled'
@@ -47,7 +47,8 @@ const routerConfig: ExtraOptions = {
 
         // 3rd party modules that require global configuration via forRoot
         MarkdownModule.forRoot({}),
-        CKEditorModule
+        CKEditorModule,
+        CarouselModule
     ],
     bootstrap   : [
         AppComponent

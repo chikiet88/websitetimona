@@ -3,11 +3,25 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
     {
-        id   : 'example',
-        title: 'Example',
+        id   : 'menu',
+        title: 'Menu',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/admin/menu'
+    },
+    {
+        id   : 'theme',
+        title: 'theme',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/theme'
+    },
+    {
+        id   : 'bai-viet',
+        title: 'Bài viết',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/bai-viet'
     }
 ];
 export const compactNavigation: FuseNavigationItem[] = [
@@ -27,6 +41,7 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         icon : 'heroicons_outline:chart-pie',
         link : '/example'
     }
+    
 ];
 export const horizontalNavigation: FuseNavigationItem[] = [
     {

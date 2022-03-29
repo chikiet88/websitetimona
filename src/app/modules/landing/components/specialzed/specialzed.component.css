@@ -230,6 +230,9 @@
     padding-left: 50px;
     padding-top: inherit;
   }
+  .commit{
+    padding: inherit !important;
+  }
   .item-img {
     height: 235px;
   }
