@@ -15,8 +15,8 @@
     <div
         class="lg:grid md:grid lg:grid-cols-3 md:grid-cols-2 gap-x-20 gap-y-8 pt-4"
     >
-     
-            <a routerLink="khoa-hoc/{{item.slug}}" class="gallery-item" *ngFor="let item of courses">
+        <div class="gallery-item">
+            <a routerLink="/khoa-hoc/theme1">
                 <div class="text-2xl relative">
                     <img
                         src="../../../assets/images/homepages/homepage/Ngành ĐT (xong)/Phun xăm thẩm mỹ.png"
@@ -33,24 +33,31 @@
                     /></i>
                 </div>
                 <div class="item-info">
-                    <div class="item-title">{{item.title}}</div>
+                    <div class="item-title">Phun xăm thẩm mỹ</div>
                     <span class="item-des text-justify font-medium" 
-                    ><div [innerHtml]="item.des"></div></span
+                    >Phun xăm thẩm mỹ được mệnh danh là nghề "hốt bạc" trong
+                    thời đại làm đẹp lên ngôi như hiện nay. Với cơ hội nghề
+                    nghiệp cao, thu nhập khủng lên tới 30 triệu đồng/ tháng,
+                    tiết kiệm chi phí, thời gian học tập. Đây chắc chắn là
+                    lựa chọn lý tưởng cho bạn trẻ ngoài con đường đại học,
+                    cao đẳng. NHƯNG HỌC Ở ĐÂU để vững kiến thức, chắc tay
+                    nghề, học xong là có đầy đủ kỹ năng để xin việc
+                    ngay?</span
                 >
                     <div class="md:hidden lg:hidden">
                         <a
-                            routerLink="home/khoa-hoc/{{item.slug}}"
+                            href="#"
                             class="!text-indigo-900 button bg-white rounded-lg"
                             >Xem thêm các khóa học khác >></a
                         >
                     </div>
                 </div>
-                <a class="hidden md:block lg:block" routerLink="khoa-hoc">Xem thêm >> </a>
+                <a class="hidden md:block lg:block">Xem thêm >> </a>
             </a>
-   
+        </div>
 
-        <!-- <a
-            class="gallery-item hidden  lg:block"
+        <a
+            class="gallery-item hidden md:block lg:block"
             routerLink="/khoa-hoc/theme2"
         >
             <div class="text-2xl relative">
@@ -218,7 +225,7 @@
                 >
             </div>
             <a class="#">Xem thêm >></a>
-        </a> -->
+        </a>
     </div>
 
     <div class="commit-wrapper">

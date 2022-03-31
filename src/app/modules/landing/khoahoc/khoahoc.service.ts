@@ -31,23 +31,25 @@ export class KhoahocService {
   );
 
   }
-  getKhoahocChitiet(id: number): Observable<Khoahoc>
+  getKhoahocChitiet(slug: string): Observable<Khoahoc>
     {
-      return this.http.get<Khoahoc>(`https://v2api.timona.edu.vn/baiviet/${id}`).pipe(
+      return this.http.get<Khoahoc>(`https://v2api.timona.edu.vn/baiviet/slug/${slug}`).pipe(
         map((course) => {
 
             // Update the course
             this._course.next(course);
             
+            console.log(course);
             
             // Return the course
             return course;
+
         }),
         switchMap((course) => {
 
             if ( !course )
             {
-                return throwError('Could not found course with id of ' + id + '!');
+                return throwError('Could not found course with id of ' + slug + '!');
             }
 
             return of(course);

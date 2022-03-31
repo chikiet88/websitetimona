@@ -6,3 +6,7 @@ ul li::before {
     width: 1em;
     margin-left: -1em;
   }
+  .fuse-mat-emphasized-affix{
+    border: 1px solid rgb(82, 79, 79);
+    border-radius: 5px;
+}

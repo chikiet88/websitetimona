@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import SwiperCore, { Navigation,Pagination,FreeMode } from "swiper";
+import SwiperCore, { Navigation,Pagination,FreeMode, Autoplay } from "swiper";
 import { OwlOptions } from 'ngx-owl-carousel-o';
-SwiperCore.use([Pagination, FreeMode, Navigation]);
+SwiperCore.use([Pagination, FreeMode, Navigation, Autoplay]);
 
 SwiperCore.use([Navigation]);
 
@@ -12,7 +12,7 @@ SwiperCore.use([Navigation]);
   encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent implements OnInit {
-
+  config;
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -55,6 +55,17 @@ export class HomepageComponent implements OnInit {
     
   }
   ngOnInit(): void {
+    this.config={
+      loop:true,
+      autoplay: {
+        delay: 1000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 5,
+    spaceBetween:30,
+        freeMode: true,
+        
+    }
   }
 
 }

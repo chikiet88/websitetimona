@@ -27,11 +27,11 @@
               <mat-expansion-panel-header >
                 <mat-panel-title>
                   <div *ngIf="itemmenu.children.length > 0 || itemmenu.Baiviet.length > 0; else notparent">
-                    <a routerLink="/home/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" >{{itemmenu.title}}</a>
+                    <a routerLink="/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" >{{itemmenu.title}}</a>
 
                   </div>
                   <ng-template #notparent>
-                    <a routerLink="/home/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" (click)="drawer.toggle()">{{itemmenu.title}}</a>
+                    <a routerLink="/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" (click)="drawer.toggle()">{{itemmenu.title}}</a>
 
                   </ng-template>
                 </mat-panel-title>
@@ -39,14 +39,14 @@
               </mat-expansion-panel-header>
               <div *ngIf="itemmenu.children.length > 0">
                 <div class="flex flex-col" *ngFor="let item of itemmenu.children ">
-                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/home/{{item.slug}}" (click)="drawer.toggle()">{{item.title}}</a>
+                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/{{item.slug}}" (click)="drawer.toggle()">{{item.title}}</a>
                    
                 </div>
               </div>
               
               <div *ngIf="itemmenu.Baiviet.length > 0">
                 <div class="flex flex-col" *ngFor="let item of itemmenu.Baiviet ">
-                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/home/khoa-hoc/{{item.id}}" (click)="drawer.toggle()">{{item.title}}</a>
+                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/khoa-hoc/{{item.id}}" (click)="drawer.toggle()">{{item.title}}</a>
                    
                 </div>
               </div>
@@ -149,7 +149,7 @@
                       
 
                               
-                              <a routerLink="/home/{{itemmenu.slug ? itemmenu.slug : khoa-hoc}}"
+                              <a routerLink="/{{itemmenu.slug ? itemmenu.slug : khoa-hoc}}"
                               class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
                               </a>
                                 
@@ -161,7 +161,7 @@
                                 type="button"
                                 id="dropdownMenuButton"
                                 aria-expanded="false"
-                                (mouseenter)="toggleMenu()"
+                                
                               >
                               <a routerLink="{{itemmenu.slug}}"
                               class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
@@ -195,7 +195,7 @@
                                 [ngClass]="{'hidden': isShow}"
                               >
                                 <li *ngFor="let item of itemmenu.children" (click)="toggleMenu()">
-                                  <a class="dropdown-item" routerLink="/home/{{item.slug}}">{{item.title}}</a>
+                                  <a class="dropdown-item" routerLink="/{{item.slug}}">{{item.title}}</a>
                                 </li>
                                
                               </ul>
@@ -222,8 +222,8 @@
                                 *ngIf="itemmenu.Baiviet.length > 0"
                                 aria-labelledby="dropdownMenuButton1"
                              [ngClass]="{'hidden': isShow}" >
-                                <li *ngFor="let item of itemmenu.Baiviet" (click)="toggleMenu()" >
-                                  <a class="dropdown-item" routerLink="/home/khoa-hoc/{{item.id}}">{{item.title}}</a>
+                                <li *ngFor="let itemBaiviet of itemmenu.Baiviet" (click)="toggleMenu()" >
+                                  <a class="dropdown-item" routerLink="/khoa-hoc/{{itemBaiviet.slug}}">{{itemBaiviet.title}}</a>
                                 </li>
                                
                               </ul>

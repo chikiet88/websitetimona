@@ -3,6 +3,7 @@ import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
 import { InitialDataResolver } from 'app/app.resolvers';
+import { PageErrorComponent } from './modules/landing/page-error/page-error.component';
 
 // @formatter:off
 /* eslint-disable max-len */
@@ -10,7 +11,7 @@ import { InitialDataResolver } from 'app/app.resolvers';
 export const appRoutes: Route[] = [
 
     // Redirect empty path to '/example'
-    {path: '', pathMatch : 'full', redirectTo: 'home'},
+    // {path: '', pathMatch : '', redirectTo: ''},
 
     // Redirect signed in user to the '/example'
     //
@@ -20,37 +21,37 @@ export const appRoutes: Route[] = [
     {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'example'},
 
     // Auth routes for guests
-    {
-        path: '',
-        canActivate: [NoAuthGuard],
-        canActivateChild: [NoAuthGuard],
-        component: LayoutComponent,
-        data: {
-            layout: 'empty'
-        },
-        children: [
-            {path: 'confirmation-required', loadChildren: () => import('app/modules/auth/confirmation-required/confirmation-required.module').then(m => m.AuthConfirmationRequiredModule)},
-            {path: 'forgot-password', loadChildren: () => import('app/modules/auth/forgot-password/forgot-password.module').then(m => m.AuthForgotPasswordModule)},
-            {path: 'reset-password', loadChildren: () => import('app/modules/auth/reset-password/reset-password.module').then(m => m.AuthResetPasswordModule)},
-            {path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.module').then(m => m.AuthSignInModule)},
-            {path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.module').then(m => m.AuthSignUpModule)}
-        ]
-    },
+    // {
+    //     path: '',
+    //     canActivate: [NoAuthGuard],
+    //     canActivateChild: [NoAuthGuard],
+    //     component: LayoutComponent,
+    //     data: {
+    //         layout: 'empty'
+    //     },
+    //     children: [
+    //         {path: 'confirmation-required', loadChildren: () => import('app/modules/auth/confirmation-required/confirmation-required.module').then(m => m.AuthConfirmationRequiredModule)},
+    //         {path: 'forgot-password', loadChildren: () => import('app/modules/auth/forgot-password/forgot-password.module').then(m => m.AuthForgotPasswordModule)},
+    //         {path: 'reset-password', loadChildren: () => import('app/modules/auth/reset-password/reset-password.module').then(m => m.AuthResetPasswordModule)},
+    //         {path: 'sign-in', loadChildren: () => import('app/modules/auth/sign-in/sign-in.module').then(m => m.AuthSignInModule)},
+    //         {path: 'sign-up', loadChildren: () => import('app/modules/auth/sign-up/sign-up.module').then(m => m.AuthSignUpModule)}
+    //     ]
+    // },
 
     // Auth routes for authenticated users
-    {
-        path: '',
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard],
-        component: LayoutComponent,
-        data: {
-            layout: 'empty'
-        },
-        children: [
-            {path: 'sign-out', loadChildren: () => import('app/modules/auth/sign-out/sign-out.module').then(m => m.AuthSignOutModule)},
-            {path: 'unlock-session', loadChildren: () => import('app/modules/auth/unlock-session/unlock-session.module').then(m => m.AuthUnlockSessionModule)}
-        ]
-    },
+    // {
+    //     path: '',
+    //     canActivate: [AuthGuard],
+    //     canActivateChild: [AuthGuard],
+    //     component: LayoutComponent,
+    //     data: {
+    //         layout: 'empty'
+    //     },
+    //     children: [
+    //         {path: 'sign-out', loadChildren: () => import('app/modules/auth/sign-out/sign-out.module').then(m => m.AuthSignOutModule)},
+    //         {path: 'unlock-session', loadChildren: () => import('app/modules/auth/unlock-session/unlock-session.module').then(m => m.AuthUnlockSessionModule)}
+    //     ]
+    // },
 
     // Landing routes
     {
@@ -60,13 +61,13 @@ export const appRoutes: Route[] = [
             layout: 'empty'
         },
         children   : [
-            {path: 'home', loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule)},
+            {path: '',  loadChildren: () => import('app/modules/landing/home/home.module').then(m => m.LandingHomeModule)}
         ]
     },
 
     // Admin routes
     {
-        path       : '',
+        path       : 'admin',
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
         component  : LayoutComponent,
@@ -74,7 +75,10 @@ export const appRoutes: Route[] = [
             initialData: InitialDataResolver,
         },
         children   : [
-            {path: 'admin', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
+            {path: '', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
         ]
-    }
+    },
+    {path: 'khong-tim-thay', pathMatch : 'full', component:PageErrorComponent},
+    {path: '**', redirectTo:'khong-tim-thay'}
+
 ];

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { environment } from 'environments/environment.prod';
+import { BehaviorSubject, map, Observable, switchMap, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +25,17 @@ export class MenuService {
   // }
 
   Addmenu(data){
-    return this.http.post(this.urlApi, data).subscribe({
-      next: data => {
-        this.post = data
-      }
-    })
+    return this.menu$.pipe(
+      take(1),
+      switchMap(menus => this.http.post(this.urlApi,data).pipe(
+        map((menu)=>{
+          
+          this._menu.next([menu,...menus ]);
+
+          return menu
+        })
+      ))
+    )
   }
 
   getMenu(){
@@ -42,5 +49,41 @@ export class MenuService {
           return menus;
       }),
     )
+  }
+  deleteMenu(id){
+    return this.menu$.pipe(
+      take(1),
+      switchMap(menus=>this.http.delete(`https://v2api.timona.edu.vn/menu/${id}`).pipe(map((isDelete => {
+        
+       const updateMenu =  menus.filter(e => e.id != id);
+        
+        this._menu.next(updateMenu)
+        return isDelete
+
+      }))))
+    )
+    
+  }
+  
+  updateMenu(data){
+    return this.menu$.pipe(
+      take(1),
+      switchMap(menus => this.http.patch(`https://v2api.timona.edu.vn/menu/${data.id}`,data).pipe(
+          map((updateMenu) => {
+
+              // Find the index of the updated tag
+              const index = menus.findIndex(item => item.id === item.id);
+
+              // Update the tag
+              menus[index] = data;
+
+              // Update the tags
+              this._menu.next(menus);
+
+              // Return the updated tag
+              return updateMenu;
+          })
+      ))
+  );
   }
 }

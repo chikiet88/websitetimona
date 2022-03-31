@@ -65,7 +65,7 @@
 }
 
 .gallery-item {
-  height: 320px;
+  height: 350px;
   cursor: pointer;
 }
 .gallery-item a {
@@ -236,6 +236,12 @@
   .item-img {
     height: 235px;
   }
+  .gallery-item{
+    display: none;
+  }
+  .gallery-item:first-child{
+    display: block;
+  }
   .gallery-item a{
     color: #00256e;
   }
@@ -276,7 +282,7 @@
     font-size: 10px !important;
   }
   .gallery-item {
-    height: 480px;
+    height: 450px;
   }
   .item-info .item-des {
     -webkit-line-clamp: inherit;

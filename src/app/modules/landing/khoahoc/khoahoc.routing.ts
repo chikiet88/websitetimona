@@ -39,15 +39,11 @@ export const khoahocRoutes: Route[] = [
       //   component:Theme3Component,
        
       // },
-      {
-        path: 'theme4',
-        pathMatch: 'full',
-        component:Theme4Component,
-       
-      },
+      
+
 
         {
-        path: ':id',
+        path: ':slug',
         component: Theme1Component,
         resolve: {
           detail: KhoahocDetailResolver,

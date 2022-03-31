@@ -8,6 +8,9 @@ import { CommonModule } from '@angular/common';
 import { ThemeComponent } from '../theme/theme.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AddBaivietComponent } from '../add-baiviet/add-baiviet.component';
+import { AddContactComponent } from '../add-contact/add-contact.component';
+import { AddFooterComponent } from '../add-footer/add-footer.component';
+
 const exampleRoutes: Route[] = [
     {
         path: '',
@@ -22,7 +25,7 @@ const exampleRoutes: Route[] = [
 ];
 
 @NgModule({
-    declarations: [ExampleComponent, MenuComponent, ThemeComponent, AddBaivietComponent],
+    declarations: [ExampleComponent, MenuComponent, ThemeComponent, AddBaivietComponent, AddContactComponent, AddFooterComponent],
     imports: [
         RouterModule.forChild(exampleRoutes),
         FormsModule,

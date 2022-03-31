@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 import { ThemeService } from './theme.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
@@ -17,6 +17,7 @@ export class ThemeComponent implements OnInit {
   userProfile: FormGroup;
   selectTheme: any;
   menu:any;
+  idtheme;
   public Editor = customBuild;
   public config = {
     htmlSupport: {
@@ -34,20 +35,33 @@ export class ThemeComponent implements OnInit {
   constructor(private themeService: ThemeService, private fb: FormBuilder) { }
 
   onSubmit() {
-    this.themeService.postTheme(this.userProfile.value)
-    alert('Tạo nội dung thành công')
+    this.themeService.postTheme(this.userProfile.value).subscribe()
+    alert('Tạo nội dung thành công') 
+  }
+
+  updateTheme(){
+    alert('Cập nhật thành công')
     
+    this.themeService.updateTheme(this.userProfile.value).subscribe()
+  }
+  deleteTheme(){
+    alert('Xóa thêm thành công')
+    
+    this.themeService.deleteTheme(this.idtheme).subscribe()
   }
 
   onSelect(item){    
     this.userProfile.get('content').setValue(item.content);
-    // this.userProfile.get('des').setValue(item.des);
-    this.userProfile.get('title').setValue(item.title);      
+    this.userProfile.get('title').setValue(item.title);
+    this.userProfile.addControl('id', new FormControl(item.id));
+    this.userProfile.get('id').setValue(item.id);
+    this.idtheme = item.id
   }
   // onSelectId(id){
     
   //   this.userProfile.get('parentid').setValue(id);   
   // }   
+
 
 
   ngOnInit(): void {
@@ -62,11 +76,10 @@ export class ThemeComponent implements OnInit {
       // slug: [''],
       
     });
-    this.themeService.getTheme().subscribe();
+    this.themeService.getTheme()
     
     this.themeService.themes$.subscribe((themes)=>{
       this.themes = themes
-      console.log(this.themes);
       
     })
     // this.themeService.getMenu().subscribe();

@@ -39,11 +39,12 @@
                 id="countries"
                 class="g-green-50 border border-none text-black-900 placeholder-black-700  rounded-lg focus:ring-black-500 focus:border-black-500 ml-3 block p-1.5 dark:bg-black-100 dark:border-black-400"
               >
-                <option>KHÓA HỌC</option>
+                <option>KHÓA HỌC</option>
+                <option *ngFor="let item of courses">{{item.title}}</option>
               </select>
             </div>
 
-            <button class="absolute bottom-0">đăng kí ngay</button>
+            <button class="absolute bottom-0 uppercase">đăng kí ngay</button>
           </form>
         </div>
       </div>
@@ -78,6 +79,8 @@
           class="g-green-50 border border-none text-black-900 placeholder-black-700  rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
         >
           <option class="text-black-700">KHÓA HỌC</option>
+          <option class="text-black-700" *ngFor="let item of courses">{{item.title}}</option>
+
         </select>
 
         <button class="text-center !w-full mx-32 rounded-lg">

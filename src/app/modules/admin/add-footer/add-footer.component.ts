@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AddFooterService } from './add-footer.service';
-import * as customBuild from "../../../ckCustomBuild/build/ckEditor"
+import * as customBuild from "../../ckCustomBuild/build/ckEditor"
+
 @Component({
   selector: 'app-add-footer',
   templateUrl: './add-footer.component.html',

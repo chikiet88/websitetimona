@@ -34,7 +34,7 @@ export class Theme1Component implements OnInit {
   .subscribe((course: any) => {
     
       // Update the counts
-      this.theme = course[0];
+      this.theme = course;
       
   });
   

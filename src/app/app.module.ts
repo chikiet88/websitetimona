@@ -17,6 +17,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MaterialExampleModule } from 'material.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { PageErrorComponent } from './modules/landing/page-error/page-error.component';
+import { SharedModule } from './shared/shared.module';
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
     scrollPositionRestoration: 'enabled'
@@ -25,12 +27,13 @@ const routerConfig: ExtraOptions = {
 @NgModule({
     declarations: [
         AppComponent,
+        PageErrorComponent,
     ],
     imports     : [
         BrowserModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, routerConfig),
-
+        SharedModule,
         // Fuse, FuseConfig & FuseMockAPI
         FuseModule,
         FuseConfigModule.forRoot(appConfig),

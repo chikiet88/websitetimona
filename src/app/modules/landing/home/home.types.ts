@@ -4,4 +4,5 @@ export interface Khoahoc{
     des: string;
     slug:  string;
     parentid: number;
+    Loaibaiviet:number;
 }
