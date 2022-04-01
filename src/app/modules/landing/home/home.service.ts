@@ -14,6 +14,7 @@ export class HomeService {
   );
   private _course: BehaviorSubject<any | null> = new BehaviorSubject(null);
   private _menu: BehaviorSubject<any | null> = new BehaviorSubject(null);
+  private _cauhinh: BehaviorSubject<any | null> = new BehaviorSubject(null);
 
 
   constructor(private http: HttpClient) {}
@@ -26,6 +27,10 @@ export class HomeService {
   get course$(): Observable<Khoahoc[]> {
     return this._course.asObservable();
   }
+  get cauhinh$(): Observable<any> {
+    return this._cauhinh.asObservable();
+  }
+
   getKhoahoc() {
     return this.http.get<Khoahoc[]>(this.urlApi).pipe(
       tap((courses) => {
@@ -42,24 +47,34 @@ export class HomeService {
     );
   }
   
- 
-
-  getKhoahocChitiet(id: number): Observable<Khoahoc> {
+  getKhoahocChitiet(slug:string): Observable<Khoahoc> {
     return this.http
-      .get<Khoahoc>('https://v2api.timona.edu.vn/baiviet', { params: { id } })
+      .get<Khoahoc>(`https://v2api.timona.edu.vn/baiviet/slug/${slug}`)
       .pipe(
         map((course) => {
           this._course.next(course);
-
+          
           return course;
         }),
         switchMap((course) => {
           if (!course) {
-            return throwError('Could not found course with id of ' + id + '!');
+            return throwError('Could not found course with id of ' + slug + '!');
           }
 
           return of(course);
         })
       );
   }
+
+  getCauhinh(){
+    return this.http.get<any>('https://v2api.timona.edu.vn/cauhinh').pipe(
+      tap((cauhinh) => {
+        console.log(cauhinh);
+        
+        this._cauhinh.next(cauhinh);
+        
+      })
+    );
+  }
+  
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { map } from 'rxjs';
 import * as customBuild from "../../ckCustomBuild/build/ckEditor"
 import { AddContactService } from './add-contact.service';
 @Component({
@@ -36,6 +37,8 @@ export class AddContactComponent implements OnInit {
     
   }
 
+
+
   // onSelect(item){    
   //   this.ContactBanner = this.fb.group({
   //     bannerimg: [item.img],
@@ -47,7 +50,7 @@ export class AddContactComponent implements OnInit {
 
   ngOnInit(): void {
  
-    
+  
 
     this.ContactBanner = this.fb.group({
       bannerimg: [''],

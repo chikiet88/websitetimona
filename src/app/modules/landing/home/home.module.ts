@@ -25,6 +25,8 @@ import { TestComponent } from '../test/test.component';
 import {FormComponent} from '../components/form/form.component'
 import { IntroduceComponent } from '../introduce/introduce.component';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { ContactPageComponent } from '../contact-page/contact-page.component';
+import { LecturerPageComponent } from '../lecturer-page/lecturer-page.component';
 @NgModule({
     declarations: [
         LandingHomeComponent,
@@ -43,6 +45,8 @@ import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
         TestComponent,
         FormComponent,
         IntroduceComponent,
+        ContactPageComponent,
+        LecturerPageComponent
     ],
     imports: [
         RouterModule.forChild(landingHomeRoutes),

@@ -1,21 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { map } from 'rxjs';
+import { HomeService } from '../../home/home.service';
 import { FooterService } from './footer.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls: ['./footer.component.css'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class FooterComponent implements OnInit {
   footer:any;
-  constructor(private footerService: FooterService) { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
 
-    this.footerService.getFooter().subscribe();
-    this.footerService.footer$.subscribe((footer)=>{
-      // this.footer = footer[footer.length - 1]
-    })
+    this.homeService.getCauhinh().subscribe();
+    this.homeService.cauhinh$.pipe(
+      map(
+          (arr) =>
+              arr && arr.length && arr.reverse().filter((r) => r.module == 'Footer')
+      )
+  )
+  .subscribe((result) => {this.footer = result[0]
+    console.log(this.footer);
+    
+  }); 
   }
 
 }

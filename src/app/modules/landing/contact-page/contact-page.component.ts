@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
+import { HomeService } from '../home/home.service';
+import { Khoahoc } from './contact-types';
 import { ContactService } from './contact.service';
 
 @Component({
@@ -7,15 +10,17 @@ import { ContactService } from './contact.service';
   styleUrls: ['./contact-page.component.css']
 })
 export class ContactPageComponent implements OnInit {
-  items: any;
-  constructor(private contactService: ContactService) { }
+  items:Khoahoc[];
+  constructor(private contactService: ContactService, private homeService: HomeService) { }
   ngOnInit(): void {
-    this.contactService.getKhoahoc().subscribe((data) =>{
-      this.items = data
-      console.log(this.items);
-      
-    
-    }) 
+   
+    this.homeService.courses$.pipe(
+      map(
+          (arr) =>
+              arr && arr.length && arr.filter((r) => r.Loaibaiviet == 1 && r.parentid == 5)
+      )
+  )
+  .subscribe((result) => (this.items = result));
   }
 
 }

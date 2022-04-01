@@ -9,7 +9,7 @@ import { ThemeComponent } from '../theme/theme.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AddBaivietComponent } from '../add-baiviet/add-baiviet.component';
 import { AddContactComponent } from '../add-contact/add-contact.component';
-import { AddFooterComponent } from '../add-footer/add-footer.component';
+import { CauhinhComponent } from '../cauhinh/cauhinh.component';
 
 const exampleRoutes: Route[] = [
     {
@@ -18,14 +18,22 @@ const exampleRoutes: Route[] = [
         children: [
             { path: 'menu', component: MenuComponent },
             { path: 'theme', component: ThemeComponent },
-            {path: 'bai-viet', component: AddBaivietComponent}
+            { path: 'bai-viet', component: AddBaivietComponent },
+            { path: 'footer', component: CauhinhComponent },
 
         ],
     },
 ];
 
 @NgModule({
-    declarations: [ExampleComponent, MenuComponent, ThemeComponent, AddBaivietComponent, AddContactComponent, AddFooterComponent],
+    declarations: [
+        ExampleComponent,
+        MenuComponent,
+        ThemeComponent,
+        AddBaivietComponent,
+        AddContactComponent,
+        CauhinhComponent,
+    ],
     imports: [
         RouterModule.forChild(exampleRoutes),
         FormsModule,

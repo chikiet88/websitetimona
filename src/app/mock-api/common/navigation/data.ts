@@ -22,7 +22,15 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/admin/bai-viet'
-    }
+    },
+    {
+        id   : 'footer',
+        title: 'Footer',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/footer'
+    },
+    
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {

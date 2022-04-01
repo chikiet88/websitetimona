@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AddFooterService } from './add-footer.service';
+import { CauhinhService } from './cauhinh.service';
 
-describe('AddFooterService', () => {
-  let service: AddFooterService;
+describe('CauhinhService', () => {
+  let service: CauhinhService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AddFooterService);
+    service = TestBed.inject(CauhinhService);
   });
 
   it('should be created', () => {

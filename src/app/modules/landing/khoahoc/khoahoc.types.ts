@@ -3,4 +3,7 @@ export interface Khoahoc{
     title: string;
     des: string;
     slug:  string;
+    Loaibaiviet: number;
+    parentid: number
+
 }
