@@ -42,7 +42,7 @@ export class CauhinhService {
 
     return this.cauhinhs$.pipe(
       take(1),
-      switchMap(courses=>this.http.delete(`http://v2api.timona.edu.vn/cauhinh/${id}`).pipe(map((isDelete => {
+      switchMap(courses=>this.http.delete(`https://v2api.timona.edu.vn/cauhinh/${id}`).pipe(map((isDelete => {
         
        const updateCourses =  courses.filter(e => e.id != id);
         
@@ -55,7 +55,7 @@ export class CauhinhService {
 
 
   getCauhinh(){
-    return this.http.get('http://v2api.timona.edu.vn/cauhinh').pipe(
+    return this.http.get('https://v2api.timona.edu.vn/cauhinh').pipe(
       map((cauhinhs) => {
 
           this._cauhinhs.next(cauhinhs);
@@ -67,7 +67,7 @@ export class CauhinhService {
   updateCauhinh(data){
     return this.cauhinhs$.pipe(
       take(1),
-      switchMap(courses => this.http.patch(`http://v2api.timona.edu.vn/cauhinh/${data.id}`, data).pipe(
+      switchMap(courses => this.http.patch(`https://v2api.timona.edu.vn/cauhinh/${data.id}`, data).pipe(
           map((updateCourse) => {
 
               // Find the index of the updated tag

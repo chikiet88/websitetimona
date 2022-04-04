@@ -40,13 +40,30 @@ export class AddBaivietComponent implements OnInit {
                 resourceType: 'Images'
             },
             uploadUrl: this.BACK_END_MAPPING_URL_FOR_SAVE_IMG,
+            withCredentials: false,
+            
             headers: {
                 'X-CSRF-TOKEN': 'CSRF-Token',
                 Authorization: 'Bearer AIzaSyCQ58kPYsxlE328vWL7BlkxfkHhJwLSYb8'
             }
           },
+          simpleUpload: {
+            // The URL that the images are uploaded to.
+            uploadUrl:  this.BACK_END_MAPPING_URL_FOR_SAVE_IMG,
+
+            // Enable the XMLHttpRequest.withCredentials property.
+            withCredentials: true,
+
+            // Headers sent along with the XMLHttpRequest to the upload server.
+            headers: {
+                'X-CSRF-TOKEN': 'CSRF-Token',
+                Authorization: 'Bearer AIzaSyCQ58kPYsxlE328vWL7BlkxfkHhJwLSYb8'
+            }
+        }
     };
   
+    
+  public componentEvents: string[] = [];
     
   
 

@@ -57,7 +57,7 @@ export class AddBaivietService {
     )
   }
   getMenu(){
-    return this.http.get('http://v2api.timona.edu.vn/menu').pipe(
+    return this.http.get('https://v2api.timona.edu.vn/menu').pipe(
       map((menu) => {
 
           this._menu.next(menu);
@@ -66,7 +66,7 @@ export class AddBaivietService {
     )
   }
   getBaiviet(){
-    return this.http.get('http://v2api.timona.edu.vn/baiviet').pipe(
+    return this.http.get('https://v2api.timona.edu.vn/baiviet').pipe(
       map((courses) => {
 
           this._courses.next(courses);
@@ -80,7 +80,7 @@ export class AddBaivietService {
 
     return this.courses$.pipe(
       take(1),
-      switchMap(courses=>this.http.delete(`http://v2api.timona.edu.vn/baiviet/${id}`).pipe(map((isDelete => {
+      switchMap(courses=>this.http.delete(`https://v2api.timona.edu.vn/baiviet/${id}`).pipe(map((isDelete => {
         
        const updateCourses =  courses.filter(e => e.id != id);
         
@@ -94,7 +94,7 @@ export class AddBaivietService {
   updateBaiviet(data){
     return this.courses$.pipe(
       take(1),
-      switchMap(courses => this.http.patch(`http://v2api.timona.edu.vn/baiviet/${data.id}`, data).pipe(
+      switchMap(courses => this.http.patch(`https://v2api.timona.edu.vn/baiviet/${data.id}`, data).pipe(
           map((updateCourse) => {
 
               // Find the index of the updated tag
