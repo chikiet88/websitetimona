@@ -41,3 +41,50 @@
 
   <div></div>
 </div> -->
+<label>
+    <input
+        type="file"
+        class="text-nowrap text-truncate"
+        (change)="selectFile($event)"
+    />
+</label>
+<button
+    class="btn btn-success btn-sm"
+    [disabled]="!selectedFiles"
+    (click)="upload()"
+>
+    Upload
+</button>
+<div *ngIf="currentFileUpload" class="progress mt-2">
+    <div
+        class="progress-bar progress-bar-info"
+        role="progressbar"
+        attr.aria-valuenow="{{ percentage }}"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [ngStyle]="{ width: percentage + '%' }"
+    >
+        {{ percentage }}%
+    </div>
+</div>
+
+<!-- <a href="{{ fileUpload.url }}">{{ fileUpload.name }}</a>
+<button (click)="deleteFileUpload(fileUpload)"
+  class="btn btn-danger btn-sm" style="float: right">
+  Delete
+</button>  -->
+<div class="card">
+    <div class="card-header">List of Files</div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let file of fileUploads">
+            <img src="{{ file.url }}" class="w-20 h-20 bg-indigo-900" alt="" />
+            <button
+                (click)="deleteFileUpload(file)"
+                class="btn btn-danger btn-sm"
+                style="float: right"
+            >
+                Delete
+            </button>
+        </li>
+    </ul>
+</div>

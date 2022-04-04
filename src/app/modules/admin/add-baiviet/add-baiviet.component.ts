@@ -4,7 +4,8 @@ import { AddBaivietService } from './add-baiviet.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
 import { Khoahoc } from '../theme/theme.types';
 import { map } from 'rxjs';
-
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import { ChangeEvent, FocusEvent, BlurEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 @Component({
     selector: 'app-add-baiviet',
     templateUrl: './add-baiviet.component.html',
@@ -17,10 +18,14 @@ export class AddBaivietComponent implements OnInit {
     userProfile: FormGroup;
     selectTheme: any;
     menu: any;
+    loader;
     idSelect;
     courses: Khoahoc[];
     public Editor = customBuild;
+    BACK_END_MAPPING_URL_FOR_SAVE_IMG:string = 'gs://timona-9c284.appspot.com/uploads';
+
     public config = {
+
         htmlSupport: {
             allow: [
                 {
@@ -30,11 +35,24 @@ export class AddBaivietComponent implements OnInit {
                 },
             ],
         },
+        ckfinder: {
+            options: {
+                resourceType: 'Images'
+            },
+            uploadUrl: this.BACK_END_MAPPING_URL_FOR_SAVE_IMG,
+            headers: {
+                'X-CSRF-TOKEN': 'CSRF-Token',
+                Authorization: 'Bearer AIzaSyCQ58kPYsxlE328vWL7BlkxfkHhJwLSYb8'
+            }
+          },
     };
+  
+    
+  
 
     constructor(
         private baivietService: AddBaivietService,
-        private fb: FormBuilder
+        private fb: FormBuilder,
     ) {}
 
     onSubmit() {
@@ -83,6 +101,8 @@ export class AddBaivietComponent implements OnInit {
 
         this.baivietService.updateBaiviet(this.userProfile.value).subscribe();
     }
+
+    
 
     ngOnInit(): void {
         this.userProfile = this.fb.group({

@@ -66,7 +66,7 @@ export class AddBaivietService {
     )
   }
   getBaiviet(){
-    return this.http.get(environment.apiUrl).pipe(
+    return this.http.get('http://v2api.timona.edu.vn/baiviet').pipe(
       map((courses) => {
 
           this._courses.next(courses);

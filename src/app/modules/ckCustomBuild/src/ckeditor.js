@@ -15,7 +15,6 @@ import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert.js';
-import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
@@ -47,7 +46,6 @@ Editor.builtinPlugins = [
 	Image,
 	ImageCaption,
 	ImageInsert,
-	ImageResize,
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
@@ -81,12 +79,13 @@ Editor.defaultConfig = {
 			'|',
 			'imageUpload',
 			'blockQuote',
+			'insertTable',
 			'mediaEmbed',
 			'undo',
 			'redo',
+			'CKFinder',
 			'sourceEditing',
-			'imageInsert',
-			'insertTable'
+			'imageInsert'
 		]
 	},
 	language: 'en',

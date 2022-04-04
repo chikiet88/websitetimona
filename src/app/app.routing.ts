@@ -68,8 +68,8 @@ export const appRoutes: Route[] = [
     // Admin routes
     {
         path       : 'admin',
-        canActivate: [AuthGuard],
-        canActivateChild: [AuthGuard],
+        // canActivate: [AuthGuard],
+        // canActivateChild: [AuthGuard],
         component  : LayoutComponent,
         resolve    : {
             initialData: InitialDataResolver,

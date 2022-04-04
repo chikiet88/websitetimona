@@ -19,7 +19,7 @@ const exampleRoutes: Route[] = [
             { path: 'menu', component: MenuComponent },
             { path: 'theme', component: ThemeComponent },
             { path: 'bai-viet', component: AddBaivietComponent },
-            { path: 'footer', component: CauhinhComponent },
+            { path: 'contact', component: AddContactComponent },
 
         ],
     },
@@ -41,6 +41,8 @@ const exampleRoutes: Route[] = [
         MaterialExampleModule,
         CommonModule,
         CKEditorModule,
-    ],
+      
+        
+    ]
 })
 export class ExampleModule {}
