@@ -24,7 +24,6 @@ export class FooterComponent implements OnInit {
       )
   )
   .subscribe((result) => {this.footer = result[0]
-    console.log(this.footer);
     
   }); 
   }

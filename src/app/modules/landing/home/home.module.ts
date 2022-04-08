@@ -8,9 +8,8 @@ import { landingHomeRoutes } from 'app/modules/landing/home/home.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from 'material.module';
 import { HomepageComponent } from '../homepage/homepage.component';
-import { SpecialzedComponent } from '../components/specialzed/specialzed.component';
-import { IntroComponent } from '../components/intro/intro.component';
-import { NewEventComponent } from '../components/new-event/new-event.component';
+import { SpecialzedComponent } from '../homepage/specialzed/specialzed.component';
+
 import { MainlayoutComponent } from '../components/mainlayout/mainlayout.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { HeaderComponent } from '../components/header/header.component';
@@ -21,12 +20,18 @@ import { AnswerPageComponent } from '../answer-page/answer-page.component';
 import { ActivatePageComponent } from '../activate-page/activate-page.component';
 import { StudentFeelPageComponent } from '../student-feel-page/student-feel-page.component';
 import { CornerStudentComponent } from '../corner-student/corner-student.component';
-import { TestComponent } from '../test/test.component';
 import {FormComponent} from '../components/form/form.component'
 import { IntroduceComponent } from '../introduce/introduce.component';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import { ContactPageComponent } from '../contact-page/contact-page.component';
 import { LecturerPageComponent } from '../lecturer-page/lecturer-page.component';
+import { CommitComponent } from '../homepage/commit/commit.component';
+import { LecturerComponent } from '../homepage/lecturer/lecturer.component';
+import { IntroComponent } from '../homepage/intro/intro.component';
+import { NewEventComponent } from '../homepage/new-event/new-event.component';
+import { StoryComponent } from '../homepage/story/story.component';
+import { ExpertComponent } from '../homepage/expert/expert.component';
+
 @NgModule({
     declarations: [
         LandingHomeComponent,
@@ -42,11 +47,14 @@ import { LecturerPageComponent } from '../lecturer-page/lecturer-page.component'
         ActivatePageComponent,
         StudentFeelPageComponent,
         CornerStudentComponent,
-        TestComponent,
         FormComponent,
         IntroduceComponent,
         ContactPageComponent,
-        LecturerPageComponent
+        LecturerPageComponent,
+        CommitComponent,
+        LecturerComponent,
+        StoryComponent,
+        ExpertComponent
     ],
     imports: [
         RouterModule.forChild(landingHomeRoutes),

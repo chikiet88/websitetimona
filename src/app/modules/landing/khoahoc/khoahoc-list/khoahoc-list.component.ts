@@ -25,7 +25,7 @@ export class KhoahocListComponent implements OnInit {
                         arr
                             .reverse()
                             .filter(
-                                (r) => r.Loaibaiviet == 1 && r.parentid == 5
+                                (r) =>  r.parentid == 5
                             )
                 )
             )

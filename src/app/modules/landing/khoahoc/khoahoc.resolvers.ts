@@ -62,6 +62,7 @@ export class KhoahocDetailResolver implements Resolve<any>
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Khoahoc>
     {
         const slug = route.paramMap.get('slug');
+        console.log(slug);
         
         return this._KhoaHoc.getKhoahocChitiet(slug)
                    .pipe(
@@ -73,7 +74,6 @@ export class KhoahocDetailResolver implements Resolve<any>
 
                            // Get the parent url
                            const parentUrl = state.url.split('/').slice(0, -1).join('/');
-                            console.log(parentUrl);
                             
                            // Navigate to there
                            this._router.navigateByUrl(parentUrl);

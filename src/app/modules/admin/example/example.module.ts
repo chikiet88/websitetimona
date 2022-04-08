@@ -20,6 +20,8 @@ const exampleRoutes: Route[] = [
             { path: 'theme', component: ThemeComponent },
             { path: 'bai-viet', component: AddBaivietComponent },
             { path: 'contact', component: AddContactComponent },
+            { path: 'footer', component: CauhinhComponent },
+
 
         ],
     },

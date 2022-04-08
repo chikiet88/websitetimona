@@ -1,0 +1,59 @@
+
+    <div>
+        <div class="flex flex-col justify-center items-center">
+            <p class="lg:text-5xl specializ-title font-bold text-white uppercase">
+                Chuyên ngành đào tạo
+            </p>
+            <span
+                class="item-des text-justify text-justify lg:text-center text-white lg:w-3/4 italic"
+                >Nhằm đáp ứng nhu cầu làm đẹp ngày càng cao của xã hội, Timona
+                Academy chú trọng đào tạo đa dạng và bài bản các chuyên ngành thẩm
+                mỹ từ cơ bản đến chuyên sâu với giáo trình học độc quyền 1 kèm 1,
+                phương pháp đào tạo theo tiêu chuẩn quốc tế.
+            </span>
+        </div>
+    
+        <div
+            class="lg:grid md:grid lg:grid-cols-3 md:grid-cols-2 gap-x-20 gap-y-8 pt-4"
+        >
+         
+                <div  class="gallery-item" *ngFor="let item of courses" routerLink="/khoa-hoc/{{item.slug}}">
+                    <div class="text-2xl relative cursor-pointer" >
+                        <img
+                            src="{{item.thumbimage}}"
+                            class="w-full h-full item-img"
+                        />
+                        <div
+                            class="absolute top-0 left-0 w-full h-full bg-black hover-img"
+                        ></div>
+                        <i class="absolute left-1/2 top-1/2 icon-hover"
+                            ><img
+                                class=""
+                                src="../../../assets/images/homepages/homepage/Ngành ĐT (xong)/icon-view.svg"
+                                alt=""
+                        /></i>
+                    </div>
+                    <div class="item-info">
+                        <div class="item-title">{{item.title}}</div>
+                        <span class="item-des text-justify font-medium" 
+                        ><div [innerHtml]="item.des"></div></span
+                    >
+                        <div class="md:hidden lg:hidden">
+                            <a
+                                routerLink="/khoa-hoc"
+                                class="!text-indigo-900 button bg-white rounded-lg"
+                                >Xem thêm các khóa học khác >></a
+                            >
+                        </div>
+                    </div>
+                    <a class="hidden md:block lg:block" routerLink="/khoa-hoc">Xem thêm >> </a>
+                </div>
+       
+    
+
+        </div>
+    
+    </div>
+    
+
+

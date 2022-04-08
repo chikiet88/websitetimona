@@ -49,8 +49,8 @@ footer:any;
     this.cauhinhList.get('data.phone').setValue(item.data.phone);
     this.cauhinhList.get('data.email').setValue(item.data.email);
     this.cauhinhList.get('data.address').setValue(item.data.address);
-    this.cauhinhList.addControl('id', new FormControl(item.id));
-    this.cauhinhList.get('id').setValue(item.id);
+    // this.cauhinhList.addControl('id', new FormControl(item.id));
+    // this.cauhinhList.get('id').setValue(item.id);
 
     this.idSelect   = item.id
   }

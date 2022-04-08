@@ -33,12 +33,12 @@ export const khoahocRoutes: Route[] = [
       //   component:Theme2Component,
        
       // },
-      // {
-      //   path: 'theme3',
-      //   pathMatch: 'full',
-      //   component:Theme3Component,
+      {
+        path: 'theme4',
+        pathMatch: 'full',
+        component:Theme4Component,
        
-      // },
+      },
       
 
 

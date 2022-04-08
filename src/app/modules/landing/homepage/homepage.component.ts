@@ -3,7 +3,7 @@ import SwiperCore, { Navigation,Pagination,FreeMode, Autoplay } from "swiper";
 import { OwlOptions } from 'ngx-owl-carousel-o';
 SwiperCore.use([Pagination, FreeMode, Navigation, Autoplay]);
 
-SwiperCore.use([Navigation]);
+
 
 @Component({
   selector: 'app-homepage',

@@ -1,8 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HomeService } from './home.service';
 import { Khoahoc } from './home.types';
 import $ from 'jquery';
+import { ViewportScroller } from '@angular/common';
+import { FacebookService, InitParams } from 'ngx-facebook';
 @Component({
     selector     : 'landing-home',
     templateUrl  : './home.component.html',
@@ -12,22 +14,34 @@ import $ from 'jquery';
 })
 export class LandingHomeComponent
 {
+  
   timedOutCloser;
     items:any;
     menu:any;
     menuArray;
     Array = [];
-    constructor(private homeService :HomeService ) {}
+    constructor(private homeService :HomeService, private scroll: ViewportScroller, private facebookService: FacebookService ) {
+      this.initFacebookService();
+    }
+    private initFacebookService(): void {
+      const initParams: InitParams = { xfbml:true, version:'v3.2'};
+      this.facebookService.init(initParams);
+    }
     courses$: Observable<Khoahoc[]>;
     panelOpenState = false;
     showFiller = false;
     isShow=false;
     
-
-    activeMenu(){
-     
-      
+    goDown1() {
+      document.getElementById("header").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
     }
+  
+    
+   
     toggleMenu()
     {
       this.isShow =!this.isShow
@@ -49,7 +63,9 @@ export class LandingHomeComponent
         trigger.closeMenu();
       }, 150);
     }
-  
+    scrollToTop(){
+      this.scroll.scrollToPosition([0,0]);
+    }
     ngOnInit(): void {
     
      

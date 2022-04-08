@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import {AngularFireStorage} from '@angular/fire/compat/storage'
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { FileUpload } from '../models/file-upload.model';
 
@@ -10,6 +10,10 @@ import { FileUpload } from '../models/file-upload.model';
 })
 export class FileUploadService {
   private basePath = '/uploads';
+  private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
+  get _thumb$(): Observable<any>{
+    return this._thumb.asObservable();
+  }
   constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
   pushFileToStorage(fileUpload: FileUpload): Observable<number | undefined> {
     const filePath = `${this.basePath}/${fileUpload.file.name}`;
@@ -22,6 +26,7 @@ export class FileUploadService {
       finalize(() => {
         storageRef.getDownloadURL().subscribe(downloadURL => {
           fileUpload.url = downloadURL;
+          this._thumb.next(fileUpload.url)
           fileUpload.name = fileUpload.file.name;
           console.log(fileUpload.url);
           

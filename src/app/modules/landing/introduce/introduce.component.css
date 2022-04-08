@@ -20,9 +20,7 @@
 .wrapper{
     padding: 1.25rem 3rem !important;
 }
-.text-column{
-    column-count: 2;
-}
+
 .title{
     font-size: 30px;
 }

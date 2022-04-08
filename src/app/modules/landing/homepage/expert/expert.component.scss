@@ -1,0 +1,146 @@
+.expert-wrapper{
+    padding: 0 80px;
+     display: flex;
+     justify-content: space-between;
+     padding-top: 50px;
+     padding-bottom: 50px;
+     
+}
+
+.expert-video{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.expert-boder{
+    display: flex;
+    border: 2px solid rgb(122, 122, 32);
+    width: 450px;
+    height: 250px;
+    position: relative;
+}
+.expert-boder-left{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+
+}.expert-boder-right{
+    width: 170px;
+    height: 200px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
+}
+.expert-boder-img{
+    width: 80px;
+    height: 50px;
+    background-color: #ddd;
+    margin-bottom: 25px;
+}
+
+.expert-boder-question{
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+}           
+.button-play{
+    width: 45px;
+    height: 45px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   transform: translate(-50%, -50%);
+}
+.video-yotube{
+}
+.expert-boder-active {
+    display: none !important;
+}
+.video-yotube.active{
+    display: block !important;
+}
+.left-reverse{
+    right: 20px;
+    bottom: 50px;
+    left: inherit;
+    text-align: end;
+}
+.right-reverse{
+    right: inherit;
+    left: 20px;
+    
+
+}
+.border-reverse{
+    position: relative;
+}
+.img-reverse{
+    position: absolute;
+    top: -75px;
+    right: 0;
+}
+
+.text-strong{
+    font-size: 22px;
+    font-weight: bold;
+   
+    padding: 10px 0;
+}
+
+.expert-question{
+    
+    font-size: 15px;
+    text-transform: uppercase;
+    padding-top: 25px;
+}
+.specializ{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(8, 8, 109);
+    border-radius: 30px;
+}
+.specializ-wrapper{
+    padding: 0 100px 50px 100px;
+}
+.specializ-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.specializ-title{
+    font-size: 40px;
+    
+    text-transform: uppercase;
+    padding-top: 50px;
+    font-weight: bold;   
+}
+.specializ-des{
+    font-size: 16px;
+    color: #fff;
+    text-transform: initial;
+    text-align: center;
+    padding: 30px 0 40px 0;
+}
+
+
+@media only screen and (max-width: 762px){
+    .expert-wrapper{
+        padding: inherit !important;
+      
+    }
+    .expert-boder-question{
+        width: 100%;
+    }
+    .specializ-title {
+        font-size: 1.5rem !important;
+        padding-top: 20px !important;
+      }
+  }

@@ -22,6 +22,7 @@ import { AngularFireModule} from '@angular/fire/compat'
 import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
 import {AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { environment } from 'environments/environment';
+import { FacebookModule } from 'ngx-facebook';
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
     scrollPositionRestoration: 'enabled'
@@ -57,7 +58,8 @@ const routerConfig: ExtraOptions = {
 
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireDatabaseModule,
-        AngularFireStorageModule
+        AngularFireStorageModule,
+        FacebookModule
     ],
     bootstrap   : [
         AppComponent

@@ -6,12 +6,19 @@ import { Khoahoc } from '../theme/theme.types';
 import { map } from 'rxjs';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
 import { ChangeEvent, FocusEvent, BlurEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+import { FileUpload } from '../models/file-upload.model';
+import { FileUploadService } from '../services/file-upload.service';
 @Component({
     selector: 'app-add-baiviet',
     templateUrl: './add-baiviet.component.html',
     styleUrls: ['./add-baiviet.component.scss'],
 })
 export class AddBaivietComponent implements OnInit {
+    fileUploads?: any[];
+
+  selectedFiles?: FileList;
+  currentFileUpload?: FileUpload;
+  percentage = 0;
     themes: any;
     theme: any;
     message: 'chon theme';
@@ -20,6 +27,7 @@ export class AddBaivietComponent implements OnInit {
     menu: any;
     loader;
     idSelect;
+    thumb;
     courses: Khoahoc[];
     public Editor = customBuild;
     BACK_END_MAPPING_URL_FOR_SAVE_IMG:string = 'gs://timona-9c284.appspot.com/uploads';
@@ -64,12 +72,30 @@ export class AddBaivietComponent implements OnInit {
   
     
   public componentEvents: string[] = [];
-    
+  upload(): void {
+    if (this.selectedFiles) {
+      const file: File | null = this.selectedFiles.item(0);
+      this.selectedFiles = undefined;
+      if (file) {
+        this.currentFileUpload = new FileUpload(file);
+        
+        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+          percentage => {
+            this.percentage = Math.round(percentage ? percentage : 0);
+          },
+          error => {
+            console.log(error);
+          }
+        );
+      }
+    }
+  }
   
 
     constructor(
         private baivietService: AddBaivietService,
         private fb: FormBuilder,
+        private uploadService: FileUploadService,
     ) {}
 
     onSubmit() {
@@ -107,7 +133,8 @@ export class AddBaivietComponent implements OnInit {
         this.userProfile.get('slug').setValue(item.slug);
         this.userProfile.get('Loaibaiviet').setValue(item.Loaibaiviet);
         this.idSelect = item.id;
-        console.log(this.userProfile.value);
+        this.thumb = item.thumbimage
+        
     }
     deleteBaiviet() {
         alert('Xóa bài thành công');
@@ -119,7 +146,14 @@ export class AddBaivietComponent implements OnInit {
         this.baivietService.updateBaiviet(this.userProfile.value).subscribe();
     }
 
-    
+    selectFile(event: any): void {
+        this.selectedFiles = event.target.files;
+      }
+      deleteFileUpload(fileUpload: FileUpload): void {
+        console.log(fileUpload);
+        
+        this.uploadService.deleteFile(fileUpload);
+      }
 
     ngOnInit(): void {
         this.userProfile = this.fb.group({
@@ -128,6 +162,7 @@ export class AddBaivietComponent implements OnInit {
             content: [''],
             slug:[''],
             Loaibaiviet:[0],
+            thumbimage:[''],
         });
         this.baivietService.getTheme().subscribe();
 
@@ -148,5 +183,22 @@ export class AddBaivietComponent implements OnInit {
         this.baivietService.courses$.subscribe((courses) => {
             this.courses = courses;
         });
+
+        this.uploadService.getFiles(1).snapshotChanges().pipe(
+            map(changes =>
+              // store the key
+              changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+            )
+          ).subscribe(fileUploads => {
+            this.fileUploads = fileUploads.reverse();
+            // console.log(fileUploads);
+            
+          });
+          this.uploadService._thumb$.subscribe((res)=>{
+              this.thumb = res
+              this.userProfile.get('thumbimage').setValue(res);
+
+              
+          })
     }
 }
