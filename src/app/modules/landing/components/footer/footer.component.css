@@ -13,6 +13,7 @@
 .footer-wrapper{
     width: 100%;
     display:  flex;
+    flex-direction: column;
     position: relative;
     padding-bottom: 50px;
 }
@@ -40,7 +41,6 @@
 .logo-footer{
     width: 210px;
     height: 70px;
-    background-color: #ddd;
 }
 .icons-social{
     
@@ -48,17 +48,16 @@
 .icon-item{
     width: 30px;
     height: 30px;
-    background-color: #ddd;
     margin-bottom: 10px;
 }
 .footer-left-notify{
     width: 100%;
-    height: 80px;
-    background-color: #ddd;
+    height: auto;
     margin-right: 40px;
 }
-.footer-right{
 
+.text-address {
+    color: white;
 }
 .footer-right-title{
     font-size: 20px;
@@ -125,9 +124,29 @@
     .footer{
         padding-top: inherit !important;
     }
-    
+    .scroll{
+        overflow-y: scroll !important;
+    }
+    .scroll::-webkit-scrollbar{
+        width: 5px;
+         background-color: #ddd;
+    }
+    .scroll::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #00256e;
+      }
     .footer{
         margin-top: inherit;
+    }
+    .text-address {
+        color: #00256e;
+    }
+    .footer-right-address{
+        color: #00256e;
+    }
+    .address-item{
+        color: #00256e;
     }
 
   }

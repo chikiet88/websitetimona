@@ -23,6 +23,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
 import {AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { environment } from 'environments/environment';
 import { FacebookModule } from 'ngx-facebook';
+import { ServiceWorkerModule } from '@angular/service-worker';
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
     scrollPositionRestoration: 'enabled'
@@ -59,7 +60,13 @@ const routerConfig: ExtraOptions = {
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireDatabaseModule,
         AngularFireStorageModule,
-        FacebookModule
+        FacebookModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          // Register the ServiceWorker as soon as the application is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
     bootstrap   : [
         AppComponent

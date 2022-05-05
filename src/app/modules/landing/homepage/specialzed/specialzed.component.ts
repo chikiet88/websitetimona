@@ -23,7 +23,11 @@ export class SpecialzedComponent implements OnInit {
                         arr && arr.length && arr.filter((r) => r.Loaibaiviet == 1 && r.parentid == 5)
                 )
             )
-            .subscribe((result) => (this.courses = result));            
+            .subscribe((result) => {
+              (this.courses = result)
+              console.log(result);
+              
+            });            
   }
 
 }

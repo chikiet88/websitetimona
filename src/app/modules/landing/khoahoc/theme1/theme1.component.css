@@ -80,32 +80,7 @@
 .title{
     font-size: 75px;
 }
-.form-right{
-    position: absolute;
-    left: 47%;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
-.form-submit input{
-    width: 250px;
-}
-.form-submit select{
-    width: 250px;
-}
-.form-submit{
-    padding-bottom: 50px;
-}
-.form-submit button{
-    border: none;
-    background-color: #f7d900;
-    border-radius: 10px;
-    width: 150px;
-    height: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 15px;
-}
 .mb{
     display: none;
 }

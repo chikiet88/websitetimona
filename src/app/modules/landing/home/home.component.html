@@ -16,11 +16,6 @@
           <a routerLink="/"  class="text-lg uppercase mt-4 text-white px-[24px]  lg:px-3 lg:py-2 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Trang Chủ</a>
           <!-- <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
            -->
-           
-           
-        
-      
-
           <mat-accordion *ngFor="let itemmenu of menu" >
             <mat-expansion-panel class="bg-indigo-900" (opened)="panelOpenState = true"
                                  (closed)="panelOpenState = false" >
@@ -52,21 +47,13 @@
               </div>
             </mat-expansion-panel>
           </mat-accordion>
-          
-
-       
-          
-        
-    
-          
-  
         </div>
       </div>
     </mat-drawer>
   
     <div class="example-sidenav-content flex flex-col relative">
-      <header id="header">
-        <nav class="bg-indigo-900 h-auto ">
+      <header id="header" class="lg:mb-0 mb-20">
+        <nav class="bg-indigo-900 h-auto w-full  z-50 ">
           <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-auto">
               <div class="absolute inset-y-0 left-0 z-10 flex items-center md:hidden">

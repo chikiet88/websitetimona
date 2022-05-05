@@ -83,5 +83,17 @@ div.cdk-overlay-container .mat-menu-content {padding-top: 0; padding-bottom: 0; 
 .swiper-button-prev:after, .swiper-button-next:after{
 	color: #ddd
 }
-
+.swiper-pagination-bullet-active-main{
+	background: blue !important;
+	
+}
+.swiper-pagination-bullet{
+	width: 0.85rem;
+	height: 0.85rem;
+	border: 1px solid #fff;
+	background: #fff;
+	opacity: 1;
+}
+.swiper-pagination-bullets-dynamic{
+}
 /* Importing Bootstrap SCSS file. */

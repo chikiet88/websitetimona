@@ -132,6 +132,8 @@ export class AddBaivietComponent implements OnInit {
         this.userProfile.get('id').setValue(item.id);
         this.userProfile.get('slug').setValue(item.slug);
         this.userProfile.get('Loaibaiviet').setValue(item.Loaibaiviet);
+        this.userProfile.get('thumbimage').setValue(item.thumbimage);
+
         this.idSelect = item.id;
         this.thumb = item.thumbimage
         
@@ -195,8 +197,9 @@ export class AddBaivietComponent implements OnInit {
             
           });
           this.uploadService._thumb$.subscribe((res)=>{
-              this.thumb = res
-              this.userProfile.get('thumbimage').setValue(res);
+              if(res){
+                this.userProfile.get('thumbimage').setValue(res);
+              }
 
               
           })

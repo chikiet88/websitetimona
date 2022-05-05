@@ -13,31 +13,6 @@ SwiperCore.use([Pagination, FreeMode, Navigation, Autoplay]);
 })
 export class HomepageComponent implements OnInit {
   config;
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 1
-      }
-    },
-    nav: true
-  }
-
 
   constructor() { }
   active = 'hidden'
@@ -61,8 +36,18 @@ export class HomepageComponent implements OnInit {
         delay: 1000,
         disableOnInteraction: false
       },
-      slidesPerView: 5,
-    spaceBetween:30,
+      breakpoints: {
+        320: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        
+        982:{
+          slidesPerView: 5,
+
+        }
+      },
+  
         freeMode: true,
         
     }

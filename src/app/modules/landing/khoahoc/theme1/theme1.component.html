@@ -1,72 +1,71 @@
-<div class="lg:max-w-7xl lg:mx-auto sm:px-6 lg:px-8">
-  <div class="text-center mt-10 lg:mx-96 pb-4 lg:pb-10">
-    <div class="dropdown">
-      <button
-        class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-2xl text-yellow-500 uppercase"
-        type="button"
-        id="dropdownMenuButton1"
-        style="width: 350px"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        xem nhanh nội dung
-        <div
-          class="absolute h-full bg-yellow-500 top-0"
-          style="width: 2px; right: 45px"
-        ></div>
-      </button>
-      
-    </div>
-  </div>
-
-  <div class="w-full h-1/2 flex flex-col hidden lg:block">
-    <div class="pb-4 flex justify-between">
-      <nav class="flex" aria-label="Breadcrumb">
-        <ol class="inline-flex items-center space-x-1 md:space-x-3">
-          <li class="inline-flex items-center">
-            <a
-              routerLink=""
-              class="inline-flex items-center  font-medium text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+<div class="lg:max-w-7xl lg:mx-auto lg:px-8 lg:py-10">
+    <div class="text-center mt-10 lg:mx-96 pb-4 lg:pb-10">
+        <div class="dropdown">
+            <button
+                class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-2xl text-yellow-500 uppercase"
+                type="button"
+                id="dropdownMenuButton1"
+                style="width: 350px"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
             >
-              Home
-            </a>
-          </li>
-          <li>
-            <div class="flex items-center text-indigo-900">
-              >>
-              <a
-                routerLink="/khoa-hoc"
-                class="ml-1  font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
-                >Khóa Học</a
-              >
-            </div>
-          </li>
-          <li aria-current="page">
-            <div class="flex items-center text-indigo-900">
-              >>
-              <span
-                class="ml-1  font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                >{{theme.title}}</span
-              >
-            </div>
-          </li>
-        </ol>
-      </nav>
+                xem nhanh nội dung
+                <div
+                    class="absolute h-full bg-yellow-500 top-0"
+                    style="width: 2px; right: 45px"
+                ></div>
+            </button>
+        </div>
     </div>
-  </div>
 
-  <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
-    <p class="text-white uppercase text-center text-xl lg:text-4xl pt-3">
-{{theme.title}}
-    </p>
-    <p
-      class="lg:text-base  text-white intro-description lg:italic text-justify"
-    ></p>
-    <div [innerHTML]="theme.des" class="text-white"></div>
-  </div>
+    <div class="w-full h-1/2 flex flex-col hidden lg:block">
+        <div class="pb-4 flex justify-between">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a
+                            routerLink=""
+                            class="inline-flex items-center font-medium text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center text-indigo-900">
+                            >>
+                            <a
+                                routerLink="/khoa-hoc"
+                                class="ml-1 font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                                >Khóa Học</a
+                            >
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center text-indigo-900">
+                            >>
+                            <span
+                                class="ml-1 font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
+                                >{{ theme.title }}</span
+                            >
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
 
-  <div class="wrapper">
-      <!-- <div class="pt-10">
+    <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
+        <p class="text-white uppercase text-center text-xl lg:text-4xl pt-3">
+            {{ theme.title }}
+        </p>
+        <p
+            class="lg:text-base text-white intro-description lg:italic text-justify"
+        ></p>
+        <div [innerHTML]="theme.des" class="text-white"></div>
+    </div>
+
+    <div class="wrapper">
+        <!-- <div class="pt-10">
       <h2 class="text-indigo-900 uppercase text-xl font-black">
         GIỚI THIỆU CHUNG VỀ KHÓA ĐÀO TẠO KỸ THUẬT VIÊN SPA
       </h2>
@@ -685,8 +684,11 @@
       </div>
     </div>  -->
 
-    <div [innerHTML]="theme.content | theme1"></div>
-    <div class="pt-10">
-     <app-form></app-form>
-  </div>
+        <div [innerHTML]="theme.content | theme1"></div>
+    </div>
+    
 </div>
+<div class="pt-10">
+  <app-form></app-form>
+</div>
+

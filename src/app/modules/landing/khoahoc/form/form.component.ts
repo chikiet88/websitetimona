@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { KhoahocService } from '../khoahoc.service';
 import { Khoahoc } from '../khoahoc.types';
 
@@ -14,15 +14,24 @@ export class FormComponent implements OnInit {
   constructor(private khoahocService: KhoahocService) { }
 
   ngOnInit(): void {
-    this.courses$ = this.khoahocService.courses$;
+    this.khoahocService.getKhoahoc().subscribe()
     this.khoahocService.courses$
-        
-        .subscribe((courses: Khoahoc[]) => {
-
-            // Update the counts
-            this.courses = courses;
-            
-        });
+            .pipe(
+                map(
+                    (arr) =>
+                        arr &&
+                        arr.length &&
+                        arr
+                            .reverse()
+                            .filter(
+                                (r) =>  r.parentid == 5
+                            )
+                )
+            )
+            .subscribe((result) => {this.courses = result
+             
+              
+            });
   }
 
 }

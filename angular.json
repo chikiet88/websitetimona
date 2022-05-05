@@ -38,7 +38,8 @@
                                 "glob": "_redirects",
                                 "input": "src",
                                 "output": "/"
-                            }
+                            },
+                            "src/manifest.webmanifest"
                         ],
                         "stylePreprocessorOptions": {
                             "includePaths": [
@@ -53,14 +54,16 @@
                             "src/styles/styles.scss",
                             "src/styles/tailwind.scss"
                         ],
-                        "scripts": []
+                        "scripts": [],
+                        "serviceWorker": true,
+                        "ngswConfigPath": "ngsw-config.json"
                     },
                     "configurations": {
                         "production": {
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "3mb",
+                                    "maximumWarning": "5mb",
                                     "maximumError": "7mb"
                                 },
                                 {
@@ -123,7 +126,8 @@
                         "assets": [
                             "src/favicon-16x16.png",
                             "src/favicon-32x32.png",
-                            "src/assets"
+                            "src/assets",
+                            "src/manifest.webmanifest"
                         ],
                         "styles": [
                             

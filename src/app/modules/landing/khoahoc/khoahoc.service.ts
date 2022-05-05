@@ -39,7 +39,6 @@ export class KhoahocService {
             // Update the course
             this._course.next(course);
             
-            console.log(course);
             
             // Return the course
             return course;

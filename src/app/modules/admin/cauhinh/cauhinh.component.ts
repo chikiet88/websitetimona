@@ -33,6 +33,8 @@ footer:any;
   constructor(private cauhinhService: CauhinhService, private fb: FormBuilder) { }
 
   onSubmit() {
+    this.cauhinhList.removeControl('id')
+
   this.cauhinhService.addCauhinh(this.cauhinhList.value).subscribe()
   
     alert('Tạo nội dung thành công')
@@ -49,8 +51,8 @@ footer:any;
     this.cauhinhList.get('data.phone').setValue(item.data.phone);
     this.cauhinhList.get('data.email').setValue(item.data.email);
     this.cauhinhList.get('data.address').setValue(item.data.address);
-    // this.cauhinhList.addControl('id', new FormControl(item.id));
-    // this.cauhinhList.get('id').setValue(item.id);
+    this.cauhinhList.addControl('id', new FormControl(item.id));
+    this.cauhinhList.get('id').setValue(item.id);
 
     this.idSelect   = item.id
   }

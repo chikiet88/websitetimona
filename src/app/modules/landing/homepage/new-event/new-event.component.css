@@ -13,9 +13,7 @@ max-height: 3.2rem;
     width: 170px;
     
 }
-.new-wrapper{
-    height: 465px;
-}
+
 
 .banner-image img{
     width: 100%;
@@ -27,16 +25,21 @@ max-height: 3.2rem;
     }
 }
 @media only screen and (max-width: 639px){
-    .banner-image{
-       height: 545px;
-    }
+    
     .new-wrapper{
         height: auto;
+       
     }
+    
 }
 @media screen  and (max-width:480px){
-    .banner-image{
-        height: auto;
-    }
+   .banner-image{
+       width: 100% !important;
+       height: 280px !important;
+   }
+   .banner-image img {
+       width: 100% !important;
+       height: 100% !important;
+   }
    
 }
