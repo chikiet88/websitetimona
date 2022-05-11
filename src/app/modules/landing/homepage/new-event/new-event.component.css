@@ -35,7 +35,6 @@ max-height: 3.2rem;
 @media screen  and (max-width:480px){
    .banner-image{
        width: 100% !important;
-       height: 280px !important;
    }
    .banner-image img {
        width: 100% !important;

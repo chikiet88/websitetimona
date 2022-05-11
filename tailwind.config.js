@@ -88,9 +88,13 @@ const config = {
             pink       : colors.pink,
             gray       : colors.blueGray,
             red        : colors.red,
-            orange     : colors.orange,
+            orange     : {
+                500: '#F29720',
+            },
             amber      : colors.amber,
-            green      : colors.green,
+            green      : {
+                500: '#39CB74'
+            },
             teal       : colors.teal,
             blue       : colors.blue,
             yellow: {

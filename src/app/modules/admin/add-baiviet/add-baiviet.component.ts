@@ -4,8 +4,6 @@ import { AddBaivietService } from './add-baiviet.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
 import { Khoahoc } from '../theme/theme.types';
 import { map } from 'rxjs';
-import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
-import { ChangeEvent, FocusEvent, BlurEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
 @Component({
@@ -115,10 +113,22 @@ export class AddBaivietComponent implements OnInit {
         .pipe(
             map(
                 (arr) =>
-                    arr && arr.length && arr.filter((r) => r.parentid == id)
+                  {
+                    console.log(arr);
+                    console.log(arr.length);
+                    
+                
+                    let abc = arr.filter((r) => r.parentid == id)
+                  console.log(abc);
+                  return abc
+                  }
             )
         )
-        .subscribe((result) => (this.courses = result));
+        .subscribe((result) => {
+          console.log(result);
+          
+         return this.courses = result
+        });
     
         
         

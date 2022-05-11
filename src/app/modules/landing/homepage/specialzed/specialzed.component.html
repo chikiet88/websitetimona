@@ -5,7 +5,7 @@
                 Chuyên ngành đào tạo
             </p>
             <span
-                class="item-des text-justify text-justify lg:text-center text-white lg:w-3/4 italic"
+                class="item-des text-justify text-justify lg:text-center text-white lg:w-3/4 italic leading-5"
                 >Nhằm đáp ứng nhu cầu làm đẹp ngày càng cao của xã hội, Timona
                 Academy chú trọng đào tạo đa dạng và bài bản các chuyên ngành thẩm
                 mỹ từ cơ bản đến chuyên sâu với giáo trình học độc quyền 1 kèm 1,
@@ -55,7 +55,7 @@
                
                 <div  class="gallery-item" *ngFor="let item of courses" routerLink="/khoa-hoc/{{item.slug}}">
                     <div class="text-2xl relative cursor-pointer" >
-                        <div class="w-full h-56 relative overflow-hidden">
+                        <div class="w-full lg:h-40 h-56 relative overflow-hidden">
                             <img
                             src="{{item.thumbimage}}"
                             class="w-full h-full item-img absolute left-0 top-0 right-0 bottom-0"
