@@ -1,7 +1,6 @@
 .footer{
     background-color: #00256e;
     padding-top: 50px;
-    margin-top: 50px;
 }
 .footer-container{
     padding: 0 150px;
@@ -123,6 +122,7 @@
     
     .footer{
         padding-top: inherit !important;
+        margin-top: 50px;
     }
     .scroll{
         overflow-y: scroll !important;

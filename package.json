@@ -39,6 +39,7 @@
         "firebase": "^9.6.10",
         "highlight.js": "11.3.1",
         "jquery": "^3.6.0",
+        "json-server": "^0.17.0",
         "lodash-es": "4.17.21",
         "mdb-angular-ui-kit": "^2.0.0",
         "moment": "2.29.1",

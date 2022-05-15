@@ -30,9 +30,9 @@
                     Giới thiệu
                 </label>
                 <ckeditor
-                [editor]="Editor"
-                #editer
-                [config]="config"
+                    [editor]="Editor"
+                    #editer
+                    [config]="config"
                     [formControlName]="'des'"
                 ></ckeditor>
             </div>
@@ -47,6 +47,8 @@
                 </label>
                 <ckeditor
                     [editor]="Editor"
+                    (ready)="onReady($event)"
+                    [(ngModel)]="html"
                     #editer
                     [config]="config"
                     [formControlName]="'content'"
@@ -118,25 +120,26 @@
                     </div>
                 </div>
             </div>
-           
-                <div class="card w-full mt-5">
-                    <div class="card-header">Image Upload</div>
-                    <ul class="list-group list-group-flush" *ngIf="thumb">
-                        <li class="list-group-item" *ngFor="let file of fileUploads">
-                            <img src="{{ thumb }}" class="w-20 h-20" alt="" />
-                            
-                        </li>
-                    </ul>
-                </div>
-          
+
+            <div class="card w-full mt-5">
+                <div class="card-header">Image Upload</div>
+                <ul class="list-group list-group-flush" *ngIf="thumb">
+                    <li
+                        class="list-group-item"
+                        *ngFor="let file of fileUploads"
+                    >
+                        <img src="{{ thumb }}" class="w-20 h-20" alt="" />
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="flex " style="height: 50px;">
+        <div class="flex" style="height: 50px">
             <mat-form-field
-                class="fuse-mat-emphasized-affix w-80 "
+                class="fuse-mat-emphasized-affix w-80"
                 appearance="fill"
             >
-                <span matPrefix >Chọn theme</span>
-                <mat-select >
+                <span matPrefix>Chọn theme</span>
+                <mat-select>
                     <mat-option
                         [value]="item.id"
                         *ngFor="let item of themes"
@@ -147,7 +150,7 @@
             </mat-form-field>
 
             <mat-form-field
-                class="fuse-mat-emphasized-affix w-80 mx-5 "
+                class="fuse-mat-emphasized-affix w-80 mx-5"
                 appearance="fill"
             >
                 <span matPrefix>Chọn Menu </span>

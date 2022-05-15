@@ -6,6 +6,8 @@ import { Khoahoc } from '../theme/theme.types';
 import { map } from 'rxjs';
 import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
+import { MyUploadAdapter } from '../MyUploadAdapter';
+
 @Component({
     selector: 'app-add-baiviet',
     templateUrl: './add-baiviet.component.html',
@@ -13,25 +15,25 @@ import { FileUploadService } from '../services/file-upload.service';
 })
 export class AddBaivietComponent implements OnInit {
     fileUploads?: any[];
-
-  selectedFiles?: FileList;
-  currentFileUpload?: FileUpload;
-  percentage = 0;
-    themes: any;
+    public html: string;
+    selectedFiles?: FileList;
+    currentFileUpload?: FileUpload;
+    percentage = 0;
+    themes: any[];
     theme: any;
     message: 'chon theme';
     userProfile: FormGroup;
     selectTheme: any;
-    menu: any;
+    menu: any[];
     loader;
     idSelect;
     thumb;
-    courses: Khoahoc[];
-    public Editor = customBuild;
-    BACK_END_MAPPING_URL_FOR_SAVE_IMG:string = 'gs://timona-9c284.appspot.com/uploads';
+    courses: any;
+    public Editor: customBuild;
+    BACK_END_MAPPING_URL_FOR_SAVE_IMG: string =
+        'gs://timona-9c284.appspot.com/uploads';
 
     public config = {
-
         htmlSupport: {
             allow: [
                 {
@@ -41,97 +43,69 @@ export class AddBaivietComponent implements OnInit {
                 },
             ],
         },
-        ckfinder: {
-            options: {
-                resourceType: 'Images'
-            },
-            uploadUrl: this.BACK_END_MAPPING_URL_FOR_SAVE_IMG,
-            withCredentials: false,
-            
-            headers: {
-                'X-CSRF-TOKEN': 'CSRF-Token',
-                Authorization: 'Bearer AIzaSyCQ58kPYsxlE328vWL7BlkxfkHhJwLSYb8'
-            }
-          },
-          simpleUpload: {
-            // The URL that the images are uploaded to.
-            uploadUrl:  this.BACK_END_MAPPING_URL_FOR_SAVE_IMG,
+    };
 
-            // Enable the XMLHttpRequest.withCredentials property.
-            withCredentials: true,
+    public componentEvents: string[] = [];
+    upload(): void {
+        if (this.selectedFiles) {
+            const file: File | null = this.selectedFiles.item(0);
+            this.selectedFiles = undefined;
+            if (file) {
+                this.currentFileUpload = new FileUpload(file);
+                console.log(this.currentFileUpload);
 
-            // Headers sent along with the XMLHttpRequest to the upload server.
-            headers: {
-                'X-CSRF-TOKEN': 'CSRF-Token',
-                Authorization: 'Bearer AIzaSyCQ58kPYsxlE328vWL7BlkxfkHhJwLSYb8'
+                this.uploadService
+                    .pushFileToStorage(this.currentFileUpload)
+                    .subscribe(
+                        (percentage) => {
+                            this.percentage = Math.round(
+                                percentage ? percentage : 0
+                            );
+                        },
+                        (error) => {
+                            console.log(error);
+                        }
+                    );
             }
         }
-    };
-  
-    
-  public componentEvents: string[] = [];
-  upload(): void {
-    if (this.selectedFiles) {
-      const file: File | null = this.selectedFiles.item(0);
-      this.selectedFiles = undefined;
-      if (file) {
-        this.currentFileUpload = new FileUpload(file);
-        
-        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
-          percentage => {
-            this.percentage = Math.round(percentage ? percentage : 0);
-          },
-          error => {
-            console.log(error);
-          }
-        );
-      }
     }
-  }
-  
 
     constructor(
         private baivietService: AddBaivietService,
         private fb: FormBuilder,
-        private uploadService: FileUploadService,
-    ) {}
-
+        private uploadService: FileUploadService
+    ) {
+        this.html = '';
+        this.Editor = customBuild;
+    }
     onSubmit() {
-        
         this.baivietService.postCourse(this.userProfile.value).subscribe();
         alert('Tạo nội dung thành công');
     }
-
     onSelect(item) {
         this.userProfile.get('content').setValue(item.content);
         this.userProfile.get('title').setValue(item.title);
     }
     onSelectId(id) {
+        console.log(id);
+
         this.userProfile.addControl('parentid', new FormControl(id));
         this.userProfile.get('parentid').setValue(id);
         this.baivietService.courses$
-        .pipe(
-            map(
-                (arr) =>
-                  {
-                    console.log(arr);
-                    console.log(arr.length);
-                    
-                
-                    let abc = arr.filter((r) => r.parentid == id)
-                  console.log(abc);
-                  return abc
-                  }
+            .pipe(
+                map((arr) => {
+                    if (arr.length > 0) {
+                        return arr.filter((r) => r.parentid == id);
+                    } else if (arr.length == 0) {
+                        return undefined;
+                    }
+                })
             )
-        )
-        .subscribe((result) => {
-          console.log(result);
-          
-         return this.courses = result
-        });
-    
-        
-        
+            .subscribe((result) => {
+                console.log(result);
+
+                this.courses = result;
+            });
     }
 
     onSelectBaiviet(item) {
@@ -145,8 +119,7 @@ export class AddBaivietComponent implements OnInit {
         this.userProfile.get('thumbimage').setValue(item.thumbimage);
 
         this.idSelect = item.id;
-        this.thumb = item.thumbimage
-        
+        this.thumb = item.thumbimage;
     }
     deleteBaiviet() {
         alert('Xóa bài thành công');
@@ -156,30 +129,57 @@ export class AddBaivietComponent implements OnInit {
         alert('Cập nhật thành công');
 
         this.baivietService.updateBaiviet(this.userProfile.value).subscribe();
+        this.resetForm();
     }
 
     selectFile(event: any): void {
         this.selectedFiles = event.target.files;
-      }
-      deleteFileUpload(fileUpload: FileUpload): void {
+    }
+    deleteFileUpload(fileUpload: FileUpload): void {
         console.log(fileUpload);
-        
+
         this.uploadService.deleteFile(fileUpload);
-      }
+        this.resetForm();
+    }
+    resetForm() {
+        this.userProfile = this.fb.group({
+            title: [''],
+            des: [''],
+            content: [''],
+            slug: [''],
+            Loaibaiviet: [0],
+            thumbimage: [''],
+        });
+    }
+    public onReady(editor) {
+        editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+            console.log(loader);
+            return new MyUploadAdapter(loader, this.uploadService);
+        };
+
+        editor.ui
+            .getEditableElement()
+            .parentElement.insertBefore(
+                editor.ui.view.toolbar.element,
+                editor.ui.getEditableElement()
+            );
+    }
 
     ngOnInit(): void {
         this.userProfile = this.fb.group({
             title: [''],
             des: [''],
             content: [''],
-            slug:[''],
-            Loaibaiviet:[0],
-            thumbimage:[''],
+            slug: [''],
+            Loaibaiviet: [0],
+            thumbimage: [''],
         });
         this.baivietService.getTheme().subscribe();
 
         this.baivietService.themes$.subscribe((themes) => {
-            this.themes = themes;
+            console.log(themes);
+
+            return (this.themes = themes);
         });
         this.baivietService.getMenu().subscribe();
         this.baivietService.menu$
@@ -196,22 +196,28 @@ export class AddBaivietComponent implements OnInit {
             this.courses = courses;
         });
 
-        this.uploadService.getFiles(1).snapshotChanges().pipe(
-            map(changes =>
-              // store the key
-              changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+        this.uploadService
+            .getFiles(1)
+            .snapshotChanges()
+            .pipe(
+                map((changes) =>
+                    // store the key
+                    changes.map((c) => ({
+                        key: c.payload.key,
+                        ...c.payload.val(),
+                    }))
+                )
             )
-          ).subscribe(fileUploads => {
-            this.fileUploads = fileUploads.reverse();
-            // console.log(fileUploads);
-            
-          });
-          this.uploadService._thumb$.subscribe((res)=>{
-              if(res){
-                this.userProfile.get('thumbimage').setValue(res);
-              }
+            .subscribe((fileUploads) => {
+                this.fileUploads = fileUploads.reverse();
+                // console.log(fileUploads);
+            });
+        this.uploadService._thumb$.subscribe((res) => {
+            if (res) {
+                console.log(res);
 
-              
-          })
+                this.userProfile.get('thumbimage').setValue(res);
+            }
+        });
     }
 }

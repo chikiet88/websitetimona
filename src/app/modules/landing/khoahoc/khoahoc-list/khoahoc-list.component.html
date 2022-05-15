@@ -28,10 +28,8 @@
   </div>
 
   <div class="">
-      <div class="w-full bg-red-100 " style="height: 350px;">
-          <img src="../../../assets/images/banner-chuyennganh.png" alt="" class=" w-full h-full">
-          
-          
+      <div class="w-full h-96" >
+          <img src="../../../assets/images/homepages/courses/CHUYEN-NGANH-DAO-TAO.png" alt="" class=" w-full h-full">
       </div>
   </div>
 
@@ -61,23 +59,23 @@
     </a>
     
 </div> -->
-      <div class=" relative border-bottom" style="height: 410px;" *ngFor="let theme of themes">
+      <div class=" relative border-bottom h-96"  *ngFor="let theme of themes">
           <a routerLink="{{theme.slug}}" style="width: 30%;" class="">
 
               <div class=" cursor-pointer" style=" height: 200px;">
-                  <img src="../../../assets/images/courses.png" class=" h-full rounded-md" alt="">
+                  <img src="{{theme.thumbimage}}" class=" h-full rounded-md" alt="">
               </div>
-              <h2 class="text-xl uppercase text-yellow-500 pt-2 mb-0">
+              <h2 class="text-2xl uppercase text-yellow-500 pt-3 pb-1 mb-0 font-black">
                 <div [innerHTML]="theme.title"></div>
               </h2>
-              <span class=" text-indigo-900 font-black des pt-2"><div [innerHTML]="theme.des"></div></span>
+              <span class=" text-indigo-900 font-bold des "><div [innerHTML]="theme.des"></div></span>
               <span class="p-2 bg-yellow-500 text-white rounded-lg absolute bottom-5 left-0 items-center">Tìm hiểu thêm >>></span>
           </a>
           
       </div>
       
   </div>
-  <div class="pt-10">
+  <div class="pt-10 mb-10">
     <app-form></app-form>
  </div>
 
