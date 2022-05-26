@@ -62,8 +62,6 @@ export class KhoahocDetailResolver implements Resolve<any>
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Khoahoc>
     {
         const slug = route.paramMap.get('slug');
-        console.log(slug);
-        
         return this._KhoaHoc.getKhoahocChitiet(slug)
                    .pipe(
                        // Error here means the requested contact is not available

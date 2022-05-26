@@ -73,7 +73,6 @@ export class KhoahocDetailResolver implements Resolve<any>
 
                            // Get the parent url
                            const parentUrl = state.url.split('/').slice(0, -1).join('/');
-                            console.log(parentUrl);
                             
                            // Navigate to there
                            this._router.navigateByUrl(parentUrl);

@@ -17,9 +17,12 @@ export class LecturerPageComponent implements OnInit {
 
   
     ngOnInit(): void {
-      console.log(this.route.snapshot.paramMap.get("slug")); 
       this.slug = this.route.snapshot.paramMap.get("slug")
-      this.homeService.getKhoahocChitiet(this.slug).subscribe((result)=> this.lecturer = result)
+      this.homeService.getKhoahocChitiet(this.slug).subscribe((result)=> {
+        this.lecturer = result
+        console.log(result);
+        
+      })
         
     }
 }

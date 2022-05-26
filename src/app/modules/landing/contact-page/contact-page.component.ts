@@ -13,6 +13,7 @@ export class ContactPageComponent implements OnInit {
   items:Khoahoc[];
   constructor(private contactService: ContactService, private homeService: HomeService) { }
   ngOnInit(): void {
+    // window.location.href = 'https://v1.timona.edu.vn/lien-he.html'
    
     this.homeService.courses$.pipe(
       map(

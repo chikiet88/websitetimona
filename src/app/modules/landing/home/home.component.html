@@ -13,20 +13,20 @@
                   <img src="../../../assets/images/homepages/homepage/Ngành ĐT (xong)/icon-close.svg" />
                 </button>
         <div class="pt-2 pb-3 space-y-1 flex flex-col pb-3 px-[24px]">
-          <a routerLink="/"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Trang Chủ</a>
+          <!-- <a routerLink="/"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Trang Chủ</a>
           <a href="https://v1.timona.edu.vn/gioi-thieu.html"  class="text-lg uppercase mt-4 text-white px-[24px] py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Giới Thiệu</a>
 
           <a href="https://v1.timona.edu.vn/khoa-hoc.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Chuyên Ngành</a>
          
-          <a href="https://v1.timona.edu.vn/hoc-vien.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Học Viên</a>
+          <a href="https://v1.timona.edu.vn/hoc-vien.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Góc Học Viện</a>
 
           <a href="https://v1.timona.edu.vn/tin-tuc-su-kien.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Tin Tức & sự kiện</a>
 
-          <a href="https://v1.timona.edu.vn/lien-he.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Liên hệ</a>
+          <a href="https://v1.timona.edu.vn/lien-he.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Liên hệ</a> -->
 
         <!-- <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
            -->
-          <!-- <mat-accordion *ngFor="let itemmenu of menu" >
+          <mat-accordion *ngFor="let itemmenu of menu" >
             <mat-expansion-panel class="bg-indigo-900" (opened)="panelOpenState = true"
                                  (closed)="panelOpenState = false" >
               <mat-expansion-panel-header >
@@ -56,7 +56,7 @@
                 </div>
               </div>
             </mat-expansion-panel>
-          </mat-accordion> -->
+          </mat-accordion>
         </div>
       </div>
     </mat-drawer>
@@ -130,7 +130,7 @@
                   <div class=" hidden lg:block md:block navbar-links">
                     <div class="flex space-x-4 pl-3 pt-3 pb-3 item-link justify-between"> 
                       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                      <a href="https://v1.timona.edu.vn/gioi-thieu.html"
+                      <!-- <a href="https://v1.timona.edu.vn/gioi-thieu.html"
                       class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium mr-5"> Giới Thiệu
                       </a>
 
@@ -146,8 +146,8 @@
                       </a>
                       <a href="https://v1.timona.edu.vn/lien-he.html"
                       class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium"> Liên hệ
-                      </a>
-                            <!-- <div class="dropdown relative" *ngFor="let itemmenu of menu">
+                      </a> -->
+                            <div class="dropdown relative" *ngFor="let itemmenu of menu">
                               <div *ngIf="itemmenu.children.length > 0 || itemmenu.Baiviet.length > 0 ;else notchild">
                                 <button
                                 class="
@@ -212,7 +212,7 @@
                                 </li>
                                
                               </ul>
-                              <ul
+                              <!-- <ul
                                 class="
                                   dropdown-menu
                                   min-w-max
@@ -239,8 +239,8 @@
                                   <a class="dropdown-item" routerLink="/khoa-hoc/{{itemBaiviet.slug}}">{{itemBaiviet.title}}</a>
                                 </li>
                                
-                              </ul>
-                            </div> -->
+                              </ul> -->
+                            </div>
                             <!-- This example requires Tailwind CSS v2.0+ -->
 
                     </div>

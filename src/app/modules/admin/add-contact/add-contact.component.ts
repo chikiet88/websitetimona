@@ -22,8 +22,6 @@ export class AddContactComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
   deleteFileUpload(fileUpload: FileUpload): void {
-    console.log(fileUpload);
-    
     this.uploadService.deleteFile(fileUpload);
   }
   upload(): void {
@@ -51,8 +49,6 @@ export class AddContactComponent implements OnInit {
       )
     ).subscribe(fileUploads => {
       this.fileUploads = fileUploads;
-      console.log(fileUploads);
-      
     });
   }
 

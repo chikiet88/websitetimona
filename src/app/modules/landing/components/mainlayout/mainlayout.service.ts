@@ -44,8 +44,6 @@ export class MainlayoutService {
     return this.http.get<any>(this.urlApi).pipe(
       tap((menu) => {
         this._menu.next(menu);
-        console.log(menu);
-        
       })
     );
   }

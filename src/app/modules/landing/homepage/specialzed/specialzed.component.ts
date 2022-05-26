@@ -25,8 +25,6 @@ export class SpecialzedComponent implements OnInit {
             )
             .subscribe((result) => {
               (this.courses = result)
-              console.log(result);
-              
             });            
   }
 

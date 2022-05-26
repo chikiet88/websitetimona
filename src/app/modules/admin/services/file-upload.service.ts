@@ -11,7 +11,8 @@ import { FileUpload } from '../models/file-upload.model';
     providedIn: 'root',
 })
 export class FileUploadService {
-    private basePath = '/uploads';
+    // private basePath = '/uploads';
+    private basePath = '/test';
     private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
     get _thumb$(): Observable<any> {
         return this._thumb.asObservable();
@@ -30,8 +31,6 @@ export class FileUploadService {
             .pipe(
                 finalize(() => {
                     storageRef.getDownloadURL().subscribe((downloadURL) => {
-                       console.log(fileUpload);
-                       
                       if(downloadURL){
                         fileUpload.url = downloadURL;
                         fileUpload.name = fileUpload.file.name;
@@ -60,8 +59,6 @@ export class FileUploadService {
             )
             .subscribe((fileUploads) => {
                 fileUploads = fileUploads.reverse();
-                console.log(fileUploads);
-                
               //  this.myUploadAdapter.upload(fileUploads)
                 this._thumb.next(fileUploads[0]);
             });

@@ -23,7 +23,6 @@ export class MyUploadAdapter {
     upload() {
         return new Promise(async (resolve, reject) => {
             this.loader.file.then((file: any) => {
-                console.log(file);
                 this.currentFileUpload = new FileUpload(file);
                 this.uploadService
                     .pushFileToStorage(this.currentFileUpload)

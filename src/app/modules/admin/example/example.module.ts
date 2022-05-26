@@ -10,6 +10,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AddBaivietComponent } from '../add-baiviet/add-baiviet.component';
 import { AddContactComponent } from '../add-contact/add-contact.component';
 import { CauhinhComponent } from '../cauhinh/cauhinh.component';
+import { DanhmucComponent } from '../danhmuc/danhmuc.component';
 
 const exampleRoutes: Route[] = [
     {
@@ -21,8 +22,7 @@ const exampleRoutes: Route[] = [
             { path: 'bai-viet', component: AddBaivietComponent },
             { path: 'contact', component: AddContactComponent },
             { path: 'footer', component: CauhinhComponent },
-
-
+            { path: 'danhmuc', component: DanhmucComponent },
         ],
     },
 ];
@@ -35,6 +35,7 @@ const exampleRoutes: Route[] = [
         AddBaivietComponent,
         AddContactComponent,
         CauhinhComponent,
+        DanhmucComponent
     ],
     imports: [
         RouterModule.forChild(exampleRoutes),
@@ -43,8 +44,6 @@ const exampleRoutes: Route[] = [
         MaterialExampleModule,
         CommonModule,
         CKEditorModule,
-      
-        
-    ]
+    ],
 })
 export class ExampleModule {}

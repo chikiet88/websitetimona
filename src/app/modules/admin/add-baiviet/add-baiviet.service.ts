@@ -36,8 +36,6 @@ export class AddBaivietService {
       take(1),
       switchMap(courses => this.http.post('https://v2api.timona.edu.vn/baiviet',data).pipe(
         map((course)=>{
-          console.log(course);
-          console.log(data);
           
           this._courses.next([course,...courses ]);
 

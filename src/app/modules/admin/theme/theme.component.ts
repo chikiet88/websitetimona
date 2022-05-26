@@ -85,7 +85,6 @@ export class ThemeComponent implements OnInit {
     // this.themeService.getMenu().subscribe();
     // this.themeService.menu$.subscribe((menu)=>{
     //   this.menu = menu.filter(e => e.parentid =='')
-    //   console.log(this.menu);
       
     // })
 

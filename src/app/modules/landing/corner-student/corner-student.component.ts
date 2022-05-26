@@ -10,6 +10,7 @@ export class CornerStudentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // window.location.href = 'https://v1.timona.edu.vn/hoc-vien.html'
   }
 
 }

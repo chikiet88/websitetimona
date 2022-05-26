@@ -25,8 +25,6 @@ export class CauhinhService {
  
 
   addCauhinh(data){
-    console.log(data);
-    
     return this.cauhinhs$.pipe(
       take(1),
       switchMap(cauhinhs => this.http.post(this.urlApi,data).pipe(

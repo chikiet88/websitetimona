@@ -9,7 +9,7 @@
                     Tiêu đề
                 </label>
                 <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="text"
                     placeholder="Phun xăm thẩm mỹ"
@@ -64,7 +64,7 @@
                     Slug
                 </label>
                 <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="text"
                     placeholder="phun-xam-tham-my"
@@ -73,8 +73,8 @@
                 />
             </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full px-3 mb-6 md:mb-0">
+        <div class="flex mb-6 items-center" style="height: 50px">
+            <div class="w-1/2 mr-3">
                 <label
                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     for="grid-first-name"
@@ -82,7 +82,7 @@
                     Thể loại
                 </label>
                 <input
-                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    class="appearance-none block w-full bg-gray-200 text-gray-700 border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="number"
                     placeholder="Nổi bật"
@@ -90,8 +90,24 @@
                     name="slug"
                 />
             </div>
+            <div class="w-1/2" >
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix w-full"
+                    appearance="fill"
+                    style="height: 50px"
+                >
+                    <span matPrefix>Chọn Danh mục</span>
+                    <mat-select (selectionChange)="selectionDanhmuc($event.value)">
+                        <mat-option
+                            [value]="item.id"
+                            *ngFor="let item of danhmucs"
+                            >{{ item.Tieude }}</mat-option
+                        >
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="flex flex-wrap mb-6">
             <div class="w-full px-3 mb-6 md:mb-0">
                 <label>
                     <input
@@ -121,14 +137,14 @@
                 </div>
             </div>
 
-            <div class="card w-full mt-5">
+            <div class="card w-full mt-5 " *ngIf="thumb">
                 <div class="card-header">Image Upload</div>
-                <ul class="list-group list-group-flush" *ngIf="thumb">
+                <ul class="list-group list-group-flush" >
                     <li
                         class="list-group-item"
-                        *ngFor="let file of fileUploads"
+                        
                     >
-                        <img src="{{ thumb }}" class="w-20 h-20" alt="" />
+                        <img src="{{ thumb.url }}" class="w-20 h-20" alt="" />
                     </li>
                 </ul>
             </div>

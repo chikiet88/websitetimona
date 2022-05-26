@@ -54,6 +54,8 @@ export class Theme1Component implements OnInit {
 // }
 
   ngOnInit(): void {
+    // window.location.href = 'https://v1.timona.edu.vn/khoa-hoc.html'
+
     this.getCourse()
     
     

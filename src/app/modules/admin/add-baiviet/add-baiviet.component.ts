@@ -7,6 +7,7 @@ import { map } from 'rxjs';
 import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
 import { MyUploadAdapter } from '../MyUploadAdapter';
+import { DanhmucService } from '../danhmuc/danhmuc.service';
 
 @Component({
     selector: 'app-add-baiviet',
@@ -21,6 +22,7 @@ export class AddBaivietComponent implements OnInit {
     percentage = 0;
     themes: any[];
     theme: any;
+    danhmucs: any[];
     message: 'chon theme';
     userProfile: FormGroup;
     selectTheme: any;
@@ -52,7 +54,6 @@ export class AddBaivietComponent implements OnInit {
             this.selectedFiles = undefined;
             if (file) {
                 this.currentFileUpload = new FileUpload(file);
-                console.log(this.currentFileUpload);
 
                 this.uploadService
                     .pushFileToStorage(this.currentFileUpload)
@@ -73,21 +74,26 @@ export class AddBaivietComponent implements OnInit {
     constructor(
         private baivietService: AddBaivietService,
         private fb: FormBuilder,
-        private uploadService: FileUploadService
+        private uploadService: FileUploadService,
+        private _danhmucService: DanhmucService
     ) {
         this.html = '';
         this.Editor = customBuild;
     }
     onSubmit() {
-        this.baivietService.postCourse(this.userProfile.value).subscribe();
-        alert('Tạo nội dung thành công');
+        this.baivietService
+            .postCourse(this.userProfile.value)
+            .subscribe((res) => {
+                if (res) {
+                    alert('Tạo nội dung thành công');
+                }
+            });
     }
     onSelect(item) {
         this.userProfile.get('content').setValue(item.content);
         this.userProfile.get('title').setValue(item.title);
     }
     onSelectId(id) {
-        console.log(id);
 
         this.userProfile.addControl('parentid', new FormControl(id));
         this.userProfile.get('parentid').setValue(id);
@@ -102,7 +108,6 @@ export class AddBaivietComponent implements OnInit {
                 })
             )
             .subscribe((result) => {
-                console.log(result);
 
                 this.courses = result;
             });
@@ -124,6 +129,7 @@ export class AddBaivietComponent implements OnInit {
     deleteBaiviet() {
         alert('Xóa bài thành công');
         this.baivietService.deleteBaiviet(this.idSelect).subscribe();
+        this.resetForm();
     }
     updateBaiviet() {
         alert('Cập nhật thành công');
@@ -136,7 +142,6 @@ export class AddBaivietComponent implements OnInit {
         this.selectedFiles = event.target.files;
     }
     deleteFileUpload(fileUpload: FileUpload): void {
-        console.log(fileUpload);
 
         this.uploadService.deleteFile(fileUpload);
         this.resetForm();
@@ -146,6 +151,7 @@ export class AddBaivietComponent implements OnInit {
             title: [''],
             des: [''],
             content: [''],
+            idDM: [0],
             slug: [''],
             Loaibaiviet: [0],
             thumbimage: [''],
@@ -153,7 +159,6 @@ export class AddBaivietComponent implements OnInit {
     }
     public onReady(editor) {
         editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
-            console.log(loader);
             return new MyUploadAdapter(loader, this.uploadService);
         };
 
@@ -164,20 +169,15 @@ export class AddBaivietComponent implements OnInit {
                 editor.ui.getEditableElement()
             );
     }
-
+    selectionDanhmuc(e) {
+        this.userProfile.get('idDM').setValue(e);
+    }
+   
     ngOnInit(): void {
-        this.userProfile = this.fb.group({
-            title: [''],
-            des: [''],
-            content: [''],
-            slug: [''],
-            Loaibaiviet: [0],
-            thumbimage: [''],
-        });
+       this.resetForm()
         this.baivietService.getTheme().subscribe();
 
         this.baivietService.themes$.subscribe((themes) => {
-            console.log(themes);
 
             return (this.themes = themes);
         });
@@ -195,7 +195,10 @@ export class AddBaivietComponent implements OnInit {
         this.baivietService.courses$.subscribe((courses) => {
             this.courses = courses;
         });
-
+        this._danhmucService.getDanhmuc().subscribe();
+        this._danhmucService.danhmucs$.subscribe(
+            (res) => (this.danhmucs = res)
+        );
         this.uploadService
             .getFiles(1)
             .snapshotChanges()
@@ -210,12 +213,10 @@ export class AddBaivietComponent implements OnInit {
             )
             .subscribe((fileUploads) => {
                 this.fileUploads = fileUploads.reverse();
-                // console.log(fileUploads);
             });
         this.uploadService._thumb$.subscribe((res) => {
             if (res) {
-                console.log(res);
-
+                this.thumb = res;
                 this.userProfile.get('thumbimage').setValue(res);
             }
         });

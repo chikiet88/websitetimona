@@ -69,7 +69,6 @@ export class HomeService {
   getCauhinh(){
     return this.http.get<any>('https://v2api.timona.edu.vn/cauhinh').pipe(
       tap((cauhinh) => {
-        console.log(cauhinh);
         
         this._cauhinh.next(cauhinh);
         

@@ -36,8 +36,6 @@ export class AddHeaderService {
       map((themes) => {
 
           this._themes.next(themes);
-          console.log(themes);
-          
           
           return themes;
       }),

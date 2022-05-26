@@ -23,12 +23,7 @@ export class MainlayoutComponent implements OnInit {
   getMenuchild(id){
    
      this.menuchild = this.menuArray.filter(e => e.parentid == id)
-     
-    //  console.log(this.menuchild);
-     
      const showbaiviet = this.items.filter(e => e.idMenu == id)
-      // console.log(showbaiviet);
-      
     return this.menuchild
      
   }
@@ -50,13 +45,8 @@ export class MainlayoutComponent implements OnInit {
     //     children: nest(items, item.id)
     // }));
 
-  
-      console.log(data);
-      
     // const datas= this.items.concat(data)
     // this.menu = nest(datas); 
-    // console.log(this.menu);
-       
     
     })
    

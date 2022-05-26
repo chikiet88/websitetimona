@@ -24,12 +24,20 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/admin/bai-viet'
     },
     {
+        id   : 'danhmuc',
+        title: 'Danh mục',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/danhmuc'
+    },
+    {
         id   : 'footer',
         title: 'Footer',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/admin/footer'
-    },
+    }
+    
     
 ];
 export const compactNavigation: FuseNavigationItem[] = [

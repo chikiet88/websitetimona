@@ -1,125 +1,166 @@
-<section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8 bg-red     -100">
-
-    <div class="text-center mt-10 mx-96 ">
+<section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8 pb-10">
+    <div class="text-center mt-10 mx-96">
         <div class="dropdown">
             <button
-                class="btn btn-secondary bg-indigo-900 rounded-3xl text-center px-5 text-left dropdown-toggle relative  text-2xl text-yellow-500 uppercase"
-                type="button" id="dropdownMenuButton1" style="width: 500px;" data-bs-toggle="dropdown"
-                aria-expanded="false">
-
+                class="btn btn-secondary bg-indigo-900 rounded-3xl text-center px-5 text-left dropdown-toggle relative text-2xl text-yellow-500 uppercase"
+                type="button"
+                id="dropdownMenuButton1"
+                style="width: 500px"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+            >
                 cảm nghĩ học viên
-                <div class="absolute h-full bg-yellow-500 top-0 " style="width: 2px; right: 55px;"></div>
+                <div
+                    class="absolute h-full bg-yellow-500 top-0"
+                    style="width: 2px; right: 55px"
+                ></div>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-
-                <li><a class="dropdown-item" routerLink="/goc-hoc-vien/hoat-dong">Hoạt Động</a></li>
-                <li><a class="dropdown-item" routerLink="/goc-hoc-vien/giai-dap">Giải Đáp</a></li>
+                <li>
+                    <a
+                        class="dropdown-item"
+                        routerLink="/goc-hoc-vien/hoat-dong"
+                        >Hoạt Động</a
+                    >
+                </li>
+                <li>
+                    <a class="dropdown-item" routerLink="/goc-hoc-vien/giai-dap"
+                        >Giải Đáp</a
+                    >
+                </li>
             </ul>
         </div>
-
     </div>
 
-    <div class="lg:pt-10 w-full h-1/2 flex flex-col  pb-4 hidden lg:block">
+    <div class="lg:pt-10 w-full h-1/2 flex flex-col pb-4 hidden lg:block">
         <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">
-              <li class="inline-flex items-center">
-                <a
-                  routerLink=""
-                  class="inline-flex items-center  text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <div class="flex items-center text-indigo-900">
-                  >>
-                  <a
-                  [routerLink]="['/goc-hoc-vien']"
-                    class="ml-1 font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
-                    > Góc Học Viên</a
-                  >
-                </div>
-              </li>
-              
-              <li aria-current="page">
-                <div class="flex items-center text-indigo-900">
-                  >>
-                  <span
-                    class="ml-1  text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                    >Cảm Nghĩ Học Viên</span
-                  >
-                </div>
-              </li>
+                <li class="inline-flex items-center">
+                    <a
+                        routerLink=""
+                        class="inline-flex items-center text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center text-indigo-900">
+                        >>
+                        <a
+                            [routerLink]="['/goc-hoc-vien']"
+                            class="ml-1 font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                        >
+                            Góc Học Viên</a
+                        >
+                    </div>
+                </li>
+
+                <li aria-current="page">
+                    <div class="flex items-center text-indigo-900">
+                        >>
+                        <span
+                            class="ml-1 text-text-indigo-900 md:ml-2 dark:text-indigo-900"
+                            >Cảm Nghĩ Học Viên</span
+                        >
+                    </div>
+                </li>
             </ol>
-          </nav>
+        </nav>
     </div>
 
     <div class="">
-        <div class="w-full bg-red-100 relative" style="height: 300px;">
-            <img src="../../../assets/images/lienhe.png" alt="" class="absolute left-0 h-full">
+        <div class="w-full bg-red-100 relative" style="height: 300px">
+            <img
+                src="../../../assets/images/lienhe.png"
+                alt=""
+                class="absolute left-0 h-full"
+            />
             <div
-                class="absolute text-indigo-900 font-black text-5xl uppercase left-1/2 z-10 top-1/2 contact-center hidden lg:block center-img">
-                <p class="text-5xl">cảm nghĩ <br> học viên</p>
-                
+                class="absolute text-indigo-900 font-black text-5xl uppercase left-1/2 z-10 top-1/2 contact-center hidden lg:block center-img"
+            >
+                <p class="text-5xl">
+                    cảm nghĩ <br />
+                    học viên
+                </p>
             </div>
-            <div class="absolute  bg-gray-100 right-0 w-1/4 right-0 h-full contact-center z-2 hidden lg:block img">
-            </div>
+            <div
+                class="absolute bg-gray-100 right-0 w-1/4 right-0 h-full contact-center z-2 hidden lg:block img"
+            ></div>
         </div>
-        
     </div>
-    
+
     <div class="flex items-center justify-center px-32 pt-10">
-        <div class="bg-gray-100 relative w-1/2 mr-10" style="width: 350px; height: 200px;">
-            <div class="absolute trapezoid"></div>
-            <div class="absolute text-yellow-500 uppercase text-2xl font-black top-1/2 z-10 right-2 center-img">
-                cảm nghĩ <br> học viên
-            </div>
-            <div class="absolute left-1/2 top-1/2 bg-gray-100 play-icon">
-                <i class="text-indigo-900">video</i>
+        <div class="bg-gray-100 relative w-1/2 mr-10">
+            <div class="video-container">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/xwKb7eMvx0w"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
             </div>
         </div>
-        <div class="w-1/2 ml-10 ">
+        <div class="w-1/2 ml-10">
             <p class="text-2xl text-indigo-900 font-black">Bạn Thịnh -K54</p>
-            <p class="text-indigo-900 ">"Cảm ơn Timona, ngoài được học chuyên môn tôi còn được kỹ năng, tư duy và thái độ để trở thành một chuyên viên thẩm mỹ chuyên nghiệp."</p>
-        </div>
-    </div>
-
-    <div class="flex items-center justify-center px-32 pt-10">
-        <div class="bg-gray-100 relative w-1/2 mr-10" style="width: 350px; height: 200px;">
-            <div class="absolute trapezoid"></div>
-            <div class="absolute text-yellow-500 uppercase text-2xl font-black top-1/2 z-10 right-2 center-img">
-                cảm nghĩ <br> học viên
-            </div>
-            <div class="absolute left-1/2 top-1/2 bg-gray-100 play-icon">
-                <i class="text-indigo-900">video</i>
-            </div>
-        </div>
-        <div class="w-1/2 ml-10 ">
-            <p class="text-2xl text-indigo-900 font-black">Chị Nga - Khóa K47</p>
-            <p class="text-indigo-900 ">"Mình từng kinh doanh online nhưng thu nhập thấp, bấp bênh nên quyết định thay đổi hướng đi. Mình chọn Timona để học nghề và giờ đã có thể tự mở được spa cho mình."</p>
-        </div>
-    </div>
-
-    <div class="flex items-center justify-center px-32 pt-10">
-        <div class="bg-gray-100 relative w-1/2 mr-10" style="width: 350px; height: 200px;">
-            <div class="absolute trapezoid"></div>
-            <div class="absolute text-yellow-500 uppercase text-2xl font-black top-1/2 z-10 right-2 center-img">
-                cảm nghĩ <br> học viên
-            </div>
-            <div class="absolute left-1/2 top-1/2 bg-gray-100 play-icon">
-                <i class="text-indigo-900">video</i>
-            </div>
-        </div>
-        <div class="w-1/2 ml-10 ">
-            <p class="text-2xl text-indigo-900 font-black">Bạn Ngọc - Khóa K55</p>
-            <p class="text-indigo-900 ">"Sau nhiều năm theo đuổi ngành Dược, Ngọc nhận ra rằng bản thân không phù hợp nên đã tìm hiểu và lựa chọn thay đổi."
+            <p class="text-indigo-900">
+                "Cảm ơn Timona, ngoài được học chuyên môn tôi còn được kỹ năng,
+                tư duy và thái độ để trở thành một chuyên viên thẩm mỹ chuyên
+                nghiệp."
             </p>
         </div>
     </div>
 
-    
-    
+    <div class="flex items-center justify-center px-32 pt-10">
+        <div class="bg-gray-100 relative w-1/2 mr-10">
+            <div class="video-container">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/PrYsNRnMJ2I"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+        <div class="w-1/2 ml-10">
+            <p class="text-2xl text-indigo-900 font-black">
+                Chị Nga - Khóa K47
+            </p>
+            <p class="text-indigo-900">
+                "Mình từng kinh doanh online nhưng thu nhập thấp, bấp bênh nên
+                quyết định thay đổi hướng đi. Mình chọn Timona để học nghề và
+                giờ đã có thể tự mở được spa cho mình."
+            </p>
+        </div>
+    </div>
 
-
-
+    <div class="flex items-center justify-center px-32 pt-10">
+        <div class="bg-gray-100 relative w-1/2 mr-10">
+            <div class="video-container">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/_Lt66ROpzAY"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+        <div class="w-1/2 ml-10">
+            <p class="text-2xl text-indigo-900 font-black">
+                Bạn Ngọc - Khóa K55
+            </p>
+            <p class="text-indigo-900">
+                "Sau nhiều năm theo đuổi ngành Dược, Ngọc nhận ra rằng bản thân
+                không phù hợp nên đã tìm hiểu và lựa chọn thay đổi."
+            </p>
+        </div>
+    </div>
 </section>

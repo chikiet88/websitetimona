@@ -10,6 +10,8 @@ export class NewPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // window.location.href = 'https://v1.timona.edu.vn/tin-tuc-su-kien.html'
+
   }
 
 }

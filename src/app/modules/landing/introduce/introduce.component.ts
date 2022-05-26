@@ -21,11 +21,7 @@ export class IntroduceComponent implements OnInit {
   constructor(private homeService: HomeService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-   
-
-  
-   
-      console.log(this.route.snapshot.paramMap.get("slug")); 
+    // window.location.href = 'https://v1.timona.edu.vn/gioi-thieu/tong-quan-timona-academy.html'
       this.slug = this.route.snapshot.paramMap.get("slug")
       this.homeService.getKhoahocChitiet(this.slug).subscribe((result)=> this.intro = result)
         
@@ -33,7 +29,7 @@ export class IntroduceComponent implements OnInit {
     this.config={
       loop:true,
       autoplay: {
-        delay: 1500,
+        delay: 2000,
         disableOnInteraction: false
       },
       breakpoints: {
@@ -44,6 +40,8 @@ export class IntroduceComponent implements OnInit {
         
         982:{
           slidesPerView: 4,
+          spaceBetween: 10,
+
 
         }
       },
