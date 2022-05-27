@@ -1,271 +1,422 @@
-<section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8  lg:pb-5">
-    <div class="lg:pt-10 w-full h-1/2 flex flex-col  pb-4 hidden lg:block">
-        <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
-              <li class="inline-flex items-center">
-                <a
-                  routerLink=""
-                  class="inline-flex items-center   text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+<section class="lg:max-w-7xl mx-auto lg:px-2 px-3 lg:px-6 lg:px-8 lg:pb-5 overflow-hidden">
+    <div class="pt-10">
+        <div class="pb-10 ">
+            <ul class="flex">
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl text-indigo-900" routerLink="A" routerLinkActive="bg-indigo-900 text-white">Tin tức</a></li>
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl text-indigo-900" routerLink="B" routerLinkActive="bg-indigo-900 text-white">Sự kiện</a></li>
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl text-indigo-900" routerLink="C" routerLinkActive="bg-indigo-900 text-white">Làm đẹp</a></li>
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl text-indigo-900" routerLink="D" routerLinkActive="bg-indigo-900 text-white">Học nghề cùng chuyên gia</a></li>
+
+            </ul>
+        </div>
+        <div class="pb-5 relative">
+            <p
+                class="text-2xl text-indigo-900 font-bold md:text-left text-center"
+            >
+                Tin Nổi Bật
+            </p>
+            <div
+                class="absolute left-1/2 bottom-3 centerX h-px w-16 bg-indigo-900 md:hidden"
+            ></div>
+        </div>
+        <div class="flex w-full">
+            <div class="md:w-3/4 w-full flex flex-col md:pr-5">
+                <div class="">
+                    <div class="">
+                        <img
+                            src="../../../assets/images/banner-new.png"
+                            class="w-full h-96"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="flex flex-col justify-around lg:mx-0">
+                        <p
+                            class="uppercase lg:text-3xl mb-2 relative font-black text-indigo-900 lg:text-left pt-5 text-2xl leading-7"
+                        >
+                            nghề spa - xu hướng nhất thời hay hướng đi bền vững
+                        </p>
+                        <div class="text-indigo-900 font-medium new-des">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Quae ipsam nam molestias labore, quia
+                            blanditiis deserunt possimus recusandae odit,
+                            tempore ea doloremque minima repellat ipsa eum. Quod
+                            dicta ipsum corrupti! Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. Nemo officiis eligendi
+                            enim ex cum omnis eveniet. Atque soluta est, neque
+                            voluptates explicabo illo, possimus alias modi,
+                            maiores dolores totam vel!
+                        </div>
+
+                        <a
+                            routerLink=""
+                            class="text-indigo-900 !mb-0 pt-3 font-medium"
+                        >
+                            Xem thêm >></a
+                        >
+                    </div>
+                </div>
+                <div class="pt-5 carousel-course md:hidden">
+                    <div
+                        class="text-white bg-indigo-900 text-2xl font-bold py-5 px-2 uppercase text-center rounded-t-xl"
+                    >
+                        danh sách khóa học
+                    </div>
+                    <swiper
+                        [config]="config"
+                        [pagination]="true"
+                        class="mySwiper pb-10"
+                    >
+                        <ng-template swiperSlide>
+                            <div class="flex flex-col pt-3">
+                                <div
+                                    class="w-full h-48 rounded-xl bg-gray-200"
+                                ></div>
+                                <p
+                                    class="text-yellow-500 font-bold text-xl uppercase py-3"
+                                >
+                                    Khóa học thẩm mỹ
+                                </p>
+                                <span
+                                    class="p-2 bg-yellow-500 text-white rounded-lg w-36 flex items-center"
+                                    >Tìm hiểu thêm >>></span
+                                >
+                            </div>
+                        </ng-template>
+
+                        <ng-template swiperSlide>
+                            <div class="flex flex-col pt-3">
+                                <div
+                                    class="w-full h-48 rounded-xl bg-gray-200"
+                                ></div>
+                                <p
+                                    class="text-yellow-500 font-bold text-xl uppercase py-3"
+                                >
+                                    Khóa học thẩm mỹ
+                                </p>
+                                <span
+                                    class="p-2 bg-yellow-500 text-white rounded-lg w-36 flex items-center"
+                                    >Tìm hiểu thêm >>></span
+                                >
+                            </div>
+                        </ng-template>
+                    </swiper>
+                </div>
+                <div class="lg:pt-10 pt-5 relative">
+                    <div class="grid grid-cols-2 md:gap-10 gap-5">
+                        <div class="cursor-pointer">
+                            <div class="w-full bg-gray-200 mr-4">
+                                <div class="banner-img md:h-64">
+                                    <img
+                                        src="../../../assets/images/new-item.png"
+                                        class="h-full hidden lg:block"
+                                        alt=""
+                                    />
+                                    <img
+                                        src="../../../assets/images/new-itemmb.png"
+                                        class="h-full lg:hidden"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                            <div
+                                class="w-full flex flex-col new-info justify-between pt-3"
+                            >
+                                <p
+                                    class="md:text-lg text-indigo-900 font-black uppercase md:leading-5 leading-4 text-justify text-md"
+                                >
+                                    bạn đã biết những lợi ích thần kỳ của việc
+                                    massage chưa?
+                                </p>
+                                <span class="pb-2 text-indigo-900 item-des"
+                                    >Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Maiores temporibus unde
+                                    tempora voluptatem nisi reprehenderit
+                                    deleniti delectus aliquid beatae corrupti.
+                                    Maiores temporibus unde tempora voluptatem
+                                    nisi reprehenderit deleniti delectus aliquid
+                                    beatae corrupti</span
+                                >
+                                <a
+                                    href="#"
+                                    class="text-indigo-900 pt-2 md:pt-0 new-link"
+                                    >Xem Thêm >></a
+                                >
+                            </div>
+                        </div>
+                        <div class="cursor-pointer">
+                            <div class="w-full bg-gray-200 mr-4">
+                                <div class="banner-img md:h-64">
+                                    <img
+                                        src="../../../assets/images/new-item.png"
+                                        class="h-full hidden lg:block"
+                                        alt=""
+                                    />
+                                    <img
+                                        src="../../../assets/images/new-itemmb.png"
+                                        class="h-full lg:hidden"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                            <div
+                                class="w-full flex flex-col new-info justify-between pt-3"
+                            >
+                                <p
+                                    class="md:text-lg text-indigo-900 font-black uppercase md:leading-5 leading-4 text-justify text-md"
+                                >
+                                    bạn đã biết những lợi ích thần kỳ của việc
+                                    massage chưa?
+                                </p>
+                                <span class="pb-2 text-indigo-900 item-des"
+                                    >Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Maiores temporibus unde
+                                    tempora voluptatem nisi reprehenderit
+                                    deleniti delectus aliquid beatae corrupti.
+                                    Maiores temporibus unde tempora voluptatem
+                                    nisi reprehenderit deleniti delectus aliquid
+                                    beatae corrupti</span
+                                >
+                                <a
+                                    href="#"
+                                    class="text-indigo-900 pt-2 md:pt-0 new-link"
+                                    >Xem Thêm >></a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute h-px w-full bg-gray-300 top-0 left-0 md:hidden"
+                    ></div>
+                    <div class="md:pt-10 pt-5">
+                        <div class="grid grid-cols-2 md:gap-10 gap-5">
+                            <div
+                                class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
+                            >
+                                <div class="md:w-1/2 w-full bg-gray-200 mr-4">
+                                    <div class="banner-img h-full">
+                                        <img
+                                            src="../../../assets/images/new-item.png"
+                                            class="h-full hidden lg:block"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="../../../assets/images/new-itemmb.png"
+                                            class="h-full lg:hidden"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="md:w-1/2 w-full flex flex-col new-info justify-center pt-3"
+                                >
+                                    <p
+                                        class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
+                                    >
+                                        bạn đã biết những lợi ích thần kỳ của
+                                        việc massage chưa?
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
+                                        >Xem Thêm >></a
+                                    >
+                                </div>
+                            </div>
+                            <div
+                                class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
+                            >
+                                <div class="md:w-1/2 w-full bg-gray-200 mr-4">
+                                    <div class="banner-img h-full">
+                                        <img
+                                            src="../../../assets/images/new-item.png"
+                                            class="h-full hidden lg:block"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="../../../assets/images/new-itemmb.png"
+                                            class="h-full lg:hidden"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="md:w-1/2 w-full flex flex-col new-info justify-center pt-3"
+                                >
+                                    <p
+                                        class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
+                                    >
+                                        bạn đã biết những lợi ích thần kỳ của
+                                        việc massage chưa?
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
+                                        >Xem Thêm >></a
+                                    >
+                                </div>
+                            </div>
+                            <div
+                                class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
+                            >
+                                <div class="md:w-1/2 w-full bg-gray-200 mr-4">
+                                    <div class="banner-img h-full">
+                                        <img
+                                            src="../../../assets/images/new-item.png"
+                                            class="h-full hidden lg:block"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="../../../assets/images/new-itemmb.png"
+                                            class="h-full lg:hidden"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="md:w-1/2 w-full flex flex-col new-info justify-center pt-3"
+                                >
+                                    <p
+                                        class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
+                                    >
+                                        bạn đã biết những lợi ích thần kỳ của
+                                        việc massage chưa?
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
+                                        >Xem Thêm >></a
+                                    >
+                                </div>
+                            </div>
+                            <div
+                                class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
+                            >
+                                <div class="md:w-1/2 w-full bg-gray-200 mr-4">
+                                    <div class="banner-img h-full">
+                                        <img
+                                            src="../../../assets/images/new-item.png"
+                                            class="h-full hidden lg:block"
+                                            alt=""
+                                        />
+                                        <img
+                                            src="../../../assets/images/new-itemmb.png"
+                                            class="h-full lg:hidden"
+                                            alt=""
+                                        />
+                                    </div>
+                                </div>
+                                <div
+                                    class="md:w-1/2 w-full flex flex-col new-info justify-center pt-3"
+                                >
+                                    <p
+                                        class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
+                                    >
+                                        bạn đã biết những lợi ích thần kỳ của
+                                        việc massage chưa?
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
+                                        >Xem Thêm >></a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center md:pt-10">
+                    <div aria-label="Page navigation" class="navigation">
+                        <ul class="pagination text-3xl lg:text-xl">
+                            <li class="mx-1">
+                                <a
+                                    class="page-link py-2 px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
+                                    href="#"
+                                    aria-label="Previous"
+                                >
+                                    <span aria-hidden="true">&lt;</span>
+                                </a>
+                            </li>
+                            <li class="mx-1">
+                                <a
+                                    class="page-link py-2 px-3 rounded-full border border-indigo-900 rounded-full text-white bg-indigo-900 font-black"
+                                    href="#"
+                                    >1</a
+                                >
+                            </li>
+                            <li class="mx-1">
+                                <a
+                                    class="page-link py-2 px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
+                                    href="#"
+                                    >2</a
+                                >
+                            </li>
+                            <li class="mx-1">
+                                <a
+                                    class="page-link py-2 px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
+                                    href="#"
+                                    >3</a
+                                >
+                            </li>
+                            <li class="mx-1">
+                                <a
+                                    class="page-link py-2 px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
+                                    href="#"
+                                    >4</a
+                                >
+                            </li>
+                            <li class="mx-1">
+                                <a
+                                    class="page-link py-2 px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
+                                    href="#"
+                                    aria-label="Next"
+                                >
+                                    <span aria-hidden="true">&gt;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:hidden pb-3">
+                    <div class="flex justify-center items-center relative py-3">
+                        <div class="bg-indigo-900 rounded-3xl p-2">
+                            <a class="text-xl text-yellow-500 p-3 uppercase font-bold"
+                                >lịch khai giảng</a
+                            >
+                        </div>
+                        <div
+                            class="absolute w-full top-0 bg-gray-300 h-px "
+                        ></div>
+                    </div>
+                    <app-form></app-form>
+
+                </div>
+            </div>
+            <div class="w-1/4 rounded-xl hidden md:block">
+                <div
+                    class="text-white bg-indigo-900 text-xl font-bold py-5 px-2 uppercase text-center rounded-t-xl"
                 >
-                  Home
-                </a>
-              </li>
-              
-              
-              <li aria-current="page">
-                <div class="flex items-center text-indigo-900">
-                  >>
-                  <span
-                    class="ml-1   text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                    >Tin Tức & Sự Kiện</span
-                  >
+                    danh sách khóa học
                 </div>
-              </li>
-            </ol>
-          </nav>
-    </div>
-    <div class=" w-full h-1/2 flex flex-col ">
-        
-
-        <div class="titile">
-            <div class="text-2xl text-indigo-900 font-black lg:pb-3 flex"> <p class="lg:hidden">1. </p> Tin Nổi Bật</div>
-        </div>
-       
-        <div class="flex lg:flex-row flex-col">
-            <div class="flex-1 bg-gray-200 lg:mr-4 ">
-                <img src="../../../assets/images/banner-new.png" class="w-full h-full" alt="">
-            </div>
-            <div class="flex-1 flex flex-col justify-around lg:mx-0 px-3 wrapper">
-                <p class="uppercase lg:text-3xl mb-2 relative font-black text-indigo-900 lg:text-left   pt:10 text-xl  ">
-                    4 sai lầm cho việc kinh doanh spa thât bại
-                </p>
-                <div class="text-indigo-900 font-medium new-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ipsam
-                    nam
-                    molestias labore, quia blanditiis deserunt possimus recusandae odit, tempore ea doloremque minima
-                    repellat ipsa eum. Quod dicta ipsum corrupti!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo officiis eligendi enim ex cum omnis
-                    eveniet. Atque soluta est, neque voluptates explicabo illo, possimus alias modi, maiores dolores
-                    totam
-                    vel!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ipsam nam
-                    molestias labore, quia blanditiis deserunt possimus recusandae odit, tempore ea doloremque minima
-                    repellat ipsa eum. Quod dicta ipsum corrupti!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo officiis eligendi enim ex cum omnis
-                    eveniet. Atque soluta est, neque voluptates explicabo illo, possimus alias modi, maiores dolores
-                    totam
-                    vel!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ipsam nam
-                    molestias labore, quia blanditiis deserunt possimus recusandae odit, tempore ea doloremque minima
-                    repellat ipsa eum. Quod dicta ipsum corrupti!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo officiis eligendi enim ex cum omnis
-                    eveniet. Atque soluta est, neque voluptates explicabo illo, possimus alias modi, maiores dolores
-                    totam
-                    vel!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae ipsam nam
-                    molestias labore, quia blanditiis deserunt possimus recusandae odit, tempore ea doloremque minima
-                    repellat ipsa eum. Quod dicta ipsum corrupti!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo officiis eligendi enim ex cum omnis
-                    eveniet. Atque soluta est, neque voluptates explicabo illo, possimus alias modi, maiores dolores
-                    totam
-                    vel!
-                </div>
-
-                <p class="text-indigo-900 !mb-0 pt-3 font-medium"> Xem thêm >></p>
-            </div>
-        </div>
-
-
-        <div class="wrapper-items">
-            <div class="grid lg:grid-cols-2 grid-cols-1  gap-4">
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-lg text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900    top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
+                <div class="py-3 px-2 border border-gray-300 rounded-b-xl">
+                    <div class="flex flex-col relative pb-5">
+                        <div class="w-full h-36 rounded-xl bg-gray-200"></div>
+                        <p
+                            class="text-yellow-500 font-bold text-xl uppercase py-3"
+                        >
+                            Khóa học thẩm mỹ
+                        </p>
+                        <span
+                            class="p-2 bg-yellow-500 text-white rounded-lg w-36 flex items-center"
+                            >Tìm hiểu thêm >>></span
+                        >
+                        <div
+                            class="absolute w-full h-px bg-indigo-900 bottom-0 left-0"
+                        ></div>
                     </div>
                 </div>
-
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-lg text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900    top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
-                    </div>
-                </div>
-
                 
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-lg text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900    top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
-                    </div>
-                </div>
-
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-base text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900   top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
-                    </div>
-                </div>
-
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-base text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900   top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
-                    </div>
-                </div>
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-base text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900   top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
-                    </div>
-                </div>
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-base text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900   top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
-                    </div>
-                </div>
-
-                <div class="lg:pt-4 flex justify-start new-item cursor-pointer">
-                    <div class="w-1/2  bg-gray-200  mr-4">
-                        <div class="banner-img  h-full">
-                            <img src="../../../assets/images/new-item.png" class="h-full hidden lg:block" alt="">
-                            <img src="../../../assets/images/new-itemmb.png" class="h-full lg:hidden" alt="">
-
-                        </div>
-                    </div>
-                    <div class="w-1/2 flex flex-col new-info justify-between pt-3" >
-                        <p class="text-lg text-indigo-900 font-black uppercase leading-5">bạn đã biết những lợi ích thần kỳ của việc massage chưa?</p>
-                        <span class="pb-2  text-indigo-900 item-des">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.
-                            Maiores temporibus unde tempora voluptatem nisi reprehenderit deleniti delectus aliquid
-                            beatae
-                            corrupti</span>
-                        <a href="#" class="text-indigo-900    top-3  font-black new-link">Tìm hiểu
-                            thêm >></a>
-
-                    </div>
-                </div>
-
             </div>
-        </div>
-
-        <div class=" flex justify-center items-center ">
-            <nav aria-label="Page navigation" class="navigation">
-                <ul class="pagination text-3xl lg:text-xl">
-                  <li class="page-item ">
-                    <a class="page-link border-none text-indigo-900 font-black" href="#" aria-label="Previous">
-                      <!-- <span aria-hidden="true"><</span> -->
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link border-none  text-indigo-900 font-black" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link border-none  text-indigo-900 font-black" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link border-none  text-indigo-900 font-black" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link border-none  text-indigo-900 font-black" href="#">4</a></li>
-                  <li class="page-item">
-                    <a class="page-link border-none  text-indigo-900 font-black" href="#" aria-label="Next">
-                      <span aria-hidden="true">></span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
         </div>
     </div>
 </section>

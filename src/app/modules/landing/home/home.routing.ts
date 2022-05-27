@@ -9,7 +9,6 @@ import { AnswerPageComponent } from '../answer-page/answer-page.component';
 import { ActivatePageComponent } from '../activate-page/activate-page.component';
 import { StudentFeelPageComponent } from '../student-feel-page/student-feel-page.component';
 import { ContactPageComponent } from '../contact-page/contact-page.component';
-import { NewPageComponent } from '../new-page/new-page.component';
 export const landingHomeRoutes: Route[] = [
     {
         path: '',
@@ -30,6 +29,18 @@ export const landingHomeRoutes: Route[] = [
                     },
                 ],
             },
+            {
+                path: '',
+                children: [
+                    {
+                        path: 'tin-tuc-su-kien',
+                        loadChildren: () =>
+                            import('../new-page/new-page.module').then(
+                                (m) => m.NewPageModule
+                            ),
+                    },
+                ],
+            },
             { path: 'goc-hoc-vien', component: CornerStudentComponent },
             { path: 'goc-hoc-vien/giai-dap', component: AnswerPageComponent },
             {
@@ -41,7 +52,6 @@ export const landingHomeRoutes: Route[] = [
                 component: StudentFeelPageComponent,
             },
             { path: 'lien-he', component: ContactPageComponent },
-            { path: 'tin-tuc', component: NewPageComponent },
 
         ],
     },

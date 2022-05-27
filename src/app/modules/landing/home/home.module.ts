@@ -31,6 +31,7 @@ import { IntroComponent } from '../homepage/intro/intro.component';
 import { NewEventComponent } from '../homepage/new-event/new-event.component';
 import { StoryComponent } from '../homepage/story/story.component';
 import { ExpertComponent } from '../homepage/expert/expert.component';
+import { NewPageComponent } from '../new-page/new-page.component';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,8 @@ import { ExpertComponent } from '../homepage/expert/expert.component';
         CommitComponent,
         LecturerComponent,
         StoryComponent,
-        ExpertComponent
+        ExpertComponent,
+        NewPageComponent
     ],
     imports: [
         RouterModule.forChild(landingHomeRoutes),

@@ -97,3 +97,16 @@ div.cdk-overlay-container .mat-menu-content {padding-top: 0; padding-bottom: 0; 
 .swiper-pagination-bullets-dynamic{
 }
 /* Importing Bootstrap SCSS file. */
+.carousel-course{
+	.swiper-pagination-bullet{
+		width: 0.65rem;
+		height: 0.65rem;
+		border: 1px solid #fff;
+		background: #ddd;
+		opacity: 1;
+	}
+	.swiper-pagination-bullet-active{
+		background: #00256e !important;
+	
+	}
+} 

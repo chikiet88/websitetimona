@@ -1,16 +1,18 @@
 <div class="lg:max-w-7xl lg:mx-auto sm:px-6 lg:px-8 lg:pt-10 lg:mb-10">
-  <div class="lg:p-6 container bg-indigo-900 lg:rounded-3xl wrapper">
-      <div [innerHTML]="lecturer.des"></div>
-      <div class="flex justify-between py-3 relative">
+    <div class="lg:p-6 container bg-indigo-900 lg:rounded-3xl wrapper">
+        <div [innerHTML]="lecturer.des"></div>
 
-          <div
-              class="absolute bg-white bottom-0 w-full"
-              style="height: 1px"
-          ></div>
-      </div>
-      <div [innerHTML]="lecturer.content"></div>
+        <div class="flex justify-between py-3 relative">
+            <div
+                class="absolute bg-white bottom-0 w-full"
+                style="height: 1px"
+            ></div>
+        </div>
 
+        <div class="pt-5">
+        <div [innerHTML]="lecturer.content"></div>
 
-  
-  </div>
+            
+        </div>
+    </div>
 </div>

@@ -19,7 +19,7 @@
         kiện
         <div class="absolute h-full w-0.5 bg-indigo-900 top-0 left-0"> </div>
       </h2>
-      <div class="pt-2 flex justify-start new-item cursor-pointer" *ngFor="let item of news" routerLink="/tin-tuc">
+      <div class="pt-2 flex justify-start new-item cursor-pointer" *ngFor="let item of news" routerLink="/tin-tuc-su-kien">
         <div class="lg:w-1/2 w-full  mr-4">
           <div style="width: 130px; height: auto;">
             <div style="width: 130px; height: auto;"><img src="{{item.thumbimage}}" class="w-full h-full" alt=""></div></div>
@@ -28,7 +28,7 @@
           <p class=" text-indigo-900 font-black new-title mb-0">{{item.title}}</p>
           <span class="pb-2  text-indigo-900 new-des"><div [innerHtml]="item.des"></div>
           </span>
-          <a routerLink="/tin-tuc" class="text-indigo-900    top-3  font-black new-link">Tìm hiểu thêm >></a>
+          <a routerLink="/tin-tuc-su-kien" class="text-indigo-900    top-3  font-black new-link">Tìm hiểu thêm >></a>
 
         </div>
       </div>

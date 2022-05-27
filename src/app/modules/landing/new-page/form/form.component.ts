@@ -1,21 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
-import { KhoahocService } from '../khoahoc.service';
-import { Khoahoc } from '../khoahoc.types';
+import { map } from 'rxjs';
+import { KhoahocService } from '../../khoahoc/khoahoc.service';
 
 @Component({
-  selector: 'app-form1',
+  selector: 'app-form-new',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  courses$: Observable<Khoahoc[]>;
   courses
-  constructor(private khoahocService: KhoahocService) { }
+  constructor(private _khoahocSerivce:KhoahocService) { }
 
   ngOnInit(): void {
-    this.khoahocService.getKhoahoc().subscribe()
-    this.khoahocService.courses$
+    this._khoahocSerivce.courses$
             .pipe(
                 map(
                     (arr) =>
@@ -28,10 +25,8 @@ export class FormComponent implements OnInit {
                             )
                 )
             )
-            .subscribe((result) => {this.courses = result
-             
-              
-            });
+            .subscribe((result) => (this.courses = result));
+
   }
 
 }
