@@ -1,28 +1,18 @@
-.dropdown-menu{
-    width: 90%;
-}
-.btn-secondary:hover{
-    
-    
-}
-.dropdown-toggle::after{
-    margin-left: 1.5rem;
-}
-.center-img{
-    transform: translate(-25%, -50%);
-}
-
 .form-sale{
-
-    padding-bottom: 50px;
+    height: 290px;
+    background: transparent !important;
     border-radius: 20px;
+   
 }
-.form-wrapper{
-    
-    display: flex;
-    justify-content: space-between;
-    
+.box-shadow{
 
+}
+
+.form-sale img{
+    box-shadow: 2px 4px 24px 9px rgba(1,7,18,0.75);
+    -webkit-box-shadow: 2px 4px 24px 9px rgba(1,7,18,0.75);
+    -moz-box-shadow: 2px 4px 24px 9px rgba(1,7,18,0.75);
+    border-radius: 35px;
 }
 .form-left{
     display: flex;
@@ -65,24 +55,27 @@
     color: #fff;
 }
 .form-left-total{
+    background-color: #ddd;
+    width: 100px;
     height: auto;
     margin-left: 15px;
 }
-.title{
-    font-size: 75px;
-}
-.form-right{
-flex: 1.5;
-}
 
+.form-submit{
+    height: 290px;
+}
 .form-submit input{
     width: 250px;
 }
 .form-submit select{
     width: 250px;
 }
-.form-submit{
-    padding-bottom: 50px;
+
+
+::placeholder{
+    
+    font-size: 12px;
+    margin-left: 10px;
 }
 .form-submit button{
     border: none;
@@ -94,3 +87,28 @@ flex: 1.5;
     font-weight: bold;
     margin-top: 15px;
 }
+option{
+    font-size: 15px;
+    width: 200px;
+}
+input::placeholder{
+    color: #000 !important;
+    font-size: 1rem !important;
+}
+@media only screen and (max-width: 762px){
+    .banner-img{
+        width: 100%;
+        height: 400px;
+    }
+   .formsale-mobile{
+       height: 550px;
+   }
+   .form-submit{
+       top: 30%;
+       left: 50%;
+       transform: translateX(-50%);
+       height: 360px;
+       margin: 0 12px;
+   }
+   
+  }

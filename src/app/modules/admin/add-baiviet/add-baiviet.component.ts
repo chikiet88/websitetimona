@@ -82,7 +82,7 @@ export class AddBaivietComponent implements OnInit {
         this.Editor = customBuild;
     }
     onSubmit() {
-
+        this.baivietForm.removeControl('isLoaibaiviet');
         this.baivietService
             .postCourse(this.baivietForm.value)
             .subscribe((res) => {
@@ -91,7 +91,6 @@ export class AddBaivietComponent implements OnInit {
                 }
             });
         // console.log(this.checklistCourse);
-
     }
     onSelectTheme(item) {
         this.baivietForm.get('content').setValue(item.content);
@@ -124,8 +123,6 @@ export class AddBaivietComponent implements OnInit {
             console.log(id);
 
             this.checklistCourse = this.checklistCourse.filter((x) => {
-               
-                
                 return x != id;
             });
             console.log(this.checklistCourse);
@@ -139,6 +136,11 @@ export class AddBaivietComponent implements OnInit {
         this.baivietForm.get('id').setValue(item.id);
         this.baivietForm.get('slug').setValue(item.slug);
         this.baivietForm.get('Loaibaiviet').setValue(item.Loaibaiviet);
+        if (item.Loaibaiviet == 1) {
+            this.baivietForm.get('isLoaiBaiviet').setValue('Có');
+        } else {
+            this.baivietForm.get('isLoaiBaiviet').setValue('Không');
+        }
         this.baivietForm.get('thumbimage').setValue(item.thumbimage);
         // this.baivietForm.get('checkListCourse').setValue(item.checkListCourse)
         console.log(item.thumbimage);
@@ -147,14 +149,19 @@ export class AddBaivietComponent implements OnInit {
         this.thumb = item.thumbimage;
     }
     deleteBaiviet() {
-        alert('Xóa bài thành công');
-        this.baivietService.deleteBaiviet(this.idSelect).subscribe();
+        this.baivietForm.removeControl('isLoaibaiviet');
+
+        this.baivietService
+            .deleteBaiviet(this.idSelect)
+            .subscribe((res) => alert('Xóa bài thành công'));
         this.resetForm();
     }
     updateBaiviet() {
-        alert('Cập nhật thành công');
+        this.baivietForm.removeControl('isLoaibaiviet');
 
-        this.baivietService.updateBaiviet(this.baivietForm.value).subscribe();
+        this.baivietService
+            .updateBaiviet(this.baivietForm.value)
+            .subscribe((res) => alert('Cập nhật thành công'));
         this.resetForm();
     }
 
@@ -165,6 +172,9 @@ export class AddBaivietComponent implements OnInit {
         this.uploadService.deleteFile(fileUpload);
         this.resetForm();
     }
+    onchangeLoaibaiviet(e) {
+        this.baivietForm.get('Loaibaiviet').setValue(e);
+    }
     resetForm() {
         this.baivietForm = this.fb.group({
             title: [''],
@@ -172,6 +182,7 @@ export class AddBaivietComponent implements OnInit {
             content: [''],
             idDM: [0],
             slug: [''],
+            isLoaiBaiviet: [''],
             Loaibaiviet: [0],
             thumbimage: [''],
             // checkListCourse:['']
@@ -202,12 +213,12 @@ export class AddBaivietComponent implements OnInit {
         });
         this.baivietService.getMenu().subscribe();
         this.baivietService.menu$
-            .pipe(
-                map(
-                    (arr) =>
-                        arr && arr.length && arr.filter((r) => r.parentid == '')
-                )
-            )
+            // .pipe(
+            //     map(
+            //         (arr) =>
+            //             arr && arr.length && arr.filter((r) => r.parentid == '')
+            //     )
+            // )
             .subscribe((result) => (this.menu = result));
 
         this.baivietService.getBaiviet().subscribe();

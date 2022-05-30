@@ -1,14 +1,12 @@
-<div class="lg:max-w-7xl lg:mx-auto sm:px-6 lg:px-8 ">
+<div class="lg:max-w-7xl lg:mx-auto sm:px-6 lg:px-8">
     <div class="bg-indigo-900 lg:mt-10 lg:pb-10">
         <p class="text-white uppercase text-center text-2xl lg:text-4xl pt-3">
-           {{intro.title}}
+            {{ intro?.title }}
         </p>
-        <div [innerHTML]="intro.des" class="text-white intro-description"></div>
-       
+        <div [innerHTML]="intro?.des" class="text-white intro-description"></div>
     </div>
     <div class="pt-5">
-        
-        <div [innerHTML]="intro.content" class="intro" ></div>
+        <div [innerHTML]="intro?.content" class="intro"></div>
 
         <div class="lg:py-12 pb-5 mx-3 lg:mx-0">
             <div class="lg:mx-24 chuyennganh-ttile">
@@ -24,10 +22,33 @@
                     bản đến chuyên sâu.
                 </p>
             </div>
-            <div
+            <!-- <div
                 class="grid lg:grid-rows-3 grid-rows-4 grid-flow-col lg:gap-4 gap-1 lg:pb-5 pb-3"
-            >
-                <div>
+            > -->
+            <div class="grid grid-cols-3 gap-5">
+                <div
+                    class="py-3 px-2  rounded-b-xl"
+                    *ngFor="let item of courses"
+                >
+                    <div class="flex flex-col relative pb-5">
+                        <div class="w-full h-48 ">
+                            <img src="{{ item.thumbimage }}" class="rounded-xl w-full h-full" alt="" />
+                        </div>
+                        <p
+                            class="text-yellow-500 font-bold text-xl uppercase py-3"
+                        >
+                            {{ item.title }}
+                        </p>
+                        <a
+                            routerLink="/khoa-hoc/{{ item.slug }}"
+                            class="p-2 bg-yellow-500 text-white rounded-lg w-36 flex items-center"
+                            >Tìm hiểu thêm >>></a
+                        >
+                       
+                    </div>
+                </div>
+
+                <!-- <div>
                     <div class="shape-outer">
                         <div
                             class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
@@ -38,115 +59,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Combo<br class="hidden lg:block" />
-                            Khóa Marketing
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Khóa Phun xăm <br class="hidden lg:block" />
-                            thẩm mỹ
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Khóa Master <br class="hidden lg:block" />
-                            thẩm mỹ
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Gội đầu<br class="hidden lg:block" />
-                            dưỡng sinh
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Khóa Nối mi
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Đào tạo <br class="hidden lg:block" />làm chủ Spa
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Khóa Chăm sóc<br class="hidden lg:block" />
-                            điều trị da
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Kỹ thuật viên spa<br class="hidden lg:block" />
-                            trực tuyến
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Khóa<br class="hidden lg:block" />
-                            Massage body
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Khóa chuyển giao <br class="hidden lg:block" />công
-                            nghệ cao
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="shape-outer">
-                        <div
-                            class="shape-inner sign-right uppercase text-indigo-900 text-[12px] lg:py-2 pl-2 font-medium flex flex-col justify-center"
-                        >
-                            Công nghệ cao <br class="hidden lg:block" />
-                            Filler, Botox
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="">
                 <p class="text-indigo-900 text-justify leading-5">

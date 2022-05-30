@@ -1,38 +1,18 @@
-<section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8 pb-10">
-    <div class="lg:pt-10 w-full h-1/2 flex flex-col pb-4 hidden lg:block">
-        <nav class="flex" aria-label="Breadcrumb">
-            <ol class="inline-flex items-center space-x-1 md:space-x-3">
-                <li class="inline-flex items-center">
-                    <a
-                        routerLink=""
-                        class="inline-flex items-center text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                    >
-                        Home
-                    </a>
-                </li>
-
-                <li aria-current="page">
-                    <div class="flex items-center text-indigo-900">
-                        >>
-                        <span
-                            class="ml-1 text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                            >Góc Học Viên</span
-                        >
-                    </div>
-                </li>
-            </ol>
-        </nav>
-    </div>
-
+<!-- <section class="lg:max-w-7xl mx-auto lg:px-2 lg:px-6 lg:px-8 pb-10 overflow-hidden">
     <div class="">
         <div class="w-full bg-red-100 relative" style="height: 300px">
             <img
                 src="../../../assets/images/lienhe.png"
                 alt=""
-                class="absolute left-0 h-full"
+                class="absolute left-0 h-full hidden md:block"
             />
+            <img
+            src="../../../assets/images/gochocvien-mb.png"
+            alt=""
+            class="absolute left-0 h-full md:hidden"
+        />
             <div
-                class="absolute text-indigo-900 font-medium text-5xl uppercase left-1/2 z-10 top-1/2 contact-center hidden lg:block"
+                class="absolute text-indigo-900  md:text-5xl text-3xl font-bold uppercase  z-10  contact-center "
             >
                 Góc học viên
             </div>
@@ -41,12 +21,12 @@
             ></div>
         </div>
     </div>
-    <div>
-        <div class="pt-10 flex justify-between">
-            <a
+    <div class="py-10 lg:px-0 px-3">
+        <div class="grid md:grid-cols-4 grid-cols-1 gap-5">
+            <div
                 [routerLink]="['/goc-hoc-vien/giai-dap']"
-                style="width: 30%"
-                class="text-center"
+                
+                class="text-center block"
             >
                 <div class="bg-gray-100 cursor-pointer" style="height: 250px">
                     <img
@@ -55,17 +35,17 @@
                         alt=""
                     />
                 </div>
-                <h2 class="text-2xl uppercase text-indigo-900 pt-3 mb-0">
+                <p class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold ">
                     giải đáp
-                </h2>
-                <span class="text-indigo-900 font-medium"
-                    >Phản hồi tất cả các thắc mắc <br />z-10 của học viên</span
+                </p>
+                <span class="text-indigo-900 font-medium text-lg md:text-base"
+                    >Phản hồi tất cả các thắc mắc <br /> của học viên</span
                 >
-            </a>
+            </div>
 
-            <a
+            <div
             [routerLink]="['/goc-hoc-vien/hoat-dong']"
-                style="width: 30%"
+                
                 class="text-center"
             >
                 <div class="bg-gray-100 cursor-pointer" style="height: 250px">
@@ -75,19 +55,19 @@
                         alt=""
                     />
                 </div>
-                <h2 class="text-2xl uppercase text-indigo-900 pt-3 mb-0">
+                <p class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold ">
                     hoạt động ngoại khóa
-                </h2>
-                <span class="text-indigo-900 font-medium"
+                </p>
+                <span class="text-indigo-900 font-medium text-lg md:text-base"
                     >Truyền nghề spa <br />
                     Truyền mọi tinh hoa trong ngành làm đẹp</span
                 >
-            </a>
+            </div>
 
-            <a
+            <div
             [routerLink]="['/goc-hoc-vien/cam-nghi']"
 
-                style="width: 30%"
+                
                 class="text-center"
             >
                 <div class="bg-gray-100 cursor-pointer" style="height: 250px">
@@ -97,14 +77,63 @@
                         alt=""
                     />
                 </div>
-                <h2 class="text-2xl uppercase text-indigo-900 pt-3 mb-0">
+                <p class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold ">
                     Cảm nghĩ học viên
-                </h2>
-                <span class="text-indigo-900 font-medium"
+                </p>
+                <span class="text-indigo-900 font-medium text-lg md:text-base"
                     >Cảm nghĩ và tâm tư của học viên <br />
                     say khóa học tại Timona Academy
                 </span>
-            </a>
+            </div>
+            <div
+            [routerLink]="['/goc-hoc-vien/cam-nghi']"
+
+                
+                class="text-center"
+            >
+                <div class="bg-gray-100 cursor-pointer" style="height: 250px">
+                    <img
+                        src="../../../assets//images/item-conner.png"
+                        class="w-full h-full"
+                        alt=""
+                    />
+                </div>
+                <p class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold ">
+                    Lễ tốt nghiệp
+                </p>
+                <span class="text-indigo-900 font-medium text-lg md:text-base"
+                    >Cảm nghĩ và tâm tư của học viên<br />
+                    sau khóa học tại Timona Academy
+                </span>
+            </div>    
         </div>
+    </div>
+    <div class="md:hidden  ">
+        <div class="flex justify-center items-center relative py-5">
+            <div class="bg-indigo-900 rounded-3xl p-2">
+                <a class="text-xl text-yellow-500 p-3 uppercase font-bold"
+                    >lịch khai giảng</a
+                >
+            </div>
+            <div
+                class="absolute w-full top-0 bg-gray-300 h-px "
+            ></div>
+        </div>
+        <app-form></app-form>
+
+    </div>
+</section> -->
+<section class="lg:max-w-7xl mx-auto lg:px-2 px-3 lg:px-6 lg:px-8 lg:pb-5 overflow-hidden">
+    <div class="pt-10">
+        <div class="pb-10 hidden md:block">
+            <ul class="flex">
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl  new-text" routerLink="giai-dap" routerLinkActive="new-active">Hỏi Đáp</a></li>
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl  new-text" routerLink="hoat-dong" routerLinkActive="new-active">Hoạt Động Ngoại Khóa</a></li>
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl  new-text" routerLink="cam-nghi" routerLinkActive="new-active">Cảm Nghĩ Học Viên</a></li>
+                <li class=" mr-5"><a class="py-1 px-5  font-bold text-xl rounded-xl  new-text" routerLink="hoc-nghe-cung-chuyen-gia" routerLinkActive="new-active">Lễ Tốt Nghiệp</a></li>
+
+            </ul>
+        </div>
+        <router-outlet></router-outlet>
     </div>
 </section>

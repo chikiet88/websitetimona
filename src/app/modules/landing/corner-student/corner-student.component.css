@@ -8,3 +8,24 @@
     background: linear-gradient(to left, rgb(240, 240, 235) 30%,rgba(0, 0, 0, 0) 69%);
     height:100%;
 }
+.new-text{
+    color: #00256e;
+}
+.new-active {
+    background-color: #00256e;
+    color: white !important;
+}
+
+.contact-center{
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@media screen and (max-width: 768px){
+    .contact-center{
+        left: 50%;
+        top: inherit;
+        bottom: 2rem;
+        transform: translateX(-50%);
+    }
+}

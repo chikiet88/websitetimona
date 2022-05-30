@@ -12,7 +12,7 @@
                 <span matPrefix >Chọn Menu mẹ</span>
                 <mat-select >
                     <mat-option
-                        [value]="item.id"
+                        [value]="item.title"
                         *ngFor="let item of menu"
                         (click)="onSelect(item)"
                         >{{ item.title ? item.title : "" }}</mat-option

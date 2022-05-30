@@ -1,0 +1,39 @@
+.dropdown-menu{
+    width: 90%;
+}
+.btn-secondary:hover{
+    
+    
+}
+.dropdown-toggle::after{
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.center-img{
+    transform: translate(-25%, -50%);
+}
+.banner-img{
+    height: 400px;
+    
+}
+.centerX {
+    transform: translateX(-50%);
+}
+.contact-center{
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@media screen and (max-width: 768px){
+    .contact-center{
+        left: 50%;
+        top: inherit;
+        bottom: 2rem;
+        transform: translateX(-50%);
+    }
+    .banner-img{
+        height: 300px;
+    }
+}

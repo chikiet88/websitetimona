@@ -1,0 +1,13 @@
+.contact-center{
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@media screen and (max-width: 768px){
+    .contact-center{
+        left: 50%;
+        top: inherit;
+        bottom: 2rem;
+        transform: translateX(-50%);
+    }
+}

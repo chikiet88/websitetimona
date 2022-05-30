@@ -1,0 +1,20 @@
+<div class="py-3 px-2 border border-gray-300 rounded-b-xl shadow-xl" >
+    <div class="flex flex-col relative pb-5 mb-5" *ngFor="let item of courses">
+        <div class="w-full h-36 rounded-xl ">
+            <img src="{{item.thumbimage}}" alt="">
+        </div>
+        <p
+            class="text-yellow-500 font-bold text-xl uppercase py-3"
+        >
+            {{item.title}}
+        </p>
+        <a
+        routerLink="/khoa-hoc/{{item.slug}}"
+            class="p-2 bg-yellow-500 text-white rounded-lg w-36 flex items-center"
+            >Tìm hiểu thêm >>></a
+        >
+        <div
+            class="absolute w-full h-px bg-indigo-900 bottom-0 left-0"
+        ></div>
+    </div>
+</div>

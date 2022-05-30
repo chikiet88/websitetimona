@@ -49,12 +49,12 @@
                 </div>
               </div>
               
-              <div *ngIf="itemmenu.Baiviet.length > 0">
+              <!-- <div *ngIf="itemmenu.Baiviet.length > 0">
                 <div class="flex flex-col" *ngFor="let item of itemmenu.Baiviet ">
                   <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/khoa-hoc/{{item.id}}" (click)="drawer.toggle()">{{item.title}}</a>
                    
                 </div>
-              </div>
+              </div> -->
             </mat-expansion-panel>
           </mat-accordion>
         </div>
@@ -159,9 +159,6 @@
                                 aria-expanded="false"
                                 (mouseenter)="toggleMenu()"
                               >
-                      
-
-                              
                               <a routerLink="/{{itemmenu.slug ? itemmenu.slug : khoa-hoc}}"
                               class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
                               </a>
@@ -208,7 +205,7 @@
                                 [ngClass]="{'hidden': isShow}"
                               >
                                 <li *ngFor="let item of itemmenu.children" (click)="toggleMenu()">
-                                  <a class="dropdown-item" routerLink="/{{item.slug}}">{{item.title}}</a>
+                                  <a class="dropdown-item" routerLink="{{item.slug}}">{{item.title}}</a>
                                 </li>
                                
                               </ul>

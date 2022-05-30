@@ -11,17 +11,15 @@ SwiperCore.use([Pagination, FreeMode, Navigation, Autoplay]);
     selector: 'app-introduce',
     templateUrl: './introduce.component.html',
     styleUrls: ['./introduce.component.css'],
-  encapsulation: ViewEncapsulation.None
-
+    encapsulation: ViewEncapsulation.None,
 })
-
 export class IntroduceComponent implements OnInit {
     config;
     config1;
     intro;
     slug;
     courses;
-    typeLoaibaiviet = 2; //
+    typeLoaibaiviet = 1; //
     idMenu = 5; //id: 5 menu của chuyên ngành
     constructor(
         private homeService: HomeService,

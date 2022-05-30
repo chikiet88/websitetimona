@@ -16,10 +16,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { KhoahocComponent } from '../khoahoc/khoahoc.component';
 import { SwiperModule } from 'swiper/angular';
-import { AnswerPageComponent } from '../answer-page/answer-page.component';
-import { ActivatePageComponent } from '../activate-page/activate-page.component';
-import { StudentFeelPageComponent } from '../student-feel-page/student-feel-page.component';
-import { CornerStudentComponent } from '../corner-student/corner-student.component';
+
 import {FormComponent} from '../components/form/form.component'
 import { IntroduceComponent } from '../introduce/introduce.component';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
@@ -32,6 +29,7 @@ import { NewEventComponent } from '../homepage/new-event/new-event.component';
 import { StoryComponent } from '../homepage/story/story.component';
 import { ExpertComponent } from '../homepage/expert/expert.component';
 import { NewPageComponent } from '../new-page/new-page.component';
+import { CornerStudentComponent } from '../corner-student/corner-student.component';
 
 @NgModule({
     declarations: [
@@ -44,10 +42,6 @@ import { NewPageComponent } from '../new-page/new-page.component';
         FooterComponent,
         HeaderComponent,
         KhoahocComponent,
-        AnswerPageComponent,
-        ActivatePageComponent,
-        StudentFeelPageComponent,
-        CornerStudentComponent,
         FormComponent,
         IntroduceComponent,
         ContactPageComponent,
@@ -56,7 +50,8 @@ import { NewPageComponent } from '../new-page/new-page.component';
         LecturerComponent,
         StoryComponent,
         ExpertComponent,
-        NewPageComponent
+        NewPageComponent,
+        CornerStudentComponent
     ],
     imports: [
         RouterModule.forChild(landingHomeRoutes),
