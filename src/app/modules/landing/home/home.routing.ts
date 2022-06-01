@@ -47,14 +47,13 @@ export const landingHomeRoutes: Route[] = [
                     {
                         path: 'goc-hoc-vien',
                         loadChildren: () =>
-                            import('../corner-student/corner-student.module').then(
-                                (m) => m.CornerStudentModule
-                            ),
+                            import(
+                                '../corner-student/corner-student.module'
+                            ).then((m) => m.CornerStudentModule),
                     },
                 ],
             },
-           
-
+            { path: 'lien-he', component: ContactPageComponent },
         ],
     },
 ];

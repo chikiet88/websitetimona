@@ -24,7 +24,15 @@
 .dropdown-toggle::after{
 display: none;
 }
-
+.menu-active{
+  color: #f7d900 !important;
+}
+.menu-item{
+  color: white;
+}
+.menu-item:hover{
+  color:#f7d900
+}
 .dropdown:hover .dropdown-menu{
   display: block;
   transition: all 1s;

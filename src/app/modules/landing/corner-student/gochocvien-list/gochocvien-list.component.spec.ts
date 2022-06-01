@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarouselCourseComponent } from './carousel-course.component';
+import { GochocvienListComponent } from './gochocvien-list.component';
 
-describe('CarouselCourseComponent', () => {
-  let component: CarouselCourseComponent;
-  let fixture: ComponentFixture<CarouselCourseComponent>;
+describe('GochocvienListComponent', () => {
+  let component: GochocvienListComponent;
+  let fixture: ComponentFixture<GochocvienListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarouselCourseComponent ]
+      declarations: [ GochocvienListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CarouselCourseComponent);
+    fixture = TestBed.createComponent(GochocvienListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -126,7 +126,7 @@
         <div class="md:flex mb-6 items-center">
             <div class="md:w-1/2 md:mr-3 w-full">
                 <mat-form-field
-                    class="fuse-mat-emphasized-affix w-full"
+                    class="fuse-mat-emphasized-affix w-full md:mb-0 mb-6"
                     appearance="fill"
                     style="height: 50px"
                 >
@@ -149,8 +149,7 @@
                     style="height: 50px"
                 >
                     <span matPrefix>Chọn bài viết nổi bật</span>
-                    <mat-select
-                        [formControlName]="'isLoaiBaiviet'"
+                    <mat-select 
                         (selectionChange)="onchangeLoaibaiviet($event.value)"
                     >
                         <mat-option value="1">Có</mat-option>
@@ -231,7 +230,7 @@
                 class="btn btn-success bg-indigo-900"
                 *ngIf="!idSelect"
             >
-                Submit
+                Tạo mới
             </button>
 
             <button
@@ -240,7 +239,7 @@
                 (click)="updateBaiviet()"
                 *ngIf="idSelect"
             >
-                Update
+                Cập nhật
             </button>
 
             <button
@@ -249,7 +248,7 @@
                 (click)="deleteBaiviet()"
                 *ngIf="idSelect"
             >
-                Delete
+                Xóa
             </button>
         </div>
     </form>

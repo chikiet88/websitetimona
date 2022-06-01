@@ -159,8 +159,8 @@
                                 aria-expanded="false"
                                 (mouseenter)="toggleMenu()"
                               >
-                              <a routerLink="/{{itemmenu.slug ? itemmenu.slug : khoa-hoc}}"
-                              class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
+                              <a routerLink="/{{itemmenu.slug ? itemmenu.slug : khoa-hoc}}" routerLinkActive="menu-active"
+                              class="text-lg uppercase  menu-item  rounded-md text-sm font-medium"> {{itemmenu.title}}
                               </a>
                                 
                               </button>
@@ -173,8 +173,8 @@
                                 aria-expanded="false"
                                 
                               >
-                              <a routerLink="{{itemmenu.slug}}"
-                              class="text-lg uppercase  text-white hover:text-yellow-500  rounded-md text-sm font-medium"> {{itemmenu.title}}
+                              <a routerLink="{{itemmenu.slug}}" routerLinkActive="menu-active"
+                              class="text-lg uppercase menu-item  rounded-md text-sm font-medium"> {{itemmenu.title}}
                               </a>
                               </button>
                               </ng-template>
@@ -204,7 +204,7 @@
                                 aria-labelledby="dropdownMenuButton1"
                                 [ngClass]="{'hidden': isShow}"
                               >
-                                <li *ngFor="let item of itemmenu.children" (click)="toggleMenu()">
+                                <li *ngFor="let item of itemmenu.children.reverse()" (click)="toggleMenu()">
                                   <a class="dropdown-item" routerLink="{{item.slug}}">{{item.title}}</a>
                                 </li>
                                

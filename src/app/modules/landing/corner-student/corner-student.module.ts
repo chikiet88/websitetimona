@@ -10,6 +10,9 @@ import { StudentFeelPageComponent } from './student-feel-page/student-feel-page.
 import { ActivatePageComponent } from './activate-page/activate-page.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { LetotnghiepComponent } from './letotnghiep/letotnghiep.component';
+import { LetotnghiepDetailComponent } from './letotnghiep/letotnghiep-detail/letotnghiep-detail.component';
+import { GochocvienListComponent } from './gochocvien-list/gochocvien-list.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { CoursesComponent } from './components/courses/courses.component';
       StudentFeelPageComponent,
       ActivatePageComponent,
       PaginationComponent,
-      CoursesComponent
+      CoursesComponent,
+      LetotnghiepComponent,
+      LetotnghiepDetailComponent,
+      GochocvienListComponent
     
     
   ],

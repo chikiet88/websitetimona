@@ -1,0 +1,44 @@
+<div class="letotnghiep">
+    <p class="text-3xl text-indigo-900 font-bold uppercase text-center">
+        lễ tốt nghiệp 2/9/2022
+    </p>
+    <swiper [config]="config" [navigation]="true" class="mySwiper pt-5">
+        <ng-template swiperSlide *ngFor="let item of b">
+            <div
+                class="grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-5 pt-5 md:pb-10"
+            >
+                <div class="" *ngFor="let i of item">
+                    <img
+                        src="../../../../../../assets/images/camnghi-hocsinh.png"
+                        class="w-full h-full rounded-xl"
+                    />
+                </div>
+            </div>
+        </ng-template>
+    </swiper>
+
+    <div class="flex items-center justify-center">
+        <div
+            class="rounded-full text-indigo-900 border border-indigo-900 mr-1 cursor-pointer"
+            (click)="swipePrev()"
+        >
+            <span class="material-icons"> expand_less </span>
+        </div>
+        <div
+            class="rounded-full text-white bg-indigo-900 border border-indigo-900 text-center ml-1 cursor-pointer"
+            (click)="swipeNext()"
+        >
+            <span class="material-icons"> expand_more </span>
+        </div>
+    </div>
+</div>
+<div class="pb-3 pt-5 mt-5">
+    <div class="flex justify-center items-center relative pb-5">
+        <div class="bg-indigo-900 rounded-3xl p-2">
+            <a class="text-xl text-yellow-500 p-3 uppercase font-bold"
+                >lịch khai giảng</a
+            >
+        </div>
+    </div>
+    <app-form-corner></app-form-corner>
+</div>
