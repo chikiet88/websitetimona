@@ -11,7 +11,7 @@ import {
     throwError,
 } from 'rxjs';
 import { Khoahoc } from './khoahoc.types';
-import { KHOAHOC } from './mock-khoahoc';
+
 @Injectable({
     providedIn: 'root',
 })
@@ -22,9 +22,8 @@ export class KhoahocService {
     private _courses: BehaviorSubject<Khoahoc[] | null> = new BehaviorSubject(
         null
     );
-    private _danhmucs: BehaviorSubject<Khoahoc[] | null> = new BehaviorSubject(
-        null
-    );
+    private _danhmucs: BehaviorSubject<any | null> = new BehaviorSubject(null);
+    private _danhmuc: BehaviorSubject<any | null> = new BehaviorSubject(null);
 
     constructor(private http: HttpClient) {}
 
@@ -37,6 +36,9 @@ export class KhoahocService {
     get danhmucs$(): Observable<any[]> {
         return this._danhmucs.asObservable();
     }
+    get danhmuc$(): Observable<any[]> {
+        return this._danhmuc.asObservable();
+    }
 
     getDanhmuc(): Observable<any[]> {
         return this.http.get<any[]>('https://v2api.timona.edu.vn/danhmuc').pipe(
@@ -44,6 +46,37 @@ export class KhoahocService {
                 this._danhmucs.next(danhmucs);
             })
         );
+    }
+    getDanhmucchitiet(slug): Observable<any> {
+        let id
+        // this.getDanhmuc().subscribe();
+       this.danhmuc$.subscribe(res=> console.log(res))
+        
+          id = this._danhmucs.value?.find((v) => v.Slug == slug).id;
+
+        Number(id)
+        console.log(id);
+
+        return this.http
+            .get<any>(`https://v2api.timona.edu.vn/danhmuc/${id}`)
+            .pipe(
+                map((danhmuc) => {
+                    // Update the danhmuc
+                    this._danhmuc.next(danhmuc);
+
+                    // Return the danhmuc
+                    return danhmuc;
+                }),
+                switchMap((danhmuc) => {
+                    if (!danhmuc) {
+                        return throwError(
+                            'Could not found danhmuc with id of ' + id + '!'
+                        );
+                    }
+
+                    return of(danhmuc);
+                })
+            );
     }
 
     getKhoahoc(): Observable<Khoahoc[]> {

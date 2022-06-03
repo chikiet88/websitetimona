@@ -6,7 +6,10 @@ import { GochocvienListComponent } from './gochocvien-list/gochocvien-list.compo
 import { LetotnghiepDetailComponent } from './letotnghiep/letotnghiep-detail/letotnghiep-detail.component';
 import { LetotnghiepComponent } from './letotnghiep/letotnghiep.component';
 import { StudentFeelPageComponent } from './student-feel-page/student-feel-page.component';
-
+import {
+    KhoahocDetailResolver,
+    KhoahocResolver,
+} from '../khoahoc/khoahoc.resolvers';
 export const CornerStudentRoutes: Route[] = [
     {
         path: '',
@@ -14,15 +17,27 @@ export const CornerStudentRoutes: Route[] = [
         // pathMatch:'full',
         // redirectTo:"tin-tuc-su-kien/tintuc",
         children: [
-            { path: '', component: GochocvienListComponent },
+            {
+                path: '',
+                component: GochocvienListComponent,
+                resolve: {
+                    courses: KhoahocResolver,
+                },
+            },
 
-            { path: 'giai-dap', component: AnswerPageComponent },
             { path: 'hoat-dong', component: ActivatePageComponent },
             { path: 'cam-nghi', component: StudentFeelPageComponent },
             { path: 'le-tot-nghiep', component: LetotnghiepComponent },
             {
                 path: 'le-tot-nghiep/:slug',
                 component: LetotnghiepDetailComponent,
+            },
+            {
+                path: ':slug',
+                component: AnswerPageComponent,
+                resolve: {
+                    detail: KhoahocDetailResolver,
+                },
             },
         ],
     },

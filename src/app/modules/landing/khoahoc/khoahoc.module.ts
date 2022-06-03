@@ -10,6 +10,7 @@ import { Theme4Component } from './theme4/theme4.component';
 import { KhoahocListComponent } from './khoahoc-list/khoahoc-list.component';
 import {FormComponent} from './form/form.component';
 import { Theme1Pipe } from './theme1/theme1.pipe'
+import { SwiperModule } from 'swiper/angular';
 @NgModule({
   declarations: [
     Theme1Component,
@@ -23,6 +24,7 @@ import { Theme1Pipe } from './theme1/theme1.pipe'
   ],
   imports: [
     CommonModule,
+    SwiperModule,
     
     RouterModule.forChild(khoahocRoutes),
    

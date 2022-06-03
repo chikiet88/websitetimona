@@ -10,98 +10,38 @@
             alt=""
             class="absolute left-0 h-full md:hidden"
         />
-        
     </div>
 </div>
 <div class="py-10 lg:px-0 px-3">
-    <div class="grid md:grid-cols-4 grid-cols-1 gap-5">
-        <div
-            [routerLink]="['/goc-hoc-vien/giai-dap']"
+    <div
+        class="grid md:grid-cols-4 grid-cols-1 gap-5"
+        *ngIf="danhmucs?.length > 0"
+    >
+        <a
+            routerLink="{{ item.Slug }}"
             class="text-center block"
+            *ngFor="let item of danhmucs[0].children.reverse()"
         >
-            <div class="" >
-                <img
-                    src="=../../../../../../../assets/images/Desktop/gochocvien/HỎI-ĐÁP.jpg"
-                    class="w-full h-full"
-                    alt=""
-                />
+            <div class="">
+                <img src="{{ item.Image }}" class="w-full h-full" alt="" />
             </div>
             <p
                 class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold"
             >
-                giải đáp
+                {{ item.Tieude }}
             </p>
-            <span class="text-indigo-900 font-medium text-lg md:text-base"
-                >Phản hồi tất cả các thắc mắc <br />
-                của học viên</span
-            >
-        </div>
-
-        <div [routerLink]="['/goc-hoc-vien/hoat-dong']" class="text-center">
-            <div class="" >
-                <img
-                    src="=../../../../../../../assets/images/Desktop/gochocvien/HOẠT-ĐỘNG-NGOẠI-KHÓA.jpg"
-                    class="w-full h-full"
-                    alt=""
-                />
-            </div>
-            <p
-                class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold"
-            >
-                hoạt động ngoại khóa
-            </p>
-            <span class="text-indigo-900 font-medium text-lg md:text-base"
-                >Truyền nghề spa <br />
-                Truyền mọi tinh hoa trong ngành làm đẹp</span
-            >
-        </div>
-
-        <div [routerLink]="['/goc-hoc-vien/cam-nghi']" class="text-center">
-            <div class="" >
-                <img
-                    src="=../../../../../../../assets/images/Desktop/gochocvien/CẢM-NGHĨ-HỌC-VIÊN.jpg"
-                    class="w-full h-full"
-                    alt=""
-                />
-            </div>
-            <p
-                class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold"
-            >
-                Cảm nghĩ học viên
-            </p>
-            <span class="text-indigo-900 font-medium text-lg md:text-base"
-                >Cảm nghĩ và tâm tư của học viên <br />
-                say khóa học tại Timona Academy
-            </span>
-        </div>
-        <div [routerLink]="['/goc-hoc-vien/le-tot-nghiep']" class="text-center">
-            <div class="" >
-                <img
-                    src="=../../../../../../../assets/images/Desktop/gochocvien/LỄ-TỐT-NGHIỆP.jpg"
-                    class="w-full h-full"
-                    alt=""
-                />
-            </div>
-            <p
-                class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold"
-            >
-                Lễ tốt nghiệp
-            </p>
-            <span class="text-indigo-900 font-medium text-lg md:text-base"
-                >Cảm nghĩ và tâm tư của học viên<br />
-                sau khóa học tại Timona Academy
-            </span>
-        </div>
+            <div [innerHTML]="item.Mota" class="text-indigo-900 font-medium text-lg md:text-base"></div>
+        </a>
     </div>
-</div>
-<div class="md:hidden">
-    <div class="flex justify-center items-center relative py-5">
-        <div class="bg-indigo-900 rounded-3xl p-2">
-            <a class="text-xl text-yellow-500 p-3 uppercase font-bold"
-                >lịch khai giảng</a
-            >
+    <div class="md:hidden">
+        <div class="flex justify-center items-center relative py-5">
+            <div class="bg-indigo-900 rounded-3xl p-2">
+                <a class="text-xl text-yellow-500 p-3 uppercase font-bold"
+                    >lịch khai giảng</a
+                >
+            </div>
+            <div class="absolute w-full top-0 bg-gray-300 h-px"></div>
         </div>
-        <div class="absolute w-full top-0 bg-gray-300 h-px"></div>
+        <app-form-corner></app-form-corner>
     </div>
-    <app-form-corner></app-form-corner>
 </div>

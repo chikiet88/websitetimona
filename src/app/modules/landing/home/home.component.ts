@@ -66,6 +66,10 @@ export class LandingHomeComponent
     scrollToTop(){
       this.scroll.scrollToPosition([0,0]);
     }
+     nest = (items, id = '', link = 'parentid') => items.filter(item => item[link] == id).map(item => ({
+      ...item,
+      children: this.nest(items, item.id)
+  }));
     ngOnInit(): void {
     
      
@@ -84,16 +88,13 @@ export class LandingHomeComponent
               v1.Baiviet = x;
             })
           });
-          this.menu = nest(dataMenu).reverse(); 
+          this.menu = this.nest(dataMenu).reverse(); 
         
         })
 
 
 
-        const nest = (items, id = '', link = 'parentid') => items.filter(item => item[link] == id).map(item => ({
-          ...item,
-          children: nest(items, item.id)
-      }));
+        
   
         
   

@@ -29,7 +29,6 @@ export class CoursesComponent implements OnInit {
             )
             .subscribe((result) => {
                 this.courses = result;
-                console.log(result);
             });
     }
 }

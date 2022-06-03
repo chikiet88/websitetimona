@@ -40,7 +40,6 @@ export class CarouselCourseComponent implements OnInit {
           )
           .subscribe((result) => {
               this.courses = result;
-              console.log(result);
           });
   }
 

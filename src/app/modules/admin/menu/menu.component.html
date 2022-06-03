@@ -1,14 +1,16 @@
 <div class="container px-10">
-    <form class="w-full pt-10" [formGroup]="MenuList">
+    <form class="w-full pt-10" >
         <div class="flex flex-wrap">
-            <div class="flex md:flex-row flex-col mx-3 mb-6" >
+            <div
+                class="flex md:flex-row flex-col justify-between w-full mx-3 mb-6"
+            >
                 <mat-form-field
                     class="fuse-mat-emphasized-affix md:w-80 w-72 mb-6 md:mb-0"
                     appearance="fill"
                     style="height: 50px"
                 >
-                    <span matPrefix>Chọn Menu mẹ</span>
-                    <mat-select>
+                    <span matPrefix>Chọn Menu cha</span>
+                    <mat-select >
                         <mat-option
                             [value]="item.title"
                             *ngFor="let item of menu"
@@ -19,16 +21,48 @@
                 </mat-form-field>
 
                 <mat-form-field
-                    class="fuse-mat-emphasized-affix md:w-80 w-72 md:mx-5"
+                    class="fuse-mat-emphasized-affix md:w-80 w-72 md:mx-5 mb-6 md:mb-0"
                     appearance="fill"
                     style="height: 50px"
                 >
-                    <span matPrefix>Menu</span>
+                    <span matPrefix>Edit Menu</span>
                     <mat-select>
                         <mat-option
                             [value]="item.id"
                             *ngFor="let item of menu"
                             (click)="onSelectMenu(item)"
+                            >{{ item.title }}</mat-option
+                        >
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix md:w-80 w-72 md:mx-5 mb-6 md:mb-0"
+                    appearance="fill"
+                    style="height: 50px"
+                >
+                    <span matPrefix>Danh mục</span>
+                    <mat-select (selectionChange)="onSelectdanhmuc($event.value)">
+                        <mat-option
+                            [value]="item"
+                            *ngFor="let item of danhmuc"
+                            >{{ item.Tieude }}</mat-option
+                        >
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix md:w-80 w-72 md:mx-5"
+                    appearance="fill"
+                    style="height: 50px"
+                >
+                    <span matPrefix>Chọn bài viết</span>
+                    <mat-select
+                        (selectionChange)="onSelectBaiviet($event.value)"
+                    >
+                        <mat-option
+                            [value]="item"
+                            *ngFor="let item of courses"
                             >{{ item.title }}</mat-option
                         >
                     </mat-select>
@@ -40,15 +74,16 @@
                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     for="grid-first-name"
                 >
-                    Title
+                    Tiêu đề
                 </label>
                 <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="text"
                     placeholder="Giới thiệu"
-                    formControlName="title"
+                    [(ngModel)]="menuForm.title"
                     name="title"
+
                 />
                 <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
             </div>
@@ -57,15 +92,15 @@
                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                     for="grid-first-name"
                 >
-                    Link
+                    Slug
                 </label>
                 <input
                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="grid-first-name"
                     type="text"
                     placeholder="gioi-thieu"
-                    formControlName="slug"
-                    name="title"
+                    [(ngModel)]="menuForm.slug"
+                    name="slug"
                 />
                 <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
             </div>

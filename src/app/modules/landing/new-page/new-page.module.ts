@@ -12,6 +12,8 @@ import { HocnghecungchuyengiaComponent } from './hocnghecungchuyengia/hocnghecun
 import { CoursesComponent } from './components/courses/courses.component';
 import { CarouselCourseComponent } from './components/carousel-course/carousel-course.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { TintucdetailComponent } from './tintucdetail/tintucdetail.component';
+import { NewListComponent } from './new-list/new-list.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +24,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     HocnghecungchuyengiaComponent,
     CoursesComponent,
     CarouselCourseComponent,
-    PaginationComponent
+    PaginationComponent,
+    TintucdetailComponent,
+    NewListComponent
     
   ],
     imports: [

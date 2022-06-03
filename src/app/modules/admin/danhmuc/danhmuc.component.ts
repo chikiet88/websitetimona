@@ -4,6 +4,7 @@ import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
 import { DanhmucService } from './danhmuc.service';
 // import { DanhmucService } from './danhmuc.service';
+import * as customBuild from '../../ckCustomBuild/build/ckEditor';
 
 @Component({
     selector: 'app-danhmuc',
@@ -22,6 +23,8 @@ export class DanhmucComponent implements OnInit {
     DanhmucList: FormGroup;
     selectTheme: any;
     idSelect;
+    public Editor: customBuild;
+
     public config = {
         htmlSupport: {
             allow: [
@@ -38,12 +41,20 @@ export class DanhmucComponent implements OnInit {
         private DanhmucService: DanhmucService,
         private fb: FormBuilder,
         private uploadService: FileUploadService
-    ) {}
+    ) {
+        this.Editor = customBuild;
+    }
 
     onSubmit() {
+        this.DanhmucList.removeControl('id');
+        this.DanhmucList.removeControl('tenDMcha');
+        console.log(this.DanhmucList.value);
+
         this.DanhmucService.AddDanhmuc(this.DanhmucList.value).subscribe(
             (res) => {
                 if (res) {
+                    console.log(res);
+
                     alert('Tạo nội dung thành công');
                 } else {
                     alert('Tạo nội dung không thành công');
@@ -53,27 +64,45 @@ export class DanhmucComponent implements OnInit {
         this.resetForm();
     }
 
-    onSelect(item) {
-        this.DanhmucList.get('pid').setValue(item.id);
-    }
-    onSelectDanhmuc(item) {
+    onSelectDanhmucEdit(item) {
+        this.resetForm();
         this.DanhmucList.addControl('id', new FormControl(item.id));
         this.DanhmucList.get('id').setValue(item.id);
         this.DanhmucList.get('Tieude').setValue(item.Tieude);
-        this.DanhmucList.get('Type').setValue(item.Tieude);
-        this.DanhmucList.get('Slug').setValue(item.Slug);
+        this.DanhmucList.get('Mota').setValue(item.Mota);
+        this.DanhmucList.get('Image').setValue(item.Image);
         this.DanhmucList.get('pid').setValue(item.pid);
+        this.DanhmucList.get('Type').setValue(item.Type);
+        this.DanhmucList.get('Slug').setValue(item.Slug);
+        console.log(item);
+
+        this.danhmuc.find((x) => {
+            if (x.id == item.pid) {
+                this.DanhmucList.get('tenDMcha').setValue(x.Tieude);
+                console.log(x);
+                
+            }
+        });
         this.idSelect = item.id;
+        this.thumb = item.Image;
+    }
+    onSelectDanhmucCha(item) {
+        this.DanhmucList.get('pid').setValue(item.id);
     }
     deleteDanhmuc() {
-        alert('Xóa Danhmuc thành công');
-        this.DanhmucService.deleteDanhmuc(this.idSelect).subscribe();
+        this.DanhmucService.deleteDanhmuc(this.idSelect).subscribe((res) =>
+            alert('Xóa Danhmuc thành công')
+        );
         this.resetForm();
     }
     updateDanhmuc() {
+        this.DanhmucList.removeControl('tenDMcha');
+
         this.DanhmucService.updateDanhmuc(this.DanhmucList.value).subscribe(
             (res) => {
                 if (res) {
+                    console.log(res);
+
                     alert('Cập nhật Danh mục thành công');
                 } else {
                     alert('Cập nhật Danh mục không thành công');
@@ -87,9 +116,10 @@ export class DanhmucComponent implements OnInit {
             Tieude: [''],
             Mota: [''],
             Image: [''],
-            Type: [0],
+            Type: [''],
             pid: [''],
             Slug: [''],
+            tenDMcha: [''],
         });
     }
     upload(): void {
@@ -114,8 +144,8 @@ export class DanhmucComponent implements OnInit {
         }
         this.uploadService._thumb$.subscribe((res) => {
             if (res) {
-                this.thumb = res;
-                this.DanhmucList.get('image').setValue(res);
+                this.thumb = res.url;
+                this.DanhmucList.get('Image').setValue(res.url);
             }
         });
     }

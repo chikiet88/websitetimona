@@ -1,0 +1,1591 @@
+<div class="lg:max-w-7xl lg:mx-auto lg:px-8 lg:py-10">
+    <div class="text-center lg:mx-96 pb-4 lg:pb-10">
+        <div class="dropdown">
+            <button
+                class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-2xl text-yellow-500 uppercase"
+                type="button"
+                id="dropdownMenuButton1"
+                style="width: 350px"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+            >
+                xem nhanh nội dung
+                <div
+                    class="absolute h-full bg-yellow-500 top-0"
+                    style="width: 2px; right: 45px"
+                ></div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <a
+                        class="dropdown-item"
+                        routerLink="/goc-hoc-vien/hoat-dong"
+                        >Hoạt Động</a
+                    >
+                </li>
+                <li>
+                    <a
+                        class="dropdown-item"
+                        routerLink="/goc-hoc-vien/cam-nghi-hoc-vien"
+                        >Cảm Nghĩ Học Viên</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="w-full h-1/2 flex flex-col hidden lg:block">
+        <div class="pb-4 flex justify-between">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a
+                            routerLink=""
+                            class="inline-flex items-center font-medium text-indigo-900 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                        >
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <div class="text-indigo-900">
+                            >>
+                            <a
+                                routerLink="/khoa-hoc"
+                                class="ml-1 font-medium text-indigo-900 hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white"
+                                >Khóa Học</a
+                            >
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="text-indigo-900">
+                            >>
+                            <span
+                                class="ml-1 font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
+                                >{{ theme.title }}</span
+                            >
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
+        <p
+            class="text-white uppercase text-center text-xl lg:text-5xl text-2xl py-5"
+        >
+            <!-- {{ theme.title }} -->PHUN XĂM THẨM MỸ
+        </p>
+        <p class="text-white lg:italic text-justify leading-5">
+            Phun xăm thẩm mỹ được mệnh danh là nghề "hốt bạc" trong thời đại làm
+            đẹp lên ngôi như hiện nay. Với cơ hội nghề nghiệp cao, thu nhập
+            khủng lên tới 30 triệu đồng/ tháng, tiết kiệm chi phí, thời gian học
+            tập. Tham giá khóa học phun xăm chắc chắn là lựa chọn lý tưởng cho
+            bạn trẻ ngoài con đường đại học, cao đẳng. Nhưng học ở đâu để vững
+            kiến thức, chắc tay nghề, học xong là có đầy đủ kỹ năng để xin việc
+            ngay? Bạn đang tìm hiểu về một lớp dạy phun xăm thẩm mỹ, vậy hãy đọc
+            ngay bài viết dưới đây.
+        </p>
+        <!-- <div [innerHTML]="theme.des" class="text-white"></div> -->
+    </div>
+
+    <div class="">
+        <div class="md:pt-10">
+            <div class="flex md:flex-row flex-col-reverse w-full">
+                <div class="md:w-3/5 w-full md:mr-5 px-4 md:px-0 pt-5 md:pt-0">
+                    <p
+                        class="text-indigo-900 uppercase md:text-xl text-2xl font-black md:text-left text-center leading-5"
+                    >
+                        HIỂU VỀ KHÓA ĐÀO TẠO PHUN XĂM CHUYÊN NGHIỆP
+                    </p>
+                    <p
+                        class="text-indigo-900 text-justify font-medium leading-5"
+                    >
+                        Phun thêu thẩm mỹ hay còn gọi là dịch vụ trang điểm bán
+                        vĩnh viễn đang rất thịnh hành trên thị trường làm đẹp
+                        hiện nay. Phương pháp giúp thay đổi ngoại hình mày, môi,
+                        mí nhanh chóng mà không xâm lấn, an toàn và hiệu quả với
+                        chi phí thấp, thời gian sử dụng lâu dài.
+
+                        <br />
+                        Các kỹ thuật viên sẽ sử dụng máy với đầu kim siêu nhỏ để
+                        đưa mực vào dưới lớp thượng bì và “vẽ”. Nhờ đó cải thiện
+                        khuyết điểm như môi thâm, mí mắt không rõ nét, chân mày
+                        nhạt nhòa, thiếu đầu cụt đuôi… giúp khuôn mặt trông hài
+                        hòa và có điểm nhấn hơn.
+                    </p>
+                </div>
+
+                <div class="md:w-2/5 w-full">
+                    <div class="video-container">
+                        <iframe
+                            width="515"
+                            height="300"
+                            src="https://www.youtube.com/embed/Y-KmAE7HOy4"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-5 px-4 md:px-0">
+                <p class="text-indigo-900 font-medium leading-5">
+                    Nhằm đáp ứng đa dạng nhu cầu làm đẹp của khách hàng, phun
+                    xăm thẩm mỹ phát triển với 3 dịch vụ chính:
+                </p>
+
+                <ul class="ml-3">
+                    <li class="text-indigo-900 leading-5 mt-2">
+                        <span
+                            class="material-icons text-xs text-indigo-900 mr-3"
+                        >
+                            circle
+                        </span>
+                        Phun xăm, điêu khắc lông mày xuất hiện sớm nhất và vẫn
+                        tiếp tục phát triển cho đến ngày nay. Ứng dụng cơ chế
+                        phun phủ mực hoặc điêu khắc từng sợi lên lông mày, chỉ
+                        sau khoảng 60 phút bạn đã sở hữu cặp chân mày sắc nét,
+                        tự nhiên.
+                    </li>
+                    <li class="text-indigo-900 leading-5 mt-2">
+                        <span
+                            class="material-icons text-xs text-indigo-900 mr-3"
+                        >
+                            circle
+                        </span>
+                        Phun xăm mí giúp tiết kiệm thời gian kẻ eyeliner rắc
+                        rối, tạo hiệu ứng đôi mắt to tròn, có hồn và đuôi mắt
+                        sắc nét hơn.
+                    </li>
+                    <li class="text-indigo-900 leading-5 mt-2">
+                        <span
+                            class="material-icons text-xs text-indigo-900 mr-3"
+                        >
+                            circle
+                        </span>
+                        Phun môi giúp loại bỏ tình trạng thâm tái hoặc nhợt
+                        nhạt, tạo cho chị em đôi môi tươi tắn, hồng hào và căng
+                        bóng.
+                    </li>
+                </ul>
+                <p class="text-indigo-900 font-medium leading-5">
+                    Khi tham gia các lớp dạy phun xăm, bạn cần trang bị đầy đủ
+                    dụng cụ, máy móc hỗ trợ hiện đại nhất để đáp ứng được những
+                    yêu cầu khắt khe về kỹ thuật. Trong đó máy móc và mực phun
+                    xăm là những phụ kiện không thể thiếu trong quá trình đào
+                    tạo học viên phun xăm thẩm mỹ. Ngoài ra, còn có các dụng cụ
+                    hỗ trợ khác cần phải có như: chì kẻ mày, thước tỉ lệ vàng,
+                    dao cạo lông mày, bông tẩy trang, nước tẩy trang, tăm bông,
+                    kem ủ tê, nhẫn lấy mực, kem che khuyết điểm, khay inox,…
+                    <br />
+                    Hiện nay, các lớp dạy phun xăm tại Timona Academy đều trang
+                    bị hết dụng cụ cơ bản cho học viên khi nhập học. Do đó, học
+                    viên chỉ cần chuẩn bị tâm lý và tới lớp học mà thôi. Dụng
+                    cụ, máy móc, phụ kiện phun xăm dẫu có quan trọng nhưng không
+                    phải là tất cả, nó cũng chỉ chiếm một phần trong một ca phun
+                    xăm thật trên cơ thể người. Bởi thực hiện phun xăm là cả một
+                    nghệ thuật và các Artist là những người nghệ sĩ, nhất thiết
+                    bạn cần phải đặt cái tâm và trách nhiệm lên mỗi việc bạn
+                    làm. Phải luôn trau dồi kỹ năng, chuyên môn và kiến thức để
+                    giúp bản thân nâng cao được trình độ và khả năng sáng tạo
+                    tuyệt vời của bản thân.
+                </p>
+            </div>
+        </div>
+
+        <div class="md:pt-10 pt-5 wrapper theme-cohoi">
+            <p
+                class="text-indigo-900 uppercase md:text-xl text-2xl mb-0 font-bold leading-5 md:text-left text-center"
+            >
+                CƠ HỘI NGHỀ NGHIỆP
+            </p>
+            <p class="text-indigo-900 pt-5 leading-5">
+                Một tin vui dành cho học viên khi những vấn đề đang được quan
+                tâm khi học nghề như: cơ hội việc làm/ Mức thu nhập/ Tỉ lệ thành
+                công… đều có thể đáp ứng khi bạn tham gia một lớp dạy phun xăm
+                thẩm mỹ.
+            </p>
+            <swiper
+                [config]="config"
+                [pagination]="{
+                    clickable: true
+                }"
+                class="mySwiper pb-10 md:pb-0"
+            >
+                <ng-template swiperSlide>
+                    <div class="relative bg-gray-100 boder-bottom">
+                        <div class="w-full h-full">
+                            <img
+                                src="../../../assets/images/theme1-cohoi.png"
+                                class="w-full h-full"
+                                alt=""
+                            />
+                        </div>
+                        <div class="w-full absolute h-1/2 top-1/2 centerY">
+                            <div
+                                class="lg:px-10 px-4 flex flex-col lg:items-center"
+                            >
+                                <span
+                                    class="uppercase lg:text-3xl text-2xl font-black text-yellow-500 text-color mb-0 text-center"
+                                >
+                                    CƠ HỘI VIỆC LÀM
+                                </span>
+                                <p
+                                    class="text-white text-color text-justify font-medium pt-5 leading-5"
+                                >
+                                    Đây là một trong những điều cần quan tâm khi
+                                    bạn muốn tham gia khóa đào tạo học viên phun
+                                    xăm thẩm mỹ cũng như có ý định theo đuổi
+                                    nghề nghiệp này. Hiện nay và trong tương
+                                    lai, phun xăm thẩm mỹ vẫn là ngành cực kỳ
+                                    ‘hot” và luôn đứng top đầu danh sách những
+                                    nghề lương cao, ổn định mà bạn nên lựa chọn.
+                                    Bởi nhu cầu làm đẹp ngày càng cao của con
+                                    người kéo theo lượng khách hàng đông đảo sử
+                                    dụng dịch vụ này liên tục tăng mạnh và nhu
+                                    cầu về nhân lực cực kỳ lớn. Điều này đồng
+                                    nghĩa, khi là một kỹ thuật viên phun xăm
+                                    chuyên nghiệp, bạn sẽ không lo thất nghiệp
+                                    sau khi ra trường.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="relative bg-gray-100">
+                        <div class="w-full h-full">
+                            <img
+                                src="../../../assets/images/theme1-cohoi.png"
+                                class="w-full h-full"
+                                alt=""
+                            />
+                        </div>
+                        <div class="w-full absolute h-1/2 top-1/2 centerY">
+                            <div
+                                class="lg:px-10 px-4 flex flex-col lg:items-center"
+                            >
+                                <span
+                                    class="uppercase lg:text-3xl text-2xl font-black text-yellow-500 text-color mb-0 text-center"
+                                >
+                                    LỘ TRÌNH THĂNG TIẾN
+                                </span>
+                                <p
+                                    class="text-white text-color text-justify font-medium pt-5 leading-5"
+                                >
+                                    Sau khi hoàn tất các lớp học phun xăm thẩm
+                                    mỹ, bạn sẽ không dừng lại ở vị trí kỹ thuật
+                                    viên mà có thể thăng tiến lên nhiều vị trí
+                                    khác như: trưởng kỹ thuật viên, quản lý kỹ
+                                    thuật viên. Thậm chí nếu có tiềm lực kinh
+                                    tế, bạn hoàn toàn có thể mở tiệm kinh doanh
+                                    riêng.
+                                    <br />
+                                    Do đó, nghề phun xăm cũng giống như các
+                                    ngành nghề làm đẹp khác, có rất nhiều vị trí
+                                    để bạn tiến tới. Quan trọng là ở bạn có chịu
+                                    nỗ lực, ý chí cầu toàn trong công việc và cố
+                                    gắng vượt qua khó khăn để đạt tới vị trí mà
+                                    bản thân mong muốn hay không?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="relative bg-gray-100 boder-bottom">
+                        <div class="w-full h-full">
+                            <img
+                                src="../../../assets/images/theme1-cohoi.png"
+                                class="w-full h-full"
+                                alt=""
+                            />
+                        </div>
+                        <div class="w-full absolute h-1/2 top-1/2 centerY">
+                            <div
+                                class="lg:px-10 px-4 flex flex-col lg:items-center"
+                            >
+                                <span
+                                    class="uppercase lg:text-3xl text-2xl font-black text-yellow-500 text-color mb-0 text-center"
+                                >
+                                    Nhu cầu nhân lực
+                                </span>
+                                <p
+                                    class="text-white text-color text-justify font-medium pt-5 leading-5"
+                                >
+                                    Theo Trung tâm dự báo nhu cầu nhân lực
+                                    TP.HCM, ước tính mỗi năm có hơn 2.000 Spa
+                                    được mở ra, cần đến 20.000 nhân lực giỏi để
+                                    lấp đầy vị trí thiếu hụt.
+                                    <br />
+                                    Spa hiện đang là ngành hốt bạc và có nhiều
+                                    triển vọng trong tương lai. Điều này cũng
+                                    đặt ra thách thức lớn cho các cơ sở đào tạo
+                                    ngành thẩm mỹ và cả người học. Do đó, sự
+                                    phát triển và cơ hội kỹ thuật viên spa luôn
+                                    luôn được mở rộng theo nhu cầu làm đẹp của
+                                    con người.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+
+                `
+            </swiper>
+            <!-- <div class="md:grid grid-cols-3 grid-cols-1 gap-10 pt-3">
+                
+
+               
+
+              
+            </div> -->
+        </div>
+
+        <div class="pt-10 wrapper">
+            <span class="text-indigo-900 uppercase text-xl mb-0 font-black">
+                MỨC LƯƠNG KỸ THUẬT VIÊN
+            </span>
+
+            <div
+                class="text-indigo-900 text-justify pt-3 font-medium leading-5"
+            >
+                Với nhu cầu làm đẹp tăng cao như hiện nay thì nghề phun xăm thẩm
+                mỹ “hái ra tiền” không có gì là lạ. Mức thu nhập có thể lên tới
+                20tr/tháng tùy vào năng lực, sự tăng tiến theo kinh nghiệm và
+                thời gian làm nghề. Đối với những bạn lựa chọn đầu tư mở tiệm,
+                thu nhập ổn định ở mức 8 con số mỗi tháng là chuyện bình thường.
+            </div>
+            <div class="w-full">
+                <div class="md:px-10">
+                    <swiper
+                        [config]="config1"
+                        [pagination]="{
+                            clickable: true
+                        }"
+                        class="mySwiper pb-10 "
+                    >
+                        <ng-template swiperSlide>
+                            <div class="bg-indigo-900 rounded-2xl">
+                                <div class="p-6">
+                                    <span
+                                        class="text-2xl uppercase text-yellow-500 mb-0 font-bold leading-7"
+                                    >
+                                        khóa phun xăm thẩm mỹ <br />
+                                        nâng cao
+                                    </span>
+                                    <div class="h-96 scroll overflow-auto">
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            a. lý thuyết
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            b. thực hành
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template swiperSlide>
+                            <div class="bg-indigo-900 rounded-2xl">
+                                <div class="p-6">
+                                    <span
+                                        class="text-2xl uppercase text-yellow-500 mb-0 font-bold leading-7"
+                                    >
+                                        khóa phun xăm thẩm mỹ <br />
+                                        nâng cao
+                                    </span>
+                                    <div class="h-96 scroll overflow-auto">
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            a. lý thuyết
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            b. thực hành
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template swiperSlide>
+                            <div class="bg-indigo-900 rounded-2xl">
+                                <div class="p-6">
+                                    <span
+                                        class="text-2xl uppercase text-yellow-500 mb-0 font-bold leading-7"
+                                    >
+                                        khóa phun xăm thẩm mỹ <br />
+                                        nâng cao
+                                    </span>
+                                    <div class="h-96 scroll overflow-auto">
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            a. lý thuyết
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            b. thực hành
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template swiperSlide>
+                            <div class="bg-indigo-900 rounded-2xl">
+                                <div class="p-6">
+                                    <span
+                                        class="text-2xl uppercase text-yellow-500 mb-0 font-bold leading-7"
+                                    >
+                                        khóa phun xăm thẩm mỹ <br />
+                                        nâng cao
+                                    </span>
+                                    <div class="h-96 scroll overflow-auto">
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            a. lý thuyết
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            b. thực hành
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template swiperSlide>
+                            <div class="bg-indigo-900 rounded-2xl">
+                                <div class="p-6">
+                                    <span
+                                        class="text-2xl uppercase text-yellow-500 mb-0 font-bold leading-7"
+                                    >
+                                        khóa phun xăm thẩm mỹ <br />
+                                        nâng cao
+                                    </span>
+                                    <div class="h-96 scroll overflow-auto">
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            a. lý thuyết
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+
+                                        <p
+                                            class="text-white uppercase text-xl font-bold pt-5"
+                                        >
+                                            b. thực hành
+                                        </p>
+                                        <ul>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-lg mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle </span
+                                                >Lý thuyết cấu trúc về da trong
+                                                phun xăm
+
+                                                <p class="ml-5 mt-1 text-white">
+                                                    - Lý thuyết cấu trúc về da
+                                                    trong phun xăm
+                                                </p>
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                            <li class="text-white text-xl mt-2">
+                                                <span
+                                                    class="material-icons text-xs text-yellow-500 mr-3"
+                                                >
+                                                    circle
+                                                </span>
+                                                Lý thuyết cấu trúc về da trong
+                                                phun xăm
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </swiper>
+                </div>
+
+                <div class="flex justify-center items-center relative py-10">
+                    <div class="bg-indigo-900 rounded-3xl p-2">
+                        <a class="text-xl text-yellow-500 p-3"
+                            >Đăng ký tư vấn ngay</a
+                        >
+                    </div>
+                </div>
+
+                <div class="px-5 bg-indigo-900 rounded-2xl my-10 pb-10">
+                    <p
+                        class="text-5xl text-white font-medium leading-10 text-center uppercase pt-10"
+                    >
+                        tiết lộ những điều cần biết<br />
+                        khi học phun xăm thẩm mỹ
+                    </p>
+                    <div class="w-full flex h-full py-10">
+                        <div class="md:w-3/5 flex flex-col justify-between">
+                            <div class="">
+                                <span
+                                    class="text-2xl text-white uppercase font-bold pb-4"
+                                    >học ngành này cần những gì?</span
+                                >
+                                <p class="text-lg text-white">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Reiciendis praesentium
+                                    adipisci maiores libero, labore odio officia
+                                    necessitatibus. Optio possimus a magni hic
+                                    officiis voluptates corrupti, error quisquam
+                                    expedita in doloremque!
+                                </p>
+                            </div>
+                            <div class="">
+                                <span
+                                    class="text-2xl text-white uppercase font-bold pb-4"
+                                    >học ngành này cần những gì?</span
+                                >
+                                <p class="text-lg text-white">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Reiciendis praesentium
+                                    adipisci maiores libero, labore odio officia
+                                    necessitatibus. Optio possimus a magni hic
+                                    officiis voluptates corrupti, error quisquam
+                                    expedita in doloremque!
+                                </p>
+                            </div>
+
+                            <div class="">
+                                <span
+                                    class="text-2xl text-white uppercase font-bold pb-4"
+                                    >học ngành này cần những gì?</span
+                                >
+                                <p class="text-lg text-white">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Reiciendis praesentium
+                                    adipisci maiores libero, labore odio officia
+                                    necessitatibus. Optio possimus a magni hic
+                                    officiis voluptates corrupti, error quisquam
+                                    expedita in doloremque!
+                                </p>
+                            </div>
+
+                            <div class="">
+                                <span
+                                    class="text-2xl text-white uppercase font-bold pb-4"
+                                    >học ngành này cần những gì?</span
+                                >
+                                <p class="text-lg text-white">
+                                    Lorem ipsum dolor sit amet consectetur,
+                                    adipisicing elit. Reiciendis praesentium
+                                    adipisci maiores libero, labore odio officia
+                                    necessitatibus. Optio possimus a magni hic
+                                    officiis voluptates corrupti, error quisquam
+                                    expedita in doloremque!
+                                </p>
+                            </div>
+                            <div class="text-white">
+                                <p
+                                    class="text-2xl text-white uppercase font-bold"
+                                >
+                                    học ngành này cần những gì?
+                                </p>
+                                <ul class="ml-3">
+                                    <li class="text-white">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                    <li class="text-white mt-3">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                    <li class="text-white mt-3">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                    <li class="text-white mt-3">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                    <li class="text-white mt-3">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                    <li class="text-white mt-3">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                    <li class="text-white mt-3">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                    <li class="text-white mt-3">
+                                        <span
+                                            class="material-icons text-xs text-white mr-3"
+                                        >
+                                            circle
+                                        </span>
+                                        Nắm được tiềm năng và định hướng nghề
+                                        phun xăm thẩm mỹ
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="md:w-2/5">
+                            <div class="w-full h-72 bg-red-200"></div>
+                            <div class="w-full h-72 bg-red-200 mt-3"></div>
+                            <div class="w-full h-72 bg-red-200 mt-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center items-center relative py-3">
+                        <div class="bg-white rounded-3xl p-2">
+                            <a
+                                class="text-2xl font-bold text-yellow-500 p-3 uppercase"
+                                >Liên hệ nhận lịch khai giảng ngay</a
+                            >
+                        </div>
+                    </div>
+                    <div class="py-10">
+                        <p
+                            class="text-5xl text-white font-medium text-center leading-10"
+                        >
+                            TẠI SAO BẠN NÊN HỌC NGHỀ SPA <br />
+                            CHĂM SÓC ĐIỀU TRỊ DA TẠI TIMONA ACADEMY
+                        </p>
+                        <p class="text-white text-justify">
+                            Học viện Timona Academy tự hào là địa chỉ đào tạo
+                            nghề Spa theo tiêu chuẩn quốc tế tại Việt Nam. Với
+                            sứ mệnh đào tạo nguồn nhân lực chuyên nghiệp, để
+                            nguồn cung – cầu trong ngành spa, thẩm mỹ được cân
+                            bằng hơn về chất lượng. Mỗi năm Timona Academy đào
+                            tạo hơn 2000 kỹ thuật viên Spa chăm sóc điều trị da
+                            đến từ nhiều tỉnh thành trên khắp cả nước. Chính vì
+                            vậy, khi đăng ký Khóa học Spa tại đây, học viên sẽ
+                            nhận được:
+                        </p>
+                        <div class="grid grid-cols-3 gap-20">
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae. Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit.
+                                    Voluptatum incidunt corporis maiores
+                                    consectetur? Corrupti tempore maxime odit,
+                                    possimus nam architecto fugiat eveniet nemo
+                                    aut, nihil at cumque accusamus natus
+                                    molestiae.
+                                </p>
+                            </div>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-20 h-20 bg-red-200 rounded-full mx-auto"
+                                ></div>
+                                <p class="text-yellow-500 text-center">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Voluptatum incidunt
+                                    corporis maiores consectetur? Corrupti
+                                    tempore maxime odit, possimus nam architecto
+                                    fugiat eveniet nemo aut, nihil at cumque
+                                    accusamus natus molestiae.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-500 rounded-3xl mx-4 hidden lg:block">
+                        <div class="mx-4 p-5 grid grid-cols-3 gap-4">
+                            <div
+                                class="text-2xl font-black leading-5 flex items-center flex-col text-indigo-900 uppercase text-center fontFamily-sans"
+                            >
+                                thạo nghề <br />
+                                chỉ sau 2-3 tháng
+                            </div>
+
+                            <div
+                                class="text-2xl font-black leading-5 flex items-center flex-col text-indigo-900 uppercase text-center fontFamily-sans"
+                            >
+                                cam kết 100% <br />
+                                Hỗ trợ việc làm
+                            </div>
+
+                            <div
+                                class="text-2xl font-black leading-5 flex items-center flex-col text-indigo-900 uppercase text-center fontFamily-sans"
+                            >
+                                thu nhập <br />
+                                10 - 20 triệu/ tháng
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-indigo-900 leading-5">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Molestiae ut deserunt ratione deleniti illum alias rerum
+                    temporibus id corrupti, ducimus officiis tenetur sit nam,
+                    esse magni perspiciatis neque doloremque quis!
+                </p>
+                <div class="pt-10">
+                    <div
+                        class="flex justify-between lg:flex-row flex-col-reverse"
+                    >
+                        <div class="lg:w-3/5 pr-10">
+                            <div
+                                class="w-full h-full flex flex-col justify-center"
+                            >
+                                <span
+                                    class="text-indigo-900 uppercase text-xl mb-0 font-black"
+                                >
+                                    HỌC VIÊN ĐÁNH GIÁ VỀ LỚP DẠY PHUN XĂM TẠI
+                                    TIMONA ACADEMY
+                                </span>
+                                <p
+                                    class="text-indigo-900 text-justify font-medium leading-5"
+                                >
+                                    Với sự đầu tư nghiêm túc về chất lượng – Uy
+                                    tín trong đào tạo, Timona Academy nhận được
+                                    nhiều phản hồi tốt từ học viên cũng như quý
+                                    phụ huynh, đối tác. Đặc biệt trước những nỗ
+                                    lực không ngừng nghỉ nhằm nâng cao chất
+                                    lượng đào tạo, tăng cường mạng lưới liên kết
+                                    đối tác rộng khắp, đảm bảo đúng cam kết việc
+                                    làm ổn định cho học viên sau tốt nghiệp,
+                                    Timona Academy vinh dự nhận được giải thưởng
+                                    “Thương hiệu tiêu biểu châu Á – Thái Bình
+                                    Dương 2021.”
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lg:w-2/5 flex justify-end">
+                            <div
+                                class="flex justify-center items-center w-full"
+                            >
+                                <iframe
+                                    width="450"
+                                    height="315"
+                                    src="https://www.youtube.com/embed/pjgElO5jKOs"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div [innerHTML]="theme.content | theme1"></div> -->
+    </div>
+</div>
+<div class="mb-10">
+    <app-form1></app-form1>
+</div>

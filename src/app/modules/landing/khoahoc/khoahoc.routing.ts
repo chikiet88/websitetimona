@@ -27,16 +27,16 @@ export const khoahocRoutes: Route[] = [
       //   component:Theme1Component,
        
       // },
-      // {
-      //   path: 'theme2',
-      //   pathMatch: 'full',
-      //   component:Theme2Component,
-       
-      // },
       {
-        path: 'theme4',
+        path: 'theme2',
         pathMatch: 'full',
-        component:Theme4Component,
+        component:Theme2Component,
+       
+      },
+      {
+        path: 'theme3',
+        pathMatch: 'full',
+        component:Theme3Component,
        
       },
       
@@ -49,8 +49,7 @@ export const khoahocRoutes: Route[] = [
           detail: KhoahocDetailResolver,
         },
       },
-      // { path:'theme2',component:Theme2Component},
-      // { path:'theme3',component:Theme3Component},
+     
     ],
   },
 ];

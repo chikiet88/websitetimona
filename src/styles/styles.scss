@@ -7,141 +7,244 @@
 @import "~swiper/css";
 @import "~swiper/css/pagination";
 @import "~swiper/css/navigation";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 body {
-	line-height: 1;
-	overflow-x: hidden;
+    line-height: 1;
+    overflow-x: hidden;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Times New Roman', Times, serif; }
-*{
-	font-family: 'Times New Roman', Times, serif;
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+}
+* {
+    font-family: "Times New Roman", Times, serif;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
 }
 
-.owl-theme .owl-dots .owl-dot span{
-	background: #ddd;
-	width: 8px;
-	height: 8px;
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
+div.cdk-overlay-container .mat-menu-content {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+    .owl-theme .owl-nav.disabled + .owl-dots {
+        display: none;
+    }
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    color: #ddd;
+}
+.swiper-pagination-bullet-active-main {
+    background: blue !important;
+}
 
-.owl-theme .owl-dots .owl-dot.active span{
-	background: #1a63f5;
-}
-.mat-button{
-	padding: 0 15px !important;
-}
-
-div.cdk-overlay-container .mat-menu-content {padding-top: 0; padding-bottom: 0; }
-@media screen and (max-width: 768px){
-	.owl-theme .owl-nav.disabled+.owl-dots{
-		display: none;
-	}
-}
-.swiper-button-prev:after, .swiper-button-next:after{
-	color: #ddd
-}
-.swiper-pagination-bullet-active-main{
-	background: blue !important;
-	
-}
-.swiper-pagination-bullet{
-	width: 0.85rem;
-	height: 0.85rem;
-	border: 1px solid #fff;
-	background: #fff;
-	opacity: 1;
-}
-.swiper-pagination-bullets-dynamic{
+.swiper-pagination-bullets-dynamic {
 }
 /* Importing Bootstrap SCSS file. */
-.carousel-course{
-	.swiper-pagination-bullet{
-		width: 0.65rem;
-		height: 0.65rem;
-		border: 1px solid #fff;
-		background: #ddd;
-		opacity: 1;
+.carousel-course {
+    .swiper-pagination-bullet {
+        width: 0.65rem;
+        height: 0.65rem;
+        border: 1px solid #fff;
+        background: #ddd;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+        background: #00256e !important;
+    }
+}
+.letotnghiep {
+    .swiper {
+        width: 100%;
+        height: 90vh;
+        .swiper-button-prev,
+        .swiper-button-next {
+            opacity: 0;
+        }
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        .swiper {
+            width: 100%;
+            height: 80vh;
+        }
+    }
+}
+
+.theme-cohoi {
+	.swiper-pagination{
+		opacity: 0;
 	}
-	.swiper-pagination-bullet-active{
-		background: #00256e !important;
-	
-	}
-} 
-.letotnghiep{
-	.swiper {
-		width: 100%;
-		height: 90vh;
-		.swiper-button-prev, .swiper-button-next{
-			opacity: 0;
+    .swiper-pagination-bullet-active {
+        background: #00256e !important;
+    }
+    @media screen and (max-width: 768px) {
+		.swiper-pagination{
+			opacity: 1;
 		}
-	  }
-	  
-	  .swiper-slide {
-		text-align: center;
-		font-size: 18px;
-		/* Center slide text vertically */
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		-webkit-justify-content: center;
-		justify-content: center;
-		-webkit-box-align: center;
-		-ms-flex-align: center;
-		-webkit-align-items: center;
-		align-items: center;
-	  }
-	
-	  @media screen and (max-width: 768px){
-		.swiper {
-			width: 100%;
-			height: 80vh;
-			
-		  }
-	}
+       
+    }
 }

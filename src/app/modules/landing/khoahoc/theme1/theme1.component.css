@@ -1,111 +1,58 @@
-.bg{
-    width:100%;
-    content:'';
-    display:block;
+.bg {
+    width: 100%;
+    content: "";
+    display: block;
 
-    
-    background: linear-gradient(to top, #00256e 52%,rgba(0, 0, 0, 0) 90%);
-    
+    background: linear-gradient(to top, #00256e 52%, rgba(0, 0, 0, 0) 90%);
 }
-.circle{
+.circle {
     transform: translateY(-50%);
     margin-left: -10px;
 }
-.radius{
+.radius {
     transform: translateY(-50%);
     top: 10px;
 }
-.boder-bottom{
+.boder-bottom {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-
 }
-
-.form-sale{
-
-    padding-bottom: 50px;
-    border-radius: 20px;
+.scroll {
+    overflow-y: scroll !important;
 }
-.form-wrapper{
-    
-    display: flex;
-    justify-content: space-between;
-    
-
+.scroll::-webkit-scrollbar {
+    width: 10px;
+    background-color: #002c82;
 }
-.form-left{
-    display: flex;
-    flex: 1;
-    
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #194cb1;
 }
-.form-left-info{
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
+.centerY{
+    transform: translateY(-30%);
 }
-.form-title{
-    width: 100%;
-    font-size: 40px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: end;
-    position: relative;
-    
-}
-.form-title::after{
-    position: absolute;
-    content: "";
-    width: 200px;
-    height: 1px;
-    
-    background-color: #fff;
-    bottom: -10px;
-    right: 0;
-}
-.gif{
-    width: 100%;
-    padding-top: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: end;
-    text-transform: uppercase;
-    color: #fff;
-}
-.form-left-total{
-    height: auto;
-    margin-left: 15px;
-}
-.title{
-    font-size: 75px;
-}
-
-.mb{
-    display: none;
-}
-
-@media only screen and (max-width: 762px){
-    .wrapper{
+@media only screen and (max-width: 762px) {
+    .wrapper {
         padding: 0 1rem;
     }
-    .padding-bottom{
+    .padding-bottom {
         padding-bottom: 1rem;
     }
-    .top-margin{
+    .top-margin {
         margin-top: 1rem;
     }
-    .radius{
+    .radius {
         top: 10px;
     }
-    .youtube-video iframe{
+    .youtube-video iframe {
         height: 200px;
         width: 480px;
     }
-    .bg{
+    .bg {
         background: inherit;
     }
-    .text-color{
+    .text-color {
         color: #00256e !important;
     }
-  }
+}

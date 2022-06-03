@@ -44,7 +44,7 @@ export class KhoahocListComponent implements OnInit {
 
                 return x;
             });
-            this.danhmuc = res?.reverse().filter((x) => x.Type == '1');
+            this.danhmuc = res?.reverse().filter((x) => x.Type == 'chuyennganh');
             console.log(this.danhmuc);
         });
     }
