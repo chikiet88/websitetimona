@@ -11,6 +11,8 @@ import { FileUpload } from '../models/file-upload.model';
     providedIn: 'root',
 })
 export class FileUploadService {
+    currentFileUpload
+    percentage
     private basePath = '/uploads';
     // private basePath = '/test';
     private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
@@ -45,6 +47,7 @@ export class FileUploadService {
         return uploadTask.percentageChanges();
     }
     private saveFileData(fileUpload: FileUpload): void {
+        let image
         this.db.list(this.basePath).push(fileUpload);
         this.getFiles(1) //lấy file  chứa key từ firebase về
             .snapshotChanges()
@@ -59,9 +62,11 @@ export class FileUploadService {
             )
             .subscribe((fileUploads) => {
                 fileUploads = fileUploads.reverse();
+                // image = fileUploads[0].url
               //  this.myUploadAdapter.upload(fileUploads)
                 this._thumb.next(fileUploads[0]);
             });
+            return image
     }
     getFiles(numberItems: number): AngularFireList<FileUpload> {
         return this.db.list(this.basePath, (ref) =>
@@ -82,4 +87,31 @@ export class FileUploadService {
         const storageRef = this.storage.ref(this.basePath);
         storageRef.child(name).delete();
     }
+    // upload(loader) {
+    //     return new Promise(async (resolve, reject) => {
+    //         loader.file.then((file: any) => {
+    //             this.currentFileUpload = new FileUpload(file);
+    //             this
+    //                 .pushFileToStorage(this.currentFileUpload)
+    //                 .subscribe(
+    //                     (percentage) => {
+    //                         this.percentage = Math.round(
+    //                             percentage ? percentage : 0
+    //                         );
+    //                         if (this.percentage == 100) {
+                               
+    //                             resolve({
+    //                                 default: url,
+    //                             });
+    //                         }
+    //                     },
+    //                     (error) => {
+    //                         console.log(error);
+    //                     }
+    //                 );
+
+    //             //Lấy hình ảnh từ firebase về
+    //         });
+    //     });
+    // }
 }

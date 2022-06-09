@@ -1,5 +1,39 @@
-<div class="lg:max-w-7xl lg:mx-auto lg:px-8 lg:py-10">
-   
+<div class="lg:max-w-6xl lg:mx-auto lg:px-8 lg:py-10">
+    <div class="text-center lg:mx-96 pb-4 lg:pb-10">
+        <div class="dropdown">
+            <button
+                class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-xl text-yellow-500 uppercase"
+                type="button"
+                id="dropdownMenuButton1"
+                style="width: 350px"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+            >
+                xem nhanh nội dung
+                <div
+                    class="absolute h-full bg-yellow-500 top-0"
+                    style="width: 2px; right: 45px"
+                ></div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li>
+                    <a
+                        class="dropdown-item"
+                        routerLink="/goc-hoc-vien/hoat-dong"
+                        >Hoạt Động</a
+                    >
+                </li>
+                <li>
+                    <a
+                        class="dropdown-item"
+                        routerLink="/goc-hoc-vien/cam-nghi-hoc-vien"
+                        >Cảm Nghĩ Học Viên</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div class="w-full h-1/2 flex flex-col hidden lg:block">
         <div class="pb-4 flex justify-between">
             <nav class="flex" aria-label="Breadcrumb">
@@ -27,7 +61,7 @@
                             >>
                             <span
                                 class="ml-1 font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                                >{{ theme.title }}</span
+                                >{{ theme?.title }}</span
                             >
                         </div>
                     </li>
@@ -36,21 +70,81 @@
         </div>
     </div>
 
-    <div class=" lg:px-10 lg:pb-10 wrapper padding-bottom">
-        <p
-            class="text-indigo-900 uppercase text-center text-xl lg:text-5xl text-2xl py-5"
+    <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
+        <h3
+            class="text-white uppercase text-center text-2xl lg:text-5xl  py-5"
         >
-            <!-- {{ theme.title }} -->PHUN XĂM THẨM MỸ
-        </p>
-        
-       <p class="text-indigo-900 leading-5">Không ngừng nỗ lực nâng cao chất lượng đào tạo, tăng cường mạng lưới liên kết đối tác rộng khắp, đảm bảo đúng cam kết việc làm ổn định cho học viên sau tốt nghiệp, Timona Academy vinh dự nhận được giải thưởng “Thương hiệu tiêu biểu châu Á – Thái Bình Dương 2021.</p>
-        <img src="/images/timona-academy-duoc-vinh-danh-thuong-hieu-tieu-bieu-2021/timona-academy-duoc-vinh-danh-thuong-hieu-2021.jpg"/>
-    
-       <!-- <div [innerHTML]="theme.des" class="text-white"></div> -->
+            {{ theme.title }}
+        </h3>
+      
+        <div [innerHTML]="theme.des" class="text-white leading-5 text-justify"></div>
     </div>
 
-  
+    <div class="">
+        <div [innerHTML]="theme?.content1 | theme1"></div>
+
+        <div class="md:pt-10 pt-5 wrapper theme-cohoi" *ngIf="isCarousel1">
+            <p
+                class="text-indigo-900 uppercase text-xl mb-0 font-bold leading-5 md:text-left text-center"
+            >
+                {{ theme?.slide1?.titleCarousel }}
+            </p>
+            <div [innerHTML]="theme?.slide1?.desCarousel | theme1"></div>
+            <swiper
+                [config]="config"
+                [pagination]="{
+                    clickable: true
+                }"
+                class="mySwiper pb-10 md:pb-0"
+            >
+                <ng-template
+                    swiperSlide
+                    *ngFor="let item of theme?.listslide1 | keyvalue"
+                >
+                    <div [innerHTML]="item.value"></div>
+                </ng-template>
+            </swiper>
+        </div>
+
+        <div class="md:pt-10 pt-5 md:px-0 px-3" *ngIf="theme?.listslide2 != {}">
+            <h3
+                class="text-indigo-900 uppercase text-xl text-center md:text-left mb-0 font-black"
+            >
+                {{ theme?.slide2?.titleCarousel }}
+            </h3>
+
+            <div [innerHTML]="theme?.slide2?.desCarousel | theme1"></div>
+            <div class="w-full">
+                <div class="md:px-10">
+                    <swiper
+                        [config]="config1"
+                        [pagination]="{
+                            clickable: true
+                        }"
+                        class="mySwiper pb-10"
+                    >
+                        <ng-template
+                            swiperSlide
+                            *ngFor="let item of theme?.listslide2 | keyvalue"
+                        >
+                            <div [innerHTML]="item.value | theme1"></div>
+                        </ng-template>
+                    </swiper>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex justify-center items-center relative">
+                <div class="bg-indigo-900 rounded-3xl p-2">
+                    <a class="text-lg text-yellow-500 p-3"
+                        >Đăng ký tư vấn ngay</a
+                    >
+                </div>
+            </div>
+            <div [innerHTML]="theme?.content2 | theme1"></div>
+        </div>
+    </div>
 </div>
-<div class="mb-10">
+<div class="mb-10 mt-10 md:mt-0">
     <app-form1></app-form1>
 </div>

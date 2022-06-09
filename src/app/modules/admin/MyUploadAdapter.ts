@@ -9,46 +9,24 @@ export class MyUploadAdapter {
     public xhr: any;
     inforImage: any;
     percentage = 0;
+    temp;
     currentFileUpload?: FileUpload;
 
     constructor(loader: any, uploadService) {
         this.loader = loader;
         this.uploadService = uploadService;
         // change "environment.BASE_URL" key and API path
-        this.url = `http://localhost:3000`;
+        this.url = `http://localhost:3000/image`;
 
         // change "token" value with your token
     }
 
-    upload() {
+    upload(url) {
         return new Promise(async (resolve, reject) => {
             this.loader.file.then((file: any) => {
                 this.currentFileUpload = new FileUpload(file);
-                this.uploadService
-                    .pushFileToStorage(this.currentFileUpload)
-                    .subscribe(
-                        (percentage) => {
-                            this.percentage = Math.round(
-                                percentage ? percentage : 0
-                            );
-                            if (this.percentage == 100) {
-                                this.uploadService._thumb$.subscribe((res) => {
-                                    if (res) {
-                                        this._initRequest();
-                                        this._initListeners(
-                                            resolve,
-                                            reject,
-                                            res
-                                        );
-                                        this._sendRequest(res);
-                                    }
-                                });
-                            }
-                        },
-                        (error) => {
-                            console.log(error);
-                        }
-                    );
+
+                this._initListeners(resolve, reject, this.currentFileUpload);
 
                 //Lấy hình ảnh từ firebase về
             });
@@ -71,38 +49,60 @@ export class MyUploadAdapter {
     }
 
     _initListeners(resolve: any, reject: any, file: any) {
-        const xhr = this.xhr;
+        // const xhr = this.xhr;
 
-        const loader = this.loader;
-        const genericErrorText = "Couldn't upload file:" + ` ${file?.name}.`;
+        // const loader = this.loader;
+        // const genericErrorText = "Couldn't upload file:" + ` ${file?.name}.`;
 
-        xhr.addEventListener('error', () => reject(genericErrorText));
-        xhr.addEventListener('abort', () => reject());
+        // xhr.addEventListener('error', () => reject(genericErrorText));
+        // xhr.addEventListener('abort', () => reject());
 
-        xhr.addEventListener('load', () => {
-            const response = xhr.response;
-            if (!response || response.error) {
-                return reject(
-                    response && response.error
-                        ? response.error.message
-                        : genericErrorText
-                );
-            }
+        // xhr.addEventListener('load', () => {
+        //     const response = xhr.response;
+        //     if (!response || response.error) {
+        //         return reject(
+        //             response && response.error
+        //                 ? response.error.message
+        //                 : genericErrorText
+        //         );
+        //     }
 
-            // change "response.data.fullPaths[0]" with image URL
-            resolve({
-                default: file.url,
-            });
-        });
+        //     resolve({
+        //         default: file.url,
+        //     });
+        // });
 
-        if (xhr.upload) {
-            xhr.upload.addEventListener('progress', (evt: any) => {
-                if (evt.lengthComputable) {
-                    loader.uploadTotal = evt.total;
-                    loader.uploaded = evt.loaded;
+        // if (xhr.upload) {
+        //     xhr.upload.addEventListener('progress', (evt: any) => {
+        //         if (evt.lengthComputable) {
+        //             loader.uploadTotal = evt.total;
+        //             loader.uploaded = evt.loaded;
+        //         }
+        //     });
+        // }
+        this.uploadService.pushFileToStorage(this.currentFileUpload).subscribe(
+            (percentage) => {
+                console.log(percentage);
+
+                this.percentage = Math.round(percentage ? percentage : 0);
+                if (this.percentage == 100) {
+                    this.uploadService._thumb$.subscribe((res) => {
+                        console.log(res);
+                        if (res != null) {
+                            this.temp = res;
+                            setTimeout(() => {
+                                resolve({
+                                    default: this.temp?.url,
+                                });
+                            }, 1000);
+                        }
+                    });
                 }
-            });
-        }
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
     }
 
     _sendRequest(file: any) {

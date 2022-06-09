@@ -2,13 +2,13 @@
 import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
-    {
-        id   : 'trangchu',
-        title: 'Trang chủ',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/'
-    },
+    // {
+    //     id   : 'trangchu',
+    //     title: 'Trang chủ',
+    //     type : 'basic',
+    //     icon : 'heroicons_outline:chart-pie',
+    //     link : '/'
+    // },
     {
         id   : 'menu',
         title: 'Menu',

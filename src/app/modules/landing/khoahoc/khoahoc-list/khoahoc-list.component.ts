@@ -19,33 +19,35 @@ export class KhoahocListComponent implements OnInit {
         // window.location.href = 'https://v1.timona.edu.vn/khoa-hoc.html'
 
         this.khoahocService.courses$
-            .pipe(
-                map(
-                    (arr) =>
-                        arr &&
-                        arr.length &&
-                        arr.reverse().filter((r) => r.parentid == 5)
-                )
-            )
+            // .pipe(
+            //     map(
+            //         (arr) =>
+            //             arr &&
+            //             arr.length &&
+            //             arr.reverse().filter((r) => r.Type == 'chuyennganh')
+            //     )
+            // )
             .subscribe((result) => (this.themes = result));
 
         this.khoahocService.getDanhmuc().subscribe();
         this.khoahocService.danhmucs$.subscribe((res) => {
+            console.log(this.themes);
             console.log(res);
+            
 
             res?.forEach((x) => {
                 x.courses = [];
-
+            
                 for (let i = 0; i <= this.themes.length; i++) {
                     if (x.id == this.themes[i]?.idDM) {
                         x.courses.push(this.themes[i]);
                     }
                 }
-
+                console.log(x);
+                
                 return x;
             });
             this.danhmuc = res?.reverse().filter((x) => x.Type == 'chuyennganh');
-            console.log(this.danhmuc);
         });
     }
 

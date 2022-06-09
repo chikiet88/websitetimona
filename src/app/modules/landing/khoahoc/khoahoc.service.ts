@@ -17,6 +17,8 @@ import { Khoahoc } from './khoahoc.types';
 })
 export class KhoahocService {
     private urlApi = 'https://v2api.timona.edu.vn/baiviet';
+    // private urlApi = 'http://localhost:3000/baiviet';
+
     private _course: BehaviorSubject<any | null> = new BehaviorSubject(null);
     // _course$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
     private _courses: BehaviorSubject<Khoahoc[] | null> = new BehaviorSubject(
@@ -48,17 +50,16 @@ export class KhoahocService {
         );
     }
     getDanhmucchitiet(slug): Observable<any> {
-        let id
-        // this.getDanhmuc().subscribe();
-       this.danhmuc$.subscribe(res=> console.log(res))
+    //     let id
+    //    this.danhmuc$.subscribe(res=> console.log(res))
         
-          id = this._danhmucs.value?.find((v) => v.Slug == slug).id;
+    //       id = this._danhmucs.value?.find((v) => v.Slug == slug).id;
 
-        Number(id)
-        console.log(id);
+    //     Number(id)
+    //     console.log(id);
 
         return this.http
-            .get<any>(`https://v2api.timona.edu.vn/danhmuc/${id}`)
+            .get<any>(`https://v2api.timona.edu.vn/danhmuc/${19}`)
             .pipe(
                 map((danhmuc) => {
                     // Update the danhmuc
@@ -70,7 +71,7 @@ export class KhoahocService {
                 switchMap((danhmuc) => {
                     if (!danhmuc) {
                         return throwError(
-                            'Could not found danhmuc with id of ' + id + '!'
+                            'Could not found danhmuc with id of ' + slug + '!'
                         );
                     }
 
@@ -88,7 +89,9 @@ export class KhoahocService {
     }
     getKhoahocChitiet(slug: string): Observable<Khoahoc> {
         return this.http
-            .get<Khoahoc>(`https://v2api.timona.edu.vn/baiviet/slug/${slug}`)
+            .get<Khoahoc>(this.urlApi+`/slug/${slug}`)
+            // .get<Khoahoc>(this.urlApi+`/${slug}`)
+
             .pipe(
                 map((course) => {
                     // Update the course

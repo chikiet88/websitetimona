@@ -29,6 +29,7 @@ SwiperCore.use([Pagination, FreeMode, Navigation, Autoplay]);
 export class Theme1Component implements OnInit {
     course$: Observable<Khoahoc>;
     massTimingsHtml;
+    isCarousel1 = false
     config;
     config1;
     constructor(
@@ -38,14 +39,21 @@ export class Theme1Component implements OnInit {
         // this.massTimingsHtml = this.getInnerHTMLValue()
     }
 
-    theme: any;
+    theme: any = {};
 
     text: SafeHtml;
 
     getCourse() {
         this.khoahocService.course$.subscribe((course: any) => {
             // Update the counts
+            
             this.theme = course;
+            if(Object.keys(this.theme.listslide1).length > 0){
+                this.isCarousel1 = true
+                this.theme.listslide1 = Object.keys(this.theme.listslide1.reverse())
+            }
+            console.log(this.theme);
+            
         });
     }
 

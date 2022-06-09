@@ -26,10 +26,6 @@ export class TintucComponent implements OnInit {
         this.baiviet1 = arr[0]
         this.baiviet2 = [arr[1],arr[2]]
         this.baiviet3 = [arr[3],arr[4],arr[5],arr[6]]
-        console.log(this.baiviet1);
-        console.log(this.baiviet2);
-
-        console.log(this.baiviet3);
       }
         
     }
@@ -49,7 +45,7 @@ export class TintucComponent implements OnInit {
 
         this._khoahocService.getKhoahoc().subscribe();
         this._khoahocService.courses$.subscribe((res) => {
-            // res = res?.filter((x) => x.idDM == this.danhmuc.id);
+            res = res?.filter((x) => x.idDM == this.danhmuc?.id);
             let x = res?.length / 7;
 
             for (let i = 0; i <= x; i++) {

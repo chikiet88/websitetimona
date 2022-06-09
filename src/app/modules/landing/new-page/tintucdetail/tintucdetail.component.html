@@ -1,4 +1,4 @@
-<div class="lg:max-w-7xl lg:mx-auto lg:px-8 lg:py-10">
+<div class="lg:max-w-6xl lg:mx-auto lg:px-5 lg:py-10" >
     <div class="w-full h-1/2 flex flex-col hidden lg:block">
         <div class="pb-4 flex justify-between">
             <nav class="flex" aria-label="Breadcrumb">
@@ -26,7 +26,7 @@
                             >>
                             <span
                                 class="ml-1 font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                                >{{ theme.title }}</span
+                                >{{ theme?.title }}</span
                             >
                         </div>
                     </li>
@@ -39,9 +39,9 @@
         <p
             class="text-indigo-900 uppercase text-center text-xl lg:text-5xl text-2xl py-5"
         >
-            {{ theme.title }}
+            {{ theme?.title }}
         </p>
 
-        <div [innerHTML]="theme.content" class="text-indigo-900"></div>
+        <div [innerHTML]="theme?.content" class="text-indigo-900"></div>
     </div>
 </div>

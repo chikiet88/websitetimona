@@ -4,91 +4,136 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ThemeService } from './theme.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
 import { Observable } from 'rxjs';
+import { MyUploadAdapter } from '../MyUploadAdapter';
+import { FileUploadService } from '../services/file-upload.service';
 
 @Component({
-  selector: 'app-theme',
-  templateUrl: './theme.component.html',
-  styleUrls: ['./theme.component.css']
+    selector: 'app-theme',
+    templateUrl: './theme.component.html',
+    styleUrls: ['./theme.component.css'],
 })
 export class ThemeComponent implements OnInit {
-  themes:any;
-  theme:any;
-  message:'chon theme'
-  userProfile: FormGroup;
-  selectTheme: any;
-  menu:any;
-  idtheme;
-  public Editor = customBuild;
-  public config = {
-    htmlSupport: {
-      allow: [
-        {
-            name: /.*/,
-            attributes: true,
-            classes: true
+    themes: any;
+    theme: any;
+    message: 'chon theme';
+    userProfile: FormGroup;
+    selectTheme: any;
+    menu: any;
+    idtheme;
+    public Editor = customBuild;
+    public config = {
+        htmlSupport: {
+            allow: [
+                {
+                    name: /.*/,
+                    attributes: true,
+                    classes: true,
+                },
+            ],
+        },
+    };
+
+    constructor(
+        private themeService: ThemeService,
+        private fb: FormBuilder,
+        private uploadService: FileUploadService
+    ) {}
+
+    onSubmit() {
+        this.userProfile.removeControl('id')
+        this.themeService.postTheme(this.userProfile.value).subscribe((res) => {
+            alert('Tạo nội dung thành công');
+            this.resetForm();
+
+        });
+    }
+
+    updateTheme() {
+        this.themeService
+            .updateTheme(this.userProfile.value)
+            .subscribe((res) => {
+                alert('Cập nhật thành công');
+                this.resetForm();
+            });
+    }
+    deleteTheme() {
+        this.themeService.deleteTheme(this.idtheme).subscribe((res) => {
+            alert('Xóa thêm thành công');
+            this.resetForm();
+        });
+    }
+    public onReady(editor) {
+        editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+            return new MyUploadAdapter(loader, this.uploadService);
+        };
+
+        editor.ui
+            .getEditableElement()
+            .parentElement.insertBefore(
+                editor.ui.view.toolbar.element,
+                editor.ui.getEditableElement()
+            );
+    }
+    onSelect(item) {
+        console.log(item);
+        if (item.content != '') {
+            this.userProfile.get('content1').setValue(item?.content);
+        } else {
+            this.userProfile.get('content1').setValue(item?.content1);
         }
-    ], 
-  }
-  }
-  
-  
-  constructor(private themeService: ThemeService, private fb: FormBuilder) { }
+        this.userProfile.get('content2').setValue(item?.content2);
+        this.userProfile
+            .get('slide1.titleCarousel')
+            .setValue(item?.slide1.titleCarousel);
+        this.userProfile
+            .get('slide1.desCarousel')
+            .setValue(item?.slide1.desCarousel);
+        this.userProfile
+            .get('slide1.contentCarousel')
+            .setValue(item?.slide1.contentCarousel);
 
-  onSubmit() {
-    this.themeService.postTheme(this.userProfile.value).subscribe()
-    alert('Tạo nội dung thành công') 
-  }
+        this.userProfile
+            .get('slide2.titleCarousel')
+            .setValue(item?.slide2.titleCarousel);
+        this.userProfile
+            .get('slide2.desCarousel')
+            .setValue(item?.slide2.desCarousel);
+        this.userProfile
+            .get('slide2.contentCarousel')
+            .setValue(item?.slide2.contentCarousel);
 
-  updateTheme(){
-    alert('Cập nhật thành công')
-    
-    this.themeService.updateTheme(this.userProfile.value).subscribe()
-  }
-  deleteTheme(){
-    alert('Xóa thêm thành công')
-    
-    this.themeService.deleteTheme(this.idtheme).subscribe()
-  }
+        this.userProfile.get('title').setValue(item.title);
+        this.userProfile.get('id').setValue(item.id);
+        this.idtheme = item.id;
+    }
+    // onSelectId(id){
 
-  onSelect(item){    
-    this.userProfile.get('content').setValue(item.content);
-    this.userProfile.get('title').setValue(item.title);
-    this.userProfile.addControl('id', new FormControl(item.id));
-    this.userProfile.get('id').setValue(item.id);
-    this.idtheme = item.id
-  }
-  // onSelectId(id){
-    
-  //   this.userProfile.get('parentid').setValue(id);   
-  // }   
+    //   this.userProfile.get('parentid').setValue(id);
+    // }
+    resetForm() {
+        this.userProfile = this.fb.group({
+            title: [''],
+            id:[''],
+            content1: [''],
+            slide1: this.fb.group({
+                titleCarousel: [''],
+                desCarousel: [''],
+                contentCarousel: [''],
+            }),
+            slide2: this.fb.group({
+                titleCarousel: [''],
+                desCarousel: [''],
+                contentCarousel: [''],
+            }),
+            content2: [''],
+        });
+    }
+    ngOnInit(): void {
+        this.resetForm();
+        this.themeService.getTheme();
 
-
-
-  ngOnInit(): void {
-
-    
-
-    this.userProfile = this.fb.group({
-      title: [''],
-      // des:[''],
-      content:[''],
-      // parentid:[''],
-      // slug: [''],
-      
-    });
-    this.themeService.getTheme()
-    
-    this.themeService.themes$.subscribe((themes)=>{
-      this.themes = themes
-      
-    })
-    // this.themeService.getMenu().subscribe();
-    // this.themeService.menu$.subscribe((menu)=>{
-    //   this.menu = menu.filter(e => e.parentid =='')
-      
-    // })
-
-    
-  }
-
+        this.themeService.themes$.subscribe((themes) => {
+            this.themes = themes;
+        });
+    }
 }

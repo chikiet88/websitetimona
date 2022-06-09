@@ -8,7 +8,12 @@ import {environment} from "../../../../environments/environment.prod"
 })
 export class AddBaivietService {
 
-  private urlApi = 'https://v2api.timona.edu.vn/theme'
+  // private urlApi = 'https://v2api.timona.edu.vn/theme'
+  private urlApi = 'https://v2api.timona.edu.vn'
+  // private urlApi = 'http://localhost:3000'
+
+
+  
   post: any;
   private _themes: BehaviorSubject<any | null> = new BehaviorSubject(null);
   private _courses: BehaviorSubject<any | null> = new BehaviorSubject(null);
@@ -34,7 +39,7 @@ export class AddBaivietService {
   postCourse(data){
     return this.courses$.pipe(
       take(1),
-      switchMap(courses => this.http.post('https://v2api.timona.edu.vn/baiviet',data).pipe(
+      switchMap(courses => this.http.post(this.urlApi+'/baiviet',data).pipe(
         map((course)=>{
           
           this._courses.next([course,...courses ]);
@@ -46,7 +51,7 @@ export class AddBaivietService {
   }
 
   getTheme(){
-    return this.http.get(this.urlApi).pipe(
+    return this.http.get(this.urlApi+'/theme').pipe(
       map((themes) => {
 
           this._themes.next(themes);          
@@ -55,7 +60,7 @@ export class AddBaivietService {
     )
   }
   getMenu(){
-    return this.http.get('https://v2api.timona.edu.vn/menu').pipe(
+    return this.http.get(this.urlApi+'/menu').pipe(
       map((menu) => {
 
           this._menu.next(menu);
@@ -64,7 +69,7 @@ export class AddBaivietService {
     )
   }
   getBaiviet(){
-    return this.http.get('https://v2api.timona.edu.vn/baiviet').pipe(
+    return this.http.get(this.urlApi+'/baiviet').pipe(
       map((courses) => {
 
           this._courses.next(courses);
@@ -78,7 +83,7 @@ export class AddBaivietService {
 
     return this.courses$.pipe(
       take(1),
-      switchMap(courses=>this.http.delete(`https://v2api.timona.edu.vn/baiviet/${id}`).pipe(map((isDelete => {
+      switchMap(courses=>this.http.delete(this.urlApi+`/baiviet/${id}`).pipe(map((isDelete => {
         
        const updateCourses =  courses.filter(e => e.id != id);
         
@@ -92,7 +97,7 @@ export class AddBaivietService {
   updateBaiviet(data){
     return this.courses$.pipe(
       take(1),
-      switchMap(courses => this.http.patch(`https://v2api.timona.edu.vn/baiviet/${data.id}`, data).pipe(
+      switchMap(courses => this.http.patch(this.urlApi+`/baiviet/${data.id}`, data).pipe(
           map((updateCourse) => {
 
               // Find the index of the updated tag

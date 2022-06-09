@@ -14,7 +14,7 @@ export class TintucdetailComponent implements OnInit {
         private route: ActivatedRoute
     ) {}
     ngOnInit(): void {
-        const slug = this.route.snapshot.paramMap.get('slug');
+        const slug = this.route.snapshot.paramMap.get('slug-key');
         console.log(slug);
 
         this._khohocService.getKhoahocChitiet(slug).subscribe();
