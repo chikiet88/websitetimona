@@ -41,6 +41,8 @@ export class TintucComponent implements OnInit {
         this._khoahocService.getDanhmuc().subscribe()
         this._khoahocService.getDanhmucchitiet(slug).subscribe((res) => {
             this.danhmuc = res;
+            console.log(res);
+            
         });
 
         this._khoahocService.getKhoahoc().subscribe();

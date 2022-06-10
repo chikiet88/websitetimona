@@ -72,7 +72,7 @@
 
     <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
         <h3
-            class="text-white uppercase text-center text-2xl lg:text-5xl  py-5"
+            class="text-white uppercase text-center text-2xl lg:text-4xl  py-5"
         >
             {{ theme.title }}
         </h3>
@@ -83,7 +83,7 @@
     <div class="">
         <div [innerHTML]="theme?.content1 | theme1"></div>
 
-        <div class="md:pt-10 pt-5 wrapper theme-cohoi" *ngIf="isCarousel1">
+        <div class="md:pt-10 pt-5  theme-cohoi md:px-0 px-3" *ngIf="isCarousel1">
             <p
                 class="text-indigo-900 uppercase text-xl mb-0 font-bold leading-5 md:text-left text-center"
             >
@@ -95,7 +95,7 @@
                 [pagination]="{
                     clickable: true
                 }"
-                class="mySwiper pb-10 md:pb-0"
+                class="mySwiper pb-10 md:pb-0 "
             >
                 <ng-template
                     swiperSlide
@@ -106,7 +106,7 @@
             </swiper>
         </div>
 
-        <div class="md:pt-10 pt-5 md:px-0 px-3" *ngIf="theme?.listslide2 != {}">
+        <div class="md:pt-10 pt-5 md:px-0 px-3" *ngIf="isCarousel2">
             <h3
                 class="text-indigo-900 uppercase text-xl text-center md:text-left mb-0 font-black"
             >
@@ -133,8 +133,8 @@
                 </div>
             </div>
         </div>
-        <div>
-            <div class="flex justify-center items-center relative">
+        <div *ngIf="theme.content2 != ''">
+            <div class="flex justify-center items-center relative my-5">
                 <div class="bg-indigo-900 rounded-3xl p-2">
                     <a class="text-lg text-yellow-500 p-3"
                         >Đăng ký tư vấn ngay</a

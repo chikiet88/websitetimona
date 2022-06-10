@@ -179,6 +179,12 @@ export class AddBaivietComponent implements OnInit {
             this.isSelectTheme1 = false
 
         }
+        if(Object.keys(item.listslide2).length > 0){
+            this.isSelectTheme2 = true
+        }else{
+            this.isSelectTheme2 = false
+
+        }
         this.resetForm();
         if (item.content != '') {
             this.baivietForm.get('content1').setValue(item.content);

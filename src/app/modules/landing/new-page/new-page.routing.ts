@@ -27,7 +27,7 @@ export const newPageRoutes: Route[] = [
                 ],
             },
 
-            { path: ':slug', component: TintucdetailComponent },
+            // { path: ':slug', component: TintucdetailComponent },
         ],
     },
 ];

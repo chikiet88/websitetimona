@@ -49,7 +49,7 @@ export class KhoahocService {
             })
         );
     }
-    getDanhmucchitiet(slug): Observable<any> {
+    getDanhmucchitiet(id): Observable<any> {
     //     let id
     //    this.danhmuc$.subscribe(res=> console.log(res))
         
@@ -59,7 +59,7 @@ export class KhoahocService {
     //     console.log(id);
 
         return this.http
-            .get<any>(`https://v2api.timona.edu.vn/danhmuc/${19}`)
+            .get<any>(`https://v2api.timona.edu.vn/danhmuc/${id}`)
             .pipe(
                 map((danhmuc) => {
                     // Update the danhmuc
@@ -71,7 +71,7 @@ export class KhoahocService {
                 switchMap((danhmuc) => {
                     if (!danhmuc) {
                         return throwError(
-                            'Could not found danhmuc with id of ' + slug + '!'
+                            'Could not found danhmuc with id of ' + id + '!'
                         );
                     }
 
