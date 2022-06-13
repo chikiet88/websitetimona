@@ -50,13 +50,8 @@ export class KhoahocService {
         );
     }
     getDanhmucchitiet(id): Observable<any> {
-    //     let id
-    //    this.danhmuc$.subscribe(res=> console.log(res))
         
-    //       id = this._danhmucs.value?.find((v) => v.Slug == slug).id;
-
-    //     Number(id)
-    //     console.log(id);
+        console.log(id);
 
         return this.http
             .get<any>(`https://v2api.timona.edu.vn/danhmuc/${id}`)
@@ -88,27 +83,31 @@ export class KhoahocService {
         );
     }
     getKhoahocChitiet(slug: string): Observable<Khoahoc> {
-        return this.http
-            .get<Khoahoc>(this.urlApi+`/slug/${slug}`)
-            // .get<Khoahoc>(this.urlApi+`/${slug}`)
+        return (
+            this.http
+                .get<Khoahoc>(this.urlApi + `/slug/${slug}`)
+                // .get<Khoahoc>(this.urlApi+`/${slug}`)
 
-            .pipe(
-                map((course) => {
-                    // Update the course
-                    this._course.next(course);
+                .pipe(
+                    map((course) => {
+                        // Update the course
+                        this._course.next(course);
 
-                    // Return the course
-                    return course;
-                }),
-                switchMap((course) => {
-                    if (!course) {
-                        return throwError(
-                            'Could not found course with id of ' + slug + '!'
-                        );
-                    }
+                        // Return the course
+                        return course;
+                    }),
+                    switchMap((course) => {
+                        if (!course) {
+                            return throwError(
+                                'Could not found course with id of ' +
+                                    slug +
+                                    '!'
+                            );
+                        }
 
-                    return of(course);
-                })
-            );
+                        return of(course);
+                    })
+                )
+        );
     }
 }

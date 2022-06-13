@@ -21,7 +21,9 @@ export class GochocvienListComponent implements OnInit {
         this._khoahocService.getDanhmuc().subscribe();
         this._khoahocService.danhmucs$.subscribe((res) => {
             this.danhmucs = res?.filter((x) => x.Type == 'gochocvien');
-            this.danhmucs = this.nest(this.danhmucs.reverse())
+            this.danhmucs = this.danhmucs.reverse()
+
+            this.danhmucs = this.nest(this.danhmucs)
         });
         
         // window.location.href = 'https://v1.timona.edu.vn/hoc-vien.html'

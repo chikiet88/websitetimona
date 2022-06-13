@@ -29,7 +29,7 @@ export class AddBaivietComponent implements OnInit {
     menu: any[];
     listA$: Observable<any>;
     isSelectTheme1 = false;
-    isSelectTheme2 = false
+    isSelectTheme2 = false;
     listslide1: any = {};
     listslide2: any = {};
     i = 0;
@@ -130,7 +130,12 @@ export class AddBaivietComponent implements OnInit {
         } else {
             this.isSelectTheme2 = false;
         }
-        this.baivietForm.get('content1').setValue(item.content1);
+        if (item.content != '') {
+            this.baivietForm.get('content1').setValue(item.content);
+        } else {
+            this.baivietForm.get('content1').setValue(item.content1);
+        }
+
         this.baivietForm.get('content2').setValue(item.content2);
         this.baivietForm
             .get('slide1.titleCarousel')
@@ -173,17 +178,15 @@ export class AddBaivietComponent implements OnInit {
 
     SelectBaiviet(item) {
         console.log(item.listslide2);
-        if(Object.keys(item.listslide1).length > 0){
-            this.isSelectTheme1 = true
-        }else{
-            this.isSelectTheme1 = false
-
+        if (Object.keys(item.listslide1).length > 0) {
+            this.isSelectTheme1 = true;
+        } else {
+            this.isSelectTheme1 = false;
         }
-        if(Object.keys(item.listslide2).length > 0){
-            this.isSelectTheme2 = true
-        }else{
-            this.isSelectTheme2 = false
-
+        if (Object.keys(item.listslide2).length > 0) {
+            this.isSelectTheme2 = true;
+        } else {
+            this.isSelectTheme2 = false;
         }
         this.resetForm();
         if (item.content != '') {
@@ -230,8 +233,7 @@ export class AddBaivietComponent implements OnInit {
             .deleteBaiviet(this.idSelect)
             .subscribe((res) => alert('Xóa bài thành công'));
         this.resetForm();
-        this.isSelectTheme1 = false
-
+        this.isSelectTheme1 = false;
     }
     updateBaiviet() {
         this.baivietForm.removeControl('isLoaiBaiviet');
@@ -241,8 +243,7 @@ export class AddBaivietComponent implements OnInit {
             .updateBaiviet(this.baivietForm.value)
             .subscribe((res) => alert('Cập nhật thành công'));
         this.resetForm();
-        this.isSelectTheme1 = false
-
+        this.isSelectTheme1 = false;
     }
 
     selectFile(event: any): void {

@@ -126,7 +126,7 @@ const config = {
             print: {'raw': 'print'},
             sm   : '600px',
             md   : '960px',
-            lg   : '1280px',
+            lg   : '1080px',
             xl   : '1440px'
         },
         extend  : {

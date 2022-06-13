@@ -1,19 +1,21 @@
-
-  
- 
-  <mat-drawer-container class="example-container" autosize>
+<mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav bg-indigo-900" mode="over">
-      <div class="sm:hidden  mobile-header" id="mobile-menu">
-        <button type="button" mat-button (click)="drawer.toggle()"
-                  class="inline-flex items-center justify-center border-none  p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                  aria-controls="mobile-menu"
-                   >
-                  <span class="sr-only">Close main menu</span>
-                  
-                  <img src="../../../assets/images/homepages/homepage/Ngành ĐT (xong)/icon-close.svg" />
-                </button>
-        <div class="pt-2 pb-3 space-y-1 flex flex-col pb-3 px-[24px]">
-          <!-- <a routerLink="/"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Trang Chủ</a>
+        <div class="sm:hidden mobile-header" id="mobile-menu">
+            <button
+                type="button"
+                mat-button
+                (click)="drawer.toggle()"
+                class="inline-flex items-center justify-center border-none p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                aria-controls="mobile-menu"
+            >
+                <span class="sr-only">Close main menu</span>
+
+                <img
+                    src="../../../assets/images/homepages/homepage/Ngành ĐT (xong)/icon-close.svg"
+                />
+            </button>
+            <div class="pt-2 pb-3 space-y-1 flex flex-col pb-3 px-[24px]">
+                <!-- <a routerLink="/"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Trang Chủ</a>
           <a href="https://v1.timona.edu.vn/gioi-thieu.html"  class="text-lg uppercase mt-4 text-white px-[24px] py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Giới Thiệu</a>
 
           <a href="https://v1.timona.edu.vn/khoa-hoc.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Chuyên Ngành</a>
@@ -24,113 +26,195 @@
 
           <a href="https://v1.timona.edu.vn/lien-he.html"  class="text-lg uppercase mt-4 text-white px-[24px]  py-4 rounded-md text-sm font-medium" aria-current="page" (click)="drawer.toggle()">Liên hệ</a> -->
 
-        <!-- <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
+                <!-- <a routerLink="/gioi-thieu-hoc-vien" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Giới thiệu</a>
            -->
-          <mat-accordion *ngFor="let itemmenu of menu" >
-            <mat-expansion-panel class="bg-indigo-900" (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false" >
-              <mat-expansion-panel-header >
-                <mat-panel-title>
-                  <div *ngIf="itemmenu.children.length > 0 || itemmenu.Baiviet.length > 0; else notparent">
-                    <a routerLink="/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" >{{itemmenu.title}}</a>
+                <mat-accordion *ngFor="let itemmenu of menu">
+                    <mat-expansion-panel
+                        class="bg-indigo-900"
+                        (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false"
+                    >
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <div
+                                    *ngIf="
+                                        itemmenu.children.length > 0 ||
+                                            itemmenu.Baiviet.length > 0;
+                                        else notparent
+                                    "
+                                >
+                                    <a
+                                        routerLink="/{{ itemmenu.slug }}"
+                                        class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium"
+                                        >{{ itemmenu.title }}</a
+                                    >
+                                </div>
+                                <ng-template #notparent>
+                                    <a
+                                        routerLink="/{{ itemmenu.slug }}"
+                                        class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium"
+                                        (click)="drawer.toggle()"
+                                        >{{ itemmenu.title }}</a
+                                    >
+                                </ng-template>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div *ngIf="itemmenu.children.length > 0">
+                            <div
+                                class="flex flex-col"
+                                *ngFor="let item of itemmenu.children"
+                            >
+                                <a
+                                    class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif"
+                                    routerLink="/{{ item.slug }}"
+                                    (click)="drawer.toggle()"
+                                    >{{ item.title }}</a
+                                >
+                            </div>
+                        </div>
 
-                  </div>
-                  <ng-template #notparent>
-                    <a routerLink="/{{itemmenu.slug}}" class="text-lg uppercase text-white mt-2 lg:px-3 mb-0 lg:py-2 rounded-md text-sm font-medium" (click)="drawer.toggle()">{{itemmenu.title}}</a>
-
-                  </ng-template>
-                </mat-panel-title>
-                
-              </mat-expansion-panel-header>
-              <div *ngIf="itemmenu.children.length > 0">
-                <div class="flex flex-col" *ngFor="let item of itemmenu.children ">
-                  <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/{{item.slug}}" (click)="drawer.toggle()">{{item.title}}</a>
-                   
-                </div>
-              </div>
-              
-              <!-- <div *ngIf="itemmenu.Baiviet.length > 0">
+                        <!-- <div *ngIf="itemmenu.Baiviet.length > 0">
                 <div class="flex flex-col" *ngFor="let item of itemmenu.Baiviet ">
                   <a class="text-lg uppercase text-white mt-1 lg:px-3 lg:py-2 rounded-md text-sm font-medium font-serif" routerLink="/khoa-hoc/{{item.id}}" (click)="drawer.toggle()">{{item.title}}</a>
                    
                 </div>
               </div> -->
-            </mat-expansion-panel>
-          </mat-accordion>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
         </div>
-      </div>
     </mat-drawer>
-  
+
     <div class="example-sidenav-content flex flex-col relative">
-      <header id="header" class="lg:mb-0 mb-20">
-        <nav class="bg-indigo-900 h-auto w-full  z-50 ">
-          <div class="lg:max-w-6xl mx-auto px-2 sm:px-6 lg:px-5">
-            <div class="relative flex items-center justify-between h-auto">
-              <div class="absolute inset-y-0 left-0 z-10 flex items-center md:hidden">
-                <!-- Mobile menu button-->
-                <button type="button" mat-button (click)="drawer.toggle()"
-                  class="inline-flex items-center justify-center  p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                  aria-controls="mobile-menu" >
-                  <span class="sr-only">Open main menu</span>
-                  <!--
+        <header id="header" class="lg:mb-0 mb-20">
+            <nav class="bg-indigo-900 h-auto w-full z-50">
+                <div class="lg:max-w-6xl mx-auto px-2 sm:px-6 lg:px-5">
+                    <div
+                        class="relative flex items-center justify-between h-auto"
+                    >
+                        <div
+                            class="absolute inset-y-0 left-0 z-10 flex items-center md:hidden"
+                        >
+                            <!-- Mobile menu button-->
+                            <button
+                                type="button"
+                                mat-button
+                                (click)="drawer.toggle()"
+                                class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                                aria-controls="mobile-menu"
+                            >
+                                <span class="sr-only">Open main menu</span>
+                                <!--
                       Icon when menu is closed.
           
                       Heroicon name: outline/menu
           
                       Menu open: "hidden", Menu closed: "block"
                     -->
-                  <svg class="hiddenh-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" aria-hidden="true">
-                    <path fill="#fafafa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                  <!--
+                                <svg
+                                    class="hiddenh-6 w-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="#fafafa"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                </svg>
+                                <!--
                       Icon when menu is open.
           
                       Heroicon name: outline/x
           
                       Menu open: "block", Menu closed: "hidden"
                     -->
-                  <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-      
-              </div>
-              <div class="logo w-full h-20  relative md:hidden z-1">
-                <div class="logo bg-gray-200 absolute left-1/2 top-1/4" style="width: 150px; height: 50px; transform: translateX(-50%);">
-                  <img src="../../../assets/images/homepages/homepage/logo/timona-logo.png" class="h-full w-full bg-indigo-900 object-contain" alt="">
-                </div>
-              </div>
-      
-              <div class="flex-1 flex items-center justify-start  sm:items-stretch sm:justify-between nav-links">
-                <div class="flex-shrink-0 flex items-center ">
-                  <a routerLink="/" alt="" class="">
-                    <img class="hidden md:block lg:block !h-16 !w-25  w-full bg-indigo-900 object-contain" src="../../../assets/images/homepages/homepage/logo/timona-logo.png" alt="TIMONA ACADEMY">
-                  </a>
-                  <!-- <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow"> -->
-      
-                </div>
-                <div class="hidden sm:block sm:ml-6 pt-6">
-                  <div class="flex items-center justify-end ">
-                    <div class="hidden lg:block">
-                      <div class="flex border-2 rounded ">
-                        <input type="text" class="px-4 py-1 w-80 h-6 rounded-lg relative bg-white">
-                        <button class="flex items-center justify-center px-2 border-none absolute right-1 ">
-                          <svg class="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24">
-                            <path
-                              d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                  </div>
-                  <div class=" hidden lg:block md:block navbar-links">
-                    <div class="flex space-x-4 pl-3 pt-3 pb-3 item-link justify-between"> 
-                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                      <!-- <a href="https://v1.timona.edu.vn/gioi-thieu.html"
+                                <svg
+                                    class="hidden h-6 w-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="logo w-full h-20 relative md:hidden z-1">
+                            <div
+                                class="logo bg-gray-200 absolute left-1/2 top-1/4"
+                                style="
+                                    width: 150px;
+                                    height: 50px;
+                                    transform: translateX(-50%);
+                                "
+                            >
+                                    <img
+                                        src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
+                                        routerLink=""
+                                        class="h-full w-full bg-indigo-900 object-contain cursor-poniter"
+                                        alt=""
+                                    />
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex-1 flex items-center justify-start sm:items-stretch sm:justify-between nav-links"
+                        >
+                            <div class="flex-shrink-0 flex items-center">
+                                <a routerLink="/" alt="" class="">
+                                    <img
+                                        class="hidden md:block lg:block !h-16 !w-25 w-full bg-indigo-900 object-contain"
+                                        src="../../../assets/images/homepages/homepage/logo/timona-logo.png"
+                                        alt="TIMONA ACADEMY"
+                                    />
+                                </a>
+                                <!-- <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow"> -->
+                            </div>
+                            <div class="hidden sm:block sm:ml-6 pt-6">
+                                <div class="flex items-center justify-end">
+                                    <div class="hidden lg:block">
+                                        <div class="flex border-2 rounded">
+                                            <input
+                                                type="text"
+                                                class="px-4 py-1 w-80 h-6 rounded-lg relative bg-white"
+                                            />
+                                            <button
+                                                class="flex items-center justify-center px-2 border-none absolute right-1"
+                                            >
+                                                <svg
+                                                    class="w-6 h-6 text-gray-600"
+                                                    fill="currentColor"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+                                                    />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="hidden lg:block md:block navbar-links"
+                                >
+                                    <div
+                                        class="flex space-x-4 pl-3 pt-3 pb-3 item-link justify-between"
+                                    >
+                                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                                        <!-- <a href="https://v1.timona.edu.vn/gioi-thieu.html"
                       class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium mr-5"> Giới Thiệu
                       </a>
 
@@ -147,69 +231,83 @@
                       <a href="https://v1.timona.edu.vn/lien-he.html"
                       class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium"> Liên hệ
                       </a> -->
-                            <div class="dropdown relative" *ngFor="let itemmenu of menu">
-                              <div *ngIf="itemmenu.children.length > 0 || itemmenu.Baiviet.length > 0 ;else notchild">
-                                <button
-                                class="
-                                px-4  dropdown-toggle border-none cusor-pointer hover:text-yellow-500
-                                "
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                                (mouseenter)="toggleMenu()"
-                              >
-                              <a routerLink="/{{itemmenu.slug ? itemmenu.slug : khoa-hoc}}" routerLinkActive="menu-active"
-                              class="text-lg uppercase  menu-item  rounded-md text-sm font-medium"> {{itemmenu.title}}
-                              </a>
-                                
-                              </button>
-                              </div>
-                              <ng-template #notchild>
-                                <button
-                                class="px-4  dropdown-toggle border-none cusor-pointer hover:text-yellow-500 "
-                                type="button"
-                                id="dropdownMenuButton"
-                                aria-expanded="false"
-                                
-                              >
-                              <a routerLink="{{itemmenu.slug}}" routerLinkActive="menu-active"
-                              class="text-lg uppercase menu-item  rounded-md text-sm font-medium"> {{itemmenu.title}}
-                              </a>
-                              </button>
-                              </ng-template>
-                             
-                              <ul
-                                class="
-                                  dropdown-menu
-                                  min-w-max
-                                  absolute
-      
-                                  bg-white
-                                  text-base
-                                  z-50
-                                  float-left
-                                  py-2
-                                  list-none
-                                  text-left
-                                  rounded-lg
-                                  shadow-lg
-                                  mt-1
-                                  
-                                  m-0
-                                  bg-clip-padding
-                                  border-none
-                                "
-                                *ngIf="itemmenu.children.length > 0"
-                                aria-labelledby="dropdownMenuButton1"
-                                [ngClass]="{'hidden': isShow}"
-                              >
-                                <li *ngFor="let item of itemmenu.children.reverse()" (click)="toggleMenu()">
-                                  <a class="dropdown-item" routerLink="{{item.slug}}">{{item.title}}</a>
-                                </li>
-                               
-                              </ul>
-                              <!-- <ul
+                                        <div
+                                            class="dropdown relative"
+                                            *ngFor="let itemmenu of menu"
+                                        >
+                                            <div
+                                                *ngIf="
+                                                    itemmenu.children.length >
+                                                        0 ||
+                                                        itemmenu.Baiviet
+                                                            .length > 0;
+                                                    else notchild
+                                                "
+                                            >
+                                                <button
+                                                    class="px-4 dropdown-toggle border-none cusor-pointer hover:text-yellow-500"
+                                                    type="button"
+                                                    id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown"
+                                                    aria-expanded="false"
+                                                    (mouseenter)="toggleMenu()"
+                                                >
+                                                    <a
+                                                        routerLink="/{{
+                                                            itemmenu.slug
+                                                                ? itemmenu.slug
+                                                                : khoa - hoc
+                                                        }}"
+                                                        routerLinkActive="menu-active"
+                                                        class="text-lg uppercase menu-item rounded-md text-sm font-medium"
+                                                    >
+                                                        {{ itemmenu.title }}
+                                                    </a>
+                                                </button>
+                                            </div>
+                                            <ng-template #notchild>
+                                                <button
+                                                    class="px-4 dropdown-toggle border-none cusor-pointer hover:text-yellow-500"
+                                                    type="button"
+                                                    id="dropdownMenuButton"
+                                                    aria-expanded="false"
+                                                >
+                                                    <a
+                                                        routerLink="{{
+                                                            itemmenu.slug
+                                                        }}"
+                                                        routerLinkActive="menu-active"
+                                                        class="text-lg uppercase menu-item rounded-md text-sm font-medium"
+                                                    >
+                                                        {{ itemmenu.title }}
+                                                    </a>
+                                                </button>
+                                            </ng-template>
+
+                                            <ul
+                                                class="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 m-0 bg-clip-padding border-none"
+                                                *ngIf="
+                                                    itemmenu.children.length > 0
+                                                "
+                                                aria-labelledby="dropdownMenuButton1"
+                                                [ngClass]="{ hidden: isShow }"
+                                            >
+                                                <li
+                                                    *ngFor="
+                                                        let item of itemmenu.children.reverse()
+                                                    "
+                                                    (click)="toggleMenu()"
+                                                >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        routerLink="{{
+                                                            item.slug
+                                                        }}"
+                                                        >{{ item.title }}</a
+                                                    >
+                                                </li>
+                                            </ul>
+                                            <!-- <ul
                                 class="
                                   dropdown-menu
                                   min-w-max
@@ -237,41 +335,41 @@
                                 </li>
                                
                               </ul> -->
+                                        </div>
+                                        <!-- This example requires Tailwind CSS v2.0+ -->
+                                    </div>
+                                </div>
                             </div>
-                            <!-- This example requires Tailwind CSS v2.0+ -->
-
+                        </div>
                     </div>
-                  </div>
-                  
                 </div>
-              </div>
-      
-      
-      
-            </div>
-          </div>
-      
-        
-          
-        </nav>
-      
-      </header>
+            </nav>
+        </header>
         <router-outlet></router-outlet>
-      
-      <app-footer></app-footer>
-     <button class="fixed bottom-7 right-24 w-10 h-10 bg-indigo-900 rounded-full scroll-to-top hidden lg:block border-2 border-white" (click)="goDown1()"><span class="material-icons absolute top-1/2 left-1/2 text-white" style="transform: translate(-50%, -50%);">
-      arrow_upward
-      </span></button>
-      <div class="fb-customerchat"
-     page_id="272459726955766">
-   
-</div>
-<button class="fixed bottom-7 left-2 rounded-xl px-4 py-2 bg-indigo-900 scroll-to-top hidden lg:block border-2 border-white"><a href="tel:+19002109" class="text-white text-xl flex items-center">
-  <span class="material-icons mr-2">
-    phone
-    </span>
- <span>19002109</span> 
-   </a></button>
+
+        <app-footer></app-footer>
+        <button
+            class="fixed bottom-7 right-24 w-10 h-10 bg-indigo-900 rounded-full scroll-to-top hidden lg:block border-2 border-white"
+            (click)="goDown1()"
+        >
+            <span
+                class="material-icons absolute top-1/2 left-1/2 text-white"
+                style="transform: translate(-50%, -50%)"
+            >
+                arrow_upward
+            </span>
+        </button>
+        <div class="fb-customerchat" page_id="272459726955766"></div>
+        <button
+            class="fixed bottom-7 left-2 rounded-xl px-4 py-2 bg-indigo-900 scroll-to-top hidden lg:block border-2 border-white"
+        >
+            <a
+                href="tel:+19002109"
+                class="text-white text-xl flex items-center"
+            >
+                <span class="material-icons mr-2"> phone </span>
+                <span>19002109</span>
+            </a>
+        </button>
     </div>
-  
-  </mat-drawer-container>
+</mat-drawer-container>

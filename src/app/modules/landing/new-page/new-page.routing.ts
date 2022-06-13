@@ -1,4 +1,8 @@
 import { Route } from '@angular/router';
+import {
+    KhoahocDetailResolver,
+    KhoahocResolver,
+} from '../khoahoc/khoahoc.resolvers';
 import { HocnghecungchuyengiaComponent } from './hocnghecungchuyengia/hocnghecungchuyengia.component';
 import { LamdepComponent } from './lamdep/lamdep.component';
 import { NewListComponent } from './new-list/new-list.component';
@@ -19,15 +23,37 @@ export const newPageRoutes: Route[] = [
                 component: NewListComponent,
                 children: [
                     {
-                        path: ':slug',
-                        component: TintucComponent,
+                        path: 'hoc-nghe-cung-chuyen-gia',
+                        component: HocnghecungchuyengiaComponent,
                     },
-
+                    {
+                        path: ':slug',
+                        children: [
+                            {
+                                path:'',
+                                component: TintucComponent
+                            },
+                          
+                        ],
+                    },
+                    // {
+                    //     path: 'sukien',
+                    //     component: SukienComponent,
+                    // },
+                    // {
+                    //     path: 'lamdep',
+                    //     component: LamdepComponent,
+                    // },
+                    
                    
                 ],
+                
             },
-
-            // { path: ':slug', component: TintucdetailComponent },
+            {
+                path: 'baiviet/:slugdetail',
+                component: TintucdetailComponent,
+                pathMatch:'full'
+            },
         ],
     },
 ];

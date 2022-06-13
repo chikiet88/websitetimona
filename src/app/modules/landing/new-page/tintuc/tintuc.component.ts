@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { KhoahocService } from '../../khoahoc/khoahoc.service';
 
 @Component({
@@ -9,54 +10,86 @@ import { KhoahocService } from '../../khoahoc/khoahoc.service';
 })
 export class TintucComponent implements OnInit {
     courses;
+    danhmucs;
     danhmuc;
-    paginate:number = 0
-    indexPaginate:number
+    slug: string;
+    idDanhmuc: number;
+    baivietnoibat: any[];
+    paginate: number = 0;
+    indexPaginate: number = 0;
     arr = [];
-    baiviet1={}
-    baiviet2=[]
-    baiviet3=[]
+    baiviet1: any = {};
+    baiviet2 = [];
+    baiviet3 = [];
     constructor(
         private _khoahocService: KhoahocService,
         private route: ActivatedRoute
     ) {}
-    
-    spliceBaiviet(arr){
-      if(arr?.length){
-        this.baiviet1 = arr[0]
-        this.baiviet2 = [arr[1],arr[2]]
-        this.baiviet3 = [arr[3],arr[4],arr[5],arr[6]]
-      }
-        
+
+    spliceBaiviet(arr) {
+        console.log(arr);
+
+        if (arr?.length) {
+            arr.filter((x) => {
+                if (x?.Loaibaiviet == 1) {
+                    this.baiviet1 = x;
+                } else {
+                    this.baiviet1 = arr[0];
+                }
+            });
+            arr = arr?.filter((x) => x?.id != this.baiviet1.id);
+            this.baiviet2 = arr.slice(0, 2);
+            console.log(this.baiviet2);
+
+            this.baiviet3 = arr.slice(1, 5);
+        }
     }
-    paginateNumber(i){
-        this.indexPaginate = i
-        this.courses = this.arr[i]
-        this.spliceBaiviet(this.courses)
-        
+    paginateNumber(i) {
+        console.log(i);
+
+        this.indexPaginate = i;
+        this.courses = this.arr[i];
+        this.courses = this.courses.concat(this.baivietnoibat[i]);
+        this.spliceBaiviet(this.courses);
     }
     ngOnInit(): void {
-        const slug = this.route.snapshot.paramMap.get('slug');
-        console.log(slug);
-        this._khoahocService.getDanhmuc().subscribe()
-        this._khoahocService.getDanhmucchitiet(slug).subscribe((res) => {
-            this.danhmuc = res;
-            console.log(res);
-            
-        });
+        this.route.params.subscribe((data: any) => {
+            this.slug = data.slug;
+            this._khoahocService.getDanhmuc().subscribe();
+            this._khoahocService.danhmucs$.subscribe((res) => {
+                let idDanhmuc = res?.find((x) => x.Slug == this.slug);
+                this.idDanhmuc = idDanhmuc?.id;
+                if (this.idDanhmuc != undefined) {
+                    this._khoahocService
+                        .getDanhmucchitiet(this.idDanhmuc)
+                        .subscribe((res) => {
+                            this.danhmuc = res;
+                        });
+                }
+            });
 
-        this._khoahocService.getKhoahoc().subscribe();
-        this._khoahocService.courses$.subscribe((res) => {
-            res = res?.filter((x) => x.idDM == this.danhmuc?.id);
-            let x = res?.length / 7;
+            this._khoahocService.getKhoahoc().subscribe();
+            this._khoahocService.courses$.subscribe((res) => {
+                this.baivietnoibat = res?.filter(
+                    (x) => x.idDM == this.idDanhmuc && x.Loaibaiviet == 1
+                );
+                this.arr = [];
 
-            for (let i = 0; i <= x; i++) {
-                this.arr.push(res.slice(7 * i, 7 * i + 7));
-            }
-            this.courses = this.arr[0] 
-            console.log(this.courses);
-            
-            this.spliceBaiviet(this.courses)
+                res = res?.filter((x) => x.idDM == this.idDanhmuc);
+                let x = res?.length / 6;
+                if (res?.length > 0) {
+                    for (let i = 0; i <= x; i++) {
+                        this.arr.push(res.slice(6 * i, 6 * i + 6));
+                    }
+                    this.courses = this.arr[0];
+                    if (this.baivietnoibat[0] != undefined) {
+                        this.courses = this.courses.concat(
+                            this.baivietnoibat[0]
+                        );
+                    }
+                    this.spliceBaiviet(this.courses);
+                }
+            });
         });
     }
 }

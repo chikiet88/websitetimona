@@ -31,10 +31,6 @@ export class KhoahocListComponent implements OnInit {
 
         this.khoahocService.getDanhmuc().subscribe();
         this.khoahocService.danhmucs$.subscribe((res) => {
-            console.log(this.themes);
-            console.log(res);
-            
-
             res?.forEach((x) => {
                 x.courses = [];
             
@@ -43,8 +39,6 @@ export class KhoahocListComponent implements OnInit {
                         x.courses.push(this.themes[i]);
                     }
                 }
-                console.log(x);
-                
                 return x;
             });
             this.danhmuc = res?.reverse().filter((x) => x.Type == 'chuyennganh');

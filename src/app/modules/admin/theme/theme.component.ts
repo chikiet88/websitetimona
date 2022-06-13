@@ -75,6 +75,7 @@ export class ThemeComponent implements OnInit {
             );
     }
     onSelect(item) {
+        this.idtheme = item.id;
         console.log(item);
         if (item.content != '') {
             this.userProfile.get('content1').setValue(item?.content);
@@ -104,7 +105,6 @@ export class ThemeComponent implements OnInit {
 
         this.userProfile.get('title').setValue(item.title);
         this.userProfile.get('id').setValue(item.id);
-        this.idtheme = item.id;
     }
     // onSelectId(id){
 

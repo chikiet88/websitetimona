@@ -1,18 +1,20 @@
-<div class="pb-5 relative">
-    <p class="text-2xl text-indigo-900 font-bold md:text-left text-center">
-        Tin Nổi Bật
-    </p>
+<div class="pb-5 relative md:px-0 px-3">
+    <div
+        [innerHTML]="danhmuc?.Mota"
+        class="text-2xl text-indigo-900 font-bold md:text-left text-center"
+    ></div>
+
     <div
         class="absolute left-1/2 bottom-3 centerX h-px w-16 bg-indigo-900 md:hidden"
     ></div>
 </div>
-<div class="flex w-full">
+<div class="flex w-full md:px-0 px-3">
     <div class="md:w-3/4 w-full flex flex-col md:pr-5">
-        <div class="">
+        <div class="cursor-poniter" routerLink="../baiviet/{{ baiviet1.slug }}">
             <div class="">
                 <img
-                    src="../../../assets/images/banner-new.png"
-                    class="w-full h-96"
+                    src="{{ baiviet1.thumbimage }}"
+                    class="w-full md:h-96"
                     alt=""
                 />
             </div>
@@ -21,22 +23,15 @@
                 <p
                     class="uppercase lg:text-3xl mb-2 relative font-black text-indigo-900 lg:text-left pt-5 text-2xl leading-7"
                 >
-                    nghề spa - xu hướng nhất thời hay hướng đi bền vững
+                    {{ baiviet1.title }}
                 </p>
-                <div class="text-indigo-900 font-medium new-des">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quae ipsam nam molestias labore, quia blanditiis deserunt
-                    possimus recusandae odit, tempore ea doloremque minima
-                    repellat ipsa eum. Quod dicta ipsum corrupti! Lorem ipsum
-                    dolor sit amet consectetur adipisicing elit. Nemo officiis
-                    eligendi enim ex cum omnis eveniet. Atque soluta est, neque
-                    voluptates explicabo illo, possimus alias modi, maiores
-                    dolores totam vel!
-                </div>
+                <div
+                    [innerHTML]="baiviet1.des"
+                    class="text-indigo-900 font-medium new-des text-justify"
+                ></div>
 
-                <a
-                    [routerLink]="'../abc'"
-                    class="text-indigo-900 !mb-0 pt-3 font-medium"
+                <a class="text-indigo-900 !mb-0 pt-3 font-medium"
+                routerLink="../baiviet/{{ baiviet1.slug }}"
                 >
                     Xem thêm >></a
                 >
@@ -44,86 +39,47 @@
         </div>
         <app-carousel-course></app-carousel-course>
         <div class="lg:pt-10 pt-5 relative">
-            <div class="grid grid-cols-2 md:gap-10 gap-5">
-                <div class="cursor-pointer">
+            <div
+                class="grid grid-cols-2 md:gap-10 gap-5"
+                *ngIf="baiviet2?.length > 0"
+            >
+                <div
+                    class="cursor-pointer flex flex-col justify-between"
+                    routerLink="../baiviet/{{ item?.slug }}"
+                    *ngFor="let item of baiviet2"
+                >
                     <div class="w-full bg-gray-200 mr-4">
                         <div class="banner-img md:h-64">
                             <img
-                                src="../../../assets/images/new-item.png"
-                                class="h-full hidden lg:block"
+                                src="{{ item?.thumbimage }}"
+                                class="h-full w-full"
                                 alt=""
                             />
-                            <img
+                            <!-- <img
                                 src="../../../assets/images/new-itemmb.png"
                                 class="h-full lg:hidden"
                                 alt=""
-                            />
+                            /> -->
                         </div>
                     </div>
                     <div
                         class="w-full flex flex-col new-info justify-between pt-3"
                     >
                         <p
-                            class="md:text-lg text-indigo-900 font-black uppercase md:leading-5 leading-4 text-justify text-md"
+                            class="text-indigo-900 font-black uppercase md:leading-5 leading-4"
                         >
-                            bạn đã biết những lợi ích thần kỳ của việc massage
-                            chưa?
+                            {{ item?.title }}
                         </p>
-                        <span
-                            class="pb-2 text-indigo-900 item-des hidden md:block"
-                            >Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Maiores temporibus unde tempora voluptatem
-                            nisi reprehenderit deleniti delectus aliquid beatae
-                            corrupti. Maiores temporibus unde tempora voluptatem
-                            nisi reprehenderit deleniti delectus aliquid beatae
-                            corrupti</span
-                        >
-                        <a
-                            href="#"
-                            class="text-indigo-900 pt-2 md:pt-0 new-link"
-                            >Xem Thêm >></a
-                        >
+                        <div
+                            [innerHTML]="baiviet1.des"
+                            class="pb-2 text-indigo-900 item-des hidden md:block text-justify leading-5"
+                        ></div>
                     </div>
-                </div>
-                <div class="cursor-pointer">
-                    <div class="w-full bg-gray-200 mr-4">
-                        <div class="banner-img md:h-64">
-                            <img
-                                src="../../../assets/images/new-item.png"
-                                class="h-full hidden lg:block"
-                                alt=""
-                            />
-                            <img
-                                src="../../../assets/images/new-itemmb.png"
-                                class="h-full lg:hidden"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                    <div
-                        class="w-full flex flex-col new-info justify-between pt-3"
+                    <a class="text-indigo-900 pt-2 md:pt-0 new-link"
+                    routerLink="../baiviet/{{ item?.slug }}"
+
+                        >Xem Thêm >></a
                     >
-                        <p
-                            class="md:text-lg text-indigo-900 font-black uppercase md:leading-5 leading-4 text-justify text-md"
-                        >
-                            bạn đã biết những lợi ích thần kỳ của việc massage
-                            chưa?
-                        </p>
-                        <span
-                            class="pb-2 text-indigo-900 item-des hidden md:block"
-                            >Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Maiores temporibus unde tempora voluptatem
-                            nisi reprehenderit deleniti delectus aliquid beatae
-                            corrupti. Maiores temporibus unde tempora voluptatem
-                            nisi reprehenderit deleniti delectus aliquid beatae
-                            corrupti</span
-                        >
-                        <a
-                            href="#"
-                            class="text-indigo-900 pt-2 md:pt-0 new-link"
-                            >Xem Thêm >></a
-                        >
-                    </div>
                 </div>
             </div>
             <div
@@ -133,17 +89,14 @@
                 <div class="grid grid-cols-2 md:gap-10 gap-5">
                     <div
                         class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
+                        routerLink="../baiviet/{{ item?.slug }}"
+                        *ngFor="let item of baiviet3"
                     >
                         <div class="md:w-1/2 w-full bg-gray-200 mr-4">
                             <div class="banner-img h-full">
                                 <img
-                                    src="../../../assets/images/new-item.png"
-                                    class="h-full hidden lg:block"
-                                    alt=""
-                                />
-                                <img
-                                    src="../../../assets/images/new-itemmb.png"
-                                    class="h-full lg:hidden"
+                                    src="{{ item?.thumbimage }}"
+                                    class="h-full w-full"
                                     alt=""
                                 />
                             </div>
@@ -154,110 +107,10 @@
                             <p
                                 class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
                             >
-                                bạn đã biết những lợi ích thần kỳ của việc
-                                massage chưa?
+                                {{ item?.title }}
                             </p>
                             <a
-                                href="#"
-                                class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
-                                >Xem Thêm >></a
-                            >
-                        </div>
-                    </div>
-                    <div
-                        class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
-                    >
-                        <div class="md:w-1/2 w-full bg-gray-200 mr-4">
-                            <div class="banner-img h-full">
-                                <img
-                                    src="../../../assets/images/new-item.png"
-                                    class="h-full hidden lg:block"
-                                    alt=""
-                                />
-                                <img
-                                    src="../../../assets/images/new-itemmb.png"
-                                    class="h-full lg:hidden"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                        <div
-                            class="md:w-1/2 w-full flex flex-col new-info justify-center pt-3"
-                        >
-                            <p
-                                class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
-                            >
-                                bạn đã biết những lợi ích thần kỳ của việc
-                                massage chưa?
-                            </p>
-                            <a
-                                href="#"
-                                class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
-                                >Xem Thêm >></a
-                            >
-                        </div>
-                    </div>
-                    <div
-                        class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
-                    >
-                        <div class="md:w-1/2 w-full bg-gray-200 mr-4">
-                            <div class="banner-img h-full">
-                                <img
-                                    src="../../../assets/images/new-item.png"
-                                    class="h-full hidden lg:block"
-                                    alt=""
-                                />
-                                <img
-                                    src="../../../assets/images/new-itemmb.png"
-                                    class="h-full lg:hidden"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                        <div
-                            class="md:w-1/2 w-full flex flex-col new-info justify-center pt-3"
-                        >
-                            <p
-                                class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
-                            >
-                                bạn đã biết những lợi ích thần kỳ của việc
-                                massage chưa?
-                            </p>
-                            <a
-                                href="#"
-                                class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
-                                >Xem Thêm >></a
-                            >
-                        </div>
-                    </div>
-                    <div
-                        class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
-                    >
-                        <div class="md:w-1/2 w-full bg-gray-200 mr-4">
-                            <div class="banner-img h-full">
-                                <img
-                                    src="../../../assets/images/new-item.png"
-                                    class="h-full hidden lg:block"
-                                    alt=""
-                                />
-                                <img
-                                    src="../../../assets/images/new-itemmb.png"
-                                    class="h-full lg:hidden"
-                                    alt=""
-                                />
-                            </div>
-                        </div>
-                        <div
-                            class="md:w-1/2 w-full flex flex-col new-info justify-center pt-3"
-                        >
-                            <p
-                                class="md:text-lg text-md text-indigo-900 font-black uppercase text-justify md:leading-5 leading-4"
-                            >
-                                bạn đã biết những lợi ích thần kỳ của việc
-                                massage chưa?
-                            </p>
-                            <a
-                                href="#"
+                                routerLink="../baiviet/{{ item?.slug }}"
                                 class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
                                 >Xem Thêm >></a
                             >
@@ -267,7 +120,10 @@
             </div>
         </div>
         <!-- <app-pagination  [paginate]="arr?.length"></app-pagination> -->
-        <div class="flex justify-center items-center py-10" *ngIf="arr.length > 0">
+        <div
+            class="flex justify-center items-center py-10"
+            *ngIf="arr.length > 0"
+        >
             <div aria-label="Page navigation" class="navigation">
                 <ul class="pagination text-3xl lg:text-xl">
                     <li class="mx-1">
@@ -279,10 +135,18 @@
                         </div>
                     </li>
 
-                    <li class="mx-1" *ngFor="let item of arr; let i = index" (click)="paginateNumber(i)">
+                    <li
+                        class="mx-1"
+                        *ngFor="let item of arr; let i = index"
+                        (click)="paginateNumber(i)"
+                    >
                         <div
                             class="page-link py-2 px-3 rounded-full border border-indigo-900 rounded-full  font-black 
-                            {{indexPaginate == i ? 'bg-indigo-900 text-white' :'text-indigo-900'}}
+                            {{
+                                indexPaginate == i
+                                    ? 'bg-indigo-900 text-white'
+                                    : 'text-indigo-900'
+                            }}
                             "
                         >
                             {{ i + 1 }}

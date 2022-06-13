@@ -18,6 +18,7 @@ import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import SwiperCore, { Navigation, Pagination, FreeMode, Autoplay } from 'swiper';
+import { forEach } from 'lodash';
 SwiperCore.use([Pagination, FreeMode, Navigation, Autoplay]);
 
 @Component({
@@ -28,18 +29,21 @@ SwiperCore.use([Pagination, FreeMode, Navigation, Autoplay]);
 })
 export class Theme1Component implements OnInit {
     course$: Observable<Khoahoc>;
+    courses: any[] = [];
+    xemNhanhBaiviet = [];
     massTimingsHtml;
-    isCarousel1 = false
-    isCarousel2 = false
+    isCarousel1 = false;
+    isCarousel2 = false;
     config;
     config1;
+    xemNhanhNoiDung: any[];
     constructor(
         private khoahocService: KhoahocService,
-        private sanitizer: DomSanitizer
+        private route: ActivatedRoute
     ) {
         // this.massTimingsHtml = this.getInnerHTMLValue()
     }
-
+    danhmucs: any[];
     theme: any = {};
 
     text: SafeHtml;
@@ -47,25 +51,82 @@ export class Theme1Component implements OnInit {
     getCourse() {
         this.khoahocService.course$.subscribe((course: any) => {
             // Update the counts
-            
-            this.theme = course;
-            console.log(this.theme);
 
-            if(Object.keys(this.theme?.listslide1).length > 0){
-                this.isCarousel1 = true
-                this.theme.listslide1 = Object.values(this.theme?.listslide1).reverse()
+            this.theme = course;
+
+            if (Object.keys(this.theme?.listslide1).length > 0) {
+                this.isCarousel1 = true;
+                this.theme.listslide1 = Object.values(this.theme?.listslide1);
+            } else {
+                this.isCarousel1 = false;
             }
-            if(Object.keys(this.theme?.listslide2).length > 0){
-                this.isCarousel2 = true
+            if (Object.keys(this.theme?.listslide2).length > 0) {
+                this.isCarousel2 = true;
+            } else {
+                this.isCarousel2 = false;
             }
-            
+        });
+    }
+    xemnhanhnoidung() {
+        let a = [];
+        let queryH3 = document.querySelectorAll('h3');
+        queryH3.forEach((x) => a.push(x));
+        this.xemNhanhNoiDung = a;
+
+        Array.from(queryH3).forEach((x) => {
+            x.addEventListener('click', function (event) {
+                console.log(event);
+            });
+        });
+    }
+    chonXemNoiDung(item, index) {
+        let queryH3 = document.querySelectorAll('h3');
+        for (let i = 0; i < queryH3.length; i++) {
+            queryH3[i].removeAttribute('id')
+            if ((i == index)) {
+                queryH3[i].setAttribute('id', 'move');
+            }
+        }
+
+        document.getElementById('move').scrollIntoView({
+            behavior: 'smooth',
         });
     }
 
     ngOnInit(): void {
-        // window.location.href = 'https://v1.timona.edu.vn/khoa-hoc.html'
-
         this.getCourse();
+
+        // window.location.href = 'https://v1.timona.edu.vn/khoa-hoc.html'
+        this.khoahocService.getKhoahoc().subscribe();
+        this.khoahocService.courses$.subscribe((res) => {
+            this.courses = res;
+        });
+        this.khoahocService.getDanhmuc().subscribe();
+        this.khoahocService.danhmucs$.subscribe((res) => {
+            res?.forEach((x) => {
+                x.courses = [];
+
+                for (let i = 0; i < this.courses?.length; i++) {
+                    if (x.id == this.courses[i]?.idDM) {
+                        x.courses.push(this.courses[i]);
+                    }
+                }
+                return x;
+            });
+            let xemBaivietTemp = [];
+            this.danhmucs = res
+                ?.reverse()
+                .filter((x) => x.Type == 'chuyennganh');
+            this.danhmucs?.forEach((x) => {
+                xemBaivietTemp.push(...x.courses);
+            });
+            this.route.params.subscribe((data: any) => {
+                this.xemNhanhBaiviet = xemBaivietTemp?.filter(
+                    (x) => x.slug != data.slug
+                );
+            });
+        });
+
         this.config = {
             loop: true,
             // autoplay: {

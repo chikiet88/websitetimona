@@ -1,5 +1,5 @@
 <div class="lg:max-w-6xl lg:mx-auto lg:px-8 lg:py-10">
-    <div class="text-center lg:mx-96 pb-4 lg:pb-10">
+    <div class="text-center lg:mx-96 pb-4 lg:pb-10 relative">
         <div class="dropdown">
             <button
                 class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-xl text-yellow-500 uppercase"
@@ -8,6 +8,7 @@
                 style="width: 350px"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                (click)="xemnhanhnoidung()"
             >
                 xem nhanh nội dung
                 <div
@@ -15,21 +16,14 @@
                     style="width: 2px; right: 45px"
                 ></div>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
+            <ul class="dropdown-menu absolute  left-0 w-full" aria-labelledby="dropdownMenuButton1">
+                <li *ngFor="let item of xemNhanhNoiDung; let i = index" (click)="chonXemNoiDung(item, i)">
                     <a
                         class="dropdown-item"
-                        routerLink="/goc-hoc-vien/hoat-dong"
-                        >Hoạt Động</a
+                        >{{item.innerText}}</a
                     >
                 </li>
-                <li>
-                    <a
-                        class="dropdown-item"
-                        routerLink="/goc-hoc-vien/cam-nghi-hoc-vien"
-                        >Cảm Nghĩ Học Viên</a
-                    >
-                </li>
+                
             </ul>
         </div>
     </div>

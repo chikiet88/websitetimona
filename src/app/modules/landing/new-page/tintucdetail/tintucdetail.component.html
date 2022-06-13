@@ -1,4 +1,36 @@
-<div class="lg:max-w-6xl lg:mx-auto lg:px-5 lg:py-10" >
+<!-- <div class="text-center lg:mx-96 pb-4 lg:pb-10">
+    <div class="dropdown">
+        <button
+            class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-lg text-yellow-500 uppercase"
+            type="button"
+            id="dropdownMenuButton1"
+            style="width: 350px"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+        >
+            xem nhanh nội dung
+            <div
+                class="absolute h-full bg-yellow-500 top-0"
+                style="width: 2px; right: 45px"
+            ></div>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+                <a class="dropdown-item" routerLink="/goc-hoc-vien/hoat-dong"
+                    >Hoạt Động</a
+                >
+            </li>
+            <li>
+                <a
+                    class="dropdown-item"
+                    routerLink="/goc-hoc-vien/cam-nghi-hoc-vien"
+                    >Cảm Nghĩ Học Viên</a
+                >
+            </li>
+        </ul>
+    </div>
+</div> -->
+<!-- 
     <div class="w-full h-1/2 flex flex-col hidden lg:block">
         <div class="pb-4 flex justify-between">
             <nav class="flex" aria-label="Breadcrumb">
@@ -26,22 +58,106 @@
                             >>
                             <span
                                 class="ml-1 font-medium text-text-indigo-900 md:ml-2 dark:text-indigo-900"
-                                >{{ theme?.title }}</span
+                                >{{ theme.title }}</span
                             >
                         </div>
                     </li>
                 </ol>
             </nav>
         </div>
-    </div>
+    </div> -->
 
-    <div class=" lg:pb-10  ">
-        <p
-            class="text-indigo-900 uppercase text-center text-xl lg:text-5xl text-2xl py-5"
-        >
-            {{ theme?.title }}
-        </p>
-
-        <div [innerHTML]="theme?.content" class="text-indigo-900"></div>
-    </div>
+<div class="bg-indigo-900 lg:px-10 pb-5  ">
+    <h3
+        class="text-white uppercase text-center text-2xl lg:text-4xl py-5 md:px-0 px-3 lg:leading-10 leading-5"
+    >
+       {{theme.title}}
+    </h3>
+    <!-- <p class="text-white lg:italic text-justify leading-5">
+        Spa thẩm mỹ hiện đang là một trong những ngành nghề hot nhất hiện nay.
+        Với tốc độ phát triển mạnh mẽ của ngành công nghiệp làm đẹp nước ta,
+        cùng với đó là nhu cầu và xu hướng làm đẹp tăng cao. Điều đó đã giúp cho
+        việc kinh doanh Spa đem về mức doanh thu và nhiều lợi nhuận đáng kể cho
+        chủ kinh doanh. Tuy nhiên, vẫn có những chủ kinh doanh Spa gặp thất bại
+        vì nhiều lý do sau đây. Dưới đây là 4 sai lầm khiến việc kinh doanh Spa
+        thất bại mà bạn cần lưu ý nếu có ý định mở Spa trong tương lai.
+    </p> -->
+    <div [innerHTML]="theme.des" class="text-white md:px-0 px-3 text-justify leading-5"></div>
 </div>
+<!-- <div class="pt-10">
+    <h3 class="text-indigo-900 text-xl font-bold pb-5">1. Thiếu kinh nghiệm</h3>
+    <p class="text-indigo-900 leading-5">
+        Kinh nghiệm là một điều quý báu mà không phải ai cũng có được. Để có
+        được kinh nghiệm đòi hỏi một người phải có sự trải nghiệm, có kiến
+        thức,… Nếu quý vị đã có kinh nghiệm trong việc mở Spa thì sẽ có được
+        những lợi thế hơn vì đã có được những trải nghiệm thực tế, nắm được
+        những điều cần làm, nên làm để có thể vận hành Spa của mình cách tốt
+        nhất.
+    </p>
+    <div class=" flex items-center">
+        <img
+            class="object-contain h-96"
+            src="https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/uploads%2Ftimona-academy-duoc-vinh-danh-thuong-hieu-2021.jpg?alt=media&amp;token=7df86b66-84a1-42d5-aa3c-76a87279b781"
+        />
+    </div>
+    <p class="">
+        Với những ai chỉ mới bắt đầu kinh doanh Spa lần đầu thì chưa thể có được
+        cái gọi là kinh nghiệm mở Spa được. Và vì thiếu kinh nghiệm thực tế nên
+        có thể dẫn đến việc kinh doanh Spa bị thất bại. Cụ thể như: không nắm
+        bắt được xu hướng thị trường, không tìm được thiết kế - xây dựng Spa uy
+        tín,… Vì thế, để việc kinh doanh Spa được thuận lợi, quý vị nên:
+    </p>
+    <ul class="md:ml-3 flex leading-5 mt-2">
+        <li class="md:ml-3 flex leading-5">
+            <span class="text-xs mr-3 mt-1 text-indigo-900 material-icons"
+                >circle</span
+            >
+            <span
+                >Lắng nghe tư vấn từ những chuyên gia, trung tâm có kinh
+                nghiệm.</span
+            >
+        </li>
+        <li class="md:ml-3 flex leading-5">
+            <span class="text-xs mr-3 mt-1 text-indigo-900 material-icons"
+                >circle</span
+            >
+            <span
+                >Lắng nghe tư vấn từ những chuyên gia, trung tâm có kinh
+                nghiệm.</span
+            >
+        </li>
+        <li class="md:ml-3 flex leading-5">
+            <span class="text-xs mr-3 mt-1 text-indigo-900 material-icons"
+                >circle</span
+            >
+            <span
+                >Lắng nghe tư vấn từ những chuyên gia, trung tâm có kinh
+                nghiệm.</span
+            >
+        </li>
+        <li class="md:ml-3 flex leading-5">&nbsp;</li>
+    </ul>
+    <h3 class="text-xl text-indigo-900 font-bold pb-5">
+        2. Thiếu quy trình vận hành
+    </h3>
+    <p>
+        Thiếu quy trình vận hành Spa cũng là một trong những lý do dẫn đến việc
+        kinh doanh Spa bị thất bại. Một quy trình vận hành tốt sẽ là tiền đề
+        vững chắc để Spa có thể duy trì và phát triển trong tương lai. Nắm được
+        quy trình vận hành tốt không chỉ giúp cho quá trình triển khai thực tế
+        ít gặp phải va vấp và có thể tránh được nhiều thiếu sót. Một quy trình
+        vận hành chuyên nghiệp không chỉ giúp bạn dễ dàng quản lý Spa của mình
+        mà đây cũng là yếu tố quan trọng để từng con người trong Spa có thể
+        nhanh chóng được phát triển. Đó là do vì sao khi có ý định mở Spa, bạn
+        nên tham gia các khóa học về quản lý spa -
+        <strong class="text-indigo-900 font-black"
+            >chủ Spa chuyên nghiệp</strong
+        >
+        để nắm được quy trình vận hành mà các chuyên gia chia sẻ. Giúp bạn bắt
+        đầu đi vào thực tế một cách dễ dàng hơn vì biết rõ mình phải làm gì.
+    </p>
+    <p class="md:ml-3 flex leading-5 mt-2">
+        Một quy trình vận hành chuyên nghiệp không chỉ giúp bạn dễ dàng quản lý Spa của mình mà đây cũng là yếu tố quan trọng để từng con người trong Spa có thể nhanh chóng được phát triển. Đó là do vì sao khi có ý định mở Spa, bạn nên tham gia các khóa học về quản lý spa - <strong class="text-indigo-900 font-black">chủ Spa chuyên nghiệp</strong> để nắm được quy trình vận hành mà các chuyên gia chia sẻ. Giúp bạn bắt đầu đi vào thực tế một cách dễ dàng hơn vì biết rõ mình phải làm gì.
+    </p>
+</div> -->
+<div [innerHTML]="theme.content1" class="text-indigo-900 md:px-0 px-3"></div>
