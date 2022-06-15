@@ -11,17 +11,17 @@ import { FileUpload } from '../models/file-upload.model';
     providedIn: 'root',
 })
 export class FileUploadService {
-    currentFileUpload
-    percentage
-    private basePath = '/uploads';
-    // private basePath = '/test';
+    currentFileUpload;
+    percentage;
+    // private basePath = '/uploads';
+    private basePath = '/test2';
     private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
     get _thumb$(): Observable<any> {
         return this._thumb.asObservable();
     }
     constructor(
         private db: AngularFireDatabase,
-        private storage: AngularFireStorage,
+        private storage: AngularFireStorage
     ) {}
     pushFileToStorage(fileUpload: FileUpload): Observable<number | undefined> {
         const filePath = `${this.basePath}/${fileUpload.file.name}`;
@@ -33,45 +33,49 @@ export class FileUploadService {
             .pipe(
                 finalize(() => {
                     storageRef.getDownloadURL().subscribe((downloadURL) => {
-                      if(downloadURL){
-                        fileUpload.url = downloadURL;
-                        fileUpload.name = fileUpload.file.name;
-                        this.saveFileData(fileUpload);
-
-                      }
+                        if (downloadURL) {
+                            fileUpload.url = downloadURL;
+                            fileUpload.name = fileUpload.file.name;
+                            this.saveFileData(fileUpload);
+                        }
                     });
                 })
             )
             .subscribe();
-            
+
         return uploadTask.percentageChanges();
     }
     private saveFileData(fileUpload: FileUpload): void {
-        let image
-        this.db.list(this.basePath).push(fileUpload);
-        this.getFiles(1) //lấy file  chứa key từ firebase về
-            .snapshotChanges()
-            .pipe(
-                map((changes) =>
-                    // store the key
-                    changes.map((c) => ({
-                        key: c.payload.key,
-                        ...c.payload.val(),
-                    }))
-                )
-            )
-            .subscribe((fileUploads) => {
-                fileUploads = fileUploads.reverse();
-                // image = fileUploads[0].url
-              //  this.myUploadAdapter.upload(fileUploads)
-                this._thumb.next(fileUploads[0]);
+        let image;
+        this.db
+            .list(this.basePath)
+            .push(fileUpload)
+            .then((x) => {
+                this.getFiles(1) //lấy file  chứa key từ firebase về
+                    .snapshotChanges()
+                    .pipe(
+                        map((changes) =>
+                            // store the key
+                            changes.map((c) => ({
+                                key: c.payload.key,
+                                ...c.payload.val(),
+                            }))
+                        )
+                    )
+                    .subscribe((fileUploads) => {
+                        fileUploads = fileUploads.reverse();
+                        // image = fileUploads[0].url
+                        //  this.myUploadAdapter.upload(fileUploads)
+                        this._thumb.next(fileUploads[0]);
+                    });
             });
-            return image
+
+        return image;
     }
     getFiles(numberItems: number): AngularFireList<FileUpload> {
-        return this.db.list(this.basePath, (ref) =>
-            ref.limitToLast(numberItems)
-        );
+        return this.db.list(this.basePath, (ref) => {
+            return ref.limitToLast(numberItems);
+        });
     }
     deleteFile(fileUpload: FileUpload): void {
         this.deleteFileDatabase(fileUpload.key)
@@ -83,35 +87,11 @@ export class FileUploadService {
     private deleteFileDatabase(key: string): Promise<void> {
         return this.db.list(this.basePath).remove(key);
     }
+    getValueByKey(key: string):Observable<any> {
+        return this.db.list(this.basePath + `/${key}`).valueChanges();
+    }
     private deleteFileStorage(name: string): void {
         const storageRef = this.storage.ref(this.basePath);
         storageRef.child(name).delete();
     }
-    // upload(loader) {
-    //     return new Promise(async (resolve, reject) => {
-    //         loader.file.then((file: any) => {
-    //             this.currentFileUpload = new FileUpload(file);
-    //             this
-    //                 .pushFileToStorage(this.currentFileUpload)
-    //                 .subscribe(
-    //                     (percentage) => {
-    //                         this.percentage = Math.round(
-    //                             percentage ? percentage : 0
-    //                         );
-    //                         if (this.percentage == 100) {
-                               
-    //                             resolve({
-    //                                 default: url,
-    //                             });
-    //                         }
-    //                     },
-    //                     (error) => {
-    //                         console.log(error);
-    //                     }
-    //                 );
-
-    //             //Lấy hình ảnh từ firebase về
-    //         });
-    //     });
-    // }
 }

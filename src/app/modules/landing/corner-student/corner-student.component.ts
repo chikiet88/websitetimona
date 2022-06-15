@@ -20,7 +20,7 @@ export class CornerStudentComponent implements OnInit {
         this._khoahocService.getDanhmuc().subscribe();
         this._khoahocService.danhmucs$.subscribe((res) => {
             this.danhmucs = res?.filter((x) => x.Type == 'gochocvien');
-            this.danhmucs = this.danhmucs.reverse()
+            this.danhmucs = this.danhmucs?.reverse()
             this.danhmucs = this.nest(this.danhmucs)
         });
 

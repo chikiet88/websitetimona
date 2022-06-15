@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AddBaivietService } from './add-baiviet.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
@@ -13,6 +13,7 @@ import { DanhmucService } from '../danhmuc/danhmuc.service';
     selector: 'app-add-baiviet',
     templateUrl: './add-baiviet.component.html',
     styleUrls: ['./add-baiviet.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class AddBaivietComponent implements OnInit {
     fileUploads?: any[];
@@ -27,11 +28,12 @@ export class AddBaivietComponent implements OnInit {
     baivietForm: FormGroup;
     selectTheme: any;
     menu: any[];
-    listA$: Observable<any>;
     isSelectTheme1 = false;
     isSelectTheme2 = false;
     listslide1: any = {};
     listslide2: any = {};
+    listkey: any = {};
+    listimage: any[] = [];
     i = 0;
     loader;
     idSelect;
@@ -63,6 +65,23 @@ export class AddBaivietComponent implements OnInit {
                 },
             ],
         },
+        resizeOptions: [
+            {
+                name: 'resizeImage:original',
+                value: null,
+                icon: 'original',
+            },
+            {
+                name: 'resizeImage:50',
+                value: '50',
+                icon: 'medium',
+            },
+            {
+                name: 'resizeImage:75',
+                value: '75',
+                icon: 'large',
+            },
+        ],
     };
 
     public componentEvents: string[] = [];
@@ -95,6 +114,54 @@ export class AddBaivietComponent implements OnInit {
             });
         }
     }
+    upload2(): void {
+        if (this.selectedFiles) {
+            console.log(this.selectedFiles);
+            for (let i = 0; i < this.selectedFiles.length; i++) {
+                const file: File | null = this.selectedFiles[i];
+                console.log(file);
+                
+                if (file) {
+                    this.currentFileUpload = new FileUpload(file);
+                    this.uploadService
+                        .pushFileToStorage(this.currentFileUpload)
+                        .subscribe(
+                            (percentage) => {
+                                this.percentage = Math.round(
+                                    percentage ? percentage : 0
+                                );
+
+                                if(percentage == 100){
+                                  this.uploadService._thumb$.subscribe(res =>{
+                                    this.listkey[i] = res?.key
+                                    console.log(this.listkey[i]);
+
+                                  })
+                                }
+                            },
+                            (error) => {
+                                console.log(error);
+                            }
+                        );
+                }
+            }
+
+            this.uploadService
+                .getValueByKey('-N4aoqIXggtD4RPAqoiK')
+                .subscribe((res) => console.log(res));
+            // setTimeout(() => {
+            //     console.log(this.listkey);
+
+            //     if (Object.keys(this.listkey).length > 0) {
+            //         for (let [key, value] of Object.entries(this.listkey)) {
+            //             console.log(value);
+            //         }
+            //     }
+            // }, 2000);
+        }
+
+        return (this.selectFile = undefined);
+    }
 
     constructor(
         private baivietService: AddBaivietService,
@@ -105,7 +172,23 @@ export class AddBaivietComponent implements OnInit {
         this.html = '';
         this.Editor = customBuild;
     }
-
+    getLinkImage(number) {
+        this.uploadService
+            .getFiles(number) //lấy file  chứa key từ firebase về
+            .snapshotChanges()
+            .pipe(
+                map((changes) =>
+                    // store the key
+                    changes.map((c) => ({
+                        key: c.payload.key,
+                        ...c.payload.val(),
+                    }))
+                )
+            )
+            .subscribe((fileUploads) => {
+                console.log(fileUploads);
+            });
+    }
     onSubmit() {
         this.baivietForm.get('listslide1').setValue(this.listslide1);
         this.baivietForm.get('listslide2').setValue(this.listslide2);

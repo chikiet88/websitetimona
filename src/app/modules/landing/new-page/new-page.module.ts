@@ -14,6 +14,7 @@ import { CarouselCourseComponent } from './components/carousel-course/carousel-c
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { TintucdetailComponent } from './tintucdetail/tintucdetail.component';
 import { NewListComponent } from './new-list/new-list.component';
+import { TintucdetailPipe } from './tintucdetail/tintucdetail.pipe';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { NewListComponent } from './new-list/new-list.component';
     CarouselCourseComponent,
     PaginationComponent,
     TintucdetailComponent,
-    NewListComponent
+    NewListComponent,
+    TintucdetailPipe
     
   ],
     imports: [

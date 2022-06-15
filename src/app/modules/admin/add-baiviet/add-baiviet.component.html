@@ -368,13 +368,30 @@
                     </div>
 
                     <div class="md:flex mb-6 items-center">
-                        <div class="md:w-1/2 w-full">
+                        <div class="md:w-1/2 w-full md:mr-3">
                             <mat-form-field
                                 class="fuse-mat-emphasized-affix w-full"
                                 appearance="fill"
                                 style="height: 50px"
                             >
                                 <span matPrefix>Chọn bài viết nổi bật</span>
+                                <mat-select
+                                    (selectionChange)="
+                                        onchangeLoaibaiviet($event.value)
+                                    "
+                                >
+                                    <mat-option value="1">Có</mat-option>
+                                    <mat-option value="0">Không</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="md:w-1/2 w-full md:ml-3 mt-6 md:mt-0">
+                            <mat-form-field
+                                class="fuse-mat-emphasized-affix w-full"
+                                appearance="fill"
+                                style="height: 50px"
+                            >
+                                <span matPrefix>Chọn file hình</span>
                                 <mat-select
                                     (selectionChange)="
                                         onchangeLoaibaiviet($event.value)
@@ -456,7 +473,58 @@
                             </ul>
                         </div>
                     </div>
+                    <div>
+                        <div class="w-full  mb-6 md:mb-0">
+                            <label
+                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                for="grid-first-name"
+                            >
+                                Upload File Hình
+                            </label>
+                            <label>
+                                <input
+                                    type="file"
+                                    class="text-nowrap text-truncate"
+                                    (change)="selectFile($event)"
+                                    multiple
+                                />
+                            </label>
+                            <button
+                                class="btn btn-success btn-sm mt-3 md:mt-0"
+                                [disabled]="!selectedFiles"
+                                (click)="upload2()"
+                            >
+                                Upload
+                            </button>
+                            <div *ngIf="currentFileUpload" class="progress mt-2">
+                                <div
+                                    class="progress-bar progress-bar-info"
+                                    role="progressbar"
+                                    attr.aria-valuenow="{{ percentage }}"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                    [ngStyle]="{ width: percentage + '%' }"
+                                >
+                                    {{ percentage }}%
+                                </div>
+                            </div>
+                            <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+                        </div>
 
+                        <div class="card w-full mt-5 flex" *ngIf="listimage?.length > 0">
+                            <div class="card-header">Image Upload</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" *ngFor="let item of listimage">
+                                    <img
+                                        src="{{ item }}"
+                                        class="w-20 h-20"
+                                        alt=""
+                                    />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                 
                     <div class="flex py-5">
                         <button
                             type="submit"

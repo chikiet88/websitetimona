@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { KhoahocService } from '../../khoahoc/khoahoc.service';
@@ -7,6 +7,8 @@ import { KhoahocService } from '../../khoahoc/khoahoc.service';
     selector: 'app-tintucdetail',
     templateUrl: './tintucdetail.component.html',
     styleUrls: ['./tintucdetail.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    
 })
 export class TintucdetailComponent implements OnInit {
     course$: Observable<any>;

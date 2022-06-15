@@ -72,12 +72,6 @@ export class Theme1Component implements OnInit {
         let queryH3 = document.querySelectorAll('h3');
         queryH3.forEach((x) => a.push(x));
         this.xemNhanhNoiDung = a;
-
-        Array.from(queryH3).forEach((x) => {
-            x.addEventListener('click', function (event) {
-                console.log(event);
-            });
-        });
     }
     chonXemNoiDung(item, index) {
         let queryH3 = document.querySelectorAll('h3');

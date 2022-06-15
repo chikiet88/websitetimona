@@ -30,6 +30,8 @@ import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+import ImageResizeEditing from '@ckeditor/ckeditor5-image/src/imageresize.js';
+import ImageResizeHandles from '@ckeditor/ckeditor5-image/src/imageresize.js';
 class Editor extends ClassicEditor {}
 
 // Plugins to include in the build.
@@ -60,7 +62,9 @@ Editor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-	SimpleUploadAdapter
+	SimpleUploadAdapter,
+	ImageResizeEditing,
+	ImageResizeHandles
 ];
 
 // Editor configuration.

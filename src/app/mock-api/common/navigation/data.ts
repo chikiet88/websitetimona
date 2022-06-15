@@ -43,6 +43,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
         link : '/admin/footer'
+    },
+    {
+        id   : 'letotnghiep',
+        title: 'Lễ Tốt Nghiệp',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/letotnghiep'
     }
     
     

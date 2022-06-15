@@ -51,8 +51,6 @@ export class KhoahocService {
     }
     getDanhmucchitiet(id): Observable<any> {
         
-        console.log(id);
-
         return this.http
             .get<any>(`https://v2api.timona.edu.vn/danhmuc/${id}`)
             .pipe(
