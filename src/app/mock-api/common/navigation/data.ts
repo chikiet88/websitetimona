@@ -45,11 +45,11 @@ export const defaultNavigation: FuseNavigationItem[] = [
         link : '/admin/footer'
     },
     {
-        id   : 'letotnghiep',
-        title: 'Lễ Tốt Nghiệp',
+        id   : 'giangvien',
+        title: 'Giảng Viên',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/admin/letotnghiep'
+        link : '/admin/giangvien'
     }
     
     

@@ -13,8 +13,10 @@ import { FileUpload } from '../models/file-upload.model';
 export class FileUploadService {
     currentFileUpload;
     percentage;
-    // private basePath = '/uploads';
-    private basePath = '/test2';
+    private basePath = '/uploads';
+    // private basePath = '/test2';
+    // private basePath = '/test5';
+
     private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
     get _thumb$(): Observable<any> {
         return this._thumb.asObservable();
@@ -77,10 +79,12 @@ export class FileUploadService {
             return ref.limitToLast(numberItems);
         });
     }
-    deleteFile(fileUpload: FileUpload): void {
-        this.deleteFileDatabase(fileUpload.key)
+    deleteFile(item): void {
+        console.log(item);
+        
+        this.deleteFileDatabase(item[2])
             .then(() => {
-                this.deleteFileStorage(fileUpload.name);
+                // this.deleteFileStorage(item[0]);
             })
             .catch((error) => console.log(error));
     }

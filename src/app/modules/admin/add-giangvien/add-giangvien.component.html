@@ -1,0 +1,94 @@
+<div class="container px-10">
+    <form class="w-full pt-10" [formGroup]="GiangvienList">
+        <div class="flex flex-wrap">
+           
+
+        
+            <div class="flex flex-wrap my-4 md:px-3 w-full">
+                <div class="w-full">
+                    <label
+                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-password"
+                    >
+                        Mô tả
+                    </label>
+                    <ckeditor
+                        [editor]="Editor"
+                        #editer
+                        [config]="config"
+                        [formControlName]="'Mota'"
+                    ></ckeditor>
+                </div>
+            </div>
+            <div class="flex flex-wrap md:mb-6">
+                <div class="w-full md:px-3 mb-6 md:mb-0">
+                    <label>
+                        <input
+                            type="file"
+                            class="text-nowrap text-truncate"
+                            (change)="selectFile($event)"
+                        />
+                    </label>
+                    <button
+                        class="btn btn-success btn-sm mt-3 md:mt-0"
+                        [disabled]="!selectedFiles"
+                        (click)="upload()"
+                    >
+                        Upload
+                    </button>
+                    <div *ngIf="currentFileUpload" class="progress mt-2">
+                        <div
+                            class="progress-bar progress-bar-info"
+                            role="progressbar"
+                            attr.aria-valuenow="{{ percentage }}"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            [ngStyle]="{ width: percentage + '%' }"
+                        >
+                            {{ percentage }}%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card w-full mt-5" *ngIf="thumb">
+                    <div class="card-header">Image Upload</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <img src="{{ thumb }}" class="w-20 h-20" alt="" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group md:mx-3 mb-6">
+            <button
+                type="submit"
+                (click)="onSubmit()"
+                [disabled]="!GiangvienList.valid"
+                class="btn btn-success bg-indigo-900"
+                *ngIf="!idSelect"
+            >
+                Tạo mới
+            </button>
+            <button
+                type="update"
+                class="btn btn-primary mr-10"
+                (click)="updateGiangvien()"
+                *ngIf="idSelect"
+            >
+                Cập nhật
+            </button>
+            <button
+                type="update"
+                class="btn btn-danger"
+                (click)="deleteGiangvien()"
+                *ngIf="idSelect"
+            >
+                Xóa
+            </button>
+        </div>
+    </form>
+
+    <div></div>
+</div>

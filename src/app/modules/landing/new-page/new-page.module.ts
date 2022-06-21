@@ -15,6 +15,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { TintucdetailComponent } from './tintucdetail/tintucdetail.component';
 import { NewListComponent } from './new-list/new-list.component';
 import { TintucdetailPipe } from './tintucdetail/tintucdetail.pipe';
+import { CustomPipePipe } from '../customs/custom-pipe.pipe';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import { TintucdetailPipe } from './tintucdetail/tintucdetail.pipe';
     PaginationComponent,
     TintucdetailComponent,
     NewListComponent,
-    TintucdetailPipe
+    TintucdetailPipe,
+    CustomPipePipe
     
   ],
     imports: [

@@ -31,7 +31,6 @@ export class SpecialzedComponent implements OnInit {
             this.courses = result;
             let a = [];
             for (let i = 0; i < this.courses?.length; i++) {
-                console.log(this.courses[i]?.idDM);
                 for (let j = 0; j < this.danhmucs.length; j++) {
                     if (this.courses[i]?.idDM == this.danhmucs[j].id) {
                         a.push(this.courses[i]);
@@ -40,6 +39,7 @@ export class SpecialzedComponent implements OnInit {
             }
            
             this.courses = a.filter(x => x.Loaibaiviet == this.baivietnoibat)
+            this.courses = this.courses.reverse()
         });
     }
 }

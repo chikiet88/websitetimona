@@ -14,7 +14,7 @@
             <div class="">
                 <img
                     src="{{ baiviet1.thumbimage }}"
-                    class="w-full md:h-96"
+                    class="w-full "
                     alt=""
                 />
             </div>
@@ -48,11 +48,11 @@
                     routerLink="../baiviet/{{ item?.slug }}"
                     *ngFor="let item of baiviet2"
                 >
-                    <div class="w-full bg-gray-200 mr-4">
-                        <div class="banner-img md:h-64">
+                    <div class="w-full mr-4">
+                        <div class="banner-img">
                             <img
                                 src="{{ item?.thumbimage }}"
-                                class="h-full w-full"
+                                class=" w-full md:h-56 object-contain"
                                 alt=""
                             />
                             <!-- <img
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div
-                        class="w-full flex flex-col new-info justify-between pt-3"
+                        class="w-full flex flex-col new-info justify-between pt-3 md:h-28"
                     >
                         <p
                             class="text-indigo-900 font-black uppercase md:leading-5 leading-4"
@@ -75,7 +75,7 @@
                             class="pb-2 text-indigo-900 item-des hidden md:block text-justify leading-5"
                         ></div>
                     </div>
-                    <a class="text-indigo-900 pt-2 md:pt-0 new-link"
+                    <a class="text-indigo-900 pt-2 md:pt-5 new-link"
                     routerLink="../baiviet/{{ item?.slug }}"
 
                         >Xem Thêm >></a

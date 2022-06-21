@@ -6,11 +6,7 @@
             class="example-sidenav lg:w-1/4 w-full"
             mode="side"
         >
-            <button
-                type="button"
-                (click)="drawer.toggle()"
-                class="p-5 "
-            >
+            <button type="button" (click)="drawer.toggle()" class="p-5">
                 <span class="material-icons"> close </span>
             </button>
             <div class="p-5">
@@ -102,9 +98,10 @@
                                 (selectionChange)="
                                     selectionDanhmuc($event.value)
                                 "
+                                [(value)]="tenDMcha"
                             >
                                 <mat-option
-                                    [value]="item.id"
+                                    [value]="item.Tieude"
                                     *ngFor="let item of danhmucs"
                                     >{{ item.Tieude }}</mat-option
                                 >
@@ -146,8 +143,12 @@
                             ></ckeditor>
                         </div>
                     </div>
-                    
-                    <div [formGroupName]="'slide1'" class="mb-6" *ngIf="isSelectTheme1">
+
+                    <div
+                        [formGroupName]="'slide1'"
+                        class="mb-6"
+                        *ngIf="isSelectTheme1"
+                    >
                         <p class="mb-3 text-2xl text-bold">
                             Nội dung Cơ hội nghề nghiệp
                         </p>
@@ -215,7 +216,8 @@
                                         <mat-option
                                             [value]="itemCarousel"
                                             *ngFor="
-                                                let itemCarousel of listslide1 | keyvalue
+                                                let itemCarousel of listslide1
+                                                    | keyvalue
                                             "
                                             >{{ itemCarousel?.key }}</mat-option
                                         >
@@ -248,7 +250,11 @@
                         </div>
                     </div>
 
-                    <div [formGroupName]="'slide2'" class="mb-6" *ngIf="isSelectTheme1 || isSelectTheme2">
+                    <div
+                        [formGroupName]="'slide2'"
+                        class="mb-6"
+                        *ngIf="isSelectTheme1 || isSelectTheme2"
+                    >
                         <p class="mb-3 text-2xl text-bold">
                             Nội dung chi tiết khóa hoc
                         </p>
@@ -316,7 +322,8 @@
                                         <mat-option
                                             [value]="itemCarousel"
                                             *ngFor="
-                                                let itemCarousel of listslide2 | keyvalue
+                                                let itemCarousel of listslide2
+                                                    | keyvalue
                                             "
                                             >{{ itemCarousel?.key }}</mat-option
                                         >
@@ -349,7 +356,10 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap mb-6" *ngIf="isSelectTheme1 || isSelectTheme2">
+                    <div
+                        class="flex flex-wrap mb-6"
+                        *ngIf="isSelectTheme1 || isSelectTheme2"
+                    >
                         <div class="w-full">
                             <label
                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -474,7 +484,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="w-full  mb-6 md:mb-0">
+                        <div class="w-full mb-6 md:mb-0">
                             <label
                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                 for="grid-first-name"
@@ -496,7 +506,10 @@
                             >
                                 Upload
                             </button>
-                            <div *ngIf="currentFileUpload" class="progress mt-2">
+                            <div
+                                *ngIf="currentFileUpload"
+                                class="progress mt-2"
+                            >
                                 <div
                                     class="progress-bar progress-bar-info"
                                     role="progressbar"
@@ -511,20 +524,34 @@
                             <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
                         </div>
 
-                        <div class="card w-full mt-5 flex" *ngIf="listimage?.length > 0">
+                        <div
+                            class="card w-full mt-5 flex"
+                            *ngIf="listimage?.length > 0"
+                        >
                             <div class="card-header">Image Upload</div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item" *ngFor="let item of listimage">
+                            <ul class="grid grid-cols-5 gap-5">
+                                <li
+                                    class="list-group-item relative my-2"
+                                    *ngFor="let item of listimage; let i = index"
+                                >
+                                        <!-- item[1] url image ở firebase -->
+
                                     <img
-                                        src="{{ item }}"
+                                        src="{{ item[1] }}"
                                         class="w-20 h-20"
                                         alt=""
                                     />
+                                    <div class="absolute right-3 top-3 cursor-pointer">
+                                        <!-- item[2] key image ở firebase -->
+                                        <span class="material-icons" (click)="deleteImageFirebase(item, i)">
+                                            close
+                                        </span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                 
+
                     <div class="flex py-5">
                         <button
                             type="submit"

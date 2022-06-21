@@ -6,6 +6,7 @@ export interface Khoahoc{
     slug:  string;
     Type:string;
     Loaibaiviet: number;
-    parentid: number
+    parentid: number,
+    image:any,
 
 }

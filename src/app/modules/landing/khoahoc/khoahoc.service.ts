@@ -32,7 +32,7 @@ export class KhoahocService {
     get courses$(): Observable<Khoahoc[]> {
         return this._courses.asObservable();
     }
-    get course$(): Observable<Khoahoc[]> {
+    get course$(): Observable<Khoahoc> {
         return this._course.asObservable();
     }
     get danhmucs$(): Observable<any[]> {

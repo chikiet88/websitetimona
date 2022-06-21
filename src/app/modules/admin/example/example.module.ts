@@ -12,7 +12,7 @@ import { AddContactComponent } from '../add-contact/add-contact.component';
 import { CauhinhComponent } from '../cauhinh/cauhinh.component';
 import { DanhmucComponent } from '../danhmuc/danhmuc.component';
 import { LetotnghiepComponent } from '../letotnghiep/letotnghiep.component';
-
+import { AddGiangvienComponent } from '../add-giangvien/add-giangvien.component';
 const exampleRoutes: Route[] = [
     {
         path: '',
@@ -25,6 +25,7 @@ const exampleRoutes: Route[] = [
             { path: 'footer', component: CauhinhComponent },
             { path: 'danhmuc', component: DanhmucComponent },
             { path: 'letotnghiep', component: LetotnghiepComponent },
+            { path: 'giangvien', component: AddGiangvienComponent },
         ],
     },
 ];
@@ -38,7 +39,8 @@ const exampleRoutes: Route[] = [
         AddContactComponent,
         CauhinhComponent,
         DanhmucComponent,
-        LetotnghiepComponent
+        LetotnghiepComponent,
+        AddGiangvienComponent,
     ],
     imports: [
         RouterModule.forChild(exampleRoutes),

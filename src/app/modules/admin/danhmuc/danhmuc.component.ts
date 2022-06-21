@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
@@ -10,6 +10,7 @@ import * as customBuild from '../../ckCustomBuild/build/ckEditor';
     selector: 'app-danhmuc',
     templateUrl: './danhmuc.component.html',
     styleUrls: ['./danhmuc.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class DanhmucComponent implements OnInit {
     themes: any;
@@ -35,6 +36,13 @@ export class DanhmucComponent implements OnInit {
                 },
             ],
         },
+        list: {
+            properties: {
+                styles: true,
+                startIndex: true,
+                reversed: true
+            }
+        }
     };
 
     constructor(

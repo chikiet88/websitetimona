@@ -181,6 +181,10 @@ div.cdk-overlay-container .mat-menu-content {
 }
 .swiper-pagination-bullet-active-main {
     background: blue !important;
+    border: 1px solid #fff
+}
+.swiper-pagination-bullet{
+    background: #ddd;
 }
 
 .swiper-pagination-bullets-dynamic {

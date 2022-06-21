@@ -20,10 +20,14 @@ export class GochocvienListComponent implements OnInit {
     ngOnInit(): void {
         this._khoahocService.getDanhmuc().subscribe();
         this._khoahocService.danhmucs$.subscribe((res) => {
-            this.danhmucs = res?.filter((x) => x.Type == 'gochocvien');
+            let danhmucCha;
+            res?.find((x) => {
+                if (x.Type == 'gochocvien') {
+                    danhmucCha = x
+                }
+            });
+            this.danhmucs = res.filter((v) => v.pid == danhmucCha.id);
             this.danhmucs = this.danhmucs.reverse()
-
-            this.danhmucs = this.nest(this.danhmucs)
         });
         
         // window.location.href = 'https://v1.timona.edu.vn/hoc-vien.html'

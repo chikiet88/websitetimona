@@ -3,20 +3,25 @@
         <p class="text-white uppercase text-center text-2xl lg:text-4xl pt-3">
             {{ intro?.title }}
         </p>
-        <div [innerHTML]="intro?.des" class="text-white intro-description"></div>
+        <div
+            [innerHTML]="intro?.des"
+            class="text-white intro-description"
+        ></div>
     </div>
     <div class="pt-5">
-        <div [innerHTML]="intro?.content" class="intro"></div>
+        <div [innerHTML]="intro?.content1" class="intro"></div>
 
         <div class="lg:py-12 pb-5 mx-3 lg:mx-0">
             <div class="lg:mx-24 chuyennganh-ttile">
                 <p
-                    class="lg:text-5xl text-2xl font-black text-indigo-900 text-center uppercase pb-3 md:pb-0"
+                    class="lg:text-5xl text-2xl font-black text-indigo-900 text-center uppercase pb-3"
                 >
                     các chuyên ngành<br class="lg:hidden" />
                     đào tạo
                 </p>
-                <p class="text-indigo-900 text-center leading-5">
+                <p
+                    class="text-indigo-900 md:text-center text-justify leading-5"
+                >
                     Với nhu cầu làm đẹp ngày càng cao, Timona Academy chú trọng
                     đào tạo đa dạng và bài bản các chuyên ngành thẩm mỹ từ cơ
                     bản đến chuyên sâu.
@@ -25,14 +30,18 @@
             <!-- <div
                 class="grid lg:grid-rows-3 grid-rows-4 grid-flow-col lg:gap-4 gap-1 lg:pb-5 pb-3"
             > -->
-            <div class="grid grid-cols-3 gap-5">
+            <div class="grid md:grid-cols-3 grid-cols-1 gap-5">
                 <div
-                    class="py-3 px-2  rounded-b-xl"
+                    class="py-3 px-2 rounded-b-xl"
                     *ngFor="let item of courses"
                 >
-                    <div class="flex flex-col relative pb-5">
-                        <div class="w-full h-48 ">
-                            <img src="{{ item.thumbimage }}" class="rounded-xl w-full h-full" alt="" />
+                    <div class="flex flex-col relative lg:pb-5">
+                        <div class="w-full">
+                            <img
+                                src="{{ item.thumbimage }}"
+                                class="rounded-xl w-full h-full"
+                                alt=""
+                            />
                         </div>
                         <p
                             class="text-yellow-500 font-bold text-xl uppercase py-3"
@@ -44,7 +53,6 @@
                             class="p-2 bg-yellow-500 text-white rounded-lg w-36 flex items-center"
                             >Tìm hiểu thêm >>></a
                         >
-                       
                     </div>
                 </div>
 
@@ -61,6 +69,7 @@
                     </div>
                 </div> -->
             </div>
+
             <div class="">
                 <p class="text-indigo-900 text-justify leading-5">
                     Timona Academy thiết kế khóa học thực chiến 90% thực hành
@@ -74,11 +83,11 @@
             </div>
         </div>
 
-        <div class="bg-indigo-900 rounded-3xl mb-10">
-            <div class="flex justify-between flex-col lg:flex-row wrapper">
-                <div class="lg:w-2/6">
+        <div class="bg-indigo-900 rounded-3xl lg:p-5 p-3 mb-10">
+            <div class="flex justify-between flex-col lg:flex-row lg:px-0 px-3">
+                <div class="lg:w-2/6 md: pt-5">
                     <p
-                        class="lg:text-4xl text-2xl text-yellow-500 uppercase title"
+                        class="lg:text-3xl text-2xl text-yellow-500 uppercase title"
                     >
                         chứng chỉ khóa học
                     </p>
@@ -115,7 +124,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-center pt-3">
-                                01 Chứng chỉ Hành nghề của Sở LDTBXH
+                                Chứng chỉ Hành nghề của Sở LDTBXH
                             </p>
                         </div>
 
@@ -130,7 +139,7 @@
                                 </div>
                             </div>
                             <p class="text-white text-center pt-3">
-                                01 Chứng chỉ của Timona Academy chứng nhận
+                                Chứng chỉ của Timona Academy chứng nhận
                             </p>
                         </div>
                     </div>
@@ -139,14 +148,14 @@
         </div>
 
         <div class="bg-indigo-900 rounded-3xl">
-            <div class="lg:m-5 lg:mx-0 relative wrapper">
-                <div class="pb-3">
+            <div class="lg:p-5 p-3 lg:mx-0 relative ">
+                <div class="pb-3 lg:pt-0 pt-5">
                     <p
-                        class="uppercase md:text-3xl text-2xl text-yellow-500 title"
+                        class="uppercase md:text-3xl text-2xl text-yellow-500 title pb-3"
                     >
                         Cơ sở vật chất hiện đại
                     </p>
-                    <p class="text-white leading-5">
+                    <p class="text-white leading-5 md:pt-0 pt-2 text-justify md:text-left">
                         Sau hơn 7 năm phát triển, Hệ thống 6 chi nhánh được chú
                         trọng đầu tư cơ sở vật chất hiện đại, trang thiết bị mới
                         nhất và được đặt ở những vị trí đắc địa, nằm ngay trung
@@ -159,342 +168,141 @@
                         dynamicBullets: true,
                         clickable: true
                     }"
-                    class="mySwiper hidden lg:block"
+                    [config]="config3"
+                    class="mySwiper  pb-10"
                 >
                     <ng-template swiperSlide>
-                        <div class="flex justify-between pb-10">
-                            <div class="w-[350px]">
-                                <div class="pb-2">
-                                    <div class="w-full h-52">
-                                        <img
-                                            src="../../../assets/images/Desktop/CSVC/thủ-đức.jpg"
-                                            class="w-full h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện thủ đức
-                                    </p>
-                                    <p class="text-white">
-                                        Số 1090A Phạm Văn Đồng, P.Linh Đông,
-                                        Tp.Thủ Đức
-                                    </p>
+                        <div class="">
+                            <div class="pb-2">
+                                <div class="w-full">
+                                    <img
+                                        src="../../../assets/images/Desktop/CSVC/thủ-đức.jpg"
+                                        class="w-full h-full"
+                                        alt=""
+                                    />
                                 </div>
                             </div>
-                            <div class="w-[350px]">
-                                <div class="pb-2">
-                                    <div class="w-full h-52">
-                                        <img
-                                            src="../../../assets/images/Desktop/CSVC/quan-10.jpg"
-                                            class="w-full h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện quận 10
-                                    </p>
-                                    <p class="text-white">
-                                        Số 408 Cao Thắng, Phường 12, Quận 10
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- <div class="">
-                <div  class="">
-                  <div class=" w-full h-full">
-                    <img
-                      src="../../../assets/images/Desktop/CSVC/Bình-thạnh.jpg"
-                      class="w-full h-full"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="text-center">
-                  <p class="uppercase text-base text-center text-white !my-2">
-                    học viện bình thạnh
-                  </p>
-                  <p class="text-white">
-                    Số 103 Nguyễn Văn Đậu, Phường 5, Quận Bình Thạnh
-                  </p>
-                </div>
-              </div> -->
-
-                            <div class="w-[350px]">
-                                <div class="w-full h-52 pb-2">
-                                    <div class="w-full h-full">
-                                        <img
-                                            src="../../../assets/images/Desktop/CSVC/Gò-vấp.jpg"
-                                            class="w-full h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện Gò Vấp
-                                    </p>
-                                    <p class="text-white">
-                                        Số 1012 - 1014 Quang Trung, Phường 8,
-                                        Quận Gò Vấp
-                                    </p>
-                                </div>
+                            <div class="text-center">
+                                <p
+                                    class="uppercase text-base text-center text-white !my-2"
+                                >
+                                    học viện thủ đức
+                                </p>
+                                <p class="text-white">
+                                    Số 1090A Phạm Văn Đồng, P.Linh Đông,<br
+                                        class="hidden lg:block"
+                                    />
+                                    Tp.Thủ Đức
+                                </p>
                             </div>
                         </div>
                     </ng-template>
                     <ng-template swiperSlide>
-                        <div class="flex justify-between pb-5">
-                            <div class="">
-                                <div class="pb-2">
-                                    <div class="w-full h-52">
-                                        <img
-                                            src="../../../assets/images/Desktop/CSVC/nhaTrang.jpg"
-                                            class="w-full h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện nha trang
-                                    </p>
-                                    <p class="text-white">
-                                        Đường số 4 - KĐT Lê Hồng Phong 2,
-                                        P.Phước Hải
-                                    </p>
+                        <div class="">
+                            <div class="pb-2">
+                                <div class="w-full">
+                                    <img
+                                        src="../../../assets/images/Desktop/CSVC/quan-10.jpg"
+                                        class="w-full h-full"
+                                        alt=""
+                                    />
                                 </div>
                             </div>
+                            <div class="text-center">
+                                <p
+                                    class="uppercase text-base text-center text-white !my-2"
+                                >
+                                    học viện quận 10
+                                </p>
+                                <p class="text-white">
+                                    Số 408 Cao Thắng, Phường 12, Quận 10
+                                </p>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template swiperSlide>
+                        <div class="">
+                            <div class="w-full pb-2">
+                                <div class="w-full h-full">
+                                    <img
+                                        src="../../../assets/images/Desktop/CSVC/Gò-vấp.jpg"
+                                        class="w-full h-full"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <p
+                                    class="uppercase text-base text-center text-white !my-2"
+                                >
+                                    học viện Gò Vấp
+                                </p>
+                                <p class="text-white">
+                                    Số 1012 - 1014 Quang Trung, Phường 8,<br
+                                        class="hidden lg:block"
+                                    />
+                                    Quận Gò Vấp
+                                </p>
+                            </div>
+                        </div>
+                    </ng-template>
 
-                            <div class="">
-                                <div class="pb-2">
-                                    <div class="w-full h-52">
-                                        <img
-                                            src="../../../assets/images/Desktop/CSVC/ĐN.jpg"
-                                            class="w-full h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện đà nẵng
-                                    </p>
-                                    <p class="text-white">
-                                        Số 69 Hàm Nghi, P.Thạc Gián, Quận Thanh
-                                        Khê
-                                    </p>
+                    <ng-template swiperSlide>
+                        <div class="">
+                            <div class="pb-2">
+                                <div class="w-full">
+                                    <img
+                                        src="../../../assets/images/Desktop/CSVC/nhaTrang.jpg"
+                                        class="w-full h-full"
+                                        alt=""
+                                    />
                                 </div>
                             </div>
-                            <div class="opacity-0">
-                                <div class="">
-                                    <div class="w-full h-52">
-                                        <img
-                                            src="../../../assets/images/address.png"
-                                            class="w-full h-full"
-                                            alt=""
-                                        />
-                                    </div>
+                            <div class="text-center">
+                                <p
+                                    class="uppercase text-base text-center text-white !my-2"
+                                >
+                                    học viện nha trang
+                                </p>
+                                <p class="text-white">
+                                    Đường số 4 - KĐT Lê Hồng Phong 2,<br
+                                        class="hidden lg:block"
+                                    />
+                                    P.Phước Hải
+                                </p>
+                            </div>
+                        </div>
+                    </ng-template>
+
+                    <ng-template swiperSlide>
+                        <div class="">
+                            <div class="pb-2">
+                                <div class="w-full">
+                                    <img
+                                        src="../../../assets/images/Desktop/CSVC/ĐN.jpg"
+                                        class="w-full h-full"
+                                        alt=""
+                                    />
                                 </div>
-                                <div class="text-center">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện đà nẵng
-                                    </p>
-                                    <p class="text-white">
-                                        Số 69 Hàm Nghi, P.Thạc Gián, Quận Thanh
-                                        Khê
-                                    </p>
-                                </div>
+                            </div>
+                            <div class="text-center">
+                                <p
+                                    class="uppercase text-base text-center text-white !my-2"
+                                >
+                                    học viện đà nẵng
+                                </p>
+                                <p class="text-white">
+                                    Số 69 Hàm Nghi, P.Thạc Gián,<br
+                                        class="hidden lg:block"
+                                    />
+                                    Quận Thanh Khê
+                                </p>
                             </div>
                         </div>
                     </ng-template>
                 </swiper>
 
-                <swiper
-                    [pagination]="{
-                        dynamicBullets: true,
-                        clickable: true
-                    }"
-                    class="mySwiper lg:hidden pb-5"
-                >
-                    <ng-template swiperSlide>
-                        <div class="flex justify-between pb-5">
-                            <div class="mr-3 flex-1">
-                                <div class="img-adress">
-                                    <div class="w-full h-full">
-                                        <img
-                                            src="../../../assets/images/Mobile/csvc_1.png"
-                                            class="h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center pt-2">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện thủ đức
-                                    </p>
-                                    <p class="text-white text-center">
-                                        800 Phạm Văn Đồng, Phường Hiệp Bình
-                                        Chánh, Tp. Thủ Đức
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="mr-3 flex-1">
-                                <div class="img-adress">
-                                    <div class="w-full h-full">
-                                        <img
-                                            src="../../../assets/images/Mobile/csvc_2.png"
-                                            class="h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center pt-2">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện gò vấp
-                                    </p>
-                                    <p class="text-white text-center">
-                                        Số 1012 - 1014 Quang Trung, Phường 8,
-                                        Quận Gò Vấp
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- <div class="ml-3 flex-1">
-                <div class=" img-adress">
-                  <div class=" w-full h-full">
-                    <img
-                    src="../../../assets/images/Mobile/csvc_2.png"
-                      
-                      class="h-full"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="text-center">
-                  <p class="uppercase text-base text-center text-white !my-2">
-                    học viện bình thạnh
-                  </p>
-                  <p class="text-white text-center">
-                    103 Phan Văn Đậu, P.7, Q.Bình Thạnh
-                  </p>
-                </div>
-              </div> -->
-                        </div>
-                    </ng-template>
-                    <ng-template swiperSlide>
-                        <div class="flex justify-between pb-5">
-                            <div class="mr-3 flex-1">
-                                <div class="img-adress">
-                                    <div class="w-full h-full">
-                                        <img
-                                            src="../../../assets/images/Mobile/csvc_1.png"
-                                            class="h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center pt-2">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện quận 10
-                                    </p>
-                                    <p class="text-white text-center">
-                                        Số 408 Cao Thắng, Phường 12, Quận 10
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="ml-3 flex-1">
-                                <div class="img-adress">
-                                    <div class="w-full h-full">
-                                        <img
-                                            src="../../../assets/images/Mobile/csvc_2.png"
-                                            class="h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center pt-2">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện đà nẵng
-                                    </p>
-                                    <p class="text-white text-center">
-                                        Số 69 Hàm Nghi, P.Thạc Gián, Quận Thanh
-                                        Khê
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                    <ng-template swiperSlide>
-                        <div class="flex justify-between pb-5">
-                            <div class="mr-3 flex-1">
-                                <div class="img-adress">
-                                    <div class="w-full h-full">
-                                        <img
-                                            src="../../../assets/images/Mobile/csvc_1.png"
-                                            class="h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center pt-2">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện nha trang
-                                    </p>
-                                    <p class="text-white text-center">
-                                        Đường số 4 - KĐT Lê Hồng Phong 2,
-                                        P.Phước Hải
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="ml-3 flex-1 opacity-0">
-                                <div class="img-adress">
-                                    <div class="w-full h-full">
-                                        <img
-                                            src="../../../assets/images/Mobile/csvc_1.png"
-                                            class="h-full"
-                                            alt=""
-                                        />
-                                    </div>
-                                </div>
-                                <div class="text-center pt-2">
-                                    <p
-                                        class="uppercase text-base text-center text-white !my-2"
-                                    >
-                                        học viện nha trang
-                                    </p>
-                                    <p class="text-white text-center">
-                                        Đường số 4 - KĐT Lê Hồng Phong 2,
-                                        P.Phước Hải
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-template>
-                </swiper>
-
+              
                 <div
                     class="absolute w-full bottom-2 bg-red-100 left-0 hidden lg:block"
                     style="height: 1px"
@@ -504,7 +312,7 @@
                 <div
                     class="flex-col-reverse lg:flex-col flex justify-between mb-2 lg:pb-5"
                 >
-                    <div class="lg:mx-5 items-center px-1 lg:px-0 pt-3">
+                    <div class="lg:mx-5 items-center px-3 lg:px-0 pt-3">
                         <div class="info-infras pb-3">
                             <p
                                 class="text-yellow-500 uppercase text-lg lg:text-5xl lg:text-center"
@@ -512,7 +320,7 @@
                                 môi trường học tập lý tưởng
                             </p>
                             <p
-                                class="text-white lg:text-justify lg:mx-5 leading-5 pt-2"
+                                class="text-white text-justify lg:mx-5 leading-5 pt-2"
                             >
                                 Đồng bộ về quy mô, mỗi cơ sở Timona Academy đều
                                 trang bị phòng học lý thuyết và thực hành cao
@@ -529,8 +337,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/mtht/1.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MTHT/CHI-NHÁNH-1-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -538,8 +346,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/mtht/2.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MTHT/CHI-NHÁNH-2-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -547,8 +355,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/mtht/3.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MTHT/CHI-NHÁNH-3-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -556,17 +364,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/mtht/4.jpg"
-                                        class="lg:h-60 h-48 w-full"
-                                        alt=""
-                                    />
-                                </div>
-                            </ng-template>
-                            <ng-template swiperSlide>
-                                <div class="img-infras">
-                                    <img
-                                        src="../../../../assets/images/Desktop/Intropage/mtht/5.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MTHT/CHI-NHÁNH-5-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -575,8 +374,35 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/mtht/6.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MTHT/HỆ-THỐNG-PHÒNG-HỌC-3-(550x550).jpg"
+                                        class="w-full"
+                                        alt=""
+                                    />
+                                </div>
+                            </ng-template>
+                            <ng-template swiperSlide>
+                                <div class="img-infras">
+                                    <img
+                                        src="../../../../assets/images/homepages/MTHT/HỆ-THỐNG-PHÒNG-HỌC-4-(550x550).jpg"
+                                        class="w-full"
+                                        alt=""
+                                    />
+                                </div>
+                            </ng-template>
+                            <ng-template swiperSlide>
+                                <div class="img-infras">
+                                    <img
+                                        src="../../../../assets/images/homepages/MTHT/HỆ-THỐNG-PHÒNG-HỌC-7(550x550).jpg"
+                                        class="w-full"
+                                        alt=""
+                                    />
+                                </div>
+                            </ng-template>
+                            <ng-template swiperSlide>
+                                <div class="img-infras">
+                                    <img
+                                        src="../../../../assets/images/homepages/MTHT/HỆ-THỐNG-PHÒNG-HỌC-8(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -588,7 +414,7 @@
                 <div
                     class="flex-col-reverse lg:flex-col flex justify-between mb-2 lg:pb-5"
                 >
-                    <div class="lg:mx-5 items-center px-1 lg:px-0 pt-3">
+                    <div class="lg:mx-5 items-center px-3 lg:px-0 pt-3">
                         <div class="info-infras pb-3">
                             <p
                                 class="text-yellow-500 uppercase text-lg lg:text-5xl lg:text-center"
@@ -596,7 +422,7 @@
                                 HỆ THỐNG PHÒNG HỌC TIÊU CHUẨN QUỐC TẾ
                             </p>
                             <p
-                                class="text-white lg:text-justify lg:mx-5 leading-5 pt-2"
+                                class="text-white text-justify lg:mx-5 leading-5 pt-2"
                             >
                                 Với quy mô đầu tư lớn, mỗi cơ sở Timona Academy
                                 đều trang bị phòng học lý thuyết và thực hành
@@ -611,8 +437,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/he-thong-phong-hoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/Phòng học/HỆ-THỐNG-PHÒNG-HỌC-1-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -620,8 +446,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/he-thong-phong-hoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/Phòng học/HỆ-THỐNG-PHÒNG-HỌC-2-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -629,8 +455,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/he-thong-phong-hoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/Phòng học/HỆ-THỐNG-PHÒNG-HỌC-5-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -638,8 +464,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/he-thong-phong-hoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/Phòng học/HỆ-THỐNG-PHÒNG-HỌC-6-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -647,18 +473,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/he-thong-phong-hoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
-                                        alt=""
-                                    />
-                                </div>
-                            </ng-template>
-
-                            <ng-template swiperSlide>
-                                <div class="img-infras">
-                                    <img
-                                        src="../../../assets/images/Desktop/CSVC/he-thong-phong-hoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/Phòng học/CHI-NHÁNH-4-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -670,14 +486,14 @@
                     class="flex-col-reverse lg:flex-col flex justify-between mb-2 lg:pb-5"
                 >
                     <div class="lg:mx-5 items-center">
-                        <div class="info-infras pb-3 px-1 pt-3">
+                        <div class="info-infras pb-3 px-3 lg:px-0 pt-3">
                             <p
                                 class="text-yellow-500 uppercase text-lg lg:text-5xl lg:text-center"
                             >
                                 MÁY MÓC, TRANG THIẾT BỊ TIÊN TIẾN - HIỆN ĐẠI
                             </p>
                             <p
-                                class="text-white lg:text-justify lg:mx-5 leading-5 pt-2"
+                                class="text-white text-justify lg:mx-5 leading-5 pt-2"
                             >
                                 Tất cả phòng thực hành đều được trang bị đầy đủ
                                 từ những dụng cụ đơn giản đến các trang thiết bị
@@ -705,8 +521,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/maymoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MÁY MÓC/máy-móc-1.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -714,8 +530,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/maymoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MÁY MÓC/máy-móc-2.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -723,8 +539,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/maymoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MÁY MÓC/máy-móc-3.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -732,8 +548,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/maymoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MÁY MÓC/máy-móc-4.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -741,8 +557,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/maymoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MÁY MÓC/TRANG-THIẾT-BỊ-1-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -751,8 +567,26 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../assets/images/Desktop/CSVC/maymoc.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/MÁY MÓC/TRANG-THIẾT-BỊ-2-(550x550).jpg"
+                                        class="w-full"
+                                        alt=""
+                                    />
+                                </div>
+                            </ng-template>
+                            <ng-template swiperSlide>
+                                <div class="img-infras">
+                                    <img
+                                        src="../../../../assets/images/homepages/MÁY MÓC/TRANG-THIẾT-BỊ-3-(550x550).jpg"
+                                        class="w-full"
+                                        alt=""
+                                    />
+                                </div>
+                            </ng-template>
+                            <ng-template swiperSlide>
+                                <div class="img-infras">
+                                    <img
+                                        src="../../../../assets/images/homepages/MÁY MÓC/TRANG-THIẾT-BỊ-4-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -763,7 +597,7 @@
                 <div
                     class="flex-col-reverse lg:flex-col flex justify-between mb-2 lg:pb-5"
                 >
-                    <div class="lg:mx-5 items-center px-1 lg:px-0 pt-3">
+                    <div class="lg:mx-5 items-center px-3 lg:px-0 pt-3">
                         <div class="info-infras pb-3">
                             <p
                                 class="text-yellow-500 uppercase text-lg lg:text-5xl lg:text-center"
@@ -771,7 +605,7 @@
                                 MÔ HÌNH KÝ TÚC XÁ ĐẠT CHUẨN 5 SAO
                             </p>
                             <p
-                                class="text-white lg:text-justify lg:mx-5 leading-5 pt-2"
+                                class="text-white text-justify lg:mx-5 leading-5 pt-2"
                             >
                                 Tại Timona, học viên còn được hỗ trợ miễn phí ở
                                 ký túc xá đạt chuẩn 5 sao. Nơi đây có đầy đủ
@@ -795,8 +629,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/1.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/CƠ-SỞ-VẬT-CHẤT-1-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -804,8 +638,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/2.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/CƠ-SỞ-VẬT-CHẤT-2-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -813,8 +647,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/3.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/CƠ-SỞ-VẬT-CHẤT-3-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -822,8 +656,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/4.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/CƠ-SỞ-VẬT-CHẤT-4-(550x550).jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -831,8 +665,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/5.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/KÝ-TÚC-XÁ-1.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -841,8 +675,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/6.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/KÝ-TÚC-XÁ-2.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -850,8 +684,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/7.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/KÝ-TÚC-XÁC-3.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>
@@ -859,17 +693,8 @@
                             <ng-template swiperSlide>
                                 <div class="img-infras">
                                     <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/8.jpg"
-                                        class="lg:h-60 h-48 w-full"
-                                        alt=""
-                                    />
-                                </div>
-                            </ng-template>
-                            <ng-template swiperSlide>
-                                <div class="img-infras">
-                                    <img
-                                        src="../../../../assets/images/Desktop/Intropage/ktx/9.jpg"
-                                        class="lg:h-60 h-48 w-full"
+                                        src="../../../../assets/images/homepages/KTX/KÝ-TÚC-XÁ-4.jpg"
+                                        class="w-full"
                                         alt=""
                                     />
                                 </div>

@@ -19,7 +19,7 @@
             <ul class="dropdown-menu absolute  left-0 w-full" aria-labelledby="dropdownMenuButton1">
                 <li *ngFor="let item of xemNhanhNoiDung; let i = index" (click)="chonXemNoiDung(item, i)">
                     <a
-                        class="dropdown-item"
+                        class="dropdown-item three-dot"
                         >{{item.innerText}}</a
                     >
                 </li>
@@ -100,7 +100,7 @@
             </swiper>
         </div>
 
-        <div class="md:pt-10 pt-5 md:px-0 px-3" *ngIf="isCarousel2">
+        <div class="md:pt-10 pt-5 md:px-0 px-3 theme-cohoi" *ngIf="isCarousel2">
             <h3
                 class="text-indigo-900 uppercase text-xl text-center md:text-left mb-0 font-black"
             >

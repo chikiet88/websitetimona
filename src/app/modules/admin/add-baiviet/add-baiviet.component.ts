@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { AddBaivietService } from './add-baiviet.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
 import { Khoahoc } from '../theme/theme.types';
-import { map, Observable } from 'rxjs';
+import { map, Observable, take } from 'rxjs';
 import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
 import { MyUploadAdapter } from '../MyUploadAdapter';
@@ -40,6 +40,7 @@ export class AddBaivietComponent implements OnInit {
     thumb;
     isbaiviet; // title loại bài viết (có hoặc không)
     courses: any;
+    tenDMcha;
     // formBaiviet;
     slide1 = {};
     slide2 = {};
@@ -65,23 +66,7 @@ export class AddBaivietComponent implements OnInit {
                 },
             ],
         },
-        resizeOptions: [
-            {
-                name: 'resizeImage:original',
-                value: null,
-                icon: 'original',
-            },
-            {
-                name: 'resizeImage:50',
-                value: '50',
-                icon: 'medium',
-            },
-            {
-                name: 'resizeImage:75',
-                value: '75',
-                icon: 'large',
-            },
-        ],
+       
     };
 
     public componentEvents: string[] = [];
@@ -105,7 +90,7 @@ export class AddBaivietComponent implements OnInit {
                         }
                     );
             }
-            this.uploadService._thumb$.subscribe((res) => {
+            this.uploadService._thumb$.pipe(take(2)).subscribe((res) => {
                 if (res != undefined && res != null) {
                     this.thumb = res.url;
                     this.baivietForm.get('thumbimage').setValue(res?.url);
@@ -117,52 +102,93 @@ export class AddBaivietComponent implements OnInit {
     upload2(): void {
         if (this.selectedFiles) {
             console.log(this.selectedFiles);
-            for (let i = 0; i < this.selectedFiles.length; i++) {
-                const file: File | null = this.selectedFiles[i];
-                console.log(file);
-                
-                if (file) {
-                    this.currentFileUpload = new FileUpload(file);
-                    this.uploadService
-                        .pushFileToStorage(this.currentFileUpload)
-                        .subscribe(
-                            (percentage) => {
-                                this.percentage = Math.round(
-                                    percentage ? percentage : 0
-                                );
-
-                                if(percentage == 100){
-                                  this.uploadService._thumb$.subscribe(res =>{
-                                    this.listkey[i] = res?.key
-                                    console.log(this.listkey[i]);
-
-                                  })
-                                }
-                            },
-                            (error) => {
-                                console.log(error);
+            for (
+                let i = 0, p = Promise.resolve();
+                i < this.selectedFiles.length;
+                i++
+            ) {
+                p = p
+                    .then(() => this.callback(this.selectedFiles.item(i), i))
+                    .then((x: string) => {
+                        this.listkey[i] = x;
+                        if (
+                            Object.keys(this.listkey).length ==
+                            this.selectedFiles.length
+                        ) {
+                            for (const property in this.listkey) {
+                                this.uploadService
+                                    .getValueByKey(this.listkey[property])
+                                    .pipe(take(1))
+                                    .subscribe((res) => {
+                                        this.listimage.push([
+                                            ...res,
+                                            this.listkey[property],
+                                        ]);
+                                        console.log(this.listimage);
+                                    });
                             }
-                        );
-                }
+                        }
+                    });
             }
-
-            this.uploadService
-                .getValueByKey('-N4aoqIXggtD4RPAqoiK')
-                .subscribe((res) => console.log(res));
-            // setTimeout(() => {
-            //     console.log(this.listkey);
-
-            //     if (Object.keys(this.listkey).length > 0) {
-            //         for (let [key, value] of Object.entries(this.listkey)) {
-            //             console.log(value);
-            //         }
-            //     }
-            // }, 2000);
         }
 
-        return (this.selectFile = undefined);
+        return;
     }
 
+    callback(item, i) {
+        return new Promise((resolve, reject) => {
+            const file: File | null = item;
+
+            this.currentFileUpload = new FileUpload(file);
+            this.uploadService
+                .pushFileToStorage(this.currentFileUpload)
+                .subscribe(
+                    (percentage) => {
+                        this.percentage = Math.round(
+                            percentage ? percentage : 0
+                        );
+
+                        if (percentage == 100) {
+                            setTimeout(() => {
+                                this.uploadService
+                                    .getFiles(1) //lấy file  chứa key từ firebase về
+                                    .snapshotChanges()
+                                    .pipe(
+                                        take(1),
+                                        map((changes) =>
+                                            // store the key
+                                            changes.map((c) => ({
+                                                key: c.payload.key,
+                                                ...c.payload.val(),
+                                            }))
+                                        )
+                                    )
+                                    .subscribe((fileUploads) => {
+                                        if (fileUploads[0]?.key) {
+                                            fileUploads = fileUploads.reverse();
+                                            resolve(fileUploads[0].key);
+                                        }
+                                    });
+                            }, 500);
+                        }
+                    },
+                    (error) => {
+                        console.log(error);
+                    }
+                );
+            // if (this.percentage == 100) {
+            //     resolve(this.percentage);
+            // } else {
+            //     reject('sss');
+            // }
+        });
+    }
+    deleteImageFirebase(item, i) {
+        this.listimage = this.listimage.filter((x) => x[2] != item[2]);
+        console.log(this.listimage);
+
+        this.uploadService.deleteFile(item);
+    }
     constructor(
         private baivietService: AddBaivietService,
         private fb: FormBuilder,
@@ -190,8 +216,10 @@ export class AddBaivietComponent implements OnInit {
             });
     }
     onSubmit() {
+        this.baivietForm.get('image').setValue(this.listkey);
         this.baivietForm.get('listslide1').setValue(this.listslide1);
         this.baivietForm.get('listslide2').setValue(this.listslide2);
+        this.baivietForm.removeControl('tenDMcha');
 
         this.baivietForm.removeControl('isLoaiBaiviet');
         this.baivietService
@@ -199,6 +227,8 @@ export class AddBaivietComponent implements OnInit {
             .subscribe((res) => {
                 if (res) {
                     alert('Tạo nội dung thành công');
+                    this.listimage = [];
+                    this.resetForm();
                 }
             });
     }
@@ -308,6 +338,24 @@ export class AddBaivietComponent implements OnInit {
         }
         this.idSelect = item.id;
         this.thumb = item.thumbimage;
+        this.danhmucs.find((res) => {
+            if (res.id == item.idDM) {
+                this.tenDMcha = res.Tieude;
+                console.log(this.tenDMcha);
+            }
+        });
+        if (Object.keys(item.image).length > 0) {
+            console.log(item.image);
+
+            for (const property in item.image) {
+                this.uploadService
+                    .getValueByKey(item.image[property])
+                    .subscribe((res) => {
+                        this.listimage.push([...res, item.image[property]]);
+                        console.log(this.listimage);
+                    });
+            }
+        }
     }
     deleteBaiviet() {
         this.baivietForm.removeControl('isLoaiBaiviet');
@@ -317,25 +365,28 @@ export class AddBaivietComponent implements OnInit {
             .subscribe((res) => alert('Xóa bài thành công'));
         this.resetForm();
         this.isSelectTheme1 = false;
+        this.idSelect = undefined;
+        this.listimage = [];
     }
     updateBaiviet() {
+        if (this.listimage.length > 0) {
+            this.baivietForm.get('image').setValue(this.listkey);
+        }
         this.baivietForm.removeControl('isLoaiBaiviet');
-        console.log(this.baivietForm.value);
-
         this.baivietService
             .updateBaiviet(this.baivietForm.value)
-            .subscribe((res) => alert('Cập nhật thành công'));
-        this.resetForm();
+            .subscribe((res) => {
+                this.listimage = [];
+                alert('Cập nhật thành công');
+            });
         this.isSelectTheme1 = false;
+        this.idSelect = undefined;
     }
 
     selectFile(event: any): void {
         this.selectedFiles = event.target.files;
     }
-    deleteFileUpload(fileUpload: FileUpload): void {
-        this.uploadService.deleteFile(fileUpload);
-        this.resetForm();
-    }
+
     onchangeLoaibaiviet(e) {
         this.baivietForm.get('Loaibaiviet').setValue(e);
     }
@@ -382,8 +433,13 @@ export class AddBaivietComponent implements OnInit {
             );
     }
     selectionDanhmuc(e) {
-        this.baivietForm.get('idDM').setValue(e);
-        // this.formBaiviet.idDM = e;
+        this.danhmucs.find((x) => {
+            if (x.Tieude == e) {
+                console.log(x.id);
+
+                this.baivietForm.get('idDM').setValue(x.id);
+            }
+        });
     }
     onchangeCarousel(index, item) {
         if (index == 1) {

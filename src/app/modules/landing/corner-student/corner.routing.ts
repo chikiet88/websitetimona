@@ -29,8 +29,11 @@ export const CornerStudentRoutes: Route[] = [
             { path: 'cam-nghi', component: StudentFeelPageComponent },
             { path: 'le-tot-nghiep', component: LetotnghiepComponent },
             {
-                path: 'le-tot-nghiep/:id',
+                path: 'le-tot-nghiep/:slug',
                 component: LetotnghiepDetailComponent,
+                resolve: {
+                    detail: KhoahocDetailResolver,
+                },
             },
             {
                 path: ':slug',

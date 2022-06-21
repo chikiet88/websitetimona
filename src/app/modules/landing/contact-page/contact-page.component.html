@@ -45,14 +45,14 @@
                 class="bg-indigo-900 rounded-2xl flex justify-between px-3 py-5 md:p-0"
             >
                 <div class="lg:pr-10" style="flex: 2; margin-bottom: 50px">
-                    <p
+                    <h3
                         class="md:text-5xl text-yellow-500 uppercase font-black text-2xl leading-5 md:leading-10"
                     >
                         vui lòng để lại thông tin <br class="lg:block hidden" />
                         để được tư vấn
-                    </p>
+                </h3>
 
-                    <form class="form-submit flex flex-col relative lg:pb-10">
+                    <form class="form-submit flex flex-col relative lg:py-10">
                         <div class="flex md:flex-row flex-col pb-5">
                             <input
                                 type="text"
@@ -71,7 +71,7 @@
                             <div class="flex flex-col lg:flex-wrap lg:flex-row">
                                 <div
                                     class="form-check flex items-center lg:mr-5 mr-3 mb-3 lg:w-64 w-full"
-                                    *ngFor="let item of items"
+                                    *ngFor="let item of courses"
                                 >
                                     <input
                                         class="form-check-input"
@@ -80,7 +80,7 @@
                                         id="flexCheckDefault"
                                     />
                                     <label
-                                        class="lg:ml-5 ml-2 text-white"
+                                        class="lg:ml-5 ml-2 text-white uppercase"
                                         for="flexCheckDefault"
                                     >
                                         {{ item.title }}

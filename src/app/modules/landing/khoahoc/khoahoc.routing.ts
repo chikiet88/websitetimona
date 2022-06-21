@@ -27,18 +27,18 @@ export const khoahocRoutes: Route[] = [
       //   component:Theme1Component,
        
       // },
-      {
-        path: 'theme2',
-        pathMatch: 'full',
-        component:Theme2Component,
+      // {
+      //   path: 'theme2',
+      //   pathMatch: 'full',
+      //   component:Theme2Component,
        
-      },
-      {
-        path: 'theme3',
-        pathMatch: 'full',
-        component:Theme3Component,
+      // },
+      // {
+      //   path: 'theme3',
+      //   pathMatch: 'full',
+      //   component:Theme3Component,
        
-      },
+      // },
       
 
 

@@ -6,4 +6,5 @@ export interface Khoahoc{
     Type:string;
     parentid: number;
     Loaibaiviet:number;
+    idDM:any;
 }

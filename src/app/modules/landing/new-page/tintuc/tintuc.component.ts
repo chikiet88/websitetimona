@@ -30,7 +30,7 @@ export class TintucComponent implements OnInit {
         console.log(arr);
 
         if (arr?.length) {
-            arr.filter((x) => {
+            arr?.filter((x) => {
                 if (x?.Loaibaiviet == 1) {
                     this.baiviet1 = x;
                 } else {
@@ -38,10 +38,14 @@ export class TintucComponent implements OnInit {
                 }
             });
             arr = arr?.filter((x) => x?.id != this.baiviet1.id);
+            console.log(arr);
+            
             this.baiviet2 = arr.slice(0, 2);
             console.log(this.baiviet2);
 
-            this.baiviet3 = arr.slice(1, 5);
+            this.baiviet3 = arr.slice(2, 6);
+            console.log(this.baiviet3);
+
         }
     }
     paginateNumber(i) {
@@ -76,11 +80,13 @@ export class TintucComponent implements OnInit {
                 this.arr = [];
 
                 res = res?.filter((x) => x.idDM == this.idDanhmuc);
-                let x = res?.length / 6;
+                let x = res?.length / 7;
                 if (res?.length > 0) {
-                    for (let i = 0; i <= x; i++) {
-                        this.arr.push(res.slice(6 * i, 6 * i + 6));
+                    for (let i = 0; i < x; i++) {
+                        this.arr.push(res.slice(7 * i, 7 * i + 7));
                     }
+                    console.log(this.arr);
+                    
                     this.courses = this.arr[0];
                     if (this.baivietnoibat[0] != undefined) {
                         this.courses = this.courses.concat(

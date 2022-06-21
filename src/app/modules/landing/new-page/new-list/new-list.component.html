@@ -2,8 +2,8 @@
 <section class="lg:max-w-6xl mx-auto lg:px-2  lg:px-6 lg:px-8 lg:pb-5 overflow-hidden ">
     <div class="pt-10">
         <div class="pb-10 ">
-            <ul class="flex justify-between md:justify-start md:px-0 px-3" *ngIf="danhmucs?.length > 0">
-                <li class=" md:mr-5" *ngFor="let item of danhmucs[0].children"><a class="py-1 md:px-5  font-bold md:text-xl text-sm rounded-xl  new-text" routerLink="{{item.Slug}}" routerLinkActive="new-active">{{item.Tieude}}</a></li>
+            <ul class="flex justify-between md:justify-start md:px-0 px-3" >
+                <li class=" md:mr-5" *ngFor="let item of danhmucs"><a class="py-1 md:px-5  font-bold md:text-xl text-sm rounded-xl  new-text" routerLink="{{item.Slug}}" routerLinkActive="new-active">{{item.Tieude}}</a></li>
             </ul>
         </div>
         <router-outlet></router-outlet>

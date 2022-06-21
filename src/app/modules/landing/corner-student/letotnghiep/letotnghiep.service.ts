@@ -14,8 +14,8 @@ import {
     providedIn: 'root',
 })
 export class LetotnghiepService {
-    // private urlApi = 'https://v2api.timona.edu.vn/baiviet';
-    private urlApi = 'http://localhost:3000/letotnghiep';
+    private urlApi = 'https://v2api.timona.edu.vn/baiviet';
+    // private urlApi = 'http://localhost:3000/letotnghiep';
 
     private _imageLetotnghiep: BehaviorSubject<any | null> =
         new BehaviorSubject(null);
@@ -40,11 +40,11 @@ export class LetotnghiepService {
             })
         );
     }
-    getDataDetail(id: number): Observable<any> {
+    getDataDetail(slug): Observable<any> {
         return (
             this.http
-                .get<any>(this.urlApi + `/${id}`)
-                // .get<Khoahoc>(this.urlApi+`/${slug}`)
+                // .get<any>(this.urlApi + `/${id}`)
+                .get<any>(this.urlApi+`/slug/${slug}`)
 
                 .pipe(
                     map((data) => {
@@ -57,7 +57,7 @@ export class LetotnghiepService {
                     switchMap((data) => {
                         if (!data) {
                             return throwError(
-                                'Could not found course with id of ' + id + '!'
+                                'Could not found course with id of ' + slug + '!'
                             );
                         }
 

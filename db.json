@@ -1,40 +1,48 @@
 {
-  "image": [],
-  "danhmuc": [],
-  "theme": [],
-  "baiviet": [],
-  "letotnghiep": [
-    {
-      "Tieude": "NGÀY 2/9",
-      "Image": [
+    "image": [],
+    "danhmuc": [],
+    "theme": [],
+    "baiviet": [],
+    "letotnghiep": [
         {
-          "key": "-N4VJaok22mT6Cv0xVw1",
-          "name": "đc-miễn-phí-dụng-cụ.png",
-          "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2F%C4%91c-mi%E1%BB%85n-ph%C3%AD-d%E1%BB%A5ng-c%E1%BB%A5.png?alt=media&token=bff96651-24a3-4c32-9b84-dcb4e59db667"
-        },
-        {
-          "key": "-N4VJaoo9saPX37eH33Y",
-          "name": "Cam-kết-k-phát-sinh.png",
-          "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2FCam-k%E1%BA%BFt-k-ph%C3%A1t-sinh.png?alt=media&token=a49a8a05-135f-4f9c-a020-b12fc0d990cc"
-        },
-        {
-          "key": "-N4VJasvfqzAHdiUKQ4s",
-          "name": "Chỗ-ở-&-KTX.png",
-          "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2FCh%E1%BB%97-%E1%BB%9F-%26-KTX.png?alt=media&token=bc7c1815-30c0-4191-97da-43a8172527ba"
-        },
-        {
-          "key": "-N4VJb8UrfKPPWYEs-iz",
-          "name": "cơ-hội-làm-việc.png",
-          "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2Fc%C6%A1-h%E1%BB%99i-l%C3%A0m-vi%E1%BB%87c.png?alt=media&token=7e10f59c-bfea-41e1-88ad-011c0ad07f3b"
-        },
-        {
-          "key": "-N4VJe2n725WjBUukZXP",
-          "name": "học-phun-xăm-cần-những2-j.png",
-          "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2Fh%E1%BB%8Dc-phun-x%C4%83m-c%E1%BA%A7n-nh%E1%BB%AFng2-j.png?alt=media&token=24aa7712-7ce8-43cf-a9ed-2b7bac85d7e9"
+            "Tieude": "NGÀY 2/9",
+            "Image": [
+                {
+                    "key": "-N4VJaok22mT6Cv0xVw1",
+                    "name": "đc-miễn-phí-dụng-cụ.png",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2F%C4%91c-mi%E1%BB%85n-ph%C3%AD-d%E1%BB%A5ng-c%E1%BB%A5.png?alt=media&token=bff96651-24a3-4c32-9b84-dcb4e59db667"
+                },
+                {
+                    "key": "-N4VJaoo9saPX37eH33Y",
+                    "name": "Cam-kết-k-phát-sinh.png",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2FCam-k%E1%BA%BFt-k-ph%C3%A1t-sinh.png?alt=media&token=a49a8a05-135f-4f9c-a020-b12fc0d990cc"
+                },
+                {
+                    "key": "-N4VJasvfqzAHdiUKQ4s",
+                    "name": "Chỗ-ở-&-KTX.png",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2FCh%E1%BB%97-%E1%BB%9F-%26-KTX.png?alt=media&token=bc7c1815-30c0-4191-97da-43a8172527ba"
+                },
+                {
+                    "key": "-N4VJb8UrfKPPWYEs-iz",
+                    "name": "cơ-hội-làm-việc.png",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2Fc%C6%A1-h%E1%BB%99i-l%C3%A0m-vi%E1%BB%87c.png?alt=media&token=7e10f59c-bfea-41e1-88ad-011c0ad07f3b"
+                },
+                {
+                    "key": "-N4VJe2n725WjBUukZXP",
+                    "name": "học-phun-xăm-cần-những2-j.png",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2Fh%E1%BB%8Dc-phun-x%C4%83m-c%E1%BA%A7n-nh%E1%BB%AFng2-j.png?alt=media&token=24aa7712-7ce8-43cf-a9ed-2b7bac85d7e9"
+                }
+            ],
+            "thumbimage": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2Fh%E1%BB%8Dc-phun-x%C4%83m-c%E1%BA%A7n-nh%E1%BB%AFng2-j.png?alt=media&token=24aa7712-7ce8-43cf-a9ed-2b7bac85d7e9",
+            "id": 1
         }
-      ],
-      "thumbimage": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test%2Fh%E1%BB%8Dc-phun-x%C4%83m-c%E1%BA%A7n-nh%E1%BB%AFng2-j.png?alt=media&token=24aa7712-7ce8-43cf-a9ed-2b7bac85d7e9",
-      "id": 1
-    }
-  ]
+    ],
+    "giangvien": [
+        {
+            "Mota": "<p class=\"lecturer-title\">Giảng viên</p><p class=\"lecturer-name\">Tiền Ngọc Hoàng Anh</p><p class=\"lecturer-specializ\">Trưởng bộ môn chăm sóc điều trị da</p><ul><li>10 năm kinh nghiệm trong ngành chăm sóc điều trị da</li><li>Chứng chỉ nghiệp vụ sư phạm</li><li>Cố vấn chuyên môn tại hệ thống viện thẩm mỹ Quốc tế</li></ul>",
+            "Image": "https://firebasestorage.googleapis.com/v0/b/timona-9c284.appspot.com/o/test2%2FTI%E1%BB%80N-NG%E1%BB%8CC-HO%C3%80NG-ANH.png?alt=media&token=8f6d97c3-0b36-48e8-8697-52a0e9f39e36",
+            "id": 1,
+            "LoaiBaiviet": 1
+        }
+    ]
 }
