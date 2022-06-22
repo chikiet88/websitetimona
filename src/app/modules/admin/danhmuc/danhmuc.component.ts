@@ -25,7 +25,6 @@ export class DanhmucComponent implements OnInit {
     selectTheme: any;
     idSelect;
     public Editor: customBuild;
-
     public config = {
         htmlSupport: {
             allow: [

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 import { ThemeService } from './theme.service';
@@ -11,6 +11,7 @@ import { FileUploadService } from '../services/file-upload.service';
     selector: 'app-theme',
     templateUrl: './theme.component.html',
     styleUrls: ['./theme.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class ThemeComponent implements OnInit {
     themes: any;

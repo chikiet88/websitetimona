@@ -61,23 +61,26 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
-
 }
 .ck.ck-content ul,
 .ck.ck-content ul li {
-  list-style-type: inherit;
+    list-style-type: inherit;
 }
 
-.ck.ck-content ul {
-  /* Default user agent stylesheet, you can change it to your needs. */
-  padding-left: 40px;
+ul {
+    padding-left: 40px;
+    list-style: disc !important;
+    list-style-type: disc !important ;
+    
 }
+ul li{
+    margin-top: 8px;
+}
+.image{
+}
+.image img{
+    object-fit: contain;
+    width: inherit;
+   margin: 0 auto;
 
-.ck.ck-content ol,
-.ck.ck-content ol li {
-  list-style-type: decimal;
-}
-.ck.ck-content ol {
-  /* Default user agent stylesheet, you can change it to your needs. */
-  padding-left: 40px;
 }

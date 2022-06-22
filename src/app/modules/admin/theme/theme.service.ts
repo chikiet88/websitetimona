@@ -9,8 +9,8 @@ import { Khoahoc } from './theme.types';
 })
 export class ThemeService {
 
-  // private urlApi = 'https://v2api.timona.edu.vn/theme'
-  private urlApi = 'http://localhost:3000/theme'
+  private urlApi = 'https://v2api.timona.edu.vn/theme'
+  // private urlApi = 'http://localhost:3000/theme'
 
   post: any;
   private _themes: BehaviorSubject<any | null> = new BehaviorSubject(null);

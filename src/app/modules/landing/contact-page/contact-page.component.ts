@@ -35,7 +35,7 @@ export class ContactPageComponent implements OnInit {
                 }
             }
 
-            this.courses = a.filter((x) => x.Loaibaiviet == this.baivietnoibat);
+            this.courses = a
             this.courses = this.courses.reverse();
         });
     }

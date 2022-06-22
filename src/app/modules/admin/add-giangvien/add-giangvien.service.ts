@@ -6,8 +6,8 @@ import { BehaviorSubject, map, Observable, switchMap, take } from 'rxjs';
   providedIn: 'root'
 })
 export class AddGiangvienService {
-  // private urlApi = 'https://v2api.timona.edu.vn/giangvien';
-  private urlApi = 'http://localhost:3000/giangvien'
+  private urlApi = 'https://v2api.timona.edu.vn/giangvien';
+//   private urlApi = 'http://localhost:3000/giangvien'
   post: any;
   private _giangviens: BehaviorSubject<any | null> = new BehaviorSubject(null);
   private _giangvien: BehaviorSubject<any | null> = new BehaviorSubject(null);

@@ -1,9 +1,57 @@
 <div class="container px-10">
     <form class="w-full pt-10" [formGroup]="GiangvienList">
         <div class="flex flex-wrap">
-           
+            <div
+                class="flex md:mx-3 md:flex-row flex-col mb-6 justify-between w-full"
+            >
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix md:w-80 w-76 md:mb-0 mb-6"
+                    appearance="fill"
+                    style="height: 50px"
+                >
+                    <span matPrefix>Tên giảng viên</span>
+                    <input
+                        matInput
+                        id="grid-first-name"
+                        type="text"
+                        [formControlName]="'TenGV'"
 
-        
+                        placeholder="Nguyễn Thị Kiều Oanh"
+                        name="title"
+                    />
+                </mat-form-field>
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix md:w-80 w-76"
+                    appearance="fill"
+                    style="height: 50px"
+                >
+                    <span matPrefix>Giảng viên nổi bật</span>
+                    <mat-select
+                        placeholder=""
+                        [formControlName]="'Loaibaiviet'"
+                    >
+                        <mat-option value=""></mat-option>
+                        <mat-option value="1">Nổi bật</mat-option>
+
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field
+                    class="fuse-mat-emphasized-affix md:w-80 w-76 md:mt-0 mt-6"
+                    appearance="fill"
+                    style="height: 50px"
+                >
+                    <span matPrefix>Chỉnh sửa giảng viên</span>
+                    <mat-select
+                        (selectionChange)="onSelectGiangvienEdit($event.value)"
+                    >
+                        <mat-option value=""></mat-option>
+                        <mat-option [value]="item" *ngFor="let item of giangviens">{{
+                            item.TenGV
+                        }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
             <div class="flex flex-wrap my-4 md:px-3 w-full">
                 <div class="w-full">
                     <label
@@ -75,7 +123,7 @@
                 type="update"
                 class="btn btn-primary mr-10"
                 (click)="updateGiangvien()"
-                *ngIf="idSelect"
+                *ngIf="idSelect != undefined"
             >
                 Cập nhật
             </button>
@@ -83,7 +131,7 @@
                 type="update"
                 class="btn btn-danger"
                 (click)="deleteGiangvien()"
-                *ngIf="idSelect"
+                *ngIf="idSelect != undefined"
             >
                 Xóa
             </button>

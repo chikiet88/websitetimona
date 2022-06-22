@@ -1,8 +1,64 @@
 <div class="lg:max-w-6xl lg:mx-auto sm:px-6 lg:px-8 lg:pt-10 lg:mb-10">
     <div class="lg:p-6 container bg-indigo-900 lg:rounded-3xl wrapper">
-        <div [innerHTML]="lecturer.des"></div>
-
+        <div class="md:py-0 py-5">
+            <p class="lg:text-4xl text-2xl uppercase text-center text-white pb-5">
+                Đội ngũ giảng viên
+            </p>
+            <p class="text-white text-center italic leading-5">
+                Trải qua hơn 7 năm hình thành và phát triển, Timona Academy từng
+                bước khẳng định vị thế thông qua uy tín về chất lượng đào tạo,
+                cam kết luôn theo sát nhu cầu thực tế của xã hội, đem đến đội
+                ngũ nhân lực cao đáp ứng nhu cầu của ngành làm đẹp, góp phần
+                phát triển đất nước.
+            </p>
+        </div>
+        <div class="flex items-center justify-center">
+            <div class="banner-img lg:pt-5 lg:pb-2">
+                <img
+                    src="../../../assets/images/homepages/lecturer/banner.png"
+                    alt=""
+                    class="w-full h-full hidden lg:block object-cover"
+                />
+                <img
+                    src="../../../assets/images/homepages/lecturer/01.png"
+                    alt=""
+                    class="w-full h-full lg:hidden"
+                />
+            </div>
+        </div>
         <div class="flex justify-between py-3 relative">
+            <div class="">
+                <p class="text-white text text-justify leading-5">
+                    Để bồi dưỡng nhân lực chất lượng, Timona quy tụ đội ngũ
+                    giảng viên là các bác sĩ, chuyên gia có trình độ cao, hơn 15
+                    năm kinh nghiệm, luôn tâm huyết với nghề. Ngoài kiến thức và
+                    kỹ năng trong nghề, mỗi giảng viên phải trải qua quá trình
+                    “thực chiến” tại các cơ sở thẩm mỹ để có thể hiểu biết
+                    chuyên sâu về ngành phụ trách đào tạo. Luôn học hỏi, nỗ lực
+                    và cập nhật những kiến thức làm đẹp để bắt kịp xu hướng thẩm
+                    mỹ hiện đại cam kết mang đến cho học viên những kiến thức,
+                    kinh nghiệm thực tế.
+                    <br />
+                    <br />
+
+                    Phần lớn đội ngũ giảng viên Timona giảng dạy theo đúng
+                    chuyên ngành đã được đào tạo và luôn sẵn sàng đồng hành cùng
+                    học viên trong quá trình học tập cũng như tiếp cận với môi
+                    trường làm việc thực tế và trong quá trình thực địa tại cơ
+                    sở.
+                    <br />
+                    <br />
+                    Với thế mạnh đội ngũ giảng viên có năng lực chuyên môn, khả
+                    năng sư phạm tốt và luôn cập nhật kiến thức mới, Timona luôn
+                    tạo mối quan hệ thầy - trò tương tác hai chiều. Các thầy cô
+                    luôn tận tâm, nhiệt tình giúp đỡ học viên để có thể trang bị
+                    thêm kiến thức lẫn kinh nghiệm. Chính vì thế, học viên
+                    Timona có nhiều thuận lợi trong quá trình tiếp cận những kỹ
+                    năng nghề nghiệp tốt nhất cũng như thu hút được sự chú ý của
+                    các nhà tuyển dụng.
+                </p>
+            </div>
+
             <div
                 class="absolute bg-white bottom-0 w-full"
                 style="height: 1px"
@@ -10,9 +66,71 @@
         </div>
 
         <div class="pt-5">
-        <div [innerHTML]="lecturer.content"></div>
+            <div
+                class="flex  h-80 w-full md:justify-center"
+            >
+            <div class="w-40 h-72 relative">
+                <div class="h-full absolute z-10" style="width: 150px">
+                    <img
+                        src="{{ lecturerNoibat.Image }}"
+                        class="w-full z-10 h-full"
+                    />
+                </div>
+                <div class="border-shadow"></div>
+                <div class="shadow-bottom"></div>
+            </div>
+            <div class="lecturer-info md:pl-8 pl-24   " [innerHTML]="lecturerNoibat?.Mota"></div>
+            </div>
 
-            
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-5">
+                <div class="flex h-80 w-full items-center lg:items-start" *ngFor="let item of lecturers">
+                    <div class="w-40 h-72 relative">
+                        <div class="h-full absolute z-10" style="width: 150px">
+                            <img
+                                src="{{ item.Image }}"
+                                class="w-full z-10 h-full"
+                            />
+                        </div>
+                        <div class="border-shadow"></div>
+                        <div class="shadow-bottom"></div>
+                    </div>
+                    <div class="w-full lecturer-info" [innerHTML]="item?.Mota"></div>
+
+                    <!-- <div
+                        class="py-5 lg:pl-5 lecturer-info lg:w-96 pt-5 lg:pl-5"
+                    >
+                        <span
+                            class="lecturer-title uppercase text-xl text-white leading-5"
+                            >Giảng viên</span
+                        >
+                        <p class="lecturer-name">Tiền Ngọc Hoàng Anh</p>
+                        <span class="lecturer-specializ"
+                            >Trưởng bộ môn chăm sóc điều trị da</span
+                        >
+                        <ul>
+                            <li>
+                                10 năm kinh nghiệm trong ngành chăm sóc điều trị
+                                da
+                            </li>
+                            <li>Chứng chỉ nghiệp vụ sư phạm</li>
+                            <li>
+                                Cố vấn chuyên môn tại hệ thống viện thẩm mỹ Quốc
+                                tế
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+                
+            </div>
+
+            <div class="pt-10">
+                <p class="text-white text-center italic leading-5">
+                    “Bằng chính sự nỗ lực và khả năng cam kết thực hiện, Timona
+                    Academy tự hào là đơn vị đào tạo nguồn nhân lực chất lượng
+                    cao, giải quyết tối ưu vấn đề việc làm cho thị trường lao
+                    động ngành chăm sóc sắc đẹp.”
+                </p>
+            </div>
         </div>
     </div>
 </div>

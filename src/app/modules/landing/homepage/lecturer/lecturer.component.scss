@@ -71,11 +71,13 @@
     font-size: 16px;
   }
   .lecturer-info ul {
+    margin-left: 10px;
     padding-top: 10px;
   }
   .lecturer-info ul li {
     list-style: none;
     color: #fff;
+    line-height: 20px;
     font-size: 14px;
     padding-top: 5px;
   }
@@ -99,8 +101,9 @@
 @media only screen and (max-width: 762px) {
    
     .lecturer-info {
+
       padding-left: 50px;
-      padding-top: inherit;
+      padding-top: 50px;
     }
     
     

@@ -16,7 +16,7 @@ export const landingHomeRoutes: Route[] = [
         children: [
             { path: '', component: HomepageComponent },
             { path: 'gioi-thieu/hoc-vien', component: IntroduceComponent },
-            { path: 'gioi-thieu/:slug', component: LecturerPageComponent },
+            { path: 'gioi-thieu/giang-vien', component: LecturerPageComponent },
             {
                 path: '',
                 children: [

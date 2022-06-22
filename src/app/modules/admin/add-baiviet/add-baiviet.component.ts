@@ -229,6 +229,7 @@ export class AddBaivietComponent implements OnInit {
                     alert('Tạo nội dung thành công');
                     this.listimage = [];
                     this.resetForm();
+                    this.ngOnInit()
                 }
             });
     }
@@ -378,6 +379,7 @@ export class AddBaivietComponent implements OnInit {
             .subscribe((res) => {
                 this.listimage = [];
                 alert('Cập nhật thành công');
+                this.resetForm()
             });
         this.isSelectTheme1 = false;
         this.idSelect = undefined;
