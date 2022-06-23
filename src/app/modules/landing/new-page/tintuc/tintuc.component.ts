@@ -7,7 +7,7 @@ import { KhoahocService } from '../../khoahoc/khoahoc.service';
     selector: 'app-tintuc',
     templateUrl: './tintuc.component.html',
     styleUrls: ['./tintuc.component.scss'],
-    encapsulation: ViewEncapsulation.Emulated
+    encapsulation: ViewEncapsulation.Emulated,
 })
 export class TintucComponent implements OnInit {
     courses;
@@ -40,13 +40,12 @@ export class TintucComponent implements OnInit {
             });
             arr = arr?.filter((x) => x?.id != this.baiviet1.id);
             console.log(arr);
-            
+
             this.baiviet2 = arr.slice(0, 2);
             console.log(this.baiviet2);
 
             this.baiviet3 = arr.slice(2, 6);
             console.log(this.baiviet3);
-
         }
     }
     paginateNumber(i) {
@@ -79,15 +78,16 @@ export class TintucComponent implements OnInit {
                     (x) => x.idDM == this.idDanhmuc && x.Loaibaiviet == 1
                 );
                 this.arr = [];
+                res = res?.filter(
+                    (x) => x.idDM == this.idDanhmuc && x.Loaibaiviet != 1
+                );
 
-                res = res?.filter((x) => x.idDM == this.idDanhmuc);
-                let x = res?.length / 7;
+                let x = res?.length / 6;
                 if (res?.length > 0) {
                     for (let i = 0; i < x; i++) {
-                        this.arr.push(res.slice(7 * i, 7 * i + 7));
+                        this.arr.push(res.slice(6 * i, 6 * i + 6));
                     }
-                    console.log(this.arr);
-                    
+
                     this.courses = this.arr[0];
                     if (this.baivietnoibat[0] != undefined) {
                         this.courses = this.courses.concat(

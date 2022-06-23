@@ -66,38 +66,15 @@ export class AddBaivietComponent implements OnInit {
                 },
             ],
         },
-       
     };
 
     public componentEvents: string[] = [];
     upload(): void {
-        if (this.selectedFiles) {
-            const file: File | null = this.selectedFiles.item(0);
-            this.selectedFiles = undefined;
-            if (file) {
-                this.currentFileUpload = new FileUpload(file);
-
-                this.uploadService
-                    .pushFileToStorage(this.currentFileUpload)
-                    .subscribe(
-                        (percentage) => {
-                            this.percentage = Math.round(
-                                percentage ? percentage : 0
-                            );
-                        },
-                        (error) => {
-                            console.log(error);
-                        }
-                    );
-            }
-            this.uploadService._thumb$.pipe(take(2)).subscribe((res) => {
-                if (res != undefined && res != null) {
-                    this.thumb = res.url;
-                    this.baivietForm.get('thumbimage').setValue(res?.url);
-                    // this.formBaiviet.thumbimage = res.url;
-                }
-            });
-        }
+        this.callback(this.selectedFiles.item(0), 1).then((x: any) => {
+            this.baivietForm.get('thumbimage').setValue(x.url);
+            this.thumb = x.url
+        });
+        return;
     }
     upload2(): void {
         if (this.selectedFiles) {
@@ -109,8 +86,8 @@ export class AddBaivietComponent implements OnInit {
             ) {
                 p = p
                     .then(() => this.callback(this.selectedFiles.item(i), i))
-                    .then((x: string) => {
-                        this.listkey[i] = x;
+                    .then((x: any) => {
+                        this.listkey[i] = x.key;
                         if (
                             Object.keys(this.listkey).length ==
                             this.selectedFiles.length
@@ -166,7 +143,7 @@ export class AddBaivietComponent implements OnInit {
                                     .subscribe((fileUploads) => {
                                         if (fileUploads[0]?.key) {
                                             fileUploads = fileUploads.reverse();
-                                            resolve(fileUploads[0].key);
+                                            resolve(fileUploads[0]);
                                         }
                                     });
                             }, 500);
@@ -229,7 +206,7 @@ export class AddBaivietComponent implements OnInit {
                     alert('Tạo nội dung thành công');
                     this.listimage = [];
                     this.resetForm();
-                    this.ngOnInit()
+                    this.ngOnInit();
                 }
             });
     }
@@ -379,7 +356,7 @@ export class AddBaivietComponent implements OnInit {
             .subscribe((res) => {
                 this.listimage = [];
                 alert('Cập nhật thành công');
-                this.resetForm()
+                this.resetForm();
             });
         this.isSelectTheme1 = false;
         this.idSelect = undefined;

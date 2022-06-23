@@ -27,8 +27,31 @@
 .ck.ck-content ol,
 .ck.ck-content ol li {
   list-style-type: decimal;
+  line-height: 1.25rem;
 }
 .ck.ck-content ol {
   /* Default user agent stylesheet, you can change it to your needs. */
   padding-left: 40px;
+}
+.ck.ck-content strong, a{
+  color: #00256e;
+}
+.ck.ck-content strong{
+  font-weight: bold;
+}
+.ck.ck-content i{
+  font-style: italic;
+}
+a{
+  color: #00256e;
+}
+h3{
+  color: #00256e;
+  font-weight: bold;
+  font-size: 1.25rem;
+
+}
+p{
+  color: #00256e;
+  line-height: 1.25rem;
 }

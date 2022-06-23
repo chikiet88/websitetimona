@@ -2,13 +2,35 @@ ul {
     padding-left: 40px;
     list-style: disc !important;
     list-style-type: disc !important ;
-    li{
+    li {
         margin-top: 8px;
+        line-height: 1.25rem;
+        text-align: justify;
     }
 }
-.image img{
+.image img {
     object-fit: contain;
     width: inherit;
-   margin: 0 auto;
+    margin: 0 auto;
+}
+strong,
+a {
+    color: #00256e;
+}
+strong {
+    font-weight: bold;
+}
+i {
+    font-style: italic;
+}
+h3 {
+    color: #00256e;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.35rem;
 
+}
+p {
+    line-height: 1.25rem;
+    text-align: justify;
 }

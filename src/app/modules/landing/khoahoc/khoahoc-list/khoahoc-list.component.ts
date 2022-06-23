@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { map, Observable, takeUntil } from 'rxjs';
 import { KhoahocService } from '../khoahoc.service';
 import { Khoahoc } from '../khoahoc.types';
@@ -7,6 +7,8 @@ import { Khoahoc } from '../khoahoc.types';
     selector: 'app-khoahoc-list',
     templateUrl: './khoahoc-list.component.html',
     styleUrls: ['./khoahoc-list.component.css'],
+    encapsulation: ViewEncapsulation.Emulated
+
 })
 export class KhoahocListComponent implements OnInit {
     courses$: Observable<Khoahoc[]>;

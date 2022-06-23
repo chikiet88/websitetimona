@@ -75,6 +75,7 @@ ul {
 }
 ul li{
     margin-top: 8px;
+    text-align: justify;
 }
 .image{
 }
@@ -82,5 +83,18 @@ ul li{
     object-fit: contain;
     width: inherit;
    margin: 0 auto;
+
+}
+a{
+    color: #00256e;
+
+}
+h3 {
+    color: #00256e;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+p{
+    line-height: 1.25rem;
 
 }
