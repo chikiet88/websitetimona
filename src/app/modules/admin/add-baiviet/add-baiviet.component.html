@@ -10,15 +10,45 @@
                 <span class="material-icons"> close </span>
             </button>
             <div class="p-5">
-                <p class="text-2xl text-center py-5">Danh sách các bài viết</p>
+                <!-- <p class="text-2xl text-center py-5">Danh sách các bài viết</p>
                 <div
-                    class="p-3 text-black"
-                    *ngFor="let item of courses"
-                    (click)="SelectBaiviet(item)"
-                    (click)="drawer.toggle()"
-                >
-                    {{ item.title }}
-                </div>
+                class="p-3 text-black"
+                *ngFor="let item of courses"
+                (click)="SelectBaiviet(item)"
+                (click)="drawer.toggle()"
+            >
+                {{ item.title }}
+            </div> -->
+                <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <mat-tree-node
+                        *matTreeNodeDef="let node"
+                        matTreeNodePadding
+                    >
+                        <button mat-icon-button disabled></button>
+                        <span (click)="SelectBaiviet(node.item)">{{
+                            node.name
+                        }}</span>
+                    </mat-tree-node>
+                    <mat-tree-node
+                        *matTreeNodeDef="let node; when: hasChild"
+                        matTreeNodePadding
+                    >
+                        <button
+                            mat-icon-button
+                            matTreeNodeToggle
+                            [attr.aria-label]="'Toggle ' + node.name"
+                        >
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{
+                                    treeControl.isExpanded(node)
+                                        ? "expand_more"
+                                        : "chevron_right"
+                                }}
+                            </mat-icon>
+                        </button>
+                        {{ node.name }}
+                    </mat-tree-node>
+                </mat-tree>
             </div>
         </mat-drawer>
 
@@ -532,18 +562,28 @@
                             <ul class="grid grid-cols-5 gap-5">
                                 <li
                                     class="list-group-item relative my-2"
-                                    *ngFor="let item of listimage; let i = index"
+                                    *ngFor="
+                                        let item of listimage;
+                                        let i = index
+                                    "
                                 >
-                                        <!-- item[1] url image ở firebase -->
+                                    <!-- item[1] url image ở firebase -->
 
                                     <img
                                         src="{{ item[1] }}"
                                         class="w-20 h-20"
                                         alt=""
                                     />
-                                    <div class="absolute right-3 top-3 cursor-pointer">
+                                    <div
+                                        class="absolute right-3 top-3 cursor-pointer"
+                                    >
                                         <!-- item[2] key image ở firebase -->
-                                        <span class="material-icons" (click)="deleteImageFirebase(item, i)">
+                                        <span
+                                            class="material-icons"
+                                            (click)="
+                                                deleteImageFirebase(item, i)
+                                            "
+                                        >
                                             close
                                         </span>
                                     </div>

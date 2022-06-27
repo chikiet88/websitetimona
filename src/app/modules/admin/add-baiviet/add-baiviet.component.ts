@@ -8,7 +8,17 @@ import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
 import { MyUploadAdapter } from '../MyUploadAdapter';
 import { DanhmucService } from '../danhmuc/danhmuc.service';
+import {
+    MatTreeFlatDataSource,
+    MatTreeFlattener,
+} from '@angular/material/tree';
+import { FlatTreeControl } from '@angular/cdk/tree';
 
+interface ExampleFlatNode {
+    expandable: boolean;
+    name: string;
+    level: number;
+}
 @Component({
     selector: 'app-add-baiviet',
     templateUrl: './add-baiviet.component.html',
@@ -24,6 +34,7 @@ export class AddBaivietComponent implements OnInit {
     themes: any[];
     theme: any;
     danhmucs: any[];
+    danhmucBaiviet: any[] = [];
     message: 'chon theme';
     baivietForm: FormGroup;
     selectTheme: any;
@@ -50,6 +61,7 @@ export class AddBaivietComponent implements OnInit {
     itemContentCarousel2: any;
     isSelectedCarousel1 = false;
     isSelectedCarousel2 = false;
+    isupdateListImage = false;
     ckeditorImage;
     public Editor: customBuild;
     checklistCourse: any[] = [];
@@ -67,17 +79,42 @@ export class AddBaivietComponent implements OnInit {
             ],
         },
     };
+    private _transformer = (node: any, level: number) => {
+        return {
+            expandable: !!node.children && node.children.length > 0,
+            name: node.Tieude || node.title,
+            level: level,
+            item: node,
+        };
+    };
+
+    treeControl = new FlatTreeControl<ExampleFlatNode>(
+        (node) => node.level,
+        (node) => node.expandable
+    );
+
+    treeFlattener = new MatTreeFlattener(
+        this._transformer,
+        (node) => node.level,
+        (node) => node.expandable,
+        (node) => node.children
+    );
+
+    dataSource = new MatTreeFlatDataSource(
+        this.treeControl,
+        this.treeFlattener
+    );
 
     public componentEvents: string[] = [];
     upload(): void {
         this.callback(this.selectedFiles.item(0), 1).then((x: any) => {
             this.baivietForm.get('thumbimage').setValue(x.url);
-            this.thumb = x.url
+            this.thumb = x.url;
         });
         return;
     }
     upload2(): void {
-        if (this.selectedFiles) {
+        if (this.selectedFiles && this.isupdateListImage == false) {
             console.log(this.selectedFiles);
             for (
                 let i = 0, p = Promise.resolve();
@@ -161,8 +198,12 @@ export class AddBaivietComponent implements OnInit {
         });
     }
     deleteImageFirebase(item, i) {
+        console.log(item);
+        console.log(this.listkey);
+
+        delete this.listkey[i];
         this.listimage = this.listimage.filter((x) => x[2] != item[2]);
-        console.log(this.listimage);
+        console.log(this.listkey);
 
         this.uploadService.deleteFile(item);
     }
@@ -175,6 +216,8 @@ export class AddBaivietComponent implements OnInit {
         this.html = '';
         this.Editor = customBuild;
     }
+    hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
     getLinkImage(number) {
         this.uploadService
             .getFiles(number) //lấy file  chứa key từ firebase về
@@ -268,7 +311,10 @@ export class AddBaivietComponent implements OnInit {
     }
 
     SelectBaiviet(item) {
-        console.log(item.listslide2);
+        console.log(item);
+
+        this.isupdateListImage = true;
+
         if (Object.keys(item.listslide1).length > 0) {
             this.isSelectTheme1 = true;
         } else {
@@ -308,6 +354,7 @@ export class AddBaivietComponent implements OnInit {
         this.baivietForm.get('slug').setValue(item.slug);
         this.baivietForm.get('Loaibaiviet').setValue(item.Loaibaiviet);
         this.baivietForm.get('thumbimage').setValue(item.thumbimage);
+        this.listkey = item.image;
         if (item.listslide1) {
             this.listslide1 = item.listslide1;
         }
@@ -504,7 +551,13 @@ export class AddBaivietComponent implements OnInit {
             }
         }
     }
-
+    nest = (items, id = '', link = 'pid') =>
+        items
+            ?.filter((item) => item[link] == id)
+            .map((item) => ({
+                ...item,
+                children: this.nest(items, item.id),
+            }));
     ngOnInit(): void {
         this.resetForm();
         this.baivietService.getTheme().subscribe();
@@ -529,8 +582,34 @@ export class AddBaivietComponent implements OnInit {
             this.courses = courses;
         });
         this._danhmucService.getDanhmuc().subscribe();
-        this._danhmucService.danhmucs$.subscribe(
-            (res) => (this.danhmucs = res)
-        );
+        this._danhmucService.danhmucs$.subscribe((res) => {
+            this.danhmucs = res;
+            this.danhmucBaiviet = this.nest(res);
+            console.log(this.danhmucBaiviet);
+            this.danhmucBaiviet?.forEach((x) => {
+                if (x.children.length > 0) {
+                    x.children.forEach((y) => {
+                        let arr = [];
+                        this.courses.filter((v) => {
+                            if (y.id == v.idDM) {
+                                arr.push(v);
+                            }
+                        });
+                        if (y.children.length == 0) {
+                            y.children = arr;
+                        }
+                    });
+                } else {
+                    let arr = [];
+                    this.courses.filter((v) => {
+                        if (x.id == v.idDM) {
+                            arr.push(v);
+                        }
+                    });
+                    x.children = arr;
+                }
+            });
+            this.dataSource.data = this.danhmucBaiviet;
+        });
     }
 }

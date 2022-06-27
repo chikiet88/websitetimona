@@ -5,7 +5,16 @@ import { FileUploadService } from '../services/file-upload.service';
 import { DanhmucService } from './danhmuc.service';
 // import { DanhmucService } from './danhmuc.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
-
+import {
+    MatTreeFlatDataSource,
+    MatTreeFlattener,
+} from '@angular/material/tree';
+import { FlatTreeControl } from '@angular/cdk/tree';
+interface ExampleFlatNode {
+    expandable: boolean;
+    name: string;
+    level: number;
+}
 @Component({
     selector: 'app-danhmuc',
     templateUrl: './danhmuc.component.html',
@@ -43,7 +52,31 @@ export class DanhmucComponent implements OnInit {
             }
         }
     };
+    private _transformer = (node: any, level: number) => {
+        return {
+            expandable: !!node.children && node.children.length > 0,
+            name: node.Tieude || node.title,
+            level: level,
+            item: node,
+        };
+    };
 
+    treeControl = new FlatTreeControl<ExampleFlatNode>(
+        (node) => node.level,
+        (node) => node.expandable
+    );
+
+    treeFlattener = new MatTreeFlattener(
+        this._transformer,
+        (node) => node.level,
+        (node) => node.expandable,
+        (node) => node.children
+    );
+
+    dataSource = new MatTreeFlatDataSource(
+        this.treeControl,
+        this.treeFlattener
+    );
     constructor(
         private DanhmucService: DanhmucService,
         private fb: FormBuilder,
@@ -51,7 +84,7 @@ export class DanhmucComponent implements OnInit {
     ) {
         this.Editor = customBuild;
     }
-
+    hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
     onSubmit() {
         this.DanhmucList.removeControl('id');
         this.DanhmucList.removeControl('tenDMcha');
@@ -159,14 +192,22 @@ export class DanhmucComponent implements OnInit {
     selectFile(event: any): void {
         this.selectedFiles = event.target.files;
     }
+    nest = (items, id = '', link = 'pid') =>
+    items
+        ?.filter((item) => item[link] == id)
+        .map((item) => ({
+            ...item,
+            children: this.nest(items, item.id),
+        }));
     ngOnInit(): void {
         this.resetForm();
 
         this.DanhmucService.getDanhmuc().subscribe();
         this.DanhmucService.danhmucs$.subscribe((danhmuc) => {
             this.danhmuc = danhmuc;
+            this.dataSource.data = this.nest(danhmuc);
         });
-
+       
         // this.addheaderService.getHeader().subscribe();
 
         // this.addheaderService.themes$.subscribe((themes)=>{

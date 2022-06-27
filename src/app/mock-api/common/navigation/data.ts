@@ -55,12 +55,48 @@ export const defaultNavigation: FuseNavigationItem[] = [
     
 ];
 export const compactNavigation: FuseNavigationItem[] = [
+   
     {
-        id   : 'example',
-        title: 'Example',
+        id   : 'menu',
+        title: 'Menu',
         type : 'basic',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        link : '/admin/menu'
+    },
+    {
+        id   : 'theme',
+        title: 'theme',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/theme'
+    },
+    {
+        id   : 'bai-viet',
+        title: 'Bài viết',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/bai-viet'
+    },
+    {
+        id   : 'danhmuc',
+        title: 'Danh mục',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/danhmuc'
+    },
+    {
+        id   : 'footer',
+        title: 'Footer',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/footer'
+    },
+    {
+        id   : 'giangvien',
+        title: 'Giảng Viên',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/giangvien'
     }
 ];
 export const futuristicNavigation: FuseNavigationItem[] = [

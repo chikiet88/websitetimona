@@ -34,34 +34,48 @@ export class LetotnghiepDetailComponent implements OnInit {
     swipeNext() {
         this.swiper.swiperRef.slideNext();
     }
+    callback(item) {
+        return new Promise((resolve, reject) => {
+            console.log(item);
+            
+            this._uploadService
+                .getValueByKey(item)
+                .pipe(take(1))
+                .subscribe((data) => {
+                    console.log(data[1]);
+
+                    resolve(data[1]);
+                });
+        });
+    }
     ngOnInit(): void {
         const slug = this.route.snapshot.paramMap.get('slug');
         this._khoahocService.getKhoahocChitiet(slug).subscribe();
-        this._khoahocService.course$.subscribe((res) => {
+        this._khoahocService.course$.pipe(take(1)).subscribe((res) => {
             this.album = res.image;
             console.log(this.album);
             
-            for (const property in res.image) {
-                this._uploadService
-                    .getValueByKey(res.image[property])
-                    .pipe(take(1))
-                    .subscribe((data) => {
-                        console.log(data[1]);
-                        
-                      this.listimage.push(res[1])
-                        // this.listimage.push([
-                        //     ...res,
-                        //     res.image[property],
-                        // ]);
-                        // console.log(this.listimage);
-                    });
+            for (
+                let i = 0, p = Promise.resolve();
+                i < Object.keys(this.album).length;
+                i++
+            ) {
+                p = p.then(() =>
+                    this.callback(this.album[i]).then((x) => {
+                        this.listimage.push(x);
+                        if(this.listimage.length == Object.keys(this.album).length){
+                            
+                            this.x = this.listimage.length / 3;
+                            for (let i = 0; i < this.x; i++) {
+                                this.b.push(this.listimage.slice(3 * i, 3 * i + 3));
+                            }
+                
+                        }
+                    })
+                );
+
             }
-            console.log(this.listimage);
-            
-            this.x = this.album.length / 3;
-            for (let i = 0; i < this.x; i++) {
-                this.b.push(this.album.slice(3 * i, 3 * i + 3));
-            }
+           
 
             // this.x = Object.keys(this.album?.image)?.length / 3;
             // for (let i = 0; i <= this.x; i++) {

@@ -13,9 +13,9 @@ import { FileUpload } from '../models/file-upload.model';
 export class FileUploadService {
     currentFileUpload;
     percentage;
-    private basePath = '/uploads';
+    // private basePath = '/uploads';
     // private basePath = '/test2';
-    // private basePath = '/test5';
+    private basePath = '/testtimona';
 
     private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
     get _thumb$(): Observable<any> {
