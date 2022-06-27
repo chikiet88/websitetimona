@@ -67,34 +67,34 @@
     list-style-type: inherit;
 }
 
-ul {
+app-theme1 ul {
     padding-left: 40px;
     list-style: disc !important;
     list-style-type: disc !important ;
     
 }
-ul li{
+app-theme1 ul li{
     margin-top: 8px;
     text-align: justify;
 }
-.image{
+app-theme1 .image{
 }
-.image img{
+app-theme1 .image img{
     object-fit: contain;
     width: inherit;
    margin: 0 auto;
 
 }
-a{
+app-theme1 a{
     color: #00256e;
 
 }
-h3 {
+app-theme1 h3 {
     color: #00256e;
     font-weight: bold;
     font-size: 1.25rem;
 }
-p{
+app-theme1 p{
     line-height: 1.25rem;
 
 }

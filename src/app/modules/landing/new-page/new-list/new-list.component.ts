@@ -9,9 +9,9 @@ import { KhoahocService } from '../../khoahoc/khoahoc.service';
 export class NewListComponent implements OnInit {
     config;
     danhmucs;
-    danhmuccha
+    danhmuccha;
     constructor(private _khoahocService: KhoahocService) {}
-    
+
     nest = (items, id = '', link = 'pid') =>
         items
             ?.filter((item) => item[link] == id)
@@ -32,16 +32,16 @@ export class NewListComponent implements OnInit {
         };
         this._khoahocService.getDanhmuc().subscribe();
         this._khoahocService.danhmucs$.subscribe((res) => {
-           
+            let temp = res
             res?.find((x) => {
                 if (x.Type == 'tintucsukien') {
-                    this.danhmuccha = x
+                    this.danhmuccha = x;
                 }
             });
             this.danhmucs = res?.filter((v) => v.pid == this.danhmuccha.id);
-            this.danhmucs = this.danhmucs?.reverse()
+            this.danhmucs = this.danhmucs?.reverse();
             console.log(this.danhmucs);
-            
+            res = temp
         });
     }
 }

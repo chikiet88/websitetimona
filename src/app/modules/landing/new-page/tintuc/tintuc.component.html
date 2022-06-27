@@ -10,10 +10,10 @@
 </div>
 <div class="flex w-full md:px-0 px-3">
     <div class="md:w-3/4 w-full flex flex-col md:pr-5">
-        <div class="cursor-poniter" routerLink="../baiviet/{{ baiviet1.slug }}">
+        <div class="cursor-poniter" routerLink="../baiviet/{{ baiviet1?.slug }}">
             <div class="">
                 <img
-                    src="{{ baiviet1.thumbimage }}"
+                    src="{{ baiviet1?.thumbimage }}"
                     class="w-full "
                     alt=""
                 />
@@ -31,7 +31,7 @@
                 ></div>
 
                 <a class="text-indigo-900 !mb-0 pt-3 font-medium"
-                routerLink="../baiviet/{{ baiviet1.slug }}"
+                routerLink="../baiviet/{{ baiviet1?.slug }}"
                 >
                     Xem thêm >></a
                 >

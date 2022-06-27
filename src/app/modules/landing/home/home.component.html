@@ -213,24 +213,7 @@
                                     <div
                                         class="flex space-x-4 pl-3 pt-3 pb-3 item-link justify-between"
                                     >
-                                        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                        <!-- <a href="https://v1.timona.edu.vn/gioi-thieu.html"
-                      class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium mr-5"> Giới Thiệu
-                      </a>
-
-                      <a href="https://v1.timona.edu.vn/khoa-hoc.html"
-                      class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium mr-5">  Chuyên Ngành
-                      </a>
-
-                      <a href="https://v1.timona.edu.vn/hoc-vien.html"
-                      class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium mr-5"> Học Viên
-                      </a>
-                      <a href="https://v1.timona.edu.vn/tin-tuc-su-kien.html"
-                      class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium mr-5"> Tin Tức & sự kiện
-                      </a>
-                      <a href="https://v1.timona.edu.vn/lien-he.html"
-                      class="text-lg uppercase  text-white hover:text-yellow-500 pb-4 pt-2  rounded-md text-sm font-medium"> Liên hệ
-                      </a> -->
+                                        
                                         <div
                                             class="dropdown relative"
                                             *ngFor="let itemmenu of menu"
@@ -307,36 +290,8 @@
                                                     >
                                                 </li>
                                             </ul>
-                                            <!-- <ul
-                                class="
-                                  dropdown-menu
-                                  min-w-max
-                                  absolute
-                                  bg-white
-                                  text-base
-                                  z-50
-                                  float-left
-
-                                  list-none
-                                  text-left
-                                  rounded-lg
-                                  shadow-lg
-                                
-              
-                                  m-0
-                                  bg-clip-padding
-                                  border-none
-                                "
-                                *ngIf="itemmenu.Baiviet.length > 0"
-                                aria-labelledby="dropdownMenuButton1"
-                             [ngClass]="{'hidden': isShow}" >
-                                <li *ngFor="let itemBaiviet of itemmenu.Baiviet" (click)="toggleMenu()" >
-                                  <a class="dropdown-item" routerLink="/khoa-hoc/{{itemBaiviet.slug}}">{{itemBaiviet.title}}</a>
-                                </li>
-                               
-                              </ul> -->
+                                           
                                         </div>
-                                        <!-- This example requires Tailwind CSS v2.0+ -->
                                     </div>
                                 </div>
                             </div>

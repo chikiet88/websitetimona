@@ -28,7 +28,6 @@ export class TintucComponent implements OnInit {
     ) {}
 
     spliceBaiviet(arr) {
-        console.log(arr);
 
         if (arr?.length) {
             arr?.filter((x) => {
@@ -39,13 +38,13 @@ export class TintucComponent implements OnInit {
                 }
             });
             arr = arr?.filter((x) => x?.id != this.baiviet1.id);
-            console.log(arr);
+            // console.log(arr);
 
             this.baiviet2 = arr.slice(0, 2);
-            console.log(this.baiviet2);
+            // console.log(this.baiviet2);
 
             this.baiviet3 = arr.slice(2, 6);
-            console.log(this.baiviet3);
+            // console.log(this.baiviet3);
         }
     }
     paginateNumber(i) {
@@ -59,6 +58,8 @@ export class TintucComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.subscribe((data: any) => {
             this.slug = data.slug;
+            console.log(this.slug);
+            
             this._khoahocService.getDanhmuc().subscribe();
             this._khoahocService.danhmucs$.subscribe((res) => {
                 let idDanhmuc = res?.find((x) => x.Slug == this.slug);
