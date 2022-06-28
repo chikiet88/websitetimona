@@ -23,13 +23,15 @@ export class LecturerPageComponent implements OnInit {
     ngOnInit(): void {
         this._giangvienService.getGiangvien().subscribe();
         this._giangvienService.giangviens$.subscribe((res) => {
-            if (res) {
-                this.lecturerNoibat = res.find((x) => x.Loaibaiviet == '1');
-                console.log(this.lecturerNoibat);
-                
-                this.lecturers = res?.filter((x) => x.Loaibaiviet != '1');
-                this.lecturers.reverse()
+            this.lecturerNoibat = res?.find((x) => x.Loaibaiviet == '1');
 
+            this.lecturers = res?.filter((x) => x.Loaibaiviet != '1');
+            if (this.lecturers?.length > 0) {
+                
+                this.lecturers.sort((a, b) => {
+                    return a.Ordering - b.Ordering;
+                });
+               
             }
         });
     }

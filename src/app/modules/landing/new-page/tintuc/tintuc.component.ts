@@ -28,7 +28,6 @@ export class TintucComponent implements OnInit {
     ) {}
 
     spliceBaiviet(arr) {
-
         if (arr?.length) {
             arr?.filter((x) => {
                 if (x?.Loaibaiviet == 1) {
@@ -59,7 +58,7 @@ export class TintucComponent implements OnInit {
         this.route.params.subscribe((data: any) => {
             this.slug = data.slug;
             console.log(this.slug);
-            
+
             this._khoahocService.getDanhmuc().subscribe();
             this._khoahocService.danhmucs$.subscribe((res) => {
                 let idDanhmuc = res?.find((x) => x.Slug == this.slug);
@@ -69,19 +68,23 @@ export class TintucComponent implements OnInit {
                         .getDanhmucchitiet(this.idDanhmuc)
                         .subscribe((res) => {
                             this.danhmuc = res;
+                            console.log(this.idDanhmuc);
                         });
                 }
             });
 
             this._khoahocService.getKhoahoc().subscribe();
             this._khoahocService.courses$.subscribe((res) => {
+                console.log(res);
+                
                 this.baivietnoibat = res?.filter(
                     (x) => x.idDM == this.idDanhmuc && x.Loaibaiviet == 1
                 );
                 this.arr = [];
                 res = res?.filter(
-                    (x) => x.idDM == this.idDanhmuc && x.Loaibaiviet != 1
+                    (x) => x.idDM == this.idDanhmuc 
                 );
+                console.log(res);
 
                 let x = res?.length / 6;
                 if (res?.length > 0) {

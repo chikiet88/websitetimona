@@ -1,4 +1,4 @@
-<div class="container px-10">
+<div class="p-5">
     <form class="w-full pt-10" [formGroup]="GiangvienList">
         <div class="flex flex-wrap">
             <div
@@ -15,7 +15,6 @@
                         id="grid-first-name"
                         type="text"
                         [formControlName]="'TenGV'"
-
                         placeholder="Nguyễn Thị Kiều Oanh"
                         name="title"
                     />
@@ -32,7 +31,6 @@
                     >
                         <mat-option value=""></mat-option>
                         <mat-option value="1">Nổi bật</mat-option>
-
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field
@@ -45,9 +43,11 @@
                         (selectionChange)="onSelectGiangvienEdit($event.value)"
                     >
                         <mat-option value=""></mat-option>
-                        <mat-option [value]="item" *ngFor="let item of giangviens">{{
-                            item.TenGV
-                        }}</mat-option>
+                        <mat-option
+                            [value]="item"
+                            *ngFor="let item of giangviens"
+                            >{{ item.TenGV }}</mat-option
+                        >
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -137,6 +137,45 @@
             </button>
         </div>
     </form>
+    <div class="p-5">
+        <p class="text-2xl text-center py-5">Danh sách các giảng viên</p>
+        <div cdkDropListGroup class="flex justify-around">
+            <div class="example-container">
+                <h2>To do</h2>
 
-    <div></div>
+                <div
+                    cdkDropList
+                    [cdkDropListData]="giangviens"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)"
+                >
+                    <div
+                        class="example-box"
+                        *ngFor="let item of giangviens"
+                        cdkDrag
+                        (click)="selectOrdering(item)"
+                    >
+                        {{ item.TenGV }}  && {{item.Ordering}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-container">
+                <h2>Done</h2>
+
+                <div
+                    cdkDropList
+                    [cdkDropListData]="done"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)"
+                >
+                    <div class="example-box" *ngFor="let item of done" cdkDrag >
+                        {{ item.TenGV }}
+                    </div>
+                </div>
+                <div (click)="capnhatOrdering()">Cập nhật</div>
+            </div>
+        </div>
+       
+    </div>
 </div>

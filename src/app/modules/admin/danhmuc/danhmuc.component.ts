@@ -113,6 +113,8 @@ export class DanhmucComponent implements OnInit {
         this.DanhmucList.get('Image').setValue(item.Image);
         this.DanhmucList.get('pid').setValue(item.pid);
         this.DanhmucList.get('Type').setValue(item.Type);
+        this.DanhmucList.get('Ordering').setValue(item.Ordering);
+
         this.DanhmucList.get('Slug').setValue(item.Slug);
         console.log(item);
 
@@ -159,6 +161,7 @@ export class DanhmucComponent implements OnInit {
             Type: [''],
             pid: [''],
             Slug: [''],
+            Ordering:[0],
             tenDMcha: [''],
         });
     }

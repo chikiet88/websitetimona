@@ -17,20 +17,20 @@ export class LecturerComponent implements OnInit {
 
     ngOnInit(): void {
         this.config = {
-            loop: true,
-            
             slidesPerView: 1,
            
         };
         this._giangvienSerivce.getGiangvien().subscribe();
         this._giangvienSerivce.giangviens$.subscribe((res) => {
             if(res){
-                res.reverse()
+                res.sort((a, b) => {
+                    return a.Ordering - b.Ordering;
+                });
                 let x = res?.length / 4;
                 for (let i = 0; i < x; i++) {
                     this.giangviens.push(res.slice(i * 4, i * 4 + 4));
                 }
-                this.giangviens.reverse()
+                
             }
         
         });

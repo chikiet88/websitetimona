@@ -53,7 +53,8 @@ export class Theme1Component implements OnInit {
             // Update the counts
 
             this.theme = course;
-
+            console.log(this.theme);
+            
             if (Object.keys(this.theme?.listslide1).length > 0) {
                 this.isCarousel1 = true;
                 this.theme.listslide1 = Object.values(this.theme?.listslide1);

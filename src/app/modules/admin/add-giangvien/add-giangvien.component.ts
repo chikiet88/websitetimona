@@ -1,20 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { FileUpload } from '../models/file-upload.model';
 import { FileUploadService } from '../services/file-upload.service';
 import { AddGiangvienService } from './add-giangvien.service';
 import * as customBuild from '../../ckCustomBuild/build/ckEditor';
-
+import { take } from 'rxjs';
+import {
+    CdkDragDrop,
+    moveItemInArray,
+    transferArrayItem,
+} from '@angular/cdk/drag-drop';
+import { log } from 'console';
 @Component({
     selector: 'app-add-giangvien',
     templateUrl: './add-giangvien.component.html',
     styleUrls: ['./add-giangvien.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class AddGiangvienComponent implements OnInit {
     themes: any;
     giangviens: any;
     theme: any;
     thumb;
+    i: number = 1;
     selectedFiles?: FileList;
     currentFileUpload?: FileUpload;
     percentage = 0;
@@ -22,6 +30,7 @@ export class AddGiangvienComponent implements OnInit {
     GiangvienList: FormGroup;
     selectTheme: any;
     idSelect;
+    done: any[] = [];
     public Editor: customBuild;
 
     public config = {
@@ -84,10 +93,8 @@ export class AddGiangvienComponent implements OnInit {
             (res) => {
                 alert('Xóa Giảng viên thành công');
                 this.resetForm();
-                this.thumb = ''
-                this.idSelect = undefined
-
-
+                this.thumb = '';
+                this.idSelect = undefined;
             }
         );
     }
@@ -100,8 +107,8 @@ export class AddGiangvienComponent implements OnInit {
             if (res) {
                 alert('Cập nhật Giảng viên thành công');
                 this.resetForm();
-                this.thumb = ''
-                this.idSelect = undefined
+                this.thumb = '';
+                this.idSelect = undefined;
             } else {
                 alert('Cập nhật Giảng viên không thành công');
             }
@@ -173,18 +180,69 @@ export class AddGiangvienComponent implements OnInit {
     selectFile(event: any): void {
         this.selectedFiles = event.target.files;
     }
+    selectOrdering(item) {
+        item.Ordering = this.i;
+        this.GiangvienService.updateGiangvien(item).subscribe((res) => {
+            console.log('sssssssss');
+            ++this.i;
+        });
+    }
+    drop(event: CdkDragDrop<any[]>) {
+        // this.giangviens.forEach(x => {
+        //     x.Ordering = x.id
+        //     this.GiangvienService.updateGiangvien(x).subscribe()
+        // });
+        this.giangviens.sort((a, b) => {
+            return a.Ordering - b.Ordering;
+        });
+
+        if (event.previousContainer === event.container) {
+            moveItemInArray(
+                event.container.data,
+                event.previousIndex,
+                event.currentIndex
+            );
+            let items = event.container.data;
+            const currentItem = items[event.currentIndex];
+            const prevItem = items[event.currentIndex - 1] || null;
+            const nextItem = items[event.currentIndex + 1] || null;
+            currentItem.Ordering = event.currentIndex;
+            prevItem.Ordering = event.currentIndex - 1 || null;
+            nextItem.Ordering = event.currentIndex + 1 || null;
+            this.GiangvienService.updateGiangvien(currentItem).subscribe();
+            this.GiangvienService.updateGiangvien(prevItem).subscribe();
+
+            this.GiangvienService.updateGiangvien(nextItem).subscribe();
+        } else {
+            transferArrayItem(
+                event.previousContainer.data,
+                event.container.data,
+                event.previousIndex,
+                event.currentIndex
+            );
+        }
+    }
+    capnhatOrdering() {
+        if (this.done.length > 0) {
+            for (let i = 0; i < this.done.length; i++) {
+                this.done[i].Ordering = i;
+                this.GiangvienService.updateGiangvien(this.done[i]).subscribe(
+                    (res) => console.log(res)
+                );
+            }
+        }
+    }
     ngOnInit(): void {
         this.resetForm();
 
         this.GiangvienService.getGiangvien().subscribe();
-        this.GiangvienService.giangviens$.subscribe((giangviens) => {
-            this.giangviens = giangviens;
-        });
-
-        // this.addheaderService.getHeader().subscribe();
-
-        // this.addheaderService.themes$.subscribe((themes)=>{
-        //   this.themes = themes
-        // })
+        this.GiangvienService.giangviens$
+            .pipe(take(2))
+            .subscribe((giangviens) => {
+                this.giangviens = giangviens;
+                this.giangviens?.sort((a, b) => {
+                    return a.Ordering - b.Ordering;
+                });
+            });
     }
 }
