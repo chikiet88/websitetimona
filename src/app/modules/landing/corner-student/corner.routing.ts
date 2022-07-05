@@ -10,6 +10,8 @@ import {
     KhoahocDetailResolver,
     KhoahocResolver,
 } from '../khoahoc/khoahoc.resolvers';
+import { CuocthiphunxamComponent } from './cuocthiphunxam/cuocthiphunxam.component';
+import { CuocthiphunxamchitietComponent } from './cuocthiphunxam/cuocthiphunxamchitiet/cuocthiphunxamchitiet.component';
 export const CornerStudentRoutes: Route[] = [
     {
         path: '',
@@ -31,6 +33,14 @@ export const CornerStudentRoutes: Route[] = [
             {
                 path: 'le-tot-nghiep/:slug',
                 component: LetotnghiepDetailComponent,
+                resolve: {
+                    detail: KhoahocDetailResolver,
+                },
+            },
+            { path: 'cuoc-thi-phun-xam', component: CuocthiphunxamComponent },
+            {
+                path: 'cuoc-thi-phun-xam/:slug',
+                component: CuocthiphunxamchitietComponent,
                 resolve: {
                     detail: KhoahocDetailResolver,
                 },

@@ -7,8 +7,7 @@ import { Khoahoc } from '../khoahoc.types';
     selector: 'app-khoahoc-list',
     templateUrl: './khoahoc-list.component.html',
     styleUrls: ['./khoahoc-list.component.css'],
-    encapsulation: ViewEncapsulation.Emulated
-
+    // encapsulation: ViewEncapsulation.Emulated,
 })
 export class KhoahocListComponent implements OnInit {
     courses$: Observable<Khoahoc[]>;
@@ -35,12 +34,15 @@ export class KhoahocListComponent implements OnInit {
         this.khoahocService.danhmucs$.subscribe((res) => {
             res?.forEach((x) => {
                 x.courses = [];
-            
+
                 for (let i = 0; i <= this.themes.length; i++) {
                     if (x.id == this.themes[i]?.idDM) {
                         x.courses.push(this.themes[i]);
                     }
                 }
+                x.courses.sort((a, b) => {
+                    return a.Ordering - b.Ordering;
+                });
                 return x;
             });
             this.danhmuc = res?.filter((x) => x.Type == 'chuyennganh');
@@ -48,7 +50,6 @@ export class KhoahocListComponent implements OnInit {
                 return a.Ordering - b.Ordering;
             });
             console.log(this.danhmuc);
-            
         });
     }
 

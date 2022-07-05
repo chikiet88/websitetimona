@@ -1,0 +1,44 @@
+<div class="">
+    <div class="">
+        <img
+        src="../../../../../assets/images/Desktop/gochocvien/4-LAYOUT_GOCHOCVIEN_DESKTOP.png"
+        class="w-full h-full md:block hidden"
+        alt=""
+    />
+    <img
+        src="../../../../../assets/images/Mobile/gochocvien/5GÓC-HỌC-VIỆN_MOBILE_WEBSITE-TIMONA.png"
+        class="w-full h-full md:hidden"
+    />
+    </div>
+    <div class="pt-10 md:px-0 px-3">
+        <div class="grid md:grid-cols-3 grid-cols-1 gap-10">
+            <div class=" w-full grid-item border-bottom" *ngFor="let item of cuocthiphunxams">
+                <div class="w-full">
+                    <img
+                        src="{{item.thumbimage}}"
+                        class="w-full h-full rounded-xl"
+                    />
+                </div>
+                <p class="text-yellow-500 font-bold py-5 text-2xl">
+                    {{item.Tieude}}
+                </p>
+                <a class="px-2 py-2 text-white bg-yellow-500 rounded-xl" routerLink="{{item.slug}}"
+                    >Tìm hiểu thêm>>>
+                </a>
+            </div>
+        </div>
+        <!-- <app-pagination></app-pagination> -->
+    </div>
+</div>
+<div class=" pb-3 pt-5 mt-5">
+    <div class="flex justify-center items-center relative pb-5">
+        <div class="bg-indigo-900 rounded-3xl p-2">
+            <a class="text-xl text-yellow-500 p-3 uppercase font-bold"
+                >lịch khai giảng</a
+            >
+        </div>
+       
+    </div>
+    <app-form-corner></app-form-corner>
+
+</div>

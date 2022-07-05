@@ -16,8 +16,12 @@ import { TintucdetailComponent } from './tintucdetail/tintucdetail.component';
 import { NewListComponent } from './new-list/new-list.component';
 import { TintucdetailPipe } from './tintucdetail/tintucdetail.pipe';
 import { CustomPipePipe } from '../customs/custom-pipe.pipe';
+import { FormsModule } from '@angular/forms';
+import { WINDOW_PROVIDERS } from '../services/window.service';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
+  
     declarations: [
     TintucComponent,
     FormComponent,
@@ -30,7 +34,8 @@ import { CustomPipePipe } from '../customs/custom-pipe.pipe';
     TintucdetailComponent,
     NewListComponent,
     TintucdetailPipe,
-    CustomPipePipe
+    CustomPipePipe,
+    CommentsComponent
     
   ],
     imports: [
@@ -38,6 +43,8 @@ import { CustomPipePipe } from '../customs/custom-pipe.pipe';
         RouterModule.forChild(newPageRoutes),
         SwiperModule,
         MaterialExampleModule,
+        FormsModule,
     ],
+    providers: [ WINDOW_PROVIDERS ]
 })
 export class NewPageModule {}

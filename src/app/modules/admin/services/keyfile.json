@@ -1,0 +1,13 @@
+{
+    "type": "service_account",
+    "project_id": "timona-academy-354907",
+    "private_key_id": "1bde3b334794299475aaa0c5d1ea976c34fb651b",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCM+kD/VRy2equY\nrfeI9gIBxPIPeL9zbmWuGf9WmqBfOCk5XOv5JeCTKOMJ6PN1gRT9Ez5PNzbu2L+j\nAoeVIYvuCw+4nx7cZQdFJfpwOjD30bykBp/uAbuvcnD139KPS+km/Qjq4jjCBoeJ\nwwFzhsesJgdp5xe6+Kj53AT6IqGFQFxTD5govE6dC9vbXcYex/Z8eY6oYK/Ymcda\nq6TFgvcvJNjq/syj3YB/E7W2hiBDWlmo7ap7ohqwDDsgKjFRTv7wE99PMzpdQmjv\nVFJeqyk6xwlRloxAJSpGZRy56mYRf88VXwA3Je5mkoVSfSHwM8/BtcAvgrR6/u+z\nqDSGnOtpAgMBAAECgf82DxXdffBaCQVusUcPvfCxvP5qmw15tgZHkgXXr8jPZTm+\n8A2MpyRL9Ixwaw5F1g8Lpyq9iu6wUsJ+6k6+C58c03Zef/sq3ZLBcU7CD45iI+Bd\nBYKjlwaMFdY7HRjLhNBi+E9IbSGr79UJfpLlOfRXOZNI3ioQsvQY28W3epAgCCb4\nawQorP/IrO8oEgjFn8B88P7Ed/F7a07/S+4dHMl04irlwYqX/SBReS7qv7e7hhMZ\nWSI08BcM3OjQQ6xv2PWX+WYIf7L/mWpjdWaLlmbI9ZlADwwGCAkREHZreWtoUtxk\n02HRreefBIiaDujPyHwEveS9EvBYjLDakdiZy78CgYEAwlhc0gw3dWz9YgiyYJup\n+tLJ+PeuOB3XTXvwVB3UDVFwShlxSZAES6d4mlQOZmmLJEaOZepte86VZ0v57IE6\nj5UPOjEEpB38vA0+gr5LF7CdaLAT/P2up66ih/aTo2ehfJpTU80v/yjl8miWp4jC\nacgI6HNxyqCKJE7U96UK3QMCgYEAubOra4G5Bu34nCmVmhROmZPiexFH3f9bJOZH\n5Drp2St+xidgCOcAnobwSpxzdofnLott35arXwU6FW7mahnprToovXApMyhTztEH\nJhvXu2E8L4OLWLcs5ywlKsDlTg4Rx0PLf0TbRdGm9GUY3dcTnUGrVWU5TnaFNwAt\n/WocPCMCgYB2pArGD78raEWmuzhp0Z2LCXNTEaDBkTYGj0q/jxYMq1Kpaa7HAawd\nozb0v6uqyXOvyYLUpLABjLOYQ8Fmp91gGdcZ5yK2LbhD9LHcjt64r5Dof9Uz9InS\nw8FkzxqB/pmOv4du+Sv70LPPsBmIXOySNxN5FEC7OhYa5CUOqSpgkQKBgQCO33MF\nlZq7gB+EVmIpV3JZqnPXZ6Y5YJvJOfsZ11HPqi0xW14Bu2i4ju0VGmWjTlBJeTCh\nk5Rp2OWlU9umyiUFB/gMN90a5O4F8sBjS4yhN+BMVhLBwLylZ0t5J0vE0AJRoxFP\n67QgdXrUEWweUblfhgTCAM0kVv+LH3JCxH7QrQKBgHXm+TDSg6jSwjqQFox+9hPb\nnwnfUT9MvN1P+so7EOnmCrbTWwZEMfbVa+E5aXZEQU9kna9BfU43Hm0bkkpIHUEV\nXk96fJ8cCVIKUxYNCyco2gYNPxeNMlsXVKsj80w6OM7MIPEHpU7A2KXu/u4ScqTW\ns0D89rO/X+Mxbj6UUp9U\n-----END PRIVATE KEY-----\n",
+    "client_email": "timonaacademy@timona-academy-354907.iam.gserviceaccount.com",
+    "client_id": "115722071065742989462",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/timonaacademy%40timona-academy-354907.iam.gserviceaccount.com"
+  }
+  

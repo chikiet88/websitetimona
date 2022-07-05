@@ -46,31 +46,15 @@ export class LandingHomeComponent {
             block: 'start',
             inline: 'nearest',
         });
+        console.log(document.getElementById('header'));
+        
     }
 
     toggleMenu() {
         this.isShow = !this.isShow;
     }
-    mouseEnter(trigger) {
-        if (this.timedOutCloser) {
-            clearTimeout(this.timedOutCloser);
-        }
-        trigger.openMenu();
-    }
-
-    mouseLeave(trigger) {
-        this.timedOutCloser = setTimeout(() => {
-            trigger.closeMenu();
-        }, 150);
-    }
-    mouseRemove(trigger) {
-        this.timedOutCloser = setTimeout(() => {
-            trigger.closeMenu();
-        }, 150);
-    }
-    scrollToTop() {
-        this.scroll.scrollToPosition([0, 0]);
-    }
+ 
+  
     nest = (items, id = '', link = 'parentid') =>
         items
             .filter((item) => item[link] == id)

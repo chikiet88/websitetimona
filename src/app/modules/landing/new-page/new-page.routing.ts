@@ -52,7 +52,6 @@ export const newPageRoutes: Route[] = [
             {
                 path: 'baiviet/:slugdetail',
                 component: TintucdetailComponent,
-                pathMatch:'full'
             },
         ],
     },

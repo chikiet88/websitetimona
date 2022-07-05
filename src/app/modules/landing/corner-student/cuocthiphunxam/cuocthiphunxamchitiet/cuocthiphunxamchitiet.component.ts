@@ -1,20 +1,17 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { KhoahocService } from 'app/modules/landing/khoahoc/khoahoc.service';
 import { FileUploadService } from 'app/modules/landing/services/file-upload.service';
 import { take } from 'rxjs';
-import SwiperCore, { Mousewheel, Pagination, Navigation } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
-SwiperCore.use([Mousewheel, Pagination, Navigation]);
 
 @Component({
-    selector: 'app-letotnghiep-detail',
-    templateUrl: './letotnghiep-detail.component.html',
-    styleUrls: ['./letotnghiep-detail.component.scss'],
-    encapsulation: ViewEncapsulation.None,
+  selector: 'app-cuocthiphunxamchitiet',
+  templateUrl: './cuocthiphunxamchitiet.component.html',
+  styleUrls: ['./cuocthiphunxamchitiet.component.scss']
 })
-export class LetotnghiepDetailComponent implements OnInit {
-    @ViewChild(SwiperComponent) swiper: SwiperComponent;
+export class CuocthiphunxamchitietComponent implements OnInit {
+  @ViewChild(SwiperComponent) swiper: SwiperComponent;
     album;
     config;
     title
@@ -42,6 +39,8 @@ export class LetotnghiepDetailComponent implements OnInit {
                 .getValueByKey(item)
                 .pipe(take(1))
                 .subscribe((data) => {
+                    console.log(data[1]);
+
                     resolve(data[1]);
                 });
         });
@@ -52,6 +51,8 @@ export class LetotnghiepDetailComponent implements OnInit {
         this._khoahocService.course$.pipe(take(1)).subscribe((res) => {
             this.title = res.title
             this.album = res.image;
+            console.log(this.album);
+            
             for (
                 let i = 0, p = Promise.resolve();
                 i < Object.keys(this.album).length;

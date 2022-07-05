@@ -13,6 +13,8 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { LetotnghiepComponent } from './letotnghiep/letotnghiep.component';
 import { LetotnghiepDetailComponent } from './letotnghiep/letotnghiep-detail/letotnghiep-detail.component';
 import { GochocvienListComponent } from './gochocvien-list/gochocvien-list.component';
+import { CuocthiphunxamComponent } from './cuocthiphunxam/cuocthiphunxam.component';
+import { CuocthiphunxamchitietComponent } from './cuocthiphunxam/cuocthiphunxamchitiet/cuocthiphunxamchitiet.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { GochocvienListComponent } from './gochocvien-list/gochocvien-list.compo
       CoursesComponent,
       LetotnghiepComponent,
       LetotnghiepDetailComponent,
-      GochocvienListComponent
+      GochocvienListComponent,
+      CuocthiphunxamComponent,
+      CuocthiphunxamchitietComponent
     
     
   ],

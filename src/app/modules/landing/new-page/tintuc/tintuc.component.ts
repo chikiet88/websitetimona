@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { KhoahocService } from '../../khoahoc/khoahoc.service';
+import { WINDOW } from '../../services/window.service';
 
 @Component({
     selector: 'app-tintuc',
     templateUrl: './tintuc.component.html',
     styleUrls: ['./tintuc.component.scss'],
-    encapsulation: ViewEncapsulation.Emulated,
 })
 export class TintucComponent implements OnInit {
     courses;
@@ -24,9 +24,15 @@ export class TintucComponent implements OnInit {
     baiviet3 = [];
     constructor(
         private _khoahocService: KhoahocService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        // @Inject(DOCUMENT) private document: Document,
+    @Inject(WINDOW) private window: Window
     ) {}
-
+    @HostListener("window:scroll", [])
+    onWindowScroll() {
+    //   const offset = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+      console.log('sssssssss');
+    }
     spliceBaiviet(arr) {
         if (arr?.length) {
             arr?.filter((x) => {
@@ -48,10 +54,11 @@ export class TintucComponent implements OnInit {
     }
     paginateNumber(i) {
         console.log(i);
+        console.log(this.arr[i]);
 
         this.indexPaginate = i;
         this.courses = this.arr[i];
-        this.courses = this.courses.concat(this.baivietnoibat[i]);
+        // this.courses = this.courses.concat(this.baivietnoibat[i]);
         this.spliceBaiviet(this.courses);
     }
     ngOnInit(): void {
@@ -76,28 +83,27 @@ export class TintucComponent implements OnInit {
             this._khoahocService.getKhoahoc().subscribe();
             this._khoahocService.courses$.subscribe((res) => {
                 console.log(res);
-                
+
                 this.baivietnoibat = res?.filter(
                     (x) => x.idDM == this.idDanhmuc && x.Loaibaiviet == 1
                 );
+                this.baivietnoibat.reverse()
                 this.arr = [];
-                res = res?.filter(
-                    (x) => x.idDM == this.idDanhmuc 
-                );
+                res = res?.filter((x) => x.idDM == this.idDanhmuc);
                 console.log(res);
 
                 let x = res?.length / 6;
                 if (res?.length > 0) {
                     for (let i = 0; i < x; i++) {
-                        this.arr.push(res.slice(6 * i, 6 * i + 6));
+                        this.arr.push(res.slice(7 * i, 7 * i + 7));
                     }
 
                     this.courses = this.arr[0];
-                    if (this.baivietnoibat[0] != undefined) {
-                        this.courses = this.courses.concat(
-                            this.baivietnoibat[0]
-                        );
-                    }
+                    // if (this.baivietnoibat[0] != undefined) {
+                    //     this.courses = this.courses.concat(
+                    //         this.baivietnoibat[0]
+                    //     );
+                    // }
                     this.spliceBaiviet(this.courses);
                 }
             });

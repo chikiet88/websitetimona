@@ -10,6 +10,7 @@ import {
     MatTreeFlattener,
 } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
+import { map, take } from 'rxjs';
 interface ExampleFlatNode {
     expandable: boolean;
     name: string;
@@ -166,30 +167,54 @@ export class DanhmucComponent implements OnInit {
         });
     }
     upload(): void {
-        if (this.selectedFiles) {
-            const file: File | null = this.selectedFiles.item(0);
-            this.selectedFiles = undefined;
-            if (file) {
-                this.currentFileUpload = new FileUpload(file);
-                this.uploadService
-                    .pushFileToStorage(this.currentFileUpload)
-                    .subscribe(
-                        (percentage) => {
-                            this.percentage = Math.round(
-                                percentage ? percentage : 0
-                            );
-                        },
-                        (error) => {
-                            console.log(error);
+        this.callback(this.selectedFiles.item(0), 1).then((x: any) => {
+            this.DanhmucList.get('Image').setValue(x.url);
+            this.thumb = x.url;
+        });
+        return;
+    }
+    callback(item, i) {
+        return new Promise((resolve, reject) => {
+            const file: File | null = item;
+
+            this.currentFileUpload = new FileUpload(file);
+            this.uploadService
+                .pushFileToStorage(this.currentFileUpload)
+                .subscribe(
+                    (percentage) => {
+                        this.percentage = Math.round(
+                            percentage ? percentage : 0
+                        );
+
+                        if (percentage == 100) {
+                            setTimeout(() => {
+                                this.uploadService
+                                    .getFiles(1) //lấy file  chứa key từ firebase về
+                                    .snapshotChanges()
+                                    .pipe(
+                                        take(1),
+                                        map((changes) =>
+                                            // store the key
+                                            changes.map((c) => ({
+                                                key: c.payload.key,
+                                                ...c.payload.val(),
+                                            }))
+                                        )
+                                    )
+                                    .subscribe((fileUploads) => {
+                                        if (fileUploads[0]?.key) {
+                                            fileUploads = fileUploads.reverse();
+                                            resolve(fileUploads[0]);
+                                        }
+                                    });
+                            }, 1000);
                         }
-                    );
-            }
-        }
-        this.uploadService._thumb$.subscribe((res) => {
-            if (res) {
-                this.thumb = res.url;
-                this.DanhmucList.get('Image').setValue(res.url);
-            }
+                    },
+                    (error) => {
+                        console.log(error);
+                    }
+                );
+         
         });
     }
     selectFile(event: any): void {

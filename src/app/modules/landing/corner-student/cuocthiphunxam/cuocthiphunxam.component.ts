@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../home/home.service';
 import { KhoahocService } from '../../khoahoc/khoahoc.service';
-import { LetotnghiepService } from './letotnghiep.service';
 
 @Component({
-    selector: 'app-letotnghiep',
-    templateUrl: './letotnghiep.component.html',
-    styleUrls: ['./letotnghiep.component.scss'],
+  selector: 'app-cuocthiphunxam',
+  templateUrl: './cuocthiphunxam.component.html',
+  styleUrls: ['./cuocthiphunxam.component.scss']
 })
-export class LetotnghiepComponent implements OnInit {
-    letotnghieps: any[];
+export class CuocthiphunxamComponent implements OnInit {
+
+  cuocthiphunxams: any[];
     danhmucs;
     constructor(
         private _HomeService: HomeService,
@@ -19,22 +19,24 @@ export class LetotnghiepComponent implements OnInit {
         this._khoahocService.getDanhmuc().subscribe();
         this._khoahocService.danhmucs$.subscribe((res) => {
             
-            this.danhmucs = res?.filter((x) => x.Type == 'letotnghiep');
+            this.danhmucs = res?.filter((x) => x.Type == 'cuocthiphunxam');
+            console.log(this.danhmucs);
+            
         });
         this._HomeService.getKhoahoc().subscribe();
         this._HomeService.courses$.subscribe((result) => {
-            this.letotnghieps = result;
+            this.cuocthiphunxams = result;
             let a = [];
-            for (let i = 0; i < this.letotnghieps?.length; i++) {
+            for (let i = 0; i < this.cuocthiphunxams?.length; i++) {
                 for (let j = 0; j < this.danhmucs?.length; j++) {
-                    if (this.letotnghieps[i]?.idDM == this.danhmucs[j].id) {
-                        a.push(this.letotnghieps[i]);
+                    if (this.cuocthiphunxams[i]?.idDM == this.danhmucs[j].id) {
+                        a.push(this.cuocthiphunxams[i]);
                     }
                 }
             }
 
-            this.letotnghieps = a
-            console.log(this.letotnghieps);
+            this.cuocthiphunxams = a
+            console.log(a);
             
         });
     }

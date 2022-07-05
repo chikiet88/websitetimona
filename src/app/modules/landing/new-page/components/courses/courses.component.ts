@@ -33,6 +33,9 @@ export class CoursesComponent implements OnInit {
             }
 
             this.courses = a.filter((x) => x.Loaibaiviet == this.baivietnoibat);
+            this.courses.sort((a, b) => {
+                return a.Ordering - b.Ordering;
+            });
         });
     }
 }

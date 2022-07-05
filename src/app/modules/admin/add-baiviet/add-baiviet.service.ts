@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, switchMap, take } from 'rxjs';
 import { Khoahoc } from '../theme/theme.types';
@@ -116,4 +116,41 @@ export class AddBaivietService {
   );
     
   }
+
+gDriveUploader(file): Promise<any> {
+  let authToken = 'ya29.A0ARrdaM9A7uRBS-5pQIQod8v9Em5LbJIsuqLSJeW-1_spMleRUGcE6pa1pE20fdFLJmuzCCzWNrnqz2FFB5XisGS8YwTB2EFTU8ByTAbnoH9POHhu3f6nSHUTz80vHjcTL71F3JQsO3dfBAciCw7CnsU0eWXdYUNnWUtBVEFTQVRBU0ZRRl91NjFWbExJZ2hlN1R4QTY1YmZQY0RXTzdyQQ0163'
+  const url = `https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable`
+      let headers = new HttpHeaders({
+        'Authorization': 'Bearer ' + authToken,
+        'Content-Type': 'application/json; charset=UTF-8',
+      });
+      let options =  ({ 
+        headers: headers,
+      });
+      console.log(file);
+      
+      return this.http.post(`${url}`, {name: file.name}, options) //just set the name
+          .toPromise()
+            .then(response => console.log(response)
+            ) //call second function to upload `file` to proper URI from response
+            // .then(response => {
+            //     let id = response.json().id //parse id of uploaded file
+            //     let resp = {fileName: file.fullName, fileType: file.fileType, fileSize: file.size, fileId: id} //create an object with file file properties, if you need that
+            //     return resp // return object back to function that called this service
+            // })
+            .catch(e=>console.log(e));
+  }
+  gDriveUploadFile(file, url): Promise<any> { //file and url we got from first func
+    let authToken = 'ya29.A0ARrdaM9A7uRBS-5pQIQod8v9Em5LbJIsuqLSJeW-1_spMleRUGcE6pa1pE20fdFLJmuzCCzWNrnqz2FFB5XisGS8YwTB2EFTU8ByTAbnoH9POHhu3f6nSHUTz80vHjcTL71F3JQsO3dfBAciCw7CnsU0eWXdYUNnWUtBVEFTQVRBU0ZRRl91NjFWbExJZ2hlN1R4QTY1YmZQY0RXTzdyQQ0163'
+        let headers = new HttpHeaders ({
+          'Authorization': 'Bearer ' + authToken,
+          'Content-Type': 'application/json; charset=UTF-8',
+          'X-Upload-Content-Type': file.type
+        });
+        let options =  ({ 
+          headers: headers,
+        });
+        return this.http.post(`${url}`, file, options) //call proper resumable upload endpoint and pass just file as body
+            .toPromise()
+    }
 }

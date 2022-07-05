@@ -13,26 +13,30 @@
     </div>
 </div>
 <div class="py-10 lg:px-0 px-3">
-    <div
-        class="grid md:grid-cols-4 grid-cols-1 gap-5"
+    <swiper
+        [config]="config"
+        [navigation]="true"
+        class="mySwiper pt-5"
         *ngIf="danhmucs?.length > 0"
     >
-        <a
-            routerLink="{{ item.Slug }}"
-            class="text-center block"
-            *ngFor="let item of danhmucs"
-        >
-            <div class="">
-                <img src="{{ item.Image }}" class="w-full h-full" alt="" />
-            </div>
-            <p
-                class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold"
-            >
-                {{ item.Tieude }}
-            </p>
-            <div [innerHTML]="item.Mota" class="text-indigo-900 font-medium text-lg md:text-base"></div>
-        </a>
-    </div>
+        <ng-template swiperSlide *ngFor="let item of danhmucs">
+            <a routerLink="{{ item.Slug }}" class="text-center block">
+                <div class="">
+                    <img src="{{ item.Image }}" class="w-full h-full" alt="" />
+                </div>
+                <p
+                    class="text-2xl uppercase text-indigo-900 pt-3 pb-2 mb-0 font-bold"
+                >
+                    {{ item.Tieude }}
+                </p>
+                <div
+                    [innerHTML]="item.Mota"
+                    class="text-indigo-900 font-medium text-lg md:text-base"
+                ></div>
+            </a>
+        </ng-template>
+    </swiper>
+
     <div class="md:hidden">
         <div class="flex justify-center items-center relative py-5">
             <div class="bg-indigo-900 rounded-3xl p-2">

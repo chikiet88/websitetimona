@@ -13,6 +13,8 @@ import {
     MatTreeFlattener,
 } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
+import { HttpHeaders } from '@angular/common/http';
+import { google } from 'googleapis';
 
 interface ExampleFlatNode {
     expandable: boolean;
@@ -62,6 +64,7 @@ export class AddBaivietComponent implements OnInit {
     isSelectedCarousel1 = false;
     isSelectedCarousel2 = false;
     isupdateListImage = false;
+    listKeyRemove: any[] = [];
     ckeditorImage;
     public Editor: customBuild;
     checklistCourse: any[] = [];
@@ -114,35 +117,98 @@ export class AddBaivietComponent implements OnInit {
         return;
     }
     upload2(): void {
-        if (this.selectedFiles && this.isupdateListImage == false) {
+        if (this.selectedFiles) {
             console.log(this.selectedFiles);
-            for (
-                let i = 0, p = Promise.resolve();
-                i < this.selectedFiles.length;
-                i++
+            if (
+                Object.keys(this.listkey).length == 0 &&
+                this.isupdateListImage == false
             ) {
-                p = p
-                    .then(() => this.callback(this.selectedFiles.item(i), i))
-                    .then((x: any) => {
-                        this.listkey[i] = x.key;
-                        if (
-                            Object.keys(this.listkey).length ==
-                            this.selectedFiles.length
-                        ) {
-                            for (const property in this.listkey) {
-                                this.uploadService
-                                    .getValueByKey(this.listkey[property])
-                                    .pipe(take(1))
-                                    .subscribe((res) => {
-                                        this.listimage.push([
-                                            ...res,
-                                            this.listkey[property],
-                                        ]);
-                                        console.log(this.listimage);
-                                    });
+                console.log('truong hop 1');
+
+                for (
+                    let i = 0, p = Promise.resolve();
+                    i < this.selectedFiles.length;
+                    i++
+                ) {
+                    p = p
+                        .then(() =>
+                            this.callback(this.selectedFiles.item(i), i)
+                        )
+                        .then((x: any) => {
+                            this.listkey[i] = x.key;
+                            if (
+                                Object.keys(this.listkey).length ==
+                                this.selectedFiles.length
+                            ) {
+                                for (const property in this.listkey) {
+                                    this.uploadService
+                                        .getValueByKey(this.listkey[property])
+                                        .pipe(take(1))
+                                        .subscribe((res) => {
+                                            this.listimage.push([
+                                                ...res,
+                                                this.listkey[property],
+                                            ]);
+                                            this.isupdateListImage = true;
+                                        });
+                                }
                             }
-                        }
-                    });
+                        });
+                }
+            } else if (
+                Object.keys(this.listkey).length != 0 &&
+                this.isupdateListImage == true
+            ) {
+                console.log('truong hop 2');
+
+                let index = Object.keys(this.listkey).length;
+
+                for (
+                    let i = 0, p = Promise.resolve();
+                    i < this.selectedFiles.length;
+                    i++
+                ) {
+                    p = p
+                        .then(() =>
+                            this.callback(this.selectedFiles.item(i), i)
+                        )
+                        .then((x: any) => {
+                            index++;
+                            this.listkey[index] = x.key;
+
+                            let a =
+                                this.listimage.length +
+                                this.selectedFiles.length;
+                            console.log(this.listkey);
+
+                            console.log(Object.keys(this.listkey).length);
+
+                            console.log(a);
+                            if (
+                                Object.keys(this.listkey).length ==
+                                this.listimage.length +
+                                    this.selectedFiles.length
+                            ) {
+                                let a =
+                                    this.listimage.length +
+                                    this.selectedFiles.length;
+                                console.log(a);
+
+                                this.listimage = [];
+                                for (const property in this.listkey) {
+                                    this.uploadService
+                                        .getValueByKey(this.listkey[property])
+                                        .pipe(take(1))
+                                        .subscribe((res) => {
+                                            this.listimage.push([
+                                                ...res,
+                                                this.listkey[property],
+                                            ]);
+                                        });
+                                }
+                            }
+                        });
+                }
             }
         }
 
@@ -183,7 +249,7 @@ export class AddBaivietComponent implements OnInit {
                                             resolve(fileUploads[0]);
                                         }
                                     });
-                            }, 500);
+                            }, 1000);
                         }
                     },
                     (error) => {
@@ -200,12 +266,16 @@ export class AddBaivietComponent implements OnInit {
     deleteImageFirebase(item, i) {
         console.log(item);
         console.log(this.listkey);
+        this.listKeyRemove.push(item[2]);
 
-        delete this.listkey[i];
+        for (const i in this.listkey) {
+            console.log(this.listkey[i]);
+
+            if (this.listkey[i] == item[2]) {
+                delete this.listkey[i];
+            }
+        }
         this.listimage = this.listimage.filter((x) => x[2] != item[2]);
-        console.log(this.listkey);
-
-        this.uploadService.deleteFile(item);
     }
     constructor(
         private baivietService: AddBaivietService,
@@ -249,6 +319,7 @@ export class AddBaivietComponent implements OnInit {
                     alert('Tạo nội dung thành công');
                     this.listimage = [];
                     this.resetForm();
+                    this.listkey = {};
                     this.ngOnInit();
                 }
             });
@@ -313,8 +384,6 @@ export class AddBaivietComponent implements OnInit {
     SelectBaiviet(item) {
         console.log(item);
 
-        this.isupdateListImage = true;
-
         if (Object.keys(item.listslide1).length > 0) {
             this.isSelectTheme1 = true;
         } else {
@@ -353,6 +422,9 @@ export class AddBaivietComponent implements OnInit {
             .setValue(item.slide2.desCarousel);
         this.baivietForm.get('slug').setValue(item.slug);
         this.baivietForm.get('Loaibaiviet').setValue(item.Loaibaiviet);
+        this.baivietForm.get('Ordering').setValue(item.Ordering);
+        this.baivietForm.get('Option.formDk').setValue(item.Option.formDk);
+
         this.baivietForm.get('thumbimage').setValue(item.thumbimage);
         this.listkey = item.image;
         if (item.listslide1) {
@@ -363,6 +435,7 @@ export class AddBaivietComponent implements OnInit {
         }
         this.idSelect = item.id;
         this.thumb = item.thumbimage;
+        this.listkey = item.image || {};
         this.danhmucs.find((res) => {
             if (res.id == item.idDM) {
                 this.tenDMcha = res.Tieude;
@@ -371,6 +444,7 @@ export class AddBaivietComponent implements OnInit {
         });
         if (Object.keys(item.image).length > 0) {
             console.log(item.image);
+            this.isupdateListImage = true;
 
             for (const property in item.image) {
                 this.uploadService
@@ -402,21 +476,30 @@ export class AddBaivietComponent implements OnInit {
             .updateBaiviet(this.baivietForm.value)
             .subscribe((res) => {
                 this.listimage = [];
+                this.tenDMcha = '';
+                this.thumb = '';
                 alert('Cập nhật thành công');
                 this.resetForm();
             });
         this.isSelectTheme1 = false;
         this.idSelect = undefined;
+        this.listKeyRemove.forEach((x) => {
+            this.uploadService.deleteFile(x);
+        });
+        this.listkey = {};
     }
 
     selectFile(event: any): void {
         this.selectedFiles = event.target.files;
     }
-
+    selectOptionNoiHienThi(e) {
+        this.baivietForm.get('Option.formDk').setValue(e);
+    }
     onchangeLoaibaiviet(e) {
         this.baivietForm.get('Loaibaiviet').setValue(e);
     }
 
+   
     resetForm() {
         this.baivietForm = this.fb.group({
             title: [''],
@@ -426,6 +509,9 @@ export class AddBaivietComponent implements OnInit {
             content: [''],
             content1: [''],
             content2: [''],
+            Option: this.fb.group({
+                formDk: [0],
+            }),
             slide1: this.fb.group({
                 titleCarousel: [''],
                 desCarousel: [''],
@@ -438,6 +524,7 @@ export class AddBaivietComponent implements OnInit {
             }),
             idDM: [0],
             slug: [''],
+            Ordering: [1],
             Loaibaiviet: [0],
             thumbimage: [''],
             image: [''],
@@ -585,12 +672,16 @@ export class AddBaivietComponent implements OnInit {
         this._danhmucService.danhmucs$.subscribe((res) => {
             this.danhmucs = res;
             this.danhmucBaiviet = this.nest(res);
-            console.log(this.danhmucBaiviet);
+            let arrchuacodanhmuc = [];
+
             this.danhmucBaiviet?.forEach((x) => {
                 if (x.children.length > 0) {
-                    x.children.forEach((y) => {
+                    console.log(x);
+
+                    x.children?.forEach((y) => {
                         let arr = [];
-                        this.courses.filter((v) => {
+
+                        this.courses?.filter((v) => {
                             if (y.id == v.idDM) {
                                 arr.push(v);
                             }
@@ -604,12 +695,15 @@ export class AddBaivietComponent implements OnInit {
                     this.courses.filter((v) => {
                         if (x.id == v.idDM) {
                             arr.push(v);
+                        } else if (v.idDM == 0) {
+                            arrchuacodanhmuc.push(v);
                         }
                     });
                     x.children = arr;
                 }
             });
-            this.dataSource.data = this.danhmucBaiviet;
+            this.danhmucBaiviet.concat(arrchuacodanhmuc);
+            this.dataSource.data = this.danhmucBaiviet.concat(arrchuacodanhmuc);
         });
     }
 }

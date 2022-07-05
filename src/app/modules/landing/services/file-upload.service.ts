@@ -13,8 +13,7 @@ import { FileUpload } from '../models/file-upload.model';
 export class FileUploadService {
     currentFileUpload;
     percentage;
-    // private basePath = '/uploads';
-    private basePath = '/testtimona';
+    private basePath = '/uploads';
     private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
     get _thumb$(): Observable<any> {
         return this._thumb.asObservable();

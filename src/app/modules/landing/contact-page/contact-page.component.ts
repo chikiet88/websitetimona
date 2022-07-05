@@ -26,17 +26,20 @@ export class ContactPageComponent implements OnInit {
         this.HomeService.getKhoahoc().subscribe();
         this.HomeService.courses$.subscribe((result) => {
             this.courses = result;
-            let a = [];
-            for (let i = 0; i < this.courses?.length; i++) {
-                for (let j = 0; j < this.danhmucs.length; j++) {
-                    if (this.courses[i]?.idDM == this.danhmucs[j].id) {
-                        a.push(this.courses[i]);
-                    }
-                }
-            }
+            // let a = [];
+            // for (let i = 0; i < this.courses?.length; i++) {
+            //     for (let j = 0; j < this.danhmucs.length; j++) {
+            //         if (this.courses[i]?.idDM == this.danhmucs[j].id) {
+            //             a.push(this.courses[i]);
+            //         }
+            //     }
+            // }
 
-            this.courses = a
-            this.courses = this.courses.reverse();
+            this.courses = this.courses.filter((x) => x.Option.formDk == 1);
+            this.courses.sort((a, b) => {
+                return a.Ordering - b.Ordering;
+            });
+            console.log(this.courses);
         });
     }
 }

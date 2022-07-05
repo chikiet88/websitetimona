@@ -7,15 +7,18 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { FileUpload } from '../models/file-upload.model';
+
+
 @Injectable({
     providedIn: 'root',
 })
 export class FileUploadService {
     currentFileUpload;
     percentage;
-    // private basePath = '/uploads';
+   
+    private basePath = '/uploads';
     // private basePath = '/test2';
-    private basePath = '/testtimona';
+    // private basePath = '/testtimona';
 
     private _thumb: BehaviorSubject<any | null> = new BehaviorSubject(null);
     get _thumb$(): Observable<any> {
@@ -23,7 +26,8 @@ export class FileUploadService {
     }
     constructor(
         private db: AngularFireDatabase,
-        private storage: AngularFireStorage
+        private storage: AngularFireStorage,
+ 
     ) {}
     pushFileToStorage(fileUpload: FileUpload): Observable<number | undefined> {
         const filePath = `${this.basePath}/${fileUpload.file.name}`;
@@ -49,28 +53,7 @@ export class FileUploadService {
     }
     private saveFileData(fileUpload: FileUpload): void {
         let image;
-        this.db
-            .list(this.basePath)
-            .push(fileUpload)
-            .then((x) => {
-                this.getFiles(1) //lấy file  chứa key từ firebase về
-                    .snapshotChanges()
-                    .pipe(
-                        map((changes) =>
-                            // store the key
-                            changes.map((c) => ({
-                                key: c.payload.key,
-                                ...c.payload.val(),
-                            }))
-                        )
-                    )
-                    .subscribe((fileUploads) => {
-                        fileUploads = fileUploads.reverse();
-                        // image = fileUploads[0].url
-                        //  this.myUploadAdapter.upload(fileUploads)
-                        this._thumb.next(fileUploads[0]);
-                    });
-            });
+        this.db.list(this.basePath).push(fileUpload);
 
         return image;
     }
@@ -81,7 +64,7 @@ export class FileUploadService {
     }
     deleteFile(item): void {
         console.log(item);
-        
+
         this.deleteFileDatabase(item[2])
             .then(() => {
                 // this.deleteFileStorage(item[0]);
@@ -91,11 +74,12 @@ export class FileUploadService {
     private deleteFileDatabase(key: string): Promise<void> {
         return this.db.list(this.basePath).remove(key);
     }
-    getValueByKey(key: string):Observable<any> {
+    getValueByKey(key: string): Observable<any> {
         return this.db.list(this.basePath + `/${key}`).valueChanges();
     }
     private deleteFileStorage(name: string): void {
         const storageRef = this.storage.ref(this.basePath);
         storageRef.child(name).delete();
     }
+   
 }
