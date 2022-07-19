@@ -11,6 +11,8 @@ import { Khoahoc } from './home.types';
 import $ from 'jquery';
 import { ViewportScroller } from '@angular/common';
 import { FacebookService, InitParams } from 'ngx-facebook';
+import gsap from 'gsap';
+
 @Component({
     selector: 'landing-home',
     templateUrl: './home.component.html',
@@ -47,14 +49,30 @@ export class LandingHomeComponent {
             inline: 'nearest',
         });
         console.log(document.getElementById('header'));
-        
     }
 
     toggleMenu() {
         this.isShow = !this.isShow;
     }
- 
-  
+
+    onscroll() {
+        let item = window.scrollY;
+        let header = document.getElementById('header');
+        let backtotop = document.querySelector('.backtotop')
+        if (item > 140) {
+            header.classList.add('header');
+        }
+        if (item > header.clientHeight + 200) {
+            header.classList.add('header-active');
+            backtotop.classList.add('backtotop-active')
+        }
+        if (item < 10) {
+            header.classList.remove('header-active');
+            header.classList.remove('header');
+            backtotop.classList.remove('backtotop-active')
+
+        }
+    }
     nest = (items, id = '', link = 'parentid') =>
         items
             .filter((item) => item[link] == id)
@@ -63,6 +81,8 @@ export class LandingHomeComponent {
                 children: this.nest(items, item.id),
             }));
     ngOnInit(): void {
+        window.addEventListener('scroll', this.onscroll, true);
+
         this.homeService.getMenu().subscribe((dataMenu) => {
             this.homeService.getKhoahoc().subscribe((dataBaiviet) => {
                 this.items = dataBaiviet;

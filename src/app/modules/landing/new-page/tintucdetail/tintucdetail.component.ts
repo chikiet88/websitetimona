@@ -1,17 +1,19 @@
 import {
     AfterViewInit,
     Component,
+    DoCheck,
     HostListener,
     OnInit,
     ViewEncapsulation,
 } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { KhoahocService } from '../../khoahoc/khoahoc.service';
+import { ViewportScroller } from '@angular/common';
 import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import Draggable from 'gsap/Draggable';
-import { Location, ViewportScroller } from '@angular/common';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ScrollDispatcher } from '@angular/cdk/scrolling';
 @Component({
     selector: 'app-tintucdetail',
     templateUrl: './tintucdetail.component.html',
@@ -19,23 +21,25 @@ import { Location, ViewportScroller } from '@angular/common';
     encapsulation: ViewEncapsulation.None,
 })
 export class TintucdetailComponent implements OnInit, AfterViewInit {
+    isSticky: boolean = false;
+
     private lastPoppedUrl: string;
     private yScrollStack: number[] = [];
     private fragment: string;
+    slug;
     course$: Observable<any>;
     courses: any[];
     danhmucs;
     danhmucTintuc: any[];
     baivietnoibat = 1;
-    
+
     tintucs: any[];
     constructor(
-        private scroll: ViewportScroller,
-        private router: Router,
         private _khoahocService: KhoahocService,
         private route: ActivatedRoute,
-        
-    ) {}
+    ) {
+      
+    }
 
     theme: any;
 
@@ -45,20 +49,65 @@ export class TintucdetailComponent implements OnInit, AfterViewInit {
             inline: 'nearest',
         });
         console.log(document.querySelectorAll('#header'));
-        this.ngOnInit()
+        this.ngOnInit();
     }
-    scrollToTop() {
-        this.scroll.scrollToPosition([0, 0]);
+    initScrollTriggers() {
+        let box = document.querySelector('.form-submit');
+        console.log(box);
     }
+    onscroll(e) {
+        let item = window.scrollY;
+        let box = document.querySelector('.form-submit').clientHeight;
+        let header = document.getElementById('header').clientHeight;
 
+        let heightDes = document.getElementById('top').clientHeight;
+        let heightCourse =
+            document.querySelector('.courses-tintuc').clientHeight;
+        let totalHeight = header + heightDes + heightCourse + 40;
+        let heigtnewpage = document.querySelector('.new-page').clientHeight;
+        box = heigtnewpage - box - 40
+        if (item >= totalHeight && item < box)  {
+            console.log('sssssssss');
+            this.isSticky = true;
+            console.log(this.isSticky);
+            document
+                .querySelector('.scroll-fixed')
+                .classList.add('fixed', 'delay-100', 'top-10');
+            document.querySelector('.image-form').classList.add('w-72');
+            document
+                .querySelector('.scroll-fixed')
+                .classList.remove('absolute', 'delay-100', 'bottom-0');
+        } else if (item <= totalHeight) {
+            this.isSticky = false;
+            console.log(this.isSticky);
+            document
+                .querySelector('.scroll-fixed')
+                .classList.remove('fixed', 'delay-100', 'top-10');
+
+            document.querySelector('.image-form').classList.remove('w-72');
+        } else if (item > box) {
+            console.log('sss');
+            
+            document
+                .querySelector('.scroll-fixed')
+                .classList.remove('fixed', 'top-10');
+
+            document
+                .querySelector('.scroll-fixed')
+                .classList.add('absolute', 'delay-100', 'bottom-0');
+        }
+    }
     ngOnInit(): void {
-      
         this.route.params.subscribe((data: any) => {
+            this.slug = data.slugdetail;
             this._khoahocService.getKhoahocChitiet(data.slugdetail).subscribe();
             this._khoahocService.course$.subscribe((course: any) => {
-                this.theme = course;
+                if (course) {
+                    this.theme = course;
+                }
             });
         });
+        window.addEventListener('scroll', this.onscroll, true);
         this._khoahocService.getDanhmuc().subscribe();
         this._khoahocService.danhmucs$.subscribe((res) => {
             this.danhmucs = res?.filter((x) => x.Type == 'chuyennganh');
@@ -86,18 +135,17 @@ export class TintucdetailComponent implements OnInit, AfterViewInit {
             }
             this.tintucs = b.sort(() => 0.5 - Math.random());
             this.tintucs = this.tintucs.slice(0, 4);
-            console.log(this.tintucs);
 
             this.courses = a.filter((x) => x.Loaibaiviet == this.baivietnoibat);
             this.courses.sort((a, b) => {
                 return a.Ordering - b.Ordering;
             });
         });
-      
     }
+
     ngAfterViewInit(): void {
         try {
-          document.querySelector('#' + this.fragment).scrollIntoView();
-        } catch (e) { }
-      }
+            document.querySelector('#' + this.fragment).scrollIntoView();
+        } catch (e) {}
+    }
 }

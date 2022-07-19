@@ -77,6 +77,8 @@ ul{
 .address-item{
     color: #fff;
     font-size: 14px;
+    display: flex;
+    line-height: 20px   ;
     padding-top: 10px;
 }
 .footer-right-contact{

@@ -9,6 +9,8 @@ import { AnswerPageComponent } from '../corner-student/answer-page/answer-page.c
 import { ActivatePageComponent } from '../corner-student/activate-page/activate-page.component';
 import { StudentFeelPageComponent } from '../corner-student/student-feel-page/student-feel-page.component';
 import { ContactPageComponent } from '../contact-page/contact-page.component';
+import { DangnhapComponent } from '../dangnhap/dangnhap.component';
+import { DangkyComponent } from '../dangky/dangky.component';
 export const landingHomeRoutes: Route[] = [
     {
         path: '',
@@ -54,6 +56,10 @@ export const landingHomeRoutes: Route[] = [
                 ],
             },
             { path: 'lien-he', component: ContactPageComponent },
+            { path: 'dang-nhap', component: DangnhapComponent },
+            { path: 'dang-ky', component: DangkyComponent },
+
+
         ],
     },
 ];

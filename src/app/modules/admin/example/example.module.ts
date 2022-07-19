@@ -13,6 +13,8 @@ import { CauhinhComponent } from '../cauhinh/cauhinh.component';
 import { DanhmucComponent } from '../danhmuc/danhmuc.component';
 import { LetotnghiepComponent } from '../letotnghiep/letotnghiep.component';
 import { AddGiangvienComponent } from '../add-giangvien/add-giangvien.component';
+import { FormdangkykhachhangComponent } from '../formdangkykhachhang/formdangkykhachhang.component';
+import { PostclipComponent } from '../postclip/postclip.component';
 const exampleRoutes: Route[] = [
     {
         path: '',
@@ -26,6 +28,10 @@ const exampleRoutes: Route[] = [
             { path: 'danhmuc', component: DanhmucComponent },
             { path: 'letotnghiep', component: LetotnghiepComponent },
             { path: 'giangvien', component: AddGiangvienComponent },
+            { path: 'khachhang', component: FormdangkykhachhangComponent },
+            { path: 'clip', component: PostclipComponent },
+
+
         ],
     },
 ];
@@ -41,6 +47,8 @@ const exampleRoutes: Route[] = [
         DanhmucComponent,
         LetotnghiepComponent,
         AddGiangvienComponent,
+        FormdangkykhachhangComponent,
+        PostclipComponent
     ],
     imports: [
         RouterModule.forChild(exampleRoutes),

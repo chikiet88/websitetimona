@@ -64,6 +64,13 @@ export const compactNavigation: FuseNavigationItem[] = [
         link : '/admin/menu'
     },
     {
+        id   : 'khachhang',
+        title: 'Khách hàng',
+        type : 'basic',
+        icon : 'heroicons_outline:chart-pie',
+        link : '/admin/khachhang'
+    },
+    {
         id   : 'theme',
         title: 'theme',
         type : 'basic',

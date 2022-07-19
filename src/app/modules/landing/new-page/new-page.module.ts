@@ -16,9 +16,10 @@ import { TintucdetailComponent } from './tintucdetail/tintucdetail.component';
 import { NewListComponent } from './new-list/new-list.component';
 import { TintucdetailPipe } from './tintucdetail/tintucdetail.pipe';
 import { CustomPipePipe } from '../customs/custom-pipe.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { WINDOW_PROVIDERS } from '../services/window.service';
 import { CommentsComponent } from './comments/comments.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   
@@ -44,6 +45,9 @@ import { CommentsComponent } from './comments/comments.component';
         SwiperModule,
         MaterialExampleModule,
         FormsModule,
+        CKEditorModule,
+        ReactiveFormsModule,
+       
     ],
     providers: [ WINDOW_PROVIDERS ]
 })

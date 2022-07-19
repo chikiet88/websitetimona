@@ -1,11 +1,10 @@
 <div class="lg:max-w-6xl lg:mx-auto lg:px-8 lg:py-10">
     <div class="text-center lg:mx-96 pb-4 lg:pb-10 relative">
-        <div class="dropdown">
+        <div class="dropdown w-96">
             <button
-                class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-xl text-yellow-500 uppercase"
+                class="btn btn-secondary bg-indigo-900 rounded-3xl w-full dropdown-toggle relative text-xl text-yellow-500 uppercase"
                 type="button"
                 id="dropdownMenuButton1"
-                style="width: 350px"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
                 (click)="xemnhanhnoidung()"
@@ -16,15 +15,23 @@
                     style="width: 2px; right: 45px"
                 ></div>
             </button>
-            <ul class="dropdown-menu absolute  left-0 w-full" aria-labelledby="dropdownMenuButton1">
-                <li *ngFor="let item of xemNhanhNoiDung; let i = index" (click)="chonXemNoiDung(item, i)">
-                    <a
-                        class="dropdown-item three-dot"
-                        >{{item.innerText}}</a
-                    >
+            <ul
+                class="dropdown-menu absolute left-0 w-full"
+                aria-labelledby="dropdownMenuButton1"
+            >
+                <li
+                    *ngFor="let item of xemNhanhNoiDung; let i = index"
+                    (click)="chonXemNoiDung(item, i)"
+                    class="list-style"
+                >
+                    <span class="dropdown-item three-dot cursor-pointer">{{
+                        item.innerText
+                    }}</span>
                 </li>
-                
             </ul>
+            <div class="absolute right-2 top-1/2 text-yellow-500 centerY">
+                <span class="material-icons"> expand_more </span>
+            </div>
         </div>
     </div>
 
@@ -65,31 +72,32 @@
     </div>
 
     <div class="bg-indigo-900 lg:px-10 lg:pb-10 wrapper padding-bottom">
-        <h3
-            class="text-white uppercase text-center text-2xl lg:text-4xl  py-5"
-        >
+        <h3 class="text-white uppercase text-center text-2xl lg:text-4xl py-5">
             {{ theme.title }}
         </h3>
-      
-        <div [innerHTML]="theme.des" class="text-white leading-5 text-justify"></div>
+
+        <div
+            [innerHTML]="theme.des"
+            class="text-white leading-5 text-justify"
+        ></div>
     </div>
 
     <div class="">
         <div [innerHTML]="theme?.content1 | theme1"></div>
 
-        <div class="md:pt-10 pt-5  theme-cohoi md:px-0 px-3" *ngIf="isCarousel1">
+        <div class="md:pt-10 pt-5 theme-cohoi md:px-0 px-3" *ngIf="isCarousel1">
             <p
-                class="text-indigo-900 uppercase text-xl mb-0 font-bold leading-5 md:text-left text-center"
+                class="text-indigo-900 uppercase text-xl mb-0 font-bold leading-5 md:text-left text-center pb-3"
             >
                 {{ theme?.slide1?.titleCarousel }}
             </p>
-            <div [innerHTML]="theme?.slide1?.desCarousel | theme1"></div>
+            <div [innerHTML]="theme?.slide1?.desCarousel | theme1" class="pb-3"></div>
             <swiper
                 [config]="config"
                 [pagination]="{
                     clickable: true
                 }"
-                class="mySwiper pb-10 md:pb-0 "
+                class="mySwiper pb-10 md:pb-0"
             >
                 <ng-template
                     swiperSlide
@@ -102,12 +110,12 @@
 
         <div class="md:pt-10 pt-5 md:px-0 px-3 theme-cohoi" *ngIf="isCarousel2">
             <h3
-                class="text-indigo-900 uppercase text-xl text-center md:text-left mb-0 font-black"
+                class="text-indigo-900 uppercase text-xl text-center md:text-left mb-0 font-black pb-3"
             >
                 {{ theme?.slide2?.titleCarousel }}
             </h3>
 
-            <div [innerHTML]="theme?.slide2?.desCarousel | theme1"></div>
+            <div [innerHTML]="theme?.slide2?.desCarousel | theme1" class="pb-3"></div>
             <div class="w-full">
                 <div class="md:px-10">
                     <swiper

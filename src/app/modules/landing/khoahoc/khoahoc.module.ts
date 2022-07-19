@@ -11,6 +11,7 @@ import { KhoahocListComponent } from './khoahoc-list/khoahoc-list.component';
 import {FormComponent} from './form/form.component';
 import { Theme1Pipe } from './theme1/theme1.pipe'
 import { SwiperModule } from 'swiper/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     Theme1Component,
@@ -25,7 +26,8 @@ import { SwiperModule } from 'swiper/angular';
   imports: [
     CommonModule,
     SwiperModule,
-    
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(khoahocRoutes),
    
     

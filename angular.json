@@ -42,15 +42,14 @@
                             "src/manifest.webmanifest"
                         ],
                         "stylePreprocessorOptions": {
-                            "includePaths": [
-                                "src/@fuse/styles"
-                            ]
+                            "includePaths": ["src/@fuse/styles"]
                         },
                         "styles": [
                             "src/@fuse/styles/tailwind.scss",
                             "src/@fuse/styles/themes.scss",
                             "src/styles/vendors.scss",
                             "src/@fuse/styles/main.scss",
+                            "src/styles.scss",
                             "src/styles/styles.scss",
                             "src/styles/tailwind.scss"
                         ],
@@ -97,7 +96,7 @@
                         "browserTarget": "secure-app:build",
                         "ssl": true,
                         "sslKey": "dev-domain.test+3-key.pem",
-                        "sslCert":"dev-domain.test+3.pem"
+                        "sslCert": "dev-domain.test+3.pem"
                     },
                     "configurations": {
                         "production": {
@@ -129,25 +128,17 @@
                             "src/assets",
                             "src/manifest.webmanifest"
                         ],
-                        "styles": [
-                            
-                            "src/styles/styles.scss"
-
-                        ],
+                        "styles": ["src/styles/styles.scss"],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
                             "node_modules/bootstrap/dist/js/bootstrap.min.js"
-
                         ]
                     }
                 },
                 "lint": {
                     "builder": "@angular-eslint/builder:lint",
                     "options": {
-                        "lintFilePatterns": [
-                            "src/**/*.ts",
-                            "src/**/*.html"
-                        ]
+                        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
                     }
                 }
             }

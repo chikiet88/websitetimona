@@ -10,12 +10,12 @@
             />
         </div>
         <div class="form-wrapper rounded-2xl w-full">
-            <form class="form-submit relative w-full">
+            <form class="form-submit relative w-full" [formGroup]="khachhangForm">
                 <div
                     class="absolute right-20 top-1/2"
                     style="transform: translateY(-50%)"
                 >
-                    <p class="text-white text-center mx-3 pb-2 leading-5">
+                    <p class="text-white text-center pb-2 leading-5">
                         Vui lòng để lại thông tin ở bên dưới, bộ phận tuyển sinh
                         sẽ liên hệ tư vấn<br />
                         MIỄN PHÍ cho bạn sau ít phút.
@@ -27,12 +27,15 @@
                             id="username-success"
                             class="border border-none bg-white text-black-900 placeholder-black-700 mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                             placeholder="HỌ TÊN"
+                            [formControlName]="'Hoten'"
                         />
                         <input
                             type="text"
                             id="username-success"
                             class="border border-none bg-white text-black-900 placeholder-black-700 ml-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                             placeholder="SỐ ĐIỆN THOẠI"
+                            [formControlName]="'SDT'"
+
                         />
                     </div>
 
@@ -42,14 +45,20 @@
                             id="username-success"
                             class="border border-none bg-white text-black-900 placeholder-black-700 mr-3 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                             placeholder="MÃ GIỚI THIỆU"
+                            [formControlName]="'MaGT'"
+
                         />
 
                         <select
                             id="countries"
                             class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 ml-3 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                        >
-                            <option>KHÓA HỌC</option>
-                            <option class="" *ngFor="let item of courses">
+                            [formControlName]="'idKH'"
+                            
+                       
+                            >
+                            <option value="" disabled selected class="">KHÓA HỌC</option>
+
+                            <option [value]="item.id" class="" *ngFor="let item of courses">
                                 {{ item.title }}
                             </option>
                         </select>
@@ -58,13 +67,16 @@
                         <select
                             id="countries"
                             class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                        >
-                            <option class="">CHỌN ĐỊA ĐIỂM</option>
-                            <option class="">TP.HCM</option>
-                            <option class="">NHA TRANG</option>
-                            <option class="">ĐÀ NẴNG</option>
+                            [formControlName]="'Diachi'"
+                        placeholder="Chọn địa điểm"
+                            >
+                            <option value="" disabled selected class="">ĐỊA CHỈ</option>
+
+                            <option value="Hồ Chí Minh" class="">Hồ Chí Minh</option>
+                            <option value="NHA TRANG" class="">NHA TRANG</option>
+                            <option value="ĐÀ NẴNG" class="">ĐÀ NẴNG</option>
                         </select>
-                        <button class="">đăng kí ngay</button>
+                        <button class="" (click)="onSubmit()">đăng kí ngay</button>
                     </div>
                 </div>
             </form>
@@ -81,51 +93,65 @@
         </div>
         <form
             class="form-submit flex flex-col pb-8 justify-center items-center absolute w-full"
+            [formGroup]="khachhangForm"
         >
-            <span class="text-white text-center px-3 leading-5">
+            <p class="text-white text-center leading-5">
                 Vui lòng để lại thông tin ở bên dưới, bộ phận tuyển sinh <br />
                 sẽ liên hệ tư vấn MIỄN PHÍ cho bạn sau ít phút.
-            </span>
+            </p>
             <input
                 type="text"
                 id="username-success"
                 class="border bg-white border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                 placeholder="HỌ TÊN"
+                [formControlName]="'Hoten'"
+
             />
             <input
                 type="text"
                 id="username-success"
                 class="border bg-white border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                 placeholder="SỐ ĐIỆN THOẠI"
+                [formControlName]="'SDT'"
+
             />
             <input
                 type="text"
                 id="username-success"
                 class="border border-none bg-white text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
                 placeholder="MÃ GIỚI HIỆU"
+                [formControlName]="'MaGT'"
+
             />
 
             <select
                 id="countries"
                 class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
-            >
-                <option class="text-black-700">KHÓA HỌC</option>
-                <option class="text-black-700" *ngFor="let item of courses">
+                [formControlName]="'idKH'"
+            
+                >
+                <option value="" disabled selected class="">KHÓA HỌC</option>
+
+                <option class="text-black-700" [value]="item.id" *ngFor="let item of courses">
                     {{ item.title }}
                 </option>
             </select>
 
             <select
+            [formControlName]="'Diachi'"
+
                 id="countries"
                 class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
             >
-                <option class="text-black-700">CHỌN ĐỊA ĐIỂM</option>
+            <option value="" disabled selected class="">CHỌN ĐỊA ĐIỂM</option>
+
                 <option class="text-black-700">TP.HCM</option>
                 <option class="text-black-700">NHA TRANG</option>
                 <option class="text-black-700">ĐÀ NẴNG</option>
             </select>
 
             <button
+             (click)="onSubmit()"
                 class="text-center !w-full mx-32 p-3 rounded-lg flex items-center justify-center"
             >
                 đăng kí ngay

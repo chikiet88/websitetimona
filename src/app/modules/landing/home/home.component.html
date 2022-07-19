@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container" autosize>
+<mat-drawer-container class="example-container h-auto overflow-x-hidden" autosize>
     <mat-drawer #drawer class="example-sidenav bg-indigo-900" mode="over">
         <div class="sm:hidden mobile-header" id="mobile-menu">
             <button
@@ -86,7 +86,7 @@
     </mat-drawer>
 
     <div class="example-sidenav-content flex flex-col relative">
-        <header id="header" class="lg:mb-0 mb-20">
+        <header id="header" class="lg:mb-0 mb-20 left-0 top-0 w-full z-20 overflow-hidden border-b border-white">
             <nav class="bg-indigo-900 h-auto w-full z-50">
                 <div class="lg:max-w-6xl mx-auto px-2 sm:px-6 lg:px-5">
                     <div
@@ -304,7 +304,7 @@
 
         <app-footer></app-footer>
         <button
-            class="fixed bottom-7 right-24 w-10 h-10 bg-indigo-900 rounded-full scroll-to-top hidden lg:block border-2 border-white"
+            class="fixed bottom-7 backtotop  right-32 w-10 h-10 bg-indigo-900 rounded-full scroll-to-top  border-2 border-white"
             (click)="goDown1()"
         >
             <span

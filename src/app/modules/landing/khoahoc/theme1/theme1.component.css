@@ -9,6 +9,10 @@
     transform: translateY(-50%);
     margin-left: -10px;
 }
+.list-style{
+    list-style: none;
+    list-style-type: none;
+}
 .radius {
     transform: translateY(-50%);
     top: 10px;
@@ -30,7 +34,7 @@
     background-color: #194cb1;
 }
 .centerY {
-    transform: translateY(-30%);
+    transform: translateY(-50%);
 }
 @media only screen and (max-width: 762px) {
     .wrapper {

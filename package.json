@@ -11,7 +11,8 @@
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "lint": "ng lint"
+        "lint": "ng lint",
+        "build-serve": "node --max_old_space_size=16000 ./node_modules/@angular/cli/bin/ng serve"
     },
     "dependencies": {
         "@angular/animations": "13.0.1",
@@ -34,6 +35,7 @@
         "@popperjs/core": "^2.11.4",
         "@types/gsap": "^3.0.0",
         "angular-bootstrap-md": "^13.0.0",
+        "angular-notifier": "^11.0.0",
         "apexcharts": "3.29.0",
         "bootstrap": "^5.1.3",
         "crypto-js": "3.3.0",
@@ -52,6 +54,8 @@
         "ngx-markdown": "13.0.0",
         "ngx-owl-carousel-o": "^5.1.0",
         "ngx-quill": "16.0.1",
+        "ngx-wheel": "^4.0.5",
+        "notify-angular": "^3.0.1",
         "perfect-scrollbar": "1.5.3",
         "quill": "1.3.7",
         "rxjs": "7.4.0",

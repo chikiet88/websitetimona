@@ -24,6 +24,49 @@ import {AngularFireStorageModule } from '@angular/fire/compat/storage'
 import { environment } from 'environments/environment';
 import { FacebookModule } from 'ngx-facebook';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { WheelComponent } from './modules/landing/wheel/wheel.component';
+import { NgxWheelModule } from 'ngx-wheel';
+const customNotifierOptions: NotifierOptions = {
+    position: {
+          horizontal: {
+              position: 'right',
+              distance: 12
+          },
+          vertical: {
+              position: 'top',
+              distance: 12,
+              gap: 10
+          }
+      },
+    theme: 'material',
+    behaviour: {
+      autoHide: 5000,
+      onClick: 'hide',
+      onMouseover: 'pauseAutoHide',
+      showDismissButton: true,
+      stacking: 4
+    },
+    animations: {
+      enabled: true,
+      show: {
+        preset: 'slide',
+        speed: 300,
+        easing: 'ease'
+      },
+      hide: {
+        preset: 'fade',
+        speed: 300,
+        easing: 'ease',
+        offset: 50
+      },
+      shift: {
+        speed: 300,
+        easing: 'ease'
+      },
+      overlap: 150
+    }
+  };
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
     scrollPositionRestoration: 'enabled'
@@ -33,6 +76,7 @@ const routerConfig: ExtraOptions = {
     declarations: [
         AppComponent,
         PageErrorComponent,
+        WheelComponent,
     ],
     imports     : [
         BrowserModule,
@@ -61,12 +105,15 @@ const routerConfig: ExtraOptions = {
         AngularFireDatabaseModule,
         AngularFireStorageModule,
         FacebookModule,
+        NotifierModule.withConfig(customNotifierOptions),
+
         ServiceWorkerModule.register('ngsw-worker.js', {
           enabled: environment.production,
           // Register the ServiceWorker as soon as the application is stable
           // or after 30 seconds (whichever comes first).
           registrationStrategy: 'registerWhenStable:30000'
-        })
+        }),
+        NgxWheelModule
     ],
     bootstrap   : [
         AppComponent

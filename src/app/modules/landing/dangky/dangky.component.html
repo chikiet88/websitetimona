@@ -1,0 +1,156 @@
+<div
+    class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0"
+>
+    <div
+        class="md:flex md:items-center md:justify-end w-full sm:w-auto md:h-full md:w-1/2 py-8 px-4 sm:p-12 md:p-16 sm:rounded-2xl md:rounded-none sm:shadow md:shadow-none sm:bg-card"
+    >
+        <div class="w-full max-w-80 sm:w-80 mx-auto sm:mx-0">
+            <div class="w-24">
+                <img
+                    src="../../../../assets/images/homepages/homepage/logo/timona-logo.png"
+                    class="bg-indigo-900"
+                />
+            </div>
+            <div
+                class="mt-8 text-4xl font-extrabold tracking-tight leading-tight"
+            >
+                Đăng ký
+            </div>
+            <form class="mt-8" [formGroup]="signUpForm">
+                <!-- Name field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Họ và tên</mat-label>
+                    <input
+                        id="company-confirm"
+                        matInput
+                        [formControlName]="'name'"
+                        placeholder="Họ và tên"
+                    />
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Số điện thoại</mat-label>
+                    <input
+                        id="name"
+                        matInput
+                        [formControlName]="'SDT'"
+                        placeholder="012345678"
+                    />
+                </mat-form-field>
+
+                <!-- Email field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Nhập Email</mat-label>
+                    <input
+                        id="email"
+                        matInput
+                        placeholder="abc@gmail.com"
+                        [formControlName]="'email'"
+                    />
+                </mat-form-field>
+
+                <!-- Password field -->
+                <mat-form-field class="w-full">
+                    <mat-label>Nhập mật khẩu</mat-label>
+                    <input
+                        id="password"
+                        matInput
+                        type="password"
+                        [formControlName]="'password'"
+                        #passwordField
+                    />
+                    <button
+                        mat-icon-button
+                        type="button"
+                        (click)="
+                            passwordField.type === 'password'
+                                ? (passwordField.type = 'text')
+                                : (passwordField.type = 'password')
+                        "
+                        matSuffix
+                    >
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField.type === 'password'"
+                            [svgIcon]="'heroicons_solid:eye'"
+                        ></mat-icon>
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField.type === 'text'"
+                            [svgIcon]="'heroicons_solid:eye-off'"
+                        ></mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                    <mat-label>Nhập lại mật khẩu</mat-label>
+                    <input
+                        id="password"
+                        matInput
+                        type="password"
+                        [formControlName]="'confirmPassword'"
+                        #passwordField1
+                    />
+                    <button
+                        mat-icon-button
+                        type="button"
+                        (click)="
+                            passwordField1.type === 'password'
+                                ? (passwordField1.type = 'text')
+                                : (passwordField1.type = 'password')
+                        "
+                        matSuffix
+                    >
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField1.type === 'password'"
+                            [svgIcon]="'heroicons_solid:eye'"
+                        ></mat-icon>
+                        <mat-icon
+                            class="icon-size-5"
+                            *ngIf="passwordField1.type === 'text'"
+                            [svgIcon]="'heroicons_solid:eye-off'"
+                        ></mat-icon>
+                    </button>
+                </mat-form-field>
+                <!-- Company field -->
+
+                <!-- ToS and PP -->
+                <div class="inline-flex items-end w-full mt-1.5">
+                    <mat-checkbox
+                        [color]="'primary'"
+                        [formControlName]="'agreements'"
+                    >
+                        <span>I agree to the</span>
+                        <a
+                            class="ml-1 text-primary-500 hover:underline"
+                            [routerLink]="['./']"
+                            >Terms of Service
+                        </a>
+                        <span>and</span>
+                        <a
+                            class="ml-1 text-primary-500 hover:underline"
+                            [routerLink]="['./']"
+                            >Privacy Policy
+                        </a>
+                    </mat-checkbox>
+                </div>
+
+                <!-- Submit button -->
+                <button
+                    class="fuse-mat-button-large w-full mt-6"
+                    mat-flat-button
+                    [color]="'primary'"
+                    [disabled]="signUpForm.disabled"
+                    (click)="signUp()"
+                >
+                    <span *ngIf="!signUpForm.disabled"> Tạo tài khoản </span>
+                    <mat-progress-spinner
+                        *ngIf="signUpForm.disabled"
+                        [diameter]="24"
+                        [mode]="'indeterminate'"
+                    ></mat-progress-spinner>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

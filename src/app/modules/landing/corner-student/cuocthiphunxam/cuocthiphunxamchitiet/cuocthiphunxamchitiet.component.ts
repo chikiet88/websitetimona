@@ -6,15 +6,15 @@ import { take } from 'rxjs';
 import { SwiperComponent } from 'swiper/angular';
 
 @Component({
-  selector: 'app-cuocthiphunxamchitiet',
-  templateUrl: './cuocthiphunxamchitiet.component.html',
-  styleUrls: ['./cuocthiphunxamchitiet.component.scss']
+    selector: 'app-cuocthiphunxamchitiet',
+    templateUrl: './cuocthiphunxamchitiet.component.html',
+    styleUrls: ['./cuocthiphunxamchitiet.component.scss'],
 })
 export class CuocthiphunxamchitietComponent implements OnInit {
-  @ViewChild(SwiperComponent) swiper: SwiperComponent;
+    @ViewChild(SwiperComponent) swiper: SwiperComponent;
     album;
     config;
-    title
+    title;
     listimage = [];
     b = [];
     a = [];
@@ -34,7 +34,7 @@ export class CuocthiphunxamchitietComponent implements OnInit {
     callback(item) {
         return new Promise((resolve, reject) => {
             console.log(item);
-            
+
             this._uploadService
                 .getValueByKey(item)
                 .pipe(take(1))
@@ -49,10 +49,10 @@ export class CuocthiphunxamchitietComponent implements OnInit {
         const slug = this.route.snapshot.paramMap.get('slug');
         this._khoahocService.getKhoahocChitiet(slug).subscribe();
         this._khoahocService.course$.pipe(take(1)).subscribe((res) => {
-            this.title = res.title
+            this.title = res.title;
             this.album = res.image;
             console.log(this.album);
-            
+
             for (
                 let i = 0, p = Promise.resolve();
                 i < Object.keys(this.album).length;
@@ -61,19 +61,20 @@ export class CuocthiphunxamchitietComponent implements OnInit {
                 p = p.then(() =>
                     this.callback(Object.values(this.album)[i]).then((x) => {
                         this.listimage.push(x);
-                        if(this.listimage.length == Object.keys(this.album).length){
-                            
+                        if (
+                            this.listimage.length ==
+                            Object.keys(this.album).length
+                        ) {
                             this.x = this.listimage.length / 3;
                             for (let i = 0; i < this.x; i++) {
-                                this.b.push(this.listimage.slice(3 * i, 3 * i + 3));
+                                this.b.push(
+                                    this.listimage.slice(3 * i, 3 * i + 3)
+                                );
                             }
-                
                         }
                     })
                 );
-
             }
-           
 
             // this.x = Object.keys(this.album?.image)?.length / 3;
             // for (let i = 0; i <= this.x; i++) {

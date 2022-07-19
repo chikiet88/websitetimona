@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotifierService } from 'angular-notifier';
 import { FacebookService, InitParams } from 'ngx-facebook';
 
 @Component({
@@ -8,10 +9,20 @@ import { FacebookService, InitParams } from 'ngx-facebook';
 })
 export class AppComponent
 {
+	
+    constructor(private facebookService: FacebookService) { 
 
-    constructor(private facebookService: FacebookService) { }
+    }
+    	/**
+	 * Show a notification
+	 *
+	 * @param {string} type    Notification type
+	 * @param {string} message Notification message
+	 */
+      
     ngOnInit(): void {
         this.initFacebookService();
+
       }
       private initFacebookService(): void {
         const initParams: InitParams = { xfbml:true, version:'v3.2'};

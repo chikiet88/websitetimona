@@ -11,4 +11,10 @@ max-height: 7.2rem;
     border-bottom: 2px solid #000;
     margin-top: 20px;
 }
-
+.three-dot{
+overflow: hidden;
+display: -webkit-box; 
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+max-height: 3.2rem;
+}

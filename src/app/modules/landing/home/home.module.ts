@@ -30,6 +30,8 @@ import { StoryComponent } from '../homepage/story/story.component';
 import { ExpertComponent } from '../homepage/expert/expert.component';
 import { NewPageComponent } from '../new-page/new-page.component';
 import { CornerStudentComponent } from '../corner-student/corner-student.component';
+import { DangkyComponent } from '../dangky/dangky.component';
+import { DangnhapComponent } from '../dangnhap/dangnhap.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +53,9 @@ import { CornerStudentComponent } from '../corner-student/corner-student.compone
         StoryComponent,
         ExpertComponent,
         NewPageComponent,
-        CornerStudentComponent
+        CornerStudentComponent,
+        DangkyComponent,
+        DangnhapComponent,
     ],
     imports: [
         RouterModule.forChild(landingHomeRoutes),

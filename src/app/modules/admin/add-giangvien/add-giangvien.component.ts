@@ -208,7 +208,6 @@ export class AddGiangvienComponent implements OnInit {
     selectOrdering(item) {
         // item.Ordering = this.i;
         // this.GiangvienService.updateGiangvien(item).subscribe((res) => {
-        //     console.log('sssssssss');
         //     ++this.i;
         // });
     }
@@ -227,17 +226,17 @@ export class AddGiangvienComponent implements OnInit {
                 event.previousIndex,
                 event.currentIndex
             );
-            let items = event.container.data;
-            const currentItem = items[event.currentIndex];
-            const prevItem = items[event.currentIndex - 1] || null;
-            const nextItem = items[event.currentIndex + 1] || null;
-            currentItem.Ordering = event.currentIndex;
-            prevItem.Ordering = event.currentIndex - 1 || null;
-            nextItem.Ordering = event.currentIndex + 1 || null;
-            this.GiangvienService.updateGiangvien(currentItem).subscribe();
-            this.GiangvienService.updateGiangvien(prevItem).subscribe();
+                // let items = event.container.data;
+                // const currentItem = items[event.currentIndex];
+                // const prevItem = items[event.currentIndex - 1] || null;
+                // const nextItem = items[event.currentIndex + 1] || null;
+                // currentItem.Ordering = event.currentIndex;
+                // prevItem.Ordering = event.currentIndex - 1 || null;
+                // nextItem.Ordering = event.currentIndex + 1 || null;
+            // this.GiangvienService.updateGiangvien(currentItem).subscribe();
+            // this.GiangvienService.updateGiangvien(prevItem).subscribe();
 
-            this.GiangvienService.updateGiangvien(nextItem).subscribe();
+            // this.GiangvienService.updateGiangvien(nextItem).subscribe();
         } else {
             transferArrayItem(
                 event.previousContainer.data,
@@ -246,6 +245,16 @@ export class AddGiangvienComponent implements OnInit {
                 event.currentIndex
             );
         }
+        event.container.data[event.currentIndex].Ordering = event.container.id
+        let item = event.container.data[event.currentIndex]
+
+
+        console.log(item);
+        console.log(event.container.id);
+        
+        
+            // this.GiangvienService.updateGiangvien(item).subscribe();
+
     }
     capnhatOrdering() {
         if (this.done.length > 0) {

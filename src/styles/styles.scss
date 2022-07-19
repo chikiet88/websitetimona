@@ -2,15 +2,14 @@
 /*  @ Import/write your custom styles here.
 /*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
 /* ----------------------------------------------------------------------------------------------------- */
+@import "node_modules/angular-notifier/styles";
 
 @import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
 @import "~swiper/css";
 @import "~swiper/css/pagination";
 @import "~swiper/css/navigation";
-html,
-body {
-    height: 100%;
-}
+
+
 
 html,
 body,
@@ -115,6 +114,7 @@ section {
     display: block;
 }
 body {
+    background-color: white;
     line-height: 1;
     overflow-x: hidden;
 }
@@ -137,14 +137,12 @@ table {
 }
 html,
 body {
-    height: 100%;
+    overflow-x: hidden;
 }
 body {
     margin: 0;
-    font-family: "Times New Roman", Times, serif;
 }
 * {
-    font-family: "Times New Roman", Times, serif;
 }
 .video-container {
     position: relative;

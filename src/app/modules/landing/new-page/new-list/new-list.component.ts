@@ -40,7 +40,6 @@ export class NewListComponent implements OnInit {
             });
             this.danhmucs = res?.filter((v) => v.pid == this.danhmuccha.id);
             this.danhmucs = this.danhmucs?.reverse();
-            console.log(this.danhmucs);
             res = temp
         });
     }

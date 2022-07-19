@@ -9,4 +9,6 @@ export const environment = {
         appId: "1:836571576483:web:0fba5f8fe89806e18ea716",
         measurementId: "G-YN95Q8DYWR"
       },
+    url: 'https://v2api.timona.edu.vn',
+
 };

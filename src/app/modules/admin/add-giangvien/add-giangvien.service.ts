@@ -74,11 +74,11 @@ export class AddGiangvienService {
                   map((updategiangvien) => {
                       // Find the index of the updated tag
                       const index = giangviens.findIndex(
-                          (item) => item.id === item.id
+                          (item) => item.id === data.id
                       );
 
                       // Update the tag
-                      giangviens[index] = data;
+                      giangviens[index] = updategiangvien;
 
                       // Update the tags
                       this._giangviens.next(giangviens);

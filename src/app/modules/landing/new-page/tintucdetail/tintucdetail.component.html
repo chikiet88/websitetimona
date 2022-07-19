@@ -1,4 +1,5 @@
-<!-- <div class="text-center lg:mx-96 pb-4 lg:pb-10">
+<div>
+    <!-- <div class="text-center lg:mx-96 pb-4 lg:pb-10">
     <div class="dropdown">
         <button
             class="btn btn-secondary bg-indigo-900 rounded-3xl dropdown-toggle relative text-lg text-yellow-500 uppercase"
@@ -30,7 +31,7 @@
         </ul>
     </div>
 </div> -->
-<!-- 
+    <!-- 
     <div class="w-full h-1/2 flex flex-col hidden lg:block">
         <div class="pb-4 flex justify-between">
             <nav class="flex" aria-label="Breadcrumb">
@@ -67,13 +68,18 @@
         </div>
     </div> -->
 
-<div class="bg-indigo-900 lg:px-10 pb-5 overflow-auto" id="top">
-    <h3
-        class="text-white uppercase text-center text-2xl lg:text-4xl py-5 md:px-0 px-3 lg:leading-10 leading-5"
+    <div
+        class="bg-indigo-900 md:mt-10 lg:px-10 pb-5 overflow-auto {{
+            isSticky ? 'isSticky' : ''
+        }}"
+        id="top"
     >
-        {{ theme?.title }}
-    </h3>
-    <!-- <p class="text-white lg:italic text-justify leading-5">
+        <h3
+            class="text-white uppercase text-center text-2xl lg:text-4xl py-5 md:px-0 px-3 lg:leading-10 leading-5"
+        >
+            {{ theme?.title }}
+        </h3>
+        <!-- <p class="text-white lg:italic text-justify leading-5">
         Spa thẩm mỹ hiện đang là một trong những ngành nghề hot nhất hiện nay.
         Với tốc độ phát triển mạnh mẽ của ngành công nghiệp làm đẹp nước ta,
         cùng với đó là nhu cầu và xu hướng làm đẹp tăng cao. Điều đó đã giúp cho
@@ -82,12 +88,12 @@
         vì nhiều lý do sau đây. Dưới đây là 4 sai lầm khiến việc kinh doanh Spa
         thất bại mà bạn cần lưu ý nếu có ý định mở Spa trong tương lai.
     </p> -->
-    <div
-        [innerHTML]="theme?.des"
-        class="text-white md:px-0 px-3 text-justify leading-5"
-    ></div>
-</div>
-<!-- <div class="pt-10">
+        <div
+            [innerHTML]="theme?.des"
+            class="text-white md:px-0 px-3 text-justify leading-5"
+        ></div>
+    </div>
+    <!-- <div class="pt-10">
     <h3 class="text-indigo-900 text-xl font-bold pb-5">1. Thiếu kinh nghiệm</h3>
     <p class="text-indigo-900 leading-5">
         Kinh nghiệm là một điều quý báu mà không phải ai cũng có được. Để có
@@ -164,7 +170,7 @@
     </p>
 </div> -->
 
-<!-- <div class="pt-10">
+    <!-- <div class="pt-10">
     <h3 class="text-indigo-900 text-2xl font-bold pb-5">
         1. Thiếu kinh nghiệm
     </h3>
@@ -285,187 +291,135 @@
         Như vậy, nếu bạn đã có ý định mở Spa thì cần học hỏi, chuẩn bị và sẵn sàng đầu tư để có thể đạt kết quả tốt nhất. Tham gia các <strong class="text-indigo-900 font-black">khóa học đào tạo quản lý Spa chuyên nghiệp</strong> &nbsp;tại Timona Academy để có được một bắt đầu thuận lợi nhé. Liên hệ hotline: <strong class="text-indigo-900 font-black">1900 2109</strong> để nhận được sự tư vấn ngay hôm nay.
     </p>
 </div> -->
-<div class="md:flex w-full md:px-0 px-3">
-    <div class="md:w-3/4 w-full flex flex-col md:pr-5 box">
-        <div
-            [innerHTML]="theme?.content1 | tintucdetail"
-            class="text-indigo-900 md:px-0 px-3"
-        ></div>
-        <div class="md:py-5 mt-5 py-5 relative">
-            <div class="flex items-center pb-5">
-                <div class="w-full h-px bg-gray-400"></div>
-            </div>
-
-            <div class="pb-5">
-                <div class="flex justify-between items-center">
-                    <div class="text-indigo-900 font-bold text-lg">
-                        Bình luận
-                    </div>
-                    <div class="flex justify-end items-center">
-                        <span class="mr-3">Chia sẽ:</span>
-                        <div class="rounded-full w-8 bg-red-200 h-8 mr-2"></div>
-                        <div class="rounded-full w-8 bg-red-200 h-8"></div>
-                    </div>
-                </div>
-                <div class="w-full border-b border-black">
-                    <textarea
-                        class="border w-full h-32 p-5 text-lg border-black rounded-lg bg-white"
-                        placeholder="Comment"
-                    ></textarea>
-                    <div
-                        class="flex justify-between text-blue-500 items-center py-2"
-                    >
-                        <div class="flex items-center">
-                            <span class="material-icons mr-3">
-                                photo_camera
-                            </span>
-                            <span>Gửi ảnh</span>
-                        </div>
-                        <div class="text-white bg-blue-500 px-3 py-1 rounded">
-                            Gửi
-                        </div>
-                    </div>
-
+    <div class="md:flex w-full md:px-0 px-3">
+        <div class="md:w-3/4 w-full flex flex-col md:pr-5 box">
+            <div
+                [innerHTML]="theme?.content1 | tintucdetail"
+                class="text-indigo-900 md:px-0 px-3"
+            ></div>
+            <div class="md:py-5 mt-5 py-5 relative">
+                <div class="flex items-center pb-5">
                     <div class="w-full h-px bg-gray-400"></div>
                 </div>
 
-                <div class="pt-5">
-                    <div class="flex items-center">
-                        <div
-                            class="h-7 w-7 text-lg flex items-center justify-center bg-gray-200 mr-2"
-                        >
-                            U
-                        </div>
-                        <p class="font-bold">Nguyễn Hồng Phương Uyên</p>
-                    </div>
-                    <div>
-                        <div class="flex items-center pt-2">
-                            <span class="text-blue-500 mr-3">Trả lời</span>
-                            <span class="text-gray-500">- 6 giờ trước</span>
-                        </div>
-                        <div class="mt-1 relative">
-                            <div class="comments">
-                                <div class="flex items-center">
-                                    <div
-                                        class="h-7 w-7 text-lg flex items-center justify-center bg-gray-200 mr-2"
-                                    >
-                                        U
-                                    </div>
-                                    <p class="font-bold">
-                                        Nguyễn Hồng Phương Uyên
-                                    </p>
-                                </div>
+                <app-comments [idBaiviet]="theme?.id"></app-comments>
+                <div class="flex items-center pb-5">
+                    <span class="text-xl md:w-48 w-56  mr-3 font-bold text-indigo-900"
+                        >Các Tin Liên Quan</span
+                    >
+                    <div class="w-full hidden md:block h-px bg-gray-400"></div>
+                </div>
+                <div
+                    class="grid grid-cols-2 md:gap-10 gap-5"
+                    (click)="goDown1()"
+                >
+                    <a
+                        class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
+                        [routerLink]="['../../baiviet/', item.slug]"
+                        fragment="top"
+                        *ngFor="let item of tintucs"
+                    >
+                        <div class="md:w-2/5 w-full bg-gray-200 mr-4">
+                            <div class="banner-img h-full">
+                                <img
+                                    src="{{ item?.thumbimage }}"
+                                    class="md:h-auto h-32 w-full object-contain"
+                                    alt=""
+                                />
                             </div>
-                            <span class="material-icons comments comments-icon absolute  left-2 "> arrow_drop_up </span>
-
                         </div>
-                    </div>
+                        <div
+                            class="md:w-3/4 w-full flex flex-col new-info justify-center pt-3"
+                        >
+                            <p
+                                class="md:text-lg text-md text-indigo-900 font-black text-justify md:leading-5 leading-4"
+                            >
+                                {{ item?.title }}
+                            </p>
+                            <a
+                                routerLink="../baiviet/{{ item?.slug }}"
+                                class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
+                                >Xem Thêm >></a
+                            >
+                        </div>
+                    </a>
                 </div>
             </div>
+        </div>
 
-            <div class="flex items-center pb-5">
-                <span class="text-xl w-48 mr-3 font-bold text-indigo-900"
-                    >Các Tin Liên Quan</span
+        <div class="md:w-1/4 rounded-xl hidden md:block relative">
+            <div class="md:my-10 courses-tintuc">
+                <div
+                    class="text-white bg-indigo-900 text-xl font-bold py-5 px-2 uppercase text-center rounded-t-xl top-0"
                 >
-                <div class="w-full h-px bg-gray-400"></div>
+                    danh sách khóa học
+                </div>
+                <app-courses></app-courses>
             </div>
-            <div class="grid grid-cols-2 md:gap-10 gap-5" (click)="goDown1()">
-                <a
-                    class="flex md:flex-row flex-col justify-start new-item cursor-pointer"
-                    routerLink="../{{ item?.slug }}"
-                    fragment="top"
-                    *ngFor="let item of tintucs"
+            <div class="scroll-fixed z-20">
+                <div
+                    class="formsale-mobile border border-white rounded-lg relative"
                 >
-                    <div class="md:w-1/4 w-full bg-gray-200 mr-4">
-                        <div class="banner-img h-full">
-                            <img
-                                src="{{ item?.thumbimage }}"
-                                class="h-full w-full object-contain"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-                    <div
-                        class="md:w-3/4 w-full flex flex-col new-info justify-center pt-3"
+                    <img
+                        src="../../../../../assets/images/homepages/homepage/Đăng ký kháo học/form-mb.jpg"
+                        class="rounded-lg image-form"
+                        alt=""
+                    />
+                    <form
+                        class="form-submit flex flex-col pb-8 justify-center items-center absolute w-full"
                     >
-                        <p
-                            class="md:text-lg text-md text-indigo-900 font-black text-justify md:leading-5 leading-4"
+                        <input
+                            type="text"
+                            id="username-success"
+                            class="border bg-white border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                            placeholder="HỌ TÊN"
+                        />
+                        <input
+                            type="text"
+                            id="username-success"
+                            class="border bg-white border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                            placeholder="SỐ ĐIỆN THOẠI"
+                        />
+                        <input
+                            type="text"
+                            id="username-success"
+                            class="border border-none bg-white text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
+                            placeholder="MÃ GIỚI HIỆU"
+                        />
+
+                        <select
+                            id="countries"
+                            class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
                         >
-                            {{ item?.title }}
-                        </p>
-                        <a
-                            routerLink="../baiviet/{{ item?.slug }}"
-                            class="text-indigo-900 pt-2 md:pt-0 new-link md:hidden"
-                            >Xem Thêm >></a
+                            <option class="text-black-700">KHÓA HỌC</option>
+                            <option
+                                class="text-black-700"
+                                *ngFor="let item of courses"
+                            >
+                                {{ item?.title }}
+                            </option>
+                        </select>
+
+                        <select
+                            id="countries"
+                            class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
                         >
-                    </div>
-                </a>
+                            <option class="text-black-700">
+                                CHỌN ĐỊA ĐIỂM
+                            </option>
+                            <option class="text-black-700">TP.HCM</option>
+                            <option class="text-black-700">NHA TRANG</option>
+                            <option class="text-black-700">ĐÀ NẴNG</option>
+                        </select>
+
+                        <button
+                            class="text-center !w-full mx-32 p-3 rounded-lg flex items-center justify-center"
+                        >
+                            đăng kí ngay
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="md:w-1/4 rounded-xl hidden md:block relative md:mt-10">
-        <div
-            class="text-white bg-indigo-900 text-xl font-bold py-5 px-2 uppercase text-center rounded-t-xl top-0"
-        >
-            danh sách khóa học
-        </div>
-        <app-courses></app-courses>
-
-        <div class="formsale-mobile rounded-lg relative mt-10">
-            <img
-                src="../../../../../assets/images/homepages/homepage/Đăng ký kháo học/form-mb.jpg"
-                class="w-full"
-                alt=""
-            />
-            <form
-                class="form-submit flex flex-col pb-8 justify-center items-center absolute w-full"
-            >
-                <input
-                    type="text"
-                    id="username-success"
-                    class="border bg-white border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                    placeholder="HỌ TÊN"
-                />
-                <input
-                    type="text"
-                    id="username-success"
-                    class="border bg-white border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                    placeholder="SỐ ĐIỆN THOẠI"
-                />
-                <input
-                    type="text"
-                    id="username-success"
-                    class="border border-none bg-white text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 mx-2 mt-4 focus:border-black-500 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                    placeholder="MÃ GIỚI HIỆU"
-                />
-
-                <select
-                    id="countries"
-                    class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                >
-                    <option class="text-black-700">KHÓA HỌC</option>
-                    <option class="text-black-700" *ngFor="let item of courses">
-                        {{ item?.title }}
-                    </option>
-                </select>
-
-                <select
-                    id="countries"
-                    class="g-green-50 border border-none text-black-900 placeholder-black-700 rounded-lg focus:ring-black-500 focus:border-black-500 mx-2 mt-4 block p-1.5 dark:bg-black-100 dark:border-black-400"
-                >
-                    <option class="text-black-700">CHỌN ĐỊA ĐIỂM</option>
-                    <option class="text-black-700">TP.HCM</option>
-                    <option class="text-black-700">NHA TRANG</option>
-                    <option class="text-black-700">ĐÀ NẴNG</option>
-                </select>
-
-                <button
-                    class="text-center !w-full mx-32 p-3 rounded-lg flex items-center justify-center"
-                >
-                    đăng kí ngay
-                </button>
-            </form>
         </div>
     </div>
 </div>
