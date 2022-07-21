@@ -128,7 +128,8 @@
                 <ul class="pagination text-3xl lg:text-xl">
                     <li class="mx-1">
                         <div
-                            class="page-link py-2 px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
+                        (click)="paginateNumber(indexPaginate - 1)"
+                            class="page-link py-2 px-3 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-full border border-indigo-900 text-indigo-900 font-black"
                             aria-label="Previous"
                         >
                             <span aria-hidden="true">&lt;</span>
@@ -141,7 +142,7 @@
                         (click)="paginateNumber(i)"
                     >
                         <div
-                            class="page-link py-2 px-3 rounded-full border border-indigo-900 rounded-full  font-black 
+                            class="page-link py-2 px-3 cursor-pointer hover:bg-indigo-900 hover:text-white rounded-full border border-indigo-900 rounded-full  font-black 
                             {{
                                 indexPaginate == i
                                     ? 'bg-indigo-900 text-white'
@@ -155,7 +156,8 @@
 
                     <li class="mx-1">
                         <div
-                            class="page-link py-2 px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
+                        (click)="paginateNumber(indexPaginate + 1)"
+                            class="page-link py-2 cursor-pointer hover:bg-indigo-900 hover:text-white px-3 rounded-full border border-indigo-900 text-indigo-900 font-black"
                             aria-label="Next"
                         >
                             <span aria-hidden="true">&gt;</span>

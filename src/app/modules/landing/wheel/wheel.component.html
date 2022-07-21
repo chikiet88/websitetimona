@@ -2,7 +2,7 @@
     <div
         class="text-indigo-900 px-10 pt-5 cursor-pointer flex justify-center relative"
     >
-        <h3 (click)="isDangky = true">
+        <h3 (click)="isDangky = true" *ngIf="!isSpin">
             Vui lòng
             <strong class="font-bold text-indigo-900 hover:text-yellow-500">
                 Đăng ký</strong

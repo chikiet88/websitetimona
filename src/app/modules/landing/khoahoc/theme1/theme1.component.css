@@ -33,8 +33,12 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #194cb1;
 }
-.centerY {
+.centerYarrow{
     transform: translateY(-50%);
+
+}
+.centerY {
+    transform: translateY(-20%);
 }
 @media only screen and (max-width: 762px) {
     .wrapper {

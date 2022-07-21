@@ -113,7 +113,7 @@ export class WheelComponent implements OnInit {
         } else {
             this.notifier.notify(
                 'error',
-                `Bạn đăng ký tham gia để xoay vòng xoay may mắn`
+                `Vui lòng đăng ký tham gia để xoay vòng xoay may mắn`
             );
         }
     }

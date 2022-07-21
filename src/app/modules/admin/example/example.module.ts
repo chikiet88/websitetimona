@@ -15,6 +15,7 @@ import { LetotnghiepComponent } from '../letotnghiep/letotnghiep.component';
 import { AddGiangvienComponent } from '../add-giangvien/add-giangvien.component';
 import { FormdangkykhachhangComponent } from '../formdangkykhachhang/formdangkykhachhang.component';
 import { PostclipComponent } from '../postclip/postclip.component';
+import { TestComponent } from '../test/test.component';
 const exampleRoutes: Route[] = [
     {
         path: '',
@@ -30,6 +31,8 @@ const exampleRoutes: Route[] = [
             { path: 'giangvien', component: AddGiangvienComponent },
             { path: 'khachhang', component: FormdangkykhachhangComponent },
             { path: 'clip', component: PostclipComponent },
+            { path: 'test', component: TestComponent },
+
 
 
         ],
@@ -48,7 +51,8 @@ const exampleRoutes: Route[] = [
         LetotnghiepComponent,
         AddGiangvienComponent,
         FormdangkykhachhangComponent,
-        PostclipComponent
+        PostclipComponent,
+        TestComponent
     ],
     imports: [
         RouterModule.forChild(exampleRoutes),

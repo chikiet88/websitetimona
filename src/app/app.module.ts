@@ -105,6 +105,7 @@ const routerConfig: ExtraOptions = {
         AngularFireDatabaseModule,
         AngularFireStorageModule,
         FacebookModule,
+        NgxWheelModule,
         NotifierModule.withConfig(customNotifierOptions),
 
         ServiceWorkerModule.register('ngsw-worker.js', {
@@ -113,7 +114,7 @@ const routerConfig: ExtraOptions = {
           // or after 30 seconds (whichever comes first).
           registrationStrategy: 'registerWhenStable:30000'
         }),
-        NgxWheelModule
+        
     ],
     bootstrap   : [
         AppComponent
